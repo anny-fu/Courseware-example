@@ -1,0 +1,146 @@
+@charset "utf-8";
+html,body {
+	margin: 0; padding: 0;
+	color: #5c5c5c;
+}
+body {
+	padding: 10px;
+	font-size: 20px;
+}
+/****************************************/
+/* 样式元件部分 */
+/****************************************/
+/* 布局 */
+.ml50 { margin-left: 50px; }
+/* 显示类型 */
+label,.resLine > div,[class^="res-"],.resLine span,#sumRes > div, output{
+	display: inline-block;
+}
+
+/****************************************/
+/* 样式初始化部分 */
+/****************************************/
+/* 表单控件 */
+fieldset {
+	border: 1px solid #00a1d1;
+	padding: 20px 16px;
+	margin-bottom: 20px;
+}
+fieldset legend {
+	padding: 0 12px;
+	color: #006f90;
+}
+/* 表单元素 */
+label {
+	text-align: right;
+}
+input,select {
+	padding: 6px;
+	border: 1px solid #006f90;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 18px;
+	color: #00a1d1;
+	box-sizing: border-box;
+	outline: none;
+}
+input:focus,select:focus {
+	border-color: #39b3d8;
+	box-shadow: 0 0 5px rgba(18, 153, 193, 0.8);
+}
+select {
+	width: 60px;
+}
+[class^="res-"] {
+	padding-right: 4px;
+}
+/****************************************/
+/* 元素样式细节 */
+/****************************************/
+main {
+	min-width: 1124px;
+	margin: 0 auto;
+}
+/* 消费笔数 */
+#quantity {
+	width: 180px;
+}
+#unitByStage > span, #unitByStage > div {
+	line-height: 260%;
+}
+/* 提示文本 */
+.placeholder {
+	color: #888;
+}
+/* 分期金额 */
+.byStageMoney {
+	width: 140px;
+}
+/* 分期选择容器 */
+.ctrlLine {
+	padding-top: 4px;
+}
+.ctrlLine > input {
+	margin: 6px;
+}
+/* 单行输出结果容器 */
+.resLine {
+	padding-bottom: 5px;
+}
+.resLine label,.resLine output,.resLine span,.resLine [class^="res-"] {
+	vertical-align: middle;
+}
+.resLine output {
+	width: 170px;
+}
+.resLine [class^="res-"], #sumRes > div output [class^="res-"] {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #f80;
+}
+.resLine [class^="res-"] {
+	max-width: 128px;
+	font-size: 22px;
+}
+.resLine:not(:last-of-type) {
+	border-bottom: 1px dashed #39b3d8;
+	margin-bottom: 10px;
+}
+
+/* 总结果部分 */
+#sumRes > div {
+	line-height: 300%;
+}
+#sumRes > div output,#sumRes > div label,#sumRes > div output span {
+	vertical-align: middle;
+}
+#sumRes > div output {
+	min-width: 272px;
+}
+#sumRes > div output [class^="res-"] {
+	max-width: 224px;
+	font-size: 24px;
+}
+/****************************************/
+/* 媒体查询部分 */
+/****************************************/
+@media screen and (max-width: 1000px) {
+	.resLine > div {
+		display: block;
+	}
+	.resLine output {
+		width: auto;
+	}
+	.resLine [class^="res-"] {
+		max-width: none;
+	}
+}
+
+
+
+
+
+
+
+

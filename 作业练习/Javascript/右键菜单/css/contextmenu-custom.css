@@ -1,0 +1,83 @@
+@charset "utf-8";
+* {
+	box-sizing: border-box;
+}
+html,body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+#main {
+	width: 100%;
+	height: calc(100% - 45px);
+	overflow: hidden;
+}
+.pathNav {
+	margin-bottom: 0;
+}
+/* 图标 */
+.icon-group {
+	width: 96px;  height: 100%;
+	float: left;
+}
+.icon-group ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.icon-group ul > li {
+	width: 96px; height: 96px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	line-height: normal;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.icon-group ul > li:hover {
+	background-color: #dbebf2;
+	border: 1px solid #b7deef;
+}
+.icon-group ul > li > img {
+	width: 64px; height: 64px;
+	margin: 8px 16px 2px;
+	display: block;
+}
+.icon-group ul > li > span {
+	font-size: 0.5rem;
+	color: #888;
+	display: block;
+}
+/* 右键菜单 */
+#contextMenue {
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	position:fixed;
+	border:1px solid #ddd;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+#contextMenue > ul {
+	min-width: 220px;
+	list-style:none;
+	margin:0; 
+	padding:0;
+	user-select: none;
+}
+#contextMenue > ul > li {
+	padding: 0 12px;
+	line-height: 36px;
+	font-size: 16px;
+	color: #888;
+	cursor: pointer;
+}
+#contextMenue > ul > li:hover {
+	background-color: #c7e1f4;
+	color: #1373ba;
+}
+#contextMenue > ul > li:active {
+	background-color: #a7cce8;
+	color: #065086;
+}
+
+
+

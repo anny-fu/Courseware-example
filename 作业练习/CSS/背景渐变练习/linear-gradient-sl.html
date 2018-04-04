@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  section{
+   width:300px;
+   height: 300px;
+   margin:0 10px;
+   float: left;
+ }
+ /*重复线性渐变*/
+ section:nth-child(1){
+  /*第一种*/
+  background: repeating-linear-gradient(0deg,#ccc 0px,#f4f4f4 1px,#f4f4f4 29px,#ccc 30px);
+  /*第二种*/
+  background: repeating-linear-gradient(180deg,#f4f4f4 0px,#f4f4f4 28px,#ccc 29px,#ccc 30px);
+}
+/*第三种*/
+section:nth-child(2){
+  background-image:linear-gradient(0deg,rgba(255,255,255,.5) 50%,transparent 50%,transparent);
+  /*指定背景图片大小，关键点！*/
+  background-size:50px 50px;
+  background-color: #ddd;
+  /* 按需要改动背景色 */
+}
+
+</style>
+<body>
+  <section></section>
+  <section></section>
+</body>
+</html>

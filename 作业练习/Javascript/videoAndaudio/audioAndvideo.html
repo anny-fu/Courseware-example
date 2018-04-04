@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8">
+ <title>音频只能播放一个demo</title>
+</head>
+<body>
+ <!-- 音频标签 -->
+ <audio src="http://oj4t8z2d5.bkt.clouddn.com/%E9%AD%94%E9%AC%BC%E4%B8%AD%E7%9A%84%E5%A4%A9%E4%BD%BF.mp3" controls></audio>
+ <audio src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></audio>
+ <audio src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></audio>
+ <audio src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></audio>
+ <audio src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></audio>
+ <!-- 视频标签 -->
+ <video src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></video>
+ <video src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></video>
+ <video src="http://oj4t8z2d5.bkt.clouddn.com/%E9%A3%8E%E7%BB%A7%E7%BB%AD%E5%90%B9.mp3" controls></video>
+ <script>
+  var audio = document.getElementsByTagName('audio');
+  var video = document.getElementsByTagName('video');
+  if(audio.length != 0 && video.length == 0){
+  //只有音频时
+  judgeMedia(audio,audio.length);
+}else if(audio.length == 0 && video.length != 0){
+  //只有视频时
+  judgeMedia(video,video.length);
+}else{
+  //既有音频又有视频时
+  audio = Array.prototype.slice.call(audio);
+  Array.prototype.push.apply(audio,video);
+  judgeMedia(audio,audio.length);
+ }
+  //判断音频资源函数，参数音频元素与音频长度
+  function judgeMedia(e,l){
+    //定义一个空数组
+    let arr =[];
+    for(let i = 0,len = e.length;i < len;i++){
+     e[i].index = i;
+  //监听视频,音频播放
+  e[i].addEventListener('play',function(){
+   arr.push(i);
+   if(arr.length > 1){
+    for(let j = 0,len = arr.length;j < len;j++){
+  //暂停
+  e[arr[j]].pause();
+  if(i <= e.length){
+   e[this.index].play();
+  }
+ }
+}
+});
+   //监听视频,音频暂停事件
+   e[i].addEventListener('pause',function(){
+    arr.pop(i);
+    if(arr.length > 1){
+     for(let j = 0,len = arr.length;j < len;j++){
+      //播放
+      e[j].play();
+     }
+    }else if(arr.length != 1){
+     for(let j = 0,len = arr.length;j < len;j++){
+   //暂停
+   e[j].pause();
+  }
+ }
+});
+  }
+ }
+</script>
+</body>
+</html>

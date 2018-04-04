@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/***
+***功能:
+***日期：2017/9/4
+***作者：tom_anny
+***/
+html,body,p,table,td,tr{
+    margin:0;padding:0;
+}
+html,body{
+    font:16px '微软雅黑';
+}
+
+.container{
+    width:600px;
+    margin:0 auto;
+}

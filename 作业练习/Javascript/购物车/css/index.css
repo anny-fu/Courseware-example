@@ -1,0 +1,85 @@
+.clearfix:before,.clearfix:after{
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.clearfix:after{
+	clear: both;
+}
+.clearfix{
+	zoom: 1;
+}
+/*隐藏number输入框的上下箭头*/
+input::-webkit-inner-spin-button{
+	display: none;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #ccc;
+	margin-top: 20px;
+	background-color: aliceblue;
+}
+
+
+.main{
+	width: 950px;
+	margin: 50px auto;
+}
+
+.main li {
+	float: left;
+	padding: 10px 15px;
+	margin-right: 100px;
+	
+}
+.main li:first-child,.main li:last-child{
+	margin-right: 0;
+}
+
+.main li input{
+	width: 30px;
+	height: 25px;
+	box-sizing: border-box;
+	text-align: center;
+	
+}
+.main li button{
+	border: none;
+	background-color: #ccc;
+	height: 25px;
+}
+.main li:last-child{
+	color: #f40;
+	font-weight: bold;
+}
+.foot{
+	background-color: #eee;
+	position: fixed;
+	bottom: 0px;
+	left: calc(50% - 475px);
+	width: 950px;
+	height: 50px;
+	padding-left: 100px;
+	box-sizing: border-box;
+}
+.foot button{
+	border: none;
+	height: 50px;
+	width: 80px;
+	background-color: #ddd;
+	color: #fff;
+	margin-left: 50px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.foot span{
+	color: #FF4400;
+	font-weight: bold;
+	font-size: 20px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>js字符串拼接</title>
+	<style type="text/css">
+		p{
+			margin:0;
+		}
+		ul{
+			list-style:none;
+		}
+		li{
+			padding:10px;
+			float: left;
+			width:200px;
+			height: auto;
+			margin-right: 10px;
+		}
+		li>img{
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+	<div >
+		<ul id='box'>
+			
+		</ul>
+	</div>
+	<script type="text/javascript">
+		// 数据对象
+		var data = [
+		{title:'风景1',imgName:'01.jpg'},
+		{title:'风景2',imgName:'02.jpg'},
+		{title:'风景3',imgName:'03.jpg'}
+		]
+		// 获取标签容器
+		var box = document.getElementById('box');
+		// 获取数据长度
+		var data_leng = data.length;
+		// 存储html代码
+		var str = '';
+		// 循环加载
+		for (var i = 0; i < data_leng; i++) {
+			// 1.字符串拼接法
+			// str += '<li><img src="img/'+
+			// data[i].imgName+
+			// '"><p>'+data[i].title+'</p></li>';
+
+				/**
+				 * 2.(标签模板)模板字符串
+				 * 标签模板其实不是模板，而是函数调用的一种特殊形式。“标签”指的就是函数，紧跟在后面的模板字符串就是它的参数。
+				 */
+				 str += `<li>
+				 <img src="img/${data[i].imgName}" alt="">
+				 <p>${data[i].title}</p>
+				</li>`;
+			}
+		// 显示到文档中
+		box.innerHTML = str;
+	</script>
+</body>
+</html>

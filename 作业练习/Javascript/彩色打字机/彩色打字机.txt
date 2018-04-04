@@ -1,0 +1,15 @@
+实现思路：
+1，获取输入框中的文本，存入数组
+2.设置定时器，将数组中的字符输出，输出时需要拼接样式;
+class名字随机获取：
+// 获取12~32之间的随机数
+var radomNum = Math.round(Math.random() * 20 + 12);
+// 拼接出class选择器的字符串
+var radomFZ = "fz-" + radomNum;
+拼接结果输出：
+如:showTxtDiv.innerHTML += '<span class="' +
+			radomFZ + '">' + 
+			txtArr[count++] + 
+			'</span>';
+			
+备注：定时器的间隔时间也需要随机获取。
