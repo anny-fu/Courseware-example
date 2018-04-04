@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Promise对象测试</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            height: 360px;
+        }
+
+        .testImg {
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+<main id="main"></main>
+
+<script>
+    let main = document.getElementById("main");
+    let preloadImage = function (path) {
+        return new Promise(function (resolve) {
+            let img = new Image();
+            img.src = `http://aulence.com/img/other/${path}`;
+            img.onload  = resolve;
+            img.onerror = reject;
+            img.className = "testImg";
+            main.appendChild(img);
+        });
+    };
+    // 使用promise对象按顺序加载图片
+    preloadImage("img-1.jpg")
+        .then(preloadImage("img-2.jpg"))
+        .then(preloadImage("img-3.jpg"))
+        .then(preloadImage("img-4.jpg"));
+
+    function reject() {
+        console.error("图片路径错误，或网络错误！");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>简易计算器</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>简易计算器</a>
+	</nav>
+	<main>
+		<div>
+			<input id="plus1" type="text" class="smallInput"> +
+			<input id="plus2" type="text" class="smallInput"> = 
+			<span id="res-plus">0</span>
+		</div>
+		<div style="margin-top: 20px;">
+			<input id="multiply1" type="text" class="smallInput"> × 
+			<input id="multiply2" type="text" class="smallInput"> =
+			<span id="res-multiply">0</span>
+		</div>
+	</main>
+	
+	<script>
+		// 相加计算表单元素
+		var plus1 = document.getElementById("plus1"),
+			plus2 = document.getElementById("plus2");
+		var resPlus = document.getElementById("res-plus");
+		
+		// 相乘计算表单元素
+		var multiply1 = document.getElementById("multiply1"),
+			multiply2 = document.getElementById("multiply2");
+		var resMultiply = document.getElementById("res-multiply");
+		
+		// 求和输入框1
+		plus1.oninput = function() {
+			fnResPlus();
+		}
+		// 求和输入框2
+		plus2.oninput = function() {
+			fnResPlus();
+		}
+		// 相乘输入框1
+		multiply1.oninput = function() {
+			fnResMultiply();
+		}
+		// 相乘输入框2
+		multiply2.oninput = function() {
+			fnResMultiply();
+		}
+		
+		// 求和函数
+		function fnResPlus() {
+			var res = 0;
+			var val_1 = plus1.value || 0,
+				val_2 = plus2.value || 0;
+			res = parseFloat(val_1) + parseFloat(val_2);
+			resPlus.textContent = res;
+		}
+		
+		// 相乘函数
+		function fnResMultiply() {
+			var res = 0;
+			var val_1 = multiply1.value || 0,
+				val_2 = multiply2.value || 0;
+			res = parseFloat(val_1) * parseFloat(val_2);
+			resMultiply.textContent = res;
+		}
+	</script>
+</body>
+</html>

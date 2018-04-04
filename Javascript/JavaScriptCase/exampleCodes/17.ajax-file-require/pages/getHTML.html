@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX示例——HTML请求</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main id="main">
+    <button id="loadBtn" type="button">加载内容</button>
+</main>
+
+<script>
+    var loadBtn = document.getElementById("loadBtn");
+    var main = document.getElementById("main");
+    loadBtn.onclick = function () {
+		// 1、创建AJAX对象
+        var xhr = new XMLHttpRequest();
+		// 2、创建AJAX请求
+		xhr.open("GET", "content.html", true);
+		// 3、发送AJAX请求
+        xhr.send(null);
+		// 4、监听请求状态，当状态为4（完成）的时候获得数据，并处理处理数据
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4) {
+                if(xhr.status == 200) {
+                    var content = xhr.responseText;
+                    main.innerHTML = content;
+                }
+                else {
+                    console.error("文件路径错误，或网络错误！");
+                }
+            }
+        }
+       
+    }
+
+</script>
+</body>
+</html>

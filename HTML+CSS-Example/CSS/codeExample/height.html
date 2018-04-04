@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+  body{
+    width:1000px;
+    height:600px;
+    margin: 0;
+    border:1px solid #ccc;
+  }
+    section {
+      width: 960px; height: 560px;
+      border: 1px solid #ddd;
+      margin: 0 auto;
+      position: fixed;
+       left: 50%; top: 50%;
+       margin-left: -480px;
+       margin-top: -280px;
+    }
+    section article {
+      width: 240px; height: 240px;
+      border: 1px solid #ddd;
+      position: fixed;
+      left: 50%; top: 50%;
+    }
+
+
+  </style>
+</head>
+<body>
+  <section>
+    <article id="art"></article>
+  </section>
+</body>
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+  var l = $("#art").offset().left;
+  var h = $("#art").offset().top;
+  console.log("======left======="+l);
+  console.log("======top======="+h);
+</script>
+</html>

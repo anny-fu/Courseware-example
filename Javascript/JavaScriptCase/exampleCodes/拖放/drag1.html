@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTML5拖放</title>
+<style type="text/css">
+html,body,div,img{margin: 0;padding: 0;}
+
+#div1, #div2 {
+	float:left;
+	width:240px;
+	height:180px;
+	margin:50px;
+	padding:10px;
+	border:1px solid #aaa;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+</style>
+</head>
+<body>
+
+<div id="div1">
+	<img id="drag1" src="img/apple.jpg" >
+</div>
+
+<div id="div2"></div>
+
+<script>
+window.onload = function() {
+	var div1 = document.getElementById("div1"),
+		div2 = document.getElementById("div2"),
+		drag1 = document.getElementById("drag1");
+
+	function drag(ev) {
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+
+	drag1.ondragstart=drag;
+
+	div2.ondrop = drop;
+	div2.ondragover = allowDrop;
+
+	div1.ondrop = drop;
+	div1.ondragover = allowDrop;
+
+}
+</script>
+</body>
+</html>

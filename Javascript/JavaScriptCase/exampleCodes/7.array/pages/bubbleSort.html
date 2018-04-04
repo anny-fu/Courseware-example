@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序和快速排序</title>
+</head>
+<body>
+<script>
+
+
+    var arr=[2,5,4,1,7,3,8,6,9,0];
+
+    /*
+     *[一]冒泡排序
+     *思想：每一次对比相邻两个数据的大小，小的排在前面，如果前面的数据比后面的大就交换这两个数的位置
+     *要实现上述规则需要用到两层for循环，外层从第一个数到倒数第二个数，内层从外层的后面一个数到最后一个数
+     * 特点：排序算法的基础。简单实用易于理解，缺点是比较次数多，效率较低。
+     */
+    var times =0;//记录比较次数，测试效率
+    var bubbleSort= function(arr){
+        for(var i =0; i<arr.length - 1; i++){
+            for(var j = i + 1; j<arr.length; j++){
+                //如果前面的数据比后面的大就交换
+                if(arr[i] > arr[j]){
+                    var temp = arr[i];//临时变量存储
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+
+            }
+            console.log("第"+(++times)+"次排序后："+arr);
+        }
+
+    }
+
+   /*
+    *[二]快速排序
+    *思想：快速排序思想：先找到一个基准点（一般指数组的中部），然后数组被该基准点分为两部分，依次与该基准点数据比较，如果比它小，放左边；反之，放右边。
+    *左右分别用一个空数组去存储比较后的数据。最后递归执行上述操作，直到数组长度<=1;
+    *特点：快速，常用。缺点是需要另外声明两个数组，浪费了内存空间资源。
+    */
+    var items = 0;
+    var quickSort = function(arr){
+        //如果数组长度小于等于1,无需排序直接返回
+        if(arr.length <=1 ){
+            return arr;
+        }
+        //获取数组基准点
+        var midIndex = Math.floor(arr.length / 2);
+        console.log(midIndex);
+        //找出数组中基准点的值 {splice(index,1)函数可以返回数组中被删除的那个数arr[index+1] }
+        var midIndexVal = arr.splice(midIndex,1)[0];
+        console.log(midIndexVal);
+        //声明两个空数组备用:arrLeft放比较基点小的数组
+        var arrLeft = [],arrRight = [];
+        for(var i =0; i<arr.length; i++){
+            if(arr[i] < midIndexVal){
+                arrLeft.push(arr[i])
+            }else{
+                arrRight.push(arr[i])
+            }
+            console.log("第"+(++items)+"次排序后："+arr);
+        }
+        //递归执行以上操作,对左右两个数组进行操作，直到数组长度为<=1；
+        return quickSort(arrLeft).concat(midIndexVal,quickSort(arrRight));
+    }
+
+
+
+</script>
+</body>
+</html>

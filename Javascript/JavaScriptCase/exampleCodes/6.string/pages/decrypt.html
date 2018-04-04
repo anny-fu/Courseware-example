@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>章节练习二</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		span[id] {
+			color: #f38d1c;
+			font-size: 26px;
+		}
+		section > p {
+			margin: 0;
+			line-height: 2;
+		}
+		#webURL {
+			width: 320px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习二</a>
+	</nav>
+	<main>
+		<section>
+			<label>获取到的密码是：</label>
+			<span id="pwdStr"></span>
+		</section>
+	</main>
+	
+	<script>
+		var str = "    ^_^￥B1%……2f$Df3k#\'$4F#C%gh5@B?E$a@#V6-_-!  ";
+		// 去首位空格
+		var noSpacingStr = str.trim();
+		// 输出数字（一）
+		var numStr1 = noSpacingStr.match(/\d/g).join("");
+		// 输出数字（二）
+		var numStr2 = noSpacingStr.replace(/\D/g,"")
+		
+		// 在页面输出密码
+		var pwdStr = document.getElementById("pwdStr");
+		pwdStr.innerHTML = '<span style="font-size: 32px; color: #f38d1d">' + numStr2 + '</span>';
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习三</title>
+</head>
+<body>
+	<script>
+		/**
+		* 功能：显示对象信息
+		* 参数：需要显示的项目（字符串，各项用“,”号分割）
+		**/
+		Object.prototype.showAllInfo = function(showInfo) {
+			var arr = [];
+			for(var x in this) {
+				if(typeof(this[x]) === "function") {
+					continue;
+				}
+				arr.push(this[x]);
+			}
+			var lbl = showInfo.split(",");
+			lbl.forEach(function(item,index) {
+				lbl[index] = item + "：" + arr[index];
+			});
+			return lbl.join("，");
+		}
+		
+		function RoleInfo(number,name,gender,tel) {
+			this.number = number;
+			this.name = name;
+			this.gender = gender;
+			this.tel = tel;
+			this.modifTel = function(newTel) {
+				this.tel = newTel;
+				return newTel;
+			}
+		}
+		var ATongMu = new RoleInfo("zh-098","阿童木","男","18012121212");
+		var DaKongYi = new RoleInfo("jp-079","大空翼","男","18034343434");
+		var DaHuangFeng = new RoleInfo("us-128","大黄蜂","女","18056565656");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

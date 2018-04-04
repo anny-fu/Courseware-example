@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+body {
+	padding: 20px;
+}
+button {
+	padding: 6px 20px;
+	font-size: 24px;
+}

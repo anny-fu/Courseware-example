@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        button {
+            margin: 5px;
+            border: 1px solid #028ae0;
+            background: #039dff;
+            height: 32px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .container {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <canvas id="myCanvas"  height="200">
+        您的浏览器不支持canvas！
+    </canvas>
+</div>
+</body>
+<script>
+    tantiao();
+    function tantiao() {
+        var wid = document.body.offsetWidth;
+        var canvas = document.getElementById('myCanvas');
+        canvas.width = wid;
+        var ctx = canvas.getContext('2d');
+        /*小球的起始位置*/
+        var posX = 20,
+            posY = 80;
+        /*每次移动X轴增大10，Y轴减小10.*/
+        var vx = 10,
+            vy = -10,
+                /*小球的初始重力*/
+            gravity = 1;
+        var tim = setInterval(function () {
+            /*渲染画布为黑色，为了抹去上一步的小圆点。*/
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            /*移动时小球的坐标的改变*/
+            posX += vx;
+            posY += vy;
+            /*一旦小球的y坐标处于屏幕下方85%的位置，向x轴移动的速度变为原来的85%，而向y轴反弹的高度是上一次反弹高度的14%。*/
+            if (posY > canvas.height * 0.85) {
+                vy *= -0.86;
+                vx *= 0.85;
+                posY = canvas.height * 0.85;
+            }
+            /*重力增加*/
+            vy += gravity;
+            console.log(posX);
+            /*绘制白色小球*/
+            ctx.beginPath();
+            ctx.fillStyle = "white";
+            ctx.arc(posX, posY, 10, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.fill();
+            /*到小球停下的时候就从头绘制*/
+            if(parseInt(posX) == 1112){
+                clearInterval(tim);
+                setTimeout(tantiao, 1000);
+            }
+        }, 30);//以30毫秒的速度移动，直到小球不断反弹后，逐步趋于静止。
+
+    }
+
+</script>
+</html>

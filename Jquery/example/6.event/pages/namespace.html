@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>命名空间的事件触发</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		.test {
+			width: 480px; height: 320px;
+			line-height: 320px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>命名空间的事件触发</a>
+	</nav>
+	<main id="main">
+		<div class="test">这是一段测试文本</div>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		var $test = $(".test");
+		$test.on("click.border.color", function() {
+			$(this).css("borderColor", "#e411ff");
+		});
+		$test.on("click.background.color", function() {
+			$(this).css("backgroundColor", "#ff9");
+		});
+		$test.on("click.font.color", function() {
+			$(this).css("color", "#01d031");
+		});
+		$test.on("click.font.size", function() {
+			$(this).css("fontSize", "48px");
+		});
+		
+		// 触发该元素所有的点击事件
+		//$test.trigger("click");
+		
+		// 触发字体部分的点击事件
+		$test.trigger("click.font");
+		
+		// 触发字体大小部分的点击事件
+		//$test.trigger("click.font.size");
+		
+		// 触发背景设置部分的点击事件
+//		$test.trigger("click.background");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

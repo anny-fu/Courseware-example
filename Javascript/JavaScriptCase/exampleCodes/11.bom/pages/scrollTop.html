@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div style="height: 1600px;"></div>
+
+  <script type="text/javascript">
+
+    window.onscroll = function() {
+      var scroll = document.documentElement.scrollTop||document.body.scrollTop;
+      console.log("scrollH-scrollTop:"+(document.documentElement.scrollHeight - scroll));
+      console.log("clientHeight:"+document.documentElement.clientHeight);
+      if (document.documentElement.scrollHeight - scroll === document.documentElement.clientHeight) {
+        console.log('谢谢阅读');
+      } else {
+        console.log('您还未读完');
+      }
+    }
+  </script>
+</body>
+</html>

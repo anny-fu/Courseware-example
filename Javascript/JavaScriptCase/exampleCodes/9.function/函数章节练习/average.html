@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>章节练习一</title>
+</head>
+<body>
+	<script>
+		// 求和计数器函数
+		function average(param){
+			// 存储结果
+			var arr,result=0;
+			if(arguments.length == 0){
+				return '请至少配置一个参数(数值类型)！';
+			}
+			// 将参数列表对象转换为真正的数组
+			arr = Array.prototype.slice.call(arguments);
+			// 循环数值成员，进行累加
+			for (var i = 0; i < arr.length; i++) {
+				// 判断成员是否都为数值
+				if(typeof(arr[i]) == 'number'){
+						// 进行累加
+						result += arr[i];
+					}else{
+						return '参数只能为数字，请检查参数的配置!';
+					}
+				}
+				return result;
+			}
+
+		</script>
+	</body>
+	</html>

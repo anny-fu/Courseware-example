@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单元素</title>
+	<link rel="stylesheet"  href="../../css/viewport.css">
+<!--[if lt IE 9]>
+  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  	input[type='number']{
+  		width:100px;
+  	}
+  	.item3,.item4{
+  		text-align: left;
+  	}
+
+  </style>
+</head>
+<body>
+	<div class="container">
+		<div class="item3 fl">
+			<p class="title" id="type">input类型</p>
+			<form action="http://www.baidu.com" class="form-list"  autocomplete="on" id="form1">
+
+				<p>
+					<label>Country Name:</label>
+					<input type="text" name="" pattern=""  title="三个字母"  />
+				</p>
+				<p>
+					<label>color拾色器：</label>
+					<input  type="color" name="" id="col">
+				</p>
+				<p>
+					<label>number( 1 到 5 之间 ):</label>
+					<input type="number" value="2" name="quantity" min="0" max="50" step="1">
+				</p>
+				<p>
+					<label>range滑竿：</label>
+					<input type="range" name="points" min="1" max="100" id="range" step="1">
+					<span id="num"></span>
+				</p>
+				<p class="icon-p">
+					<label>E-mail: </label>
+					<input type="email" name="email"  placeholder="请输入正确的Email格式" required autofocus>
+				</p>
+				<p>
+					<label>search搜索:</label>
+					<input type="search" name="search"  >
+				</p>
+				<p>
+					<label>Tel:</label>
+					<input type="tel" name="tel" pattern="^1(3|4|5|7|8)\d{9}$" title="请输入11位手机号" >
+				</p>
+				<p>
+					<label>url地址:</label>
+					<input type="url" name="" value="" required  placeholder="请输入utl地址" />
+				</p>
+				<p class="btn">
+					<input type="submit" name="">
+					<input type="submit" name="" formaction="http://www.qq.com">
+				</p>
+			</form>
+		</div>
+		<div class="item4 fr">
+			<form class="form-list" class="form2">
+				<p class="title">时间类型</p>
+				<p>
+					<label for="">日期date:</label>
+					<input type="date" name="bday">
+				</p>
+				<p>
+					<label for="">本地日期:</label>
+					<input type="datetime-local" name="bday">
+				</p>
+				<p>
+					<label for="">月份month(月和年):</label>
+					<input type="month" name="bday">
+				</p>
+				<p>
+					<label for="">时间(时分):</label>
+					<input type="time" name="usertime">
+				</p>
+				<p>
+					<label for="">周week(年和周):</label>
+					<input type="week" name="week_year">
+				</p>
+				<p>
+					<label for="">日期时间:</label>
+					<input type="datetime" name="week_year">
+				</p>
+
+				<p class="btn"><input type="submit" name=""></p>
+			</form> 
+		</div>
+		<div class="cl"></div>
+	</div>
+</body>
+<script>
+	var Cle=document.getElementById("col");
+	var E=document.getElementById("type");
+	var range=document.getElementById("range");
+	var num=document.getElementById("num");
+	Cle.onchange=function(){
+		var color=Cle.value;
+		E.style.color=color;
+		alert(color);
+	}
+	range.onchange=function(){
+		var val=this.value;
+		num.innerHTML=val;
+	}
+</script>
+</html>

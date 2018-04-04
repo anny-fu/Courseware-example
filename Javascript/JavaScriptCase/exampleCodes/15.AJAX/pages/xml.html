@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>XML</title>
+</head>
+<body>
+XML
+<script>
+
+	/*
+	 什么是XML
+	 XML全称为 Extensible Markup Language，意思是可扩展的标记语言。XML语法上和HTML比较相似，但HTML中的元素是固定的，
+	 而XML的标签是可以由用户自定义的。目前常用的为1.0版本。*/
+
+	/*
+	 * XML应用
+	 * 1.用于配置文件
+	 * 2.用于存储数据*/
+	/*XML配置文件*/
+/*	<?xml version="1.0" encoding="UTF-8"?>
+			//xml声明:版本号(常用1.0)，编码格式
+	<note>//必须要有根元素(类似于对象名)
+	<to>Tove</to>//类似于属性名:属性值
+	<from>Jani</from>
+	<heading>Reminder</heading>
+	<body>Don't forget me this weekend!</body>
+	</note>*/
+/*语法特点：
+* 标签必须关闭,对标签名大小写敏感
+* 必须正确嵌套(错误嵌套：<b><i></b></i>)
+* 属性必须加引号
+* 空格会被保留
+* */
+
+
+	//js简易创建XML字符串
+	//创建DOMParser对象
+	var xmlParser = new DOMParser();
+	//XML字符串
+	var xmlStr = '<root>\n<user>Lee</user>\n</root>';
+	//得到XMLDOM
+	var xmlDom = xmlParser.parseFromString(xmlStr, 'text/xml');
+	// alert(xmlDom.getElementsByTagName('user')[0].tagName);
+
+	//    模拟.xml属性序列化字符串
+	var serializer = new XMLSerializer();
+	var xml = serializer.serializeToString(xmlDom);
+	alert(xml);
+
+
+/*原生AJAX请求XML*/
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	}
+	else {// code for IE6, IE5
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("GET", "note.xml", false);
+	xmlhttp.send();
+	//	得到类似于document对象一样的xmlDOM文档对象
+	xmlDoc = xmlhttp.responseXML;
+	//解析对应节点内容，进行数据展示
+	var toTxt = xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+	var fromTxt = xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+	var messageTxt = xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+</script>
+</body>
+</html>

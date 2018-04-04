@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>动态改变元素样式和内容</title>
+	<style>
+		html,body{
+			margin: 0;
+			font: 24px "微软雅黑";
+			padding:0 10px;
+		}
+		#showInfo {
+			width: 220px;
+			padding: 6px;
+			margin-top: 20px;
+			color: #555;
+		}
+	</style>
+</head>
+<body>
+	<div id="skillList">
+		<div data-color="#d98e00" onclick="setStyle(this)">HTML</div>
+		<div data-color="#0096d9" onclick="setStyle(this)">CSS</div>
+		<div data-color="#00c72e" onclick="setStyle(this)">JavaScript</div>
+	</div>
+	<div id="showInfo"></div>
+	<script>
+// 获取元素
+var skill_div = document.getElementById('skillList').children;
+var showInfo = document.getElementById('showInfo');
+
+function setStyle(obj){
+		// 获取当前元素的text,data-color属性值
+		var divText = obj.textContent;
+		console.log(divText);
+		showInfo.innerText = divText;
+		var bgColor = obj.getAttribute("data-color");
+		console.log(bgColor);
+		showInfo.style.backgroundColor = bgColor;
+	}
+
+
+
+for (var i = 0; i <skill_div.length; i++) {
+	// console.log(skill_div[i]);
+	skill_div[i].onclick = function(){
+		// 获取当前元素的text,data-color属性值
+		var divText = this.textContent;
+		console.log(divText);
+		showInfo.innerText = divText;
+		var bgColor = this.getAttribute("data-color");
+			console.log(bgColor);
+		showInfo.style.backgroundColor = bgColor;
+	}
+}
+
+
+
+</script>
+</body>
+</html>

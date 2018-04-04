@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>正则test方法基本使用</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		label {
+			width: 98px;
+			display: inline-block;
+			text-align: right
+		}
+		.erroMesg {
+			height: 30px;
+			margin: 4px 0 0 106px;
+			color: #f84242;
+			font-size: 0.8rem;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>正则test方法基本使用</a>
+	</nav>
+	<main>
+		<div>
+			<p class="erroMesg"></p>
+			<label>用户名：</label>
+			<input id="txtUserName" type="text">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>年龄：</label>
+			<input id="txtAge" type="number">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>手机号：</label>
+			<input id="txtTel" type="tel">
+		</div>
+	</main>
+	
+	<script>
+		// 用户名正则验证
+		var txtUserName = document.getElementById("txtUserName");
+		txtUserName.onblur = function() {
+			var erroMesg = document.getElementsByClassName("erroMesg")[0];
+			var thisVal = this.value;
+			// 从开始到结束都只能是：英文、数字、下划线，并且大于等于6位
+			var regx = /^\w{6,}$/;
+			if(regx.test(thisVal)) {
+			    erroMesg.textContent = "";
+		    }
+			else {
+				erroMesg.textContent = "用户名只能由多于5位的英文、数字、下划线组成";
+			}
+		}
+		
+		// 年龄正则验证
+		var txtAge = document.getElementById("txtAge");
+		txtAge.onblur = function() {
+			// 内容从开始到结束都只能是数字，长度1~3位
+			var reg = /^\d{1,3}$/;
+			var thisVal = this.value;
+			var erroMesg = document.getElementsByClassName("erroMesg")[1];
+			if(reg.test(thisVal)) {
+				erroMesg.textContent = "";
+			}
+			else {
+				erroMesg.textContent = "年龄为必填项，而且只能为数字";
+			}
+		}
+		
+		// 手机号正则验证
+		var txtTel = document.getElementById("txtTel");
+		txtTel.onblur = function() {
+			var erroMesg = document.getElementsByClassName("erroMesg")[2];
+			var thisVal = this.value;
+			// 从开始到结束都只能是：英文、数字、下划线，并且大于等于6位
+			var regx = /^[1][3587]\d{9}$/;
+			if(regx.test(thisVal)) {
+			    erroMesg.textContent = "";
+		    }
+			else {
+				erroMesg.textContent = "请输入正确的11位手机号";
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

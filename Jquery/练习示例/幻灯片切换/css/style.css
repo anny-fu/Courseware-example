@@ -1,0 +1,75 @@
+@charset "utf-8";
+html,body {
+	width: 100%; height: 100%;
+	margin: 0; padding: 0;
+	overflow: hidden;
+}
+/**************************************************/
+/* 细节设置部分 */
+/**************************************************/
+page {
+	width: 100%; height: 100%;
+	font-size: 32px;
+	color: #fff;
+	display: block;
+	position: absolute;
+}
+
+.page1 {
+	background-color: #9f0b0b;
+}
+.page2 {
+	background-color: #0b9f7d;
+	left: 100%;
+}
+.page3 {
+	background-color: #0b669f;
+	left: 100%;
+}
+/**************************************************/
+/* 动画执行部分 */
+/**************************************************/
+.page2_anim-1 {
+	animation: page2_anim-1 2.4s both;
+}
+.page3_anim-1 {
+	animation: page3_anim-1 1.2s both;
+}
+
+/**************************************************/
+/* 动画定义部分 */
+/**************************************************/
+/* page2 */
+@keyframes page2_anim-1 {
+	0% {
+		transform: rotate(0deg);
+		left: 100%;
+	}
+	100% {
+		transform: rotate(720deg);
+		left: 0%;
+	}
+}
+/* page3 */
+@keyframes page3_anim-1 {
+	0% {
+		transform: scale(0.8);
+		left: -100%; top: -100%
+	}
+	50% {
+		transform: scale(0.8);
+		left: 5%; top: 5%
+	}
+	100% {
+		transform: scale(1);
+		left: 0%; top: 0;
+	}
+}
+
+
+
+
+
+
+
+

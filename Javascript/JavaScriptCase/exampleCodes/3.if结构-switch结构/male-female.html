@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>男女选择</title>
+</head>
+<body>
+	<form name="staffInfo">
+		<lable>男</lable>
+		<input id="male" type="radio" name="gender">
+		<lable>女</lable>
+		<input id="female" type="radio" name="gender">
+	</form>
+	<script>
+			// 这个函数参数具有不确定性的情况
+			function rtnGender(staffName){
+					// 获取表单元素中性别为男或女的两个单选框
+					var rdoMale = document.getElementById('male'),
+					rdoFemale = document.getElementById('female');
+					// 清空属性处理
+					rdoMale.removeAttribute('checked');
+					rdoFemale.removeAttribute('checked');
+					if(staffName == '母晓倩'){
+						rdoFemale.setAttribute('checked','checked');
+					}else if(staffName == '高宇'){
+						rdoFemale.setAttribute('checked','checked');
+					}else if(staffName == '张莉'){
+						rdoFemale.setAttribute('checked','checked');
+					}else{
+						rdoMale.setAttribute('checked','checked');
+					}
+				}
+
+
+				/*修改结构后的函数*/
+				function rtnGenders(staffName){
+					// 获取表单元素中性别为男或女的两个单选框
+					var rdoMale = document.getElementById('male'),
+					rdoFemale = document.getElementById('female');
+					// 清空属性处理
+					rdoMale.removeAttribute('checked');
+					rdoFemale.removeAttribute('checked');
+					if(staffName == '母晓倩' || staffName == '高宇' || staffName == '张莉'){
+						rdoFemale.setAttribute('checked','checked');
+					}else{
+						rdoMale.setAttribute('checked','checked');
+					}
+				}
+
+			</script>
+		</body>
+		</html>

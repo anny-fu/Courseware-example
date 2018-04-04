@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>兄弟元素选择器</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		ul {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			list-style: none;
+		}
+		ul li {
+			height: 40px;
+			padding: 0 20px;
+			line-height: 40px;
+			text-align: center;
+			float: left;
+			cursor: pointer;
+		}
+		ul li:hover {
+			color: #8a1eb2;
+		}
+		ul li.checked {
+			background-color: #8a1eb2;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>兄弟元素选择器</a>
+	</nav>
+	<main id="main">
+		<ul class="skill-list">
+			<li class="html">HTML</li>
+			<li class="css">CSS</li>
+			<li class="js">JavaScript</li>
+			<li class="jq">jQuery</li>
+			<li class="ng">Angular</li>
+			<li class="rc">React</li>
+			<li class="v">Vue</li>
+		</ul>
+		
+		<!-- 默认让列表中第一项“选中”（其实只是一个CSS样式而已）-->
+		<ul class="mainNav">
+			<li class="checked">英雄联盟</li>
+			<li>王者荣耀</li>
+			<li>穿越火线</li>
+			<li>地下城与勇士</li>
+			<li>魔兽世界</li>
+			<li>梦幻西游</li>
+			<li>炉石传说</li>
+		</ul>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$(".skill-list > li").click(function() {
+			// 在控制台观察输出结果的顺序
+			console.log( $(this).prevAll() );
+		});
+		
+		// 当行点击选中效果
+		$("ul.mainNav > li").click(function() {
+		// 当前元素添加指定class，其它所有兄弟元素则移除这个class
+		// “checked”这个class是我们在CSS里预先设置好样式的
+			$(this).addClass("checked").siblings().removeClass("checked");
+			console.log( $(this) );
+			console.log( $(this).addClass("checked") );
+			//$(this).addClass("checked");
+			//$(this).siblings().removeClass("checked");
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

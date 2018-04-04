@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ajax</title>
+        <script src="js/jquery-3.0.0.min.js"></script>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+    </body>
+    <script>
+        $("#btn").click(function(){
+
+            $.ajax({
+                dataType: 'jsonp',
+                url: 'http://api.douban.com/v2/book/isbn/9787111358893',
+                success: function (data) {
+                    var json=JSON.stringify(data);
+                    console.log(JSON.stringify(data));
+                    console.log(json.subtitle);
+
+                }, error: function () {
+                    alert("你丫的错了！");
+                }
+            });
+            $.getJSON('http://api.douban.com/v2/book/isbn/9787111358893?callback=?',function(obj){
+                console.log(obj);
+            });
+
+            //            function foo(data){
+            //                console.log(data);
+            //            }
+            //            $.getJSON('http://api.douban.com/v2/book/isbn/9787111358893?callback=foo');
+        })
+
+    </script>
+</html>

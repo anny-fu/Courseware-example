@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习一</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/selector-01.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习一</a>
+	</nav>
+
+	<main id="main">
+		<div class="leftNavMenu">
+			<ul>
+				<li class="checked">
+					<a>域名管理</a>
+					<ul>
+						<li><a href="#">添加域名</a></li>
+						<li><a href="#">启动CDN</a></li>
+						<li><a href="#">修改所属项目</a></li>
+						<li><a href="#">访问控制</a></li>
+						<li><a href="#">高级配置</a></li>
+					</ul>
+				</li>
+				<li>
+					<a>缓存刷新</a>
+					<ul>
+						<li><a href="#">URL刷新</a></li>
+						<li><a href="#">目录刷新</a></li>
+						<li><a href="#">操作记录</a></li>
+					</ul>
+				</li>
+				<li>
+					<a>统计分析</a>
+					<ul>
+						<li><a href="#">使用量统计</a></li>
+						<li><a href="#">访问情况统计</a></li>
+						<li><a href="#">状态码统计</a></li>
+						<li><a href="#">源站统计</a></li>
+						<li><a href="#">全网状态监控</a></li>
+						<li><a href="#">运营月报</a></li>
+					</ul>
+				</li>
+				<li>
+					<a>高级工具</a>
+					<ul>
+						<li><a href="#">证书管理</a></li>
+						<li><a href="#">流量包管理</a></li>
+					</ul>
+				</li>
+				<li>
+					<a>诊断工具</a>
+					<ul>
+						<li><a href="#">节点IP归属查询</a></li>
+						<li><a href="#">自动故障诊断</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$(".leftNavMenu > ul > li").click(function() {
+			$(this).addClass("checked").siblings().removeClass("checked");
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+@charset "utf-8";
+/**
+* 功能：弹出框样式
+**/
+/***********************************************/
+/* 公共样式 */
+/***********************************************/
+/* 绝对定位 */
+#popup-main masklayer,#popup-main popup-box,#popup-main popup-box popup-close {
+	position: absolute;
+}
+/* 相对定位 */
+#popup-main .form div {
+	position: relative;
+}
+/* 块级元素 */
+#popup-main popup-content {
+	display: block;
+}
+/* IE盒子模型 */
+#popup-main popup-content,#popup-main .form .errInfo {
+	box-sizing: border-box;
+}
+
+/***********************************************/
+/* 细节样式 */
+/***********************************************/
+/* 添加过渡模糊效果的过渡条件 */
+main {
+	transition: 0.3s ease-in;
+	filter: blur(0px);
+}
+/* 弹出框组件 */
+#popup-main {
+	position: fixed;
+	left: 0; top: 0; right: 0; bottom: 0;
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s ease-in;
+	color: #333;
+}
+/* 遮罩层 */
+#popup-main masklayer {
+	width: 100%; height: 100%;
+	z-index: 1000;
+}  
+/* 弹出框主体 */
+#popup-main popup-box {
+	width: auto; height: auto;
+	/*min-width: 320px; min-height: 180px;
+	max-width: 560px; max-height: 360px;*/
+	background-color: #fff;
+	border-radius: 3px;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1001;
+}
+/* 关闭按钮 */
+#popup-main popup-close {
+	width: 32px; height: 32px;
+	background-color: #000;
+	border-radius: 50%;
+	text-align: center;
+	font: 32px "Arail";
+	line-height: 30px;
+	color: #fff;
+	right: -18px; top: -18px;
+	cursor: pointer;
+	opacity: 0.4;
+	transition: 0.2s;
+}
+#popup-main popup-close:hover {
+	opacity: 0.7;
+}
+/* 弹出框内容 */
+#popup-main popup-content {
+	width: calc(100% - 20px); height: calc(100% - 20px);
+	margin: 10px;
+	overflow: hidden;
+}
+/* 文本类样式 */
+#popup-main .text {
+	min-width: 360px;
+	max-width: 480px;
+	padding: 30px 40px;
+}
+/* 确认框类样式 */
+#popup-main .confirm {
+	min-width: 376px; 
+	max-width: 480px;
+	padding: 40px 50px 20px;
+}
+#popup-main .buttonGroup {
+	text-align: center;
+	margin-top: 30px;
+}
+#popup-main .buttonGroup button {
+	width: 120px; height: 34px;
+	background-color: #5f33e6;
+	border: 1px solid #a767ff;
+	border-radius: 3px;
+	font: 18px "微软雅黑";
+	color: #fff;
+	outline: none;
+}
+#popup-main .buttonGroup button:hover {
+	background-color: #835df8;
+	border: 1px solid #c49afd;
+}
+#popup-main .buttonGroup button:active {
+	background-color: #570bbf;
+	border: 1px solid #8133eb;
+}
+#popup-main .buttonGroup button:last-child {
+	margin-left: 36px;
+}
+/* 图片类样式 */
+#popup-main .image img {
+	min-width: 320px; min-height: 180px;
+	max-width: 960px; max-height: 560px;
+	display: block;
+}
+/* 表单类样式 */
+#popup-main .form {
+	min-width: 340px;
+	padding-top: 12px;
+}
+#popup-main .form div {
+	line-height: 300%;
+}
+#popup-main .form .buttonGroup {
+	margin-top: 5px;
+}
+#popup-main .form label, #popup-main .form input {
+	vertical-align: middle;
+}
+#popup-main .form label {
+	width: 92px;
+	text-align: right;
+	display: inline-block;
+}
+#popup-main .form input {
+	width: 202px;
+	padding: 4px 6px;
+	border: 1px solid #999;
+	border-radius: 3px;
+	outline: none;
+	color: #313e4b;
+}
+/* 表单错误信息 */
+#popup-main .form .errInfo {
+	width: 100%; height: 20px;
+	padding-left: 96px; padding-right: 32px;
+    text-align: left;
+	font-size: 16px;
+	line-height: normal;
+	margin: 0;
+	color: #e00;
+	position: absolute;
+	top: -8px;
+}
+
+/***********************************************/
+/* 其它元件效果 */
+/***********************************************/
+/* 界面元素模糊,针对IE */
+.blur {
+	filter: blur(10px);
+}
+
+
+
+
+

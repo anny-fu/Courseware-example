@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>H5实用标签</title>
+	<style type="text/css">
+		em{
+			font-size: 20px;
+			color:#f00;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		HTML5技术是未来<mark>互联网技术</mark>发展的一个大方向。
+	</p>
+	<p>
+		<meter value="2" min="0" max="10" low="3" high="7" optimum="9"></meter>
+		<meter value="4" min="0" max="10" low="3" high="7" optimum="9"></meter>
+		<meter value="6" min="0" max="10" low="3" high="7" optimum="9"></meter>
+		<meter value="8" min="0" max="10" low="3" high="7" optimum="9"></meter>
+	</p>
+	<p>
+		<progress></progress>
+		<progress value="50" max="100"></progress>
+	</p>
+	<p>
+		<audio controls>
+			<source src="media/cityOfSky.ogg" type="audio/ogg">
+			<source src="media/cityOfSky.mp3" type="audio/mp3">
+		</audio>
+	</p>
+	<p>
+		<video width="500"  height="300" controls>
+			<source src="media/chuai.mp4" type="video/mp4">
+			<source src="media/chuai.ogg" type="video/ogg">
+		</video>
+	</p>
+	<p>
+		div section article ，语义是从无到有，逐渐增强的。div 无任何语义，仅仅用作样式化或者脚本化的钩子,对于一段主题性的内容，则就适用 <em>section</em>，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 <i>article</i>。原则上来说，能使用 article 的时候，也是可以使用 section 的，但是实际上，假如使用 article 更合适，那么就不要使用 section 。nav 和 aside 的使用也是如此，这两个标签也是特殊的 section，在使用 nav 和 aside 更合适的情况下，也不要使用 section 了。
+	</p>
+</body>
+</html>

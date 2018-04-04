@@ -1,0 +1,17 @@
+{
+  "name": "2.gulp-watch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "cnpm install gulp gulp-less --save-dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-less": "^3.3.2"
+  }
+}

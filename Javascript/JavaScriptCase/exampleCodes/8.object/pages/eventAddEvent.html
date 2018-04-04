@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>事件内添加事件</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#component {
+			padding: 20px;
+			border: 1px solid #037;
+		}
+		#component img {
+			width: 128px; height: 128px;
+			border: 1px solid #ddd;
+			cursor: pointer;
+		}
+		#btnAddComponent {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>事件内添加事件</a>
+	</nav>
+	<main>
+		<div id="component"></div>
+		<button id="btnAddComponent" type="button">添加组件</button>
+	</main>
+	
+	<script>
+		var component = document.getElementById("component");
+		
+		// 添加组件按钮事件
+		document.getElementById("btnAddComponent").onclick = function() {
+			// 添加一张图片
+			component.innerHTML = '<img src="../img/img-1.jpg">';
+			// 为图片添加点击事件
+			var imgBtn = document.getElementsByTagName("img"),
+			img_length = imgBtn.length;
+			for(var i = 0; i < img_length; i++) {
+				imgBtn[i].onclick = function() {
+					// 添加一张新图片
+					component.innerHTML += '<img src="../img/img-2.jpg">';
+				}
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

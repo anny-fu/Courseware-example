@@ -1,0 +1,31 @@
+浏览器属性：
+window.screen.availHeight 返回当前屏幕高度(空白空间) 
+window.innerHeight：浏览器窗口的可见高度
+
+window.screen.height 返回当前屏幕高度(分辨率值) 
+
+offsetHeight; 获取元素实际内容高度( height + padding + border )
+
+clientHeight：内容可视区域的高度，也就是说页面浏览器中可以看到内容的这个区域的高度，一般是最后一个工具条以下到状态栏以上的这个区域，与页面内容无关（不包含滚动条宽度:height + padding ）。
+
+scrollHeight：获取对象的滚动高度。
+IE,Opera:网页的实际高度，可以小于clientHeight；
+FF：网页内容高度，最小值是clientHeight
+
+scrollTop：相对于顶部的偏移像素
+
+各自的width对应以为的height分别即可。
+
+/**
+ * 各浏览器获取scrollTop的区别:
+ * 1.IE6/7/8
+ * 有文档声明：document.documentElement.scrollTop
+ * 没有文档声明：document.body.scrollTop
+ * Safari：
+ * window.pageYOffset
+ * Firefox,chrome:
+ * document.documentElement.scrollTop
+ * 
+ */
+兼容写法如下：
+var scrollT = document.documentElement.scrollTop || window.pageYOffset|| document.body.scrollTop || 0;

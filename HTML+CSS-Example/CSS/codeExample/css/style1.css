@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* **
+***日期：
+***开发人员：
+***最后的修改时间：
+*** */
+/***************************************************/
+html,body,p,span{
+  padding:0;
+  margin:0;
+}
+
+/* 文本设置 */
+/*p{
+  font-size: 40px;
+  color:#333;
+  text-align:center;
+  font-family: "楷体";
+}
+.textShadow{
+  text-shadow:5px 5px 5px #ff3622;
+}*/
+
+
+/*盒子模型*/
+div{
+width:631.5px;
+/* padding:10px;
+margin:10px;
+border:5px solid #f00; */
+margin:10px auto;
+background-color: green;
+box-sizing: border-box;
+}
+.div1,.div2{
+ /* margin-right: 5px;*/
+height: 200px;
+}
+.div2{
+/*  margin-left: 5px;*/
+}
+p{
+  height: 100px;
+}
+.div3{
+  padding-bottom:20px;
+}
+.div3 p:nth-of-type(2){
+  background-color: yellowgreen;
+margin-bottom: 25px;
+}
+span{
+  margin: 10px;
+  display: inline;
+}
+
+.btn{
+  width:200px;
+  height: 120px;
+  background-color: black;
+  /*margin:10px auto;*/
+  position:absolute;
+  left: 50%;
+
+  margin-left: -100px;
+}
+
+
+

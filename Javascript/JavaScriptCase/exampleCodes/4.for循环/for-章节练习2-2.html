@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环加if结构实现数据筛选</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 学员信息
+    var info = [
+        ['学员A', '女', '本科'],
+        ['学员B', '男', '大专'],
+        ['学员C', '女', '大专'],
+        ['学员D', '男', '本科'],
+        ['学员E', '女', '大专'],
+        ['学员F', '女', '本科'],
+        ['学员G', '男', '大专'],
+        ['学员H', '男', '本科'],
+        ['学员I', '女', '大专']
+    ]
+
+    // 记录本科学员数组和性别为“女”的学员信息
+    var zyArray = new Array();
+    var genderArr = new Array();
+    // 循环数组
+    for (var i = 0; i < info.length; i++) {
+        //存储数据成员值
+        var arr = info[i];
+        //如果不是数组就结束本次循环，继续下一次循环
+        if (typeof arr !== 'object') {
+            continue;
+        }
+
+        //如果是数组，继续循环查找
+        for (var j = 0; j < arr.length; j++) {
+            switch (arr[j]) {
+                case "本科":
+                    zyArray.push(arr);
+                    // console.log(arr);
+                    break;
+                case "女":
+                    genderArr.push(arr);
+                    // console.log(arr);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    console.log('本科学员一共：' + zyArray.length + '位！分别是：'+zyArray);
+    console.log('女学员一共：' + genderArr.length + '位！分别是：'+genderArr);
+</script>
+</body>
+</html>

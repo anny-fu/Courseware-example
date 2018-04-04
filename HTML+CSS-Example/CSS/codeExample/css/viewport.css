@@ -1,0 +1,110 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body{
+	font-family: "微软雅黑";
+}
+.fl{float: left;}
+.fr{float: right;}
+.cl{clear: both;}
+.container{
+	width:80%;
+	margin: auto;
+}
+input{
+	height: 32px;
+	width: 200px;
+	padding:0 5px;
+	border-radius: 5px;
+	background: transparent;
+	border:1px solid #0080ff;
+	outline: 0;
+}
+input:focus{
+	background: #ffc8c8;
+	border-color: #f00;
+}
+input[type=file]{
+	border:0;
+}
+.item1,.item2,.item3{
+	padding-bottom: 40px;
+}
+.item1 p{
+	line-height: 28px;
+	font-size: 18px;
+	color:#333;
+}
+.item2 p>label{
+	width:96px;
+	display: inline-block;	
+}
+p.title,p.title, p.title{
+	font-size: 22px;
+	padding:10px 0;
+	color:#000;
+}
+
+.article{
+	width: 100%;
+
+}
+.article div.img{
+	text-align: center;
+}
+.article div.img,.article p.text{
+	width:50%;
+	padding: 10px;
+	display: inline-block;
+}
+
+.article div.img img{
+	width:100%;
+}
+.article p.text{
+	padding-top: 30px;
+}
+p.duliang meter{
+	margin:0 10px;
+}
+.item3,.item4{
+	width:50%;
+	text-align: center;
+
+}
+.item3 p,.item4 p{
+	padding:20px 0;
+}
+
+
+.form-list p.btn input{
+	width:80px;
+	height: 40px;
+	background: #ccc;
+	border-radius: 5px;
+
+}
+.container .items{
+	width: 100%;
+}
+.item3 .inputtxt{
+	padding: 10px;
+}
+.item3 input.inputbt{
+	width:80px;
+	height: 30px;
+
+}
+#range,#number,#n{
+	width: 62px;
+	height: 30px;
+	padding: 0 10px;
+}
+
+#range{
+	display: inline-block;
+	margin-right: 10px;
+	width: 150px;
+}
+span.fh{
+	padding: 0 20px;
+}

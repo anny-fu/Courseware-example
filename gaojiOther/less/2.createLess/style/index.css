@@ -1,0 +1,33 @@
+/**
+ * 功能：主页入口文件
+ * 日期：2017/6/7
+**/
+/**
+ * 功能：字体设置文件
+ * 日期：2017/6/7
+**/
+body {
+  font: normal 16px "微软雅黑";
+  color: #333333;
+}
+main {
+  width: 960px;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+/**
+ * 功能：布局文件
+ * 日期：2017/6/7
+**/
+.center-block {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+main {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/*# sourceMappingURL=index.css.map */

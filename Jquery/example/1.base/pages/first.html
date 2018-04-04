@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>第一句jQuery代码</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		ul > li {
+			cursor: pointer;
+		}
+		ul > li:active {
+			color: #2396fd;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>第一句jQuery代码</a>
+	</nav>
+	<main id="main">
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+			<li>jQuery</li>
+		</ul>
+		<div>您选择的是：<span></span></div>
+	</main>
+	
+	<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		// 用原生JS实现
+		/*var ul = document.getElementsByTagName("ul")[0];
+		var li = ul.children,
+			li_leng = li.length;
+		for(var i = 0; i < li_leng; i++) {
+			li[i].onclick = function() {
+				var thisText = this.textContent;
+				var div_span = document.getElementsByTagName("div")[0].getElementsByTagName("span")[0];
+				div_span.textContent = thisText;
+			}
+		}*/
+		//console.log(li.style);
+		
+		// 用jQuery去实现相同功能
+		$("ul > li").click(function() {
+			var thisText = $(this).text();
+			$("div > span").text(thisText);
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

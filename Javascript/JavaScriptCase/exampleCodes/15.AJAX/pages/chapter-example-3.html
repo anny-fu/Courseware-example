@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习三</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习三</a>
+	</nav>
+	
+	<main>
+		<ul id="hardware"></ul>
+	</main>
+	
+	<script>
+		var testObj = {
+			userName: "auelnce",
+			niceName: "verning",
+			age: 18,
+			skill: "编写HTML"
+		}
+		function objToParam(obj) {
+			var val = Object.prototype.toString.call(obj);
+			val = val.slice(
+				val.indexOf(" ") + 1, 
+				val.lastIndexOf("]")
+			).toLowerCase();
+			if(val !== "object") {
+			   console.error("该函数的参数只能是一个原生对象");
+				return typeof(val);
+			}
+			
+			var paramArr = [];
+			var paramStr = "";
+			for(var x in obj) {
+                paramStr = x + "=" + encodeURIComponent(obj[x]);
+				paramArr.push(paramStr);
+			}
+			var result = paramArr.join("&");
+			return result;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

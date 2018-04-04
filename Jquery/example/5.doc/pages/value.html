@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>表单值的获取和设置</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		textarea {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>表单值的获取和设置</a>
+	</nav>
+	<main id="main">
+		<select>
+			<option>HTML</option>
+			<option>CSS</option>
+			<option>JavaScript</option>
+			<option>jQuery</option>
+		</select>
+		<div class="slt-res">您选中的是：</div>
+		
+		<textarea></textarea>
+		<div class="txta-res"></div>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("select").change(function() {
+			var thisVal = $(this).val();
+			$(".slt-res").text(function(index,value) {
+				value = value.slice(0, value.indexOf("：") + 1);
+				return value + thisVal;
+			});
+		});
+		
+		$("textarea").keyup(function(e) {
+			var thisVal = $(this).val();
+			$(".txta-res").text(thisVal);
+		});
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

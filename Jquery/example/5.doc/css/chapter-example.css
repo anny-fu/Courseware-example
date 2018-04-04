@@ -1,0 +1,35 @@
+/**
+* 功能：章节练习样式
+**/
+@charset "utf-8";
+
+form > div {
+	padding: 24px 0 6px 0;
+	position: relative;
+}
+form > div > label, form > div > input, form > div > i.checked {
+	vertical-align: middle;
+	display: inline-block;
+}
+form > div > label {
+	width: 98px;
+	text-align: right;
+}
+/* 错误信息 */
+form > div > p.erroMesg {
+	margin: 0;
+	position: absolute;
+	left: 112px; top: 0;
+	font-size: 18px;
+	color: #ef3333;
+}
+/* 验证通过图标 */
+i.checked {
+	width: 32px; height: 32px;
+	background: #fff url(../img/checked.svg) no-repeat;
+	margin-left: 8px;
+}
+/* 表单内的提交按钮 */
+form > div.form-ctrl > button {
+	margin-left: 106px;
+}

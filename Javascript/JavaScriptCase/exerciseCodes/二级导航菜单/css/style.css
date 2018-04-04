@@ -1,0 +1,126 @@
+@charset "utf-8";
+/**
+ * 功能：成绩统计表
+ * 日期：2017-8-8
+**/
+
+/*************************************************/
+/* 样式初始化部分 */
+/*************************************************/
+* {
+	box-sizing: border-box;
+}
+body,html {
+	margin: 0;
+	padding: 0;
+	font: lighter 18px "微软雅黑";
+}
+body {
+	padding-bottom: 100px;
+	background-color: #dcdcdc;
+}
+
+/*************************************************/
+/* 样式细节设置部分 */
+/*************************************************/
+
+.bannerAndNav {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+#goodsNav, #banner {
+	height: 460px;
+}
+/* 商品导航（子导航） */
+#goodsNav {
+	width: 260px;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	left: 0; top: 0;
+	z-index: 10;
+}
+/* banner内容 */
+#banner {
+	background: #1c1d22 url("../img/banner-01.jpg") no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#goodsNav {
+	padding: 20px 0;
+}
+#goodsNav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/* 一级导航部分 */
+#goodsNav ul.lv1 > li:hover {
+	background-color: #ff6700;
+}
+#goodsNav ul.lv1 > li > a {
+	height: 52px;
+	line-height: 52px;
+	padding-left: 30px;
+	text-decoration: none;
+	font-size: 1rem;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	display: block;
+}
+#goodsNav ul.lv1 > li i {
+	font: normal 1.2rem Consolas,Monaco;
+	line-height: 52px;
+	position: absolute;
+	right: 20px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+/* 二级导航部分 */
+#goodsNav ul.lv2 {
+	height: 100%;
+	background-color: #fff;
+	position: absolute;
+	left: 260px; top: 0;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+	display: none;
+}
+/* 主容器悬浮显示二级导航部分 */
+#goodsNav:hover ul.lv2 {
+	display: block;
+}
+#goodsNav ul.lv2 li {
+	width: 320px;
+	padding: 18px 20px;
+}
+#goodsNav ul.lv2 li a {
+	white-space: nowrap;
+	text-decoration: none;
+	color: #666;
+	display: block;
+}
+#goodsNav ul.lv2 li a img {
+	width: 40px; height: 40px;
+	vertical-align: middle;
+	margin-right: 10px;
+	display: inline-block;
+}
+#goodsNav ul.lv2 li a:hover {
+	color: #ff6700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

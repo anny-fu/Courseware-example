@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>水平垂直居中</title>
+	<style type="text/css">
+		html,body{
+			height: 100%;
+			overflow: hidden;
+		}
+		/*1.绝对定位加负外间距（已知固定宽高）*/
+		/*2.绝对/固定定位，（未知元素宽高），设置元素top,right,bottom,left属性值，margin:auto*/
+
+/*	div{
+		border:1px solid #f00;
+		position: absolute;
+		position: fixed;
+		left:5px;right:5px;
+		top:5px;bottom:5px;
+		margin:auto;
+	}*/
+
+	/*3伸缩盒子实现(宽高固定或不固定) justify-content/align-items父元素设置，子元素生效，设置父级为弹性伸缩盒子display: -webkit-flex;*/
+/*	body{
+		justify-content: center; 
+		align-items: center; 
+		display: -webkit-flex;
+	}
+	div{
+		width:120px;
+		height: 120px;
+		border:1px solid #f00;
+		padding:5px;
+	}*/
+
+/*	div{
+		width:120px;
+		height: 120px;
+		margin:0 auto;
+		border:1px solid #f00;
+		margin-top: calc(50% - 60px)
+	}
+*/
+</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

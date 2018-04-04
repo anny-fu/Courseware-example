@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>事件对象的目标</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		main > div {
+			padding: 25px;
+			width: 480px; height: 180px
+		}
+		main > div > p {
+			background-color: #5cff88;
+			margin: 0;
+			padding: 25px;
+		}
+		div:nth-of-type(1) {
+			background-color: #ffd5d5;
+		}
+		div:nth-of-type(2) {
+			background-color: #d5ecff;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>事件对象的目标</a>
+	</nav>
+	<main id="main">
+		<div>
+			<p>
+				<span>DIV1的span</span>
+			</p>
+		</div>
+		<div>
+			<p>
+				<span>DIV2的span</span>
+			</p>
+		</div>
+		<section>点击DIV在控制台查看结果</section>
+	</main>
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("div").first().on("click", function(e) {
+			console.log(e.target);
+			console.log($(e.target).is("span"));
+		});
+		$("div").last().on("click", function(e) {
+			console.log(e.currentTarget);
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

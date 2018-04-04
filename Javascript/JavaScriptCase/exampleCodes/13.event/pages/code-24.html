@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件的传播</title>
+  <style>
+   p{
+    font-size: 32px;
+    color:#f00;
+    border:1px solid #aa0303;
+    border-radius: 3px;
+    margin: 0;
+    padding:0;
+  }
+</style>
+</head>
+<body>
+  <div>
+   <p>Click Me</p>
+ </div>
+</body>
+<script>
+  /*阶段对象*/
+  var phases = {
+   1: 'capture',
+   2: 'target',
+   3: 'bubble'
+ };
+ /*获取到div和p元素*/
+ var div = document.querySelector('div');
+ var p = document.querySelector('p');
+ /*监听点击事件*/
+ p.addEventListener('click', callback, true);
+ p.addEventListener('click', callback, false);
+ // div.addEventListener('click', callback, true);
+ // div.addEventListener('click', callback, false);
+ /*监听函数*/
+ function callback(event) {
+   var tag = event.currentTarget.tagName;
+   var phase = phases[event.eventPhase];
+   /*输出监听结果*/
+   console.log("Tag: '" + tag + "'; EventPhase: '" + phase + "'\n");
+ }
+
+
+
+
+</script>
+</html>

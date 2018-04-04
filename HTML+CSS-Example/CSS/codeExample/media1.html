@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>媒体查询</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- 兼容IE9及以下 -->
+  <!--[if lt IE9]>
+  <script src="http://cdn.bootcss.com/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"> </script>
+  <![endif]-->
+  <style type="text/css">
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      /*min-width: 1024px;*/
+    }
+    body,ul,li{
+      margin: 0;
+      padding:0;
+      overflow-x: hidden;
+    }
+    ul,li{
+      list-style: none;
+      float: left;
+    }
+    img{
+      vertical-align: middle;
+      width: 100%;
+    }
+    .container{
+      width:1024px;
+      margin: 0 auto;
+      background-color: #999;
+
+    }
+    .container .img-list>li{
+      width:25%;
+      padding:5px;
+    }
+    .container:after{
+      content: ".";
+      height: 0;
+      display: block;
+      visibility: hidden;
+      clear: both;
+    }
+    @media (min-width:600px) and (max-width:900px){
+      .container{
+        width:800px;
+        margin: 0 auto;
+      }
+      .container h1{
+        color:#f00;
+      }
+      .container .img-list>li{
+        width:33.33%;
+      }
+    }
+    @media screen and (max-width:640px){
+      .container{
+        width:100%;
+        margin: 0 auto;
+      }
+      .container .img-list>li{
+        width:50%;
+      }
+    }
+    @media screen and (min-width:320px) and (max-width: 414px){
+      .container{
+        width:100%;
+        margin: 0 auto;
+      }
+      .container .img-list>li{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- container -->
+<section class="container">
+
+  <h1>大于600px小于900px时，本行文字显示为红色。</h1>
+  <ul class="img-list">
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+    <li><img src="img/s3.jpg"></li>
+  </ul>
+</section>
+</body>
+</html>

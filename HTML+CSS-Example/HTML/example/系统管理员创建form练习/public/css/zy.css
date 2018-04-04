@@ -1,0 +1,57 @@
+@charset "utf-8";
+body{font: 16px "微软雅黑";}
+label{font-size:16px; color:#015892;}
+textarea{font-size:15px; color:#666;}
+input{font-size:15px; color:#666;
+	padding-left: 5px;
+}
+input,select,textarea{
+	border: 1px solid #015892;
+}
+body{padding:0;margin:0;}
+.container{
+	width:500px;
+	margin:0 auto;
+}
+.container>h1{
+	color:#7f7b7b;
+}
+.container>form{
+	padding: 21px 80px;
+}
+.w-240>input,.w-240>select{
+	width: 240px;
+	height: 30px;
+}
+.w70>select{
+	width:70px;height: 30px;
+}
+.w70>input{
+	width:340px;height:24px;
+	margin-top: 5px;
+}
+.textareaBox>textarea{
+	width:340px;
+	min-width: 340px;
+	max-width: 340px;
+	height: 130px;
+	min-height: 130px;
+	max-height: 175px;
+}
+.file>input{
+	width:188px;
+	border:none;
+}
+.btnBox{
+	text-align: center;
+}
+.btnBox>button{
+	width: 60px;
+	height: 30px;
+	color: #fff;
+	background-color: #0485cc;
+	border: 1px solid #0178b9;
+	box-shadow: 0 0 2px #024065;
+	border-radius: 4px;
+	margin-right: 10px;
+}

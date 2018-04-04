@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>类似数组的转换</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>类似数组的转换</a>
+	</nav>
+	<main>
+	</main>
+	
+	<script>
+		var likeArr = {
+			0: "苹果",
+			1: "梨子",
+			2: "香蕉",
+			length: 3
+		}
+		// 方式一
+		var fruit1 = Array.prototype.slice.call(likeArr);
+		fruit1.push("西瓜");
+		console.log(fruit1);
+		
+		// 方式二（ES6）
+		var fruit2 = Array.from(likeArr);
+		fruit2.push("西瓜");
+		console.log(fruit2);
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

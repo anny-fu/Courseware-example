@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="author" content="Auelnce,aulence@foxmail.com">
+	<title>Title</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		html,body {
+			height: 100%;
+			margin: 0;
+		}
+		body {
+			font: 20px "微软雅黑";
+		}
+		header,footer {
+			width: 100%;
+			height: 50px;
+			background-color: #ff5347;
+			text-align: center;
+			line-height: 50px;
+			color: #fff;
+		}
+		@media (max-width: 360px) {
+			header,footer {
+				 height: 40px;
+				 line-height: 40px;
+			}
+		}
+		main {
+			height: 100%;
+		}
+		.content {
+			width: 100%;
+			height: calc(100% - 100px);
+			background-color: #ff0;
+			border: 1px solid transparent;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+		@media (max-width: 360px) {
+			.content {
+				height: calc(100% - 80px);
+			}
+		}
+		page {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(111, 183, 255, 0.53);
+			display: block;
+			position: fixed;
+			top: 0;
+			right: -100%;
+			transition: right 0.6s;
+		}
+		page.show {
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<header>头部的标题</header>
+		<div class="content">
+			<p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p><p>页面内容</p>
+		</div>
+		<footer>页脚</footer>
+	</main>
+	<page>
+		<header>
+			<a class="backHome">&lt;</a>
+		</header>
+		<div></div>
+	</page>
+	<script>
+		var liBtn = document.getElementsByClassName("content")[0].getElementsByTagName("p"),
+			liBtn_leng = liBtn.length;
+		for(var i = 0; i < liBtn_leng; i++) {
+			liBtn[i].onclick = function () {
+				document.getElementsByTagName("page")[0].classList.add("show");
+			}
+		}
+
+		document.getElementsByClassName("backHome")[0].onclick = function () {
+			document.getElementsByTagName("page")[0].classList.remove("show");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>this的对象指向问题（题外）</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>this的对象指向问题（题外）</a>
+	</nav>
+	<main id="main">
+		<button id="showInfo" type="button">显示用户信息</button>
+		<p id="showRes">--显示结果--</p>
+	</main>
+	
+	<script>
+		var userInfo = {
+			name: "陈惠如"
+		}
+		showInfo.onclick = function() {
+			showUserInfo.call(userInfo, "用户名：");
+			// 或
+			/*showUserInfo.bind(userInfo)("用户名：");
+			// 或
+			showUserInfo.apply(userInfo，"用户名：");*/
+		}
+		function showUserInfo(prefix) {
+			console.log(this);
+			showRes.textContent = prefix + this.name;
+		}
+		
+		// 模仿jQuery的CSS方法
+		function $(tag) {
+			var ele = document.querySelectorAll(tag)[0];
+			return {
+				css: function(attr,value) {
+					ele.style[attr] = value;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

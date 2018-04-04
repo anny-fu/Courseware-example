@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body{
+    background-color: #e3e3e3;
+    color: #666;
+    font-family: "微软雅黑";
+}
+article{
+    width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #acacac;
+    box-shadow: 0 0 10px #888888;
+    padding: 20px;
+    line-height: 200%;
+    font-size: 16px;
+}
+.container{
+  text-indent: 2em;  
+}
+h1{
+    text-align: center;
+    font-size: 24px;
+}
+.time{
+    text-align: center;
+    font-size: 10px;
+}
+.time p{
+    display: inline;
+}
+h2{
+    font-size: 20px;
+}
+h1,h2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.container p{
+    margin: 10px 0 0;
+}
+span{
+    color: #00f;
+    font-weight: bold;
+}
+.img{
+    text-align: center;
+    margin: 10px 0 0;
+}
+img{
+    border: 1px solid #fff;
+    padding: 5px;
+}

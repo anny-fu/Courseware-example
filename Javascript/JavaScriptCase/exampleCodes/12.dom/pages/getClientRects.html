@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Element</title>
+  <style type="text/css">
+    .container{
+      width:90px;
+      margin:0 auto;
+    }
+  </style>
+
+</head>
+<body>
+<!-- div固定宽度 -->
+<div class="container">
+    <span id="inline">
+      Hello World
+      Hello World
+      Hello World
+    </span>
+  </div>
+</body>
+<script type="text/javascript">
+  var el=document.getElementById("inline");
+  var le=el.getClientRects().length;
+  var l=el.getClientRects()[0].left;
+  var r=el.getClientRects()[0].right;
+  var b=el.getClientRects()[0].bottom;
+  var h=el.getClientRects()[0].height;
+  var w=el.getClientRects()[0].width;
+  console.log('length:'+le);
+  console.log('left:'+l);
+  console.log('right:'+r);
+  console.log('bottom:'+b);
+  console.log('height:'+h);
+  console.log('width:'+w);
+</script>
+</html>

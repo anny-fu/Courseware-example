@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>获取元素的索引</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		nav ul {
+			border: 1px solid #acacac;
+			border-radius: 5px;
+			list-style: none;
+			margin: 0; padding: 0;
+			overflow: hidden;
+		}
+		nav ul li {
+			padding: 10px 32px;
+			float: left;
+			cursor: pointer;
+		}
+		nav ul li.active {
+			background-color: #2266ff;
+			color: #fff;
+		}
+		main {
+			width: 960px;
+			margin: 20px auto;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>获取元素的索引</a>
+	</nav>
+	
+	<main>
+		<nav>
+			<ul>
+				<li data-href="home" class="active">首页</li>
+				<li data-href="product">产品</li>
+				<li data-href="service">服务</li>
+				<li data-href="about">关于</li>
+			</ul>
+		</nav>
+		<div class="content"></div>
+	</main>
+	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		var $content = $(".content");
+		
+		$("nav ul li").on('click', function() {
+			// 导航的点选效果
+			$(this).addClass("active").siblings().removeClass();
+			// 获取索引
+			var thisIndex = $(this).index();
+			switch(thisIndex) {
+				case 0:
+					$.get("/data/home.html", function(doc) {
+						$content.html(doc)
+					});
+					break;
+				case 1:
+					$.get("/data/product.html", function(doc) {
+						$content.html(doc)
+					});
+					break;
+				case 2:
+					$.get("/data/service.html", function(doc) {
+						$content.html(doc)
+					});
+					break;
+				case 3:
+					$.get("/data/about.html", function(doc) {
+						$content.html(doc)
+					});
+					break;
+				default:
+					$.get("/data/home.html", function(doc) {
+						$content.html(doc)
+					});
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

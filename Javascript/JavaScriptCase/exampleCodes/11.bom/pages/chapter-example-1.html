@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习一</title>
+	<link id="setCSS" rel="stylesheet" href="../css/style-large.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习一</a>
+	</nav>
+	<main>
+		这是测试文本
+	</main>
+	
+	<script>
+		var setLinkCSS = document.getElementById("setCSS");
+		var currentWidth = window.innerWidth;
+		var isMobile = /mobile/i.test(navigator.userAgent);
+		if(currentWidth > 1366 && !isMobile) {
+			setLinkCSS.href = "../css/style-large.css";
+		}
+		else if(currentWidth <= 1366 && !isMobile) {
+			setLinkCSS.href = "../css/style-small.css";
+		}
+		else if(isMobile) {
+			setLinkCSS.href = "../css/style-mobile.css";
+		}
+		setTimeout(function() {
+			document.body.style.opacity = "1";
+		},500);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

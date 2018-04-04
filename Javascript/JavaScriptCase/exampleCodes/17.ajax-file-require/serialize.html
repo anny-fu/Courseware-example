@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		function serialize(obj) {
+			var serializeRes = "";
+			var objArr = Object.keys(obj),
+				objArr_leng = objArr.length;
+			for(var x in obj) {
+				serializeRes += x + '=' + obj[x];
+				if(x === objArr[objArr_leng - 1]) {
+					break;
+				}
+				else {
+					serializeRes += '&';
+				}
+			}
+			return serializeRes;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>事件回调函数</title>
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		component {
+			position: fixed;
+			left: 0; 
+			top: 0; 
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+		}
+		popup-box {
+			padding: 30px 40px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			position: absolute;
+			left: 50%; top: 50%;
+			transform: translate(-50%,-50%);
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+		}
+		popup-content,popup-ctrl {
+			width: 100%;
+			text-align: center;
+			display: block;
+		}
+		#showImg {
+			width: 320px;
+			display: block;
+		}
+		#createPopupBox {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<img id="showImg" src="img/img-1.jpg">
+		<button id="showImg1" type="button">显示图片1</button>
+		<button id="showImg2" type="button">显示图片2</button>
+		<button id="showImg3" type="button">显示图片3</button>
+		<button id="popupImg" type="button">弹出图片</button>
+		<!-- 组件显示区域 -->
+		<component>
+			<!--<popup-box>
+			<popup-content>
+			<img src="">
+			</popup-content>
+			</popup-box>-->
+		</component>
+	</main>
+	
+	<script>
+		// 图片显示容器
+		var showImg = document.getElementById("showImg");
+		// 四个按钮
+		var showImg1 = document.getElementById("showImg1");
+		var showImg2 = document.getElementById("showImg2");
+		var showImg3 = document.getElementById("showImg3");
+		var popupImg = document.getElementById("popupImg");
+		// 替换为图片1
+		showImg1.onclick = function() {
+			creatBox({
+				mesg: "您确定要替换位图片1吗？",
+				sureEvent: function() {
+					showImg.src = "img/img-1.jpg";
+				}
+			});
+		}
+		// 替换为图片2
+		showImg2.onclick = function() {
+			creatBox({
+				mesg: "您确定要替换位图片2吗？",
+				sureEvent: function() {
+					showImg.src = "img/img-2.jpg";
+				}
+			});
+		}
+		// 替换为图片3
+		showImg3.onclick = function() {
+			creatBox({
+				mesg: "您确定要替换位图片3吗？",
+				sureEvent: function() {
+					showImg.src = "img/img-3.jpg";
+				}
+			});
+		}
+		// 弹出图片
+		popupImg.onclick = function() {
+			creatBox({
+				type: "image",
+				imgURL: "img/img-7.jpg"
+			});
+		}
+		
+		/**
+		* 功能：弹出框插件
+		* 参数1：弹出框文本
+		* 参数2：确认按钮的回调函数
+		**/
+		function creatBox(param) {
+			// 处理type初始值
+			param.type = (param.type === undefined)? "text" : param.type;
+			// 获取组件显示容器
+			var component = document.getElementsByTagName("component")[0];
+			// 如果是文本框
+			if(param.type === "text") {
+				component.innerHTML = '<popup-box>' +
+				'<popup-content>' +
+				'<p>' + param.mesg + '</p>' +
+				'</popup-content>' +
+				'<popup-ctrl>' +
+				'<button id="sureCtrl" type="button">确认</button>' +
+				'</popup-ctrl>' +
+				'</popup-box>';
+				component.style.zIndex = "10";
+				var sureCtrl = document.getElementById("sureCtrl");
+				sureCtrl.onclick = function() {
+					// 回调函数（实际上是一个未知的函数）
+					param.sureEvent();
+					this.parentElement.parentElement.remove();
+					component.style.zIndex = "-1";
+				}
+		    }
+			// 如果是显示图片
+			else if(param.type === "image") {
+				component.innerHTML = '<popup-box>' +
+					'<popup-content>' +
+					'<img id="popup-image" src="' + param.imgURL + '">' +
+					'</popup-content>' +
+					'</popup-box>';
+			}
+			component.style.zIndex = "10";
+			var popupImage = document.getElementById("popup-image");
+			popupImage.onclick = function() {
+				this.parentElement.parentElement.remove();
+				component.style.zIndex = "-1";
+			}
+			
+		}
+			
+	</script>
+</body>
+</html>
+
+
+
+
+
+

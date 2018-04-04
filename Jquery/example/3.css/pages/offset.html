@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>offset方法</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		div {
+			height: 200px;
+			margin-top: 100px;
+			background-color: #a52b2b;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>offset方法</a>
+	</nav>
+	<main id="main">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</main>
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		var offset = $("div").eq(3).offset();
+		console.log(offset);
+		console.log(offset.left + "--" + offset.top);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

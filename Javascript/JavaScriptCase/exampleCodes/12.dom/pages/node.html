@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="con" id="div">div元素</div>
+  <ul class="ul">
+    <li>列表1</li>
+    <li>列表2</li>
+  </ul>
+</body>
+<script type="text/javascript">
+  var d=document.getElementById("div");
+  var attr=d.getAttributeNode("id");
+  var text=d.firstChild;
+  console.log(d.nodeName+"====="+d.nodeType+"========"+d.nodeValue);
+  console.log(d+"===========attr"+attr+"============text:"+text);
+  console.log(attr.nodeName+"====="+attr.nodeType+"========"+attr.nodeValue);
+  console.log(text.nodeName+"====="+text.nodeType+"========"+text.nodeValue);
+  var u=document.getElementsByTagName("ul");
+  var li=u[0].firstChild;
+  console.log(u);
+   console.log(li.nodeName+"====="+li.nodeType+"========"+li.nodeValue);
+  var text1=document.createTextNode("Hello!");
+  console.log(text1.nodeName+"====="+text1.nodeType+"========"+text1.nodeValue);
+  // var pre=document.getElementsByClassName("ul")[0].childNodes;
+  // var p= pre[0].firstChild;
+  // console.log(pre+"==="+p.nodeValue);
+</script>
+
+</html>

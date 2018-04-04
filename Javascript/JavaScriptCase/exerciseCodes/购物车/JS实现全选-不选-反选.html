@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS实现全选、不选、反选</title>
+</head>
+<body>
+<form>
+	<label for="all">全选</label>
+	<input type="button" id="all" value="全选" /><br />
+	<label for="uncheck">不选</label>
+	<input type="button" id="uncheck" value="不选" /><br />
+	<label for="othercheck">反选</label>
+	<input type="button" id="othercheck" value="反选" /><br />
+
+<div id="div">
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+    <input type="checkbox" /><br />
+</div>
+</form>
+
+<script>
+window.onload=function(){
+    var CheckAll=document.getElementById('all');
+    var UnCheck=document.getElementById('uncheck');
+    var OtherCheck=document.getElementById('othercheck');
+    var div=document.getElementById('div');
+    var CheckBox=div.getElementsByTagName('input');
+    CheckAll.onclick=function(){
+            for(i=0;i<CheckBox.length;i++){
+                    CheckBox[i].checked=true;
+                };
+        };
+    UnCheck.onclick=function(){
+            for(i=0;i<CheckBox.length;i++){
+                    CheckBox[i].checked=false;
+                };
+        };
+    othercheck.onclick=function(){
+            for(i=0;i<CheckBox.length;i++){
+                    if(CheckBox[i].checked==true){
+                            CheckBox[i].checked=false;
+                        }
+                    else{
+                        CheckBox[i].checked=true
+                        }
+                    
+                };
+        };
+};
+</script>
+</body>
+</html>

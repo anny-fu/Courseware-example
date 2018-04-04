@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-平行四边形</title>
+    <style>
+        html,body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*第一个图形*/
+        .position1 {
+           margin-bottom: 50px;
+       }
+       .border-left,.border-center,.border-right,.bor-left,.bor-right {
+        width: 0; height: 0;
+        border-width: 50px;
+        border-style: solid;
+        float: left;
+    }
+    /* 左三角 */
+    .border-left {
+        border-color: transparent #880 #880 transparent;
+    }
+    /* 正方形 */
+    .border-center {
+        border-color: #f80 #f80 #f80 #f80;
+    }
+    /* 右三角 */
+    .border-right {
+        border-color: #080 transparent transparent #080;
+    }
+    /* 第二个图形 */
+    .bor-left,.bor-right{ border-width: 80px;
+    }
+    .bor-left{
+        border-color:transparent #f0f transparent transparent;
+    }
+    .bor-right{
+        border-color:transparent  transparent transparent #00f;
+    }
+
+
+</style>
+
+</head>
+<body>
+    <div class="position1">
+        <div class="border-left"></div>
+        <div class="border-center"></div>
+        <div class="border-right"></div>
+    </div>
+    <div class="position2">
+        <div class="bor-left"></div>
+        <div class="bor-right"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

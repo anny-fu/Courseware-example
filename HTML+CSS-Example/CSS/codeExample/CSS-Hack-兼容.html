@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSSHack和兼容设置</title>
+	<style>
+		/*CSS Hack
+		1.属性Hack：
+		_：IE6以下浏览器
+		*:IE7以下浏览器
+		\9:IE6以上浏览器
+		2.选择符Hack
+		*：IE6以下
+		* +：IE7
+		3.条件Hack
+<!--[if <keywords>? IE <version>?]>
+HTML代码块
+<![endif]-->
+keywords:是否(空)、大于(gt)、大于或等于(gte)、
+小于(lt)、小于或等于(lte)、非指定版本(!)
+version:浏览器版本号
+		*/
+
+		/*H5标签兼容*/
+		/*1.显示设置元素类型为block*/
+		header,footer,section,article,aisde,nav,main{
+			display: block;
+		}
+	</style>
+	<!--IE8及以下浏览器会去读取该样式-->
+	<!--[if lte IE 8]>
+	<style>
+	.test{
+	color:#ccc;
+	}
+	</style>
+<! [endif] -->
+
+</head>
+<body>
+
+<!--2.H5兼容js文件引入-->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<![endif]-->
+</body>
+</html>

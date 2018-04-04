@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>表单设计</title>
+	<style>
+		.box{width:500px;margin:0 auto;}
+
+	</style>
+</head>
+<body>
+	<!-- 注册表单-->
+	<!-- ctrl+/ ctrl+shift+/ 注释快捷键 -->
+	<div class="box">
+		<form action="" name="registForm">
+			<!-- 隐藏输入域 -->
+			<input type="hidden" >
+			<p>
+				<label>用户名：</label>
+				<input type="text" name="userName" id="userName" value=""   placeholder="请输入用户名">
+			</p>
+			<p>
+				<label>密&nbsp;&nbsp;&nbsp;码：</label>
+				<input type="password" name="pwd" id="pwd" value="" maxlength="6" >
+			</p>
+			<!-- 性别 -->
+			<p>
+				<label>性&nbsp;&nbsp;&nbsp;别：</label>
+				男<input type="radio" name="gender" checked>
+				女<input type="radio" name="gender">
+			</p>
+			<!-- 兴趣爱好 -->
+			<p>
+				<label>兴&nbsp;&nbsp;&nbsp;趣:</label>
+				<label for="game">游戏</label>
+				<input type="checkbox" id="game"  checked>
+				<label for="book">看书</label>
+				<input type="checkbox" id="book">
+				<label for="sport">运动</label>
+				<input type="checkbox" id="sport" checked>
+				<label for="travel">旅游</label>
+				<input type="checkbox" id="travel">
+			</p>
+			<!-- 籍贯 -->
+			<p>
+				<label>籍&nbsp;&nbsp;&nbsp;贯：</label>
+				<select>
+					<optgroup label="四川省">
+						<option value="0">成都</option>
+						<option value="1">绵阳</option>
+						<option value="2" selected>德阳</option>
+					</optgroup>
+					<optgroup label="湖北省">
+						<option value="0">武汉</option>
+						<option value="1">黄冈</option>
+						<option value="2">仙桃</option>
+					</optgroup>
+				</select>
+			</p>
+			<!-- 自我介绍 -->
+			<p>
+				<label>自我介绍：</label>
+			</p>
+			<p>
+				<textarea cols="50" rows="8">请输入你的自我介绍，在200字以内..
+				</textarea>
+			</p>
+			<!-- 文件上传 -->
+			<p>
+				<label>上传文件：</label>
+				<input type="file">
+			</p>
+			<!-- 按钮类型 -->
+			<p>
+				<input type="button" value="普通">
+				<input type="submit" value="提交">
+				<input type="reset" value="重置">
+			</p>
+			<!-- button -->
+			<p>
+				<button type="button">普通按钮</button>
+				<button type="submit">提交按钮</button>
+				<button type="reset">重置按钮</button>
+			</p>
+		</form>
+	</div>
+</body>
+</html>

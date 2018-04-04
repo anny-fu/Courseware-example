@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>构建一个选择器</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>构建一个选择器</a>
+	</nav>
+	<main id="main">
+		<header>
+			<nav>
+				<ul>
+					<li>首页</li>
+					<li>产品</li>
+					<li>服务</li>
+					<li>关于</li>
+				</ul>
+			</nav>
+		</header>
+		<article>
+			<h1>文章标题</h1>
+			<section>
+				<h2 class="h2Btn">章节一</h2>
+				<p>段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1</p>
+				<p>段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1</p>
+			</section>
+			<section>
+				<h2 class="h2Btn">章节二</h2>
+				<p>段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1</p>
+				<p>段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1，段落内容1</p>
+			</section>
+		</article>
+	</main>
+	
+	<script>
+		// 修改UL的样式
+		getElem("ul")[0].style.cssText = "margin: 0; padding: 0; list-style:none;";
+		getElem("#main").style.cssText = "width: 960px; margin: 0 auto; background-color: #3f3631; color:#fff";
+		
+		// 获取到导航列表的长度
+		var navList = getElem("li");
+		var navList_length = navList.length;
+		// 修改所有导航列表项的样式
+		for(var i = 0; i < navList_length; i++) {
+			navList[i].style.cssText = "padding: 6px 20px;float:left;"
+		}
+		
+		// 获取h2的长度
+		var h2Btn = getElem(".h2Btn");
+		var h2_length = h2Btn.length;
+		for(var j = 0; j < h2_length; j++) {
+			h2Btn[j].onclick = function() {
+				this.style.marginLeft = "200px";
+			}
+		}
+		
+		/**
+		* 功能：自定义选择器
+		* 参数：CSS选择器（String）
+		**/
+		function getElem(param) {
+			// 获取到CSS字符串首字符
+			var firstChar = param.charAt(0);
+			// 返回结果变量
+			var result = "";
+			// 如果是一个ID
+			if(firstChar === "#") {
+				result = document.getElementById(param.slice(1));
+			}
+			// 如果是一个Class
+			else if(firstChar === ".") {
+				result = document.querySelectorAll(param);
+			}
+			else if(/[a-z]/i.test(firstChar)) {
+				result = document.querySelectorAll(param);
+			}
+			return result;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

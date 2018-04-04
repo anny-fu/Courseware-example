@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>六角星</title>
+  <style type="text/css">
+    div{
+      width:0;
+      height: 0;
+      position: absolute;
+      border-width:0px 100px 200px;
+      border-color:transparent transparent #f00 transparent;
+      border-style: solid;
+      margin:10px auto;
+    }
+    div:after{
+      content: '';
+      width:0;
+      height: 0;
+      position: absolute;
+      border-width:200px 100px 0px;
+      border-color:#f00 transparent transparent transparent;
+      border-style: solid;
+      margin:60px 0 0 -100px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

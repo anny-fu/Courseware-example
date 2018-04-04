@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>理解构造函数</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>理解构造函数</a>
+	</nav>
+	<main id="main">
+		<p>
+			<span>普通对象 =&gt; </span>
+			<span class="res"></span>
+		</p>
+		<p>
+			<span>构造对象 =&gt; </span>
+			<span class="res"></span>
+		</p>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		// 普通对象
+		var obj = {
+			name: "对象",
+			add: function(a,b) {
+				return a + b;
+			}
+		}
+		$(".res").eq(0).text(
+			"名称：" + obj.name + "，结果：" + obj.add(3,3)
+		);
+		
+		// 构造函数
+		function Struct() {
+			this.name = "构造函数";
+			this.add = function(a,b) {
+				return a + b;
+			}
+			//console.log(this);
+		}
+		var toObj = new Struct();
+		$(".res").eq(1).text(
+			"名称：" + toObj.name + "，结果：" + toObj.add(6,3)
+		);
+		
+		// 构造一个类的游戏角色
+		function LightningRole(name,lev,skill) {
+			this.name = name;
+			this.lev = lev;
+			this.skill = skill;
+			this.serise = "电系";
+			this.country = "雷云国";
+		}
+		var 王震 = new LightningRole("王震", 1, ["卖萌","唱歌"]);
+		var 梅飘彧 = new LightningRole("梅飘彧", 3, ["笑","瞪"]);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

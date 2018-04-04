@@ -1,0 +1,66 @@
+@charset "utf-8";
+/**
+ * 功能：单页示例
+ * 日期：2017年11月23日
+**/
+
+/*************************************************/
+/* 样式初始化部分 */
+/*************************************************/
+* {
+    box-sizing: border-box;
+}
+html,body,ul,ol,p {
+    margin: 0;
+    padding: 0;
+}
+temp {
+    display: block;
+}
+/*************************************************/
+/* 元件样式定义 */
+/*************************************************/
+
+/*************************************************/
+/* 样式细节设置部分 */
+/*************************************************/
+body {
+    font: normal 20px "Microsoft YaHei";
+}
+header {
+    height: 50px;
+    background-color: #5d97ff;
+}
+header nav {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+header nav ul {
+    height: 100px;
+    overflow: hidden;
+    list-style: none;
+}
+header nav ul li {
+    padding: 0 20px;
+    line-height: 50px;
+    float: left;
+    color: #ffffff;
+    cursor: pointer;
+}
+header nav ul li:hover {
+    background-color: #74a7ff;
+}
+header nav ul li.active {
+    background-color: #8ab3ff;
+}
+/* 内容部分 */
+#app {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+/*************************************************/
+/* 动画帧定义部分 */
+/*************************************************/

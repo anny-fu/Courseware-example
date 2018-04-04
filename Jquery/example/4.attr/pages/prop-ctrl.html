@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>状态属性操作</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		form > div {
+			padding: 10px 0;
+		}
+		input[type='checkbox'] {
+			width: 18px; height: 18px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>状态属性操作</a>
+	</nav>
+	<main id="main">
+		<h1>附带软件下载</h1>
+		<form name="softForm">
+			<div>
+				<label>全选/全不选：
+					<input name="allCkd" type="checkbox">
+				</label>
+			</div>
+			<div class="softList">
+				<label>奇虎360
+					<input name="soft" type="checkbox">
+				</label>
+				<label>金山杀毒
+					<input name="soft" type="checkbox">
+				</label>
+				<label>百度工具栏
+					<input name="soft" type="checkbox">
+				</label>
+				<label>搜狗浏览器
+					<input name="soft" type="checkbox">
+				</label>
+			</div>
+			<div>
+				<button type="button" disabled>完成</button>
+				<!-- DHTML（动态的HTML，即结合AJAX的HTML） -->
+				<!-- 在XHTML（严格的HTML模式）里应该写成 -->
+				<!--<button type="button" disabled="disabled">登录</button>-->
+			</div>
+		</form>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("[name='allCkd']").click(function() {
+			var ckdStatus = $(this).prop("checked");
+			if(ckdStatus) {
+				$(".softList input").prop("checked", true);
+			}
+			else {
+				$(".softList input").prop("checked", false);
+			}
+		});
+		$("[name='allCkd']")[0].indeterminate = true;
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id="src">
+
+    <img  id="banana" src="img/banana.jpg" alt="banana" title="">
+
+    <img  id="apple" src="img/apple.jpg" alt="apple" title="">
+
+    <img  id="orange" src="img/orange.jpg" alt="orange" title="">
+
+    <div id="target">
+      <p id="msg">Drop Here</p>
+    </div><!-- #target -->
+
+  </div><!-- #src -->
+
+  <!-- <script src="js/script.js"></script> -->
+</body>
+<script type="text/javascript">
+// 获取drag对象和接受drag元素的（drop）对象
+var src=document.getElementById('src');
+var tar=document.getElementById('target');
+var msg=document.getElementById('msg');
+
+// 拖放事件开始
+src.ondragstart=function(ev){
+  ev.dataTransfer.setData('Text',ev.target.id);
+}
+// 连续触发拖放事件
+src.ondrag=function(ev){
+  msg.innerHTML=ev.target.id;
+}
+// 拖放结束时
+src.ondragend=function(e){
+  msg.innerHTML='Drop Here';
+}
+
+
+/*创建接受拖放区域*/
+function allDrop(ev){
+  ev.preventDefault();
+}
+// tar.ondragenter=allDrop;
+
+tar.ondragover=allDrop;
+
+/*接受拖放内容*/
+tar.ondrop=function(ev){
+  // ev.preventDefault();
+  var re=ev.dataTransfer.getData('Text');
+  var chil=document.getElementById(re).cloneNode(false);
+  tar.innerHTML="";
+  /*当前接受拖放内容的元素（tar/this）*/
+  this.appendChild(chil);
+}
+
+</script>
+</html>

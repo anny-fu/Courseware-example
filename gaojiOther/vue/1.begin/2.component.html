@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="author" content="Auelnce,aulence@foxmail.com">
+	<title>Vue组件基础</title>
+	<link rel="stylesheet" href="style/common.css">
+</head>
+<body>
+	<main id="main">
+		<section id="app-1">
+			<h3>1、基本数据显示</h3>
+			<comp-base></comp-base>
+		</section>
+		<section id="app-2">
+			<h3>2、全局组件的使用</h3>
+			<ul>
+				<custom-book-list :bookprop="book" :key="book.id" v-for="book in bookList"></custom-book-list>
+			</ul>
+		</section>
+	</main>
+
+	<script src="plugin/vue.js"></script>
+	<script src="scripts/2.component.js"></script>
+</body>
+</html>

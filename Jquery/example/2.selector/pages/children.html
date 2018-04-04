@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>后代、子选择器</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>后代、子选择器</a>
+	</nav>
+	<main id="main">
+		<ul class="ul-1">
+			<li>1</li>
+			<li class="item">2</li>
+			<li>3</li>
+			<li class="item">4</li>
+		</ul>
+		
+		<ul class="ul-2">
+			<li>1</li>
+			<li>
+				2
+				<ul>
+					<li>a</li>
+					<li class="item">b</li>
+					<li>c</li>
+				</ul>
+			</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		// 子选择器
+		var $ul_1 = $(".ul-1");
+		$ul_1.children().css({
+			width: "220px",
+			padding: "6px",
+			backgroundColor: "#eee",
+			marginBottom: "10px"
+		});
+		$ul_1.children(".item").css("color", "#6ed6c0");
+		
+		// 后代元素选择器
+		var $ul_2 = $(".ul-2");
+		$ul_2.find("li").css({
+			minWidth: "220px",
+			maxWidth: "360px",
+			padding: "6px",
+			border: "1px solid #ddd",
+			marginBottom: "10px"
+		});
+		$ul_2.find("li.item").css("color", "#6e82d6");
+		$ul_2.find("li").click(function() {
+			alert( $(this).text() );
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

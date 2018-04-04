@@ -1,0 +1,241 @@
+@charset "utf-8";
+/**
+ * 功能：利用Web存储实现注册和登录
+ * 日期：2017-9-9
+ **/
+
+/*************************************************/
+/* 样式初始化部分 */
+/*************************************************/
+* {
+	box-sizing: border-box;
+}
+html,body,ul,ol,p {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: normal 20px "微软雅黑";
+	color: #333;
+}
+button,input {
+	font: normal 18px "微软雅黑";
+	outline: none;
+}
+input {
+	padding: 6px;
+	border: 1px solid #999;
+	border-radius: 3px;
+}
+
+/*************************************************/
+/* 样式元件部分 */
+/*************************************************/
+/* 抖动盒子元素 */
+.shakeTheBox {
+	animation: shakeBox 0.1s;
+	animation-iteration-count: 2;
+}
+
+/*************************************************/
+/* 样式细节设置部分 */
+/*************************************************/
+/**** header ****/
+header {
+	width: 100%; height: 50px;
+	background: linear-gradient(180deg, #f3f3f3, #dfdfdf);
+	border-bottom: 1px solid #acacac;
+	line-height: 50px;;
+}
+/* 导航 */
+nav {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+.mainNav {
+	list-style: none;
+	overflow: hidden;
+}
+.mainNav > li {
+	padding: 0 20px;
+	float: left;
+}
+.mainNav > li > a {
+	text-decoration: none;
+	color: #333;
+}
+.mainNav > li > a:hover {
+	color: #02a30d;
+}
+.mainNav > li > a:active {
+	color: #01790a;
+}
+/* 当前页面的导航按钮选中状态 */
+.mainNav > li.active {
+	background-color: rgba(2, 163, 13, 0.8);
+}
+.mainNav > li.active a {
+	color: #fff;
+	cursor: default;
+}
+/* 登录和注册按钮 */
+.signinStatus {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #666;
+}
+header button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color: #666;
+}
+header button:hover {
+	color: #888;
+}
+header button:active {
+	color: #333;
+}
+/* 登录用户昵称 */
+#currentUser a {
+	text-decoration: none;
+	color: #02a30d;
+}
+
+/**** main ****/
+main {
+	width: 960px;
+	padding: 16px;
+	font-size: 1.2em;
+	color: #01b910;
+	margin: 0 auto;
+}
+main img {
+	width: 420px;
+	border: 1px solid #f3f3f3;
+	border-radius: 5px;
+	overflow: hidden;
+	display: block;
+	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+main div:nth-child(2) {
+	margin-top: 10px;
+}
+
+/**** 弹出框组件 ****/
+component {
+	opacity: 0;
+	transition: opacity 0.6s;
+}
+/* 遮罩层 */
+masklayer {
+	background-color: rgba(0, 0, 0, 0.2);
+	position: fixed;
+	left: 0; right: 0; bottom: 0; top: 0;
+	z-index: 10;
+}
+/* 弹出框 */
+dialog-box {
+	background-color: #fff;
+	border-radius: 8px;
+	position: fixed;
+	z-index: 11;
+	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+/* 弹出框--头部 */
+dialog-box .dialog-header {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 弹出框--内容 */
+dialog-box .dialog-content {
+	padding: 0 46px 24px 36px;
+}
+dialog-box .dialog-content form > div {
+	padding: 24px 0 0;
+}
+dialog-box label, dialog-box input {
+	vertical-align: middle;
+	display: inline-block;
+}
+dialog-box label {
+	width: 106px;
+	text-align: right
+}
+dialog-box input {
+	width: 280px;
+	color: #02a300;
+}
+/* 弹出框--底部 */
+dialog-box .dialog-oprate {
+	padding: 12px;
+	border-top: 1px solid #ddd;
+	text-align: center;
+}
+dialog-box .dialog-oprate button {
+	padding: 8px 32px;
+	background-color: #f3f3f3;
+	border: 1px solid #999;
+	border-radius: 5px;
+	cursor: pointer;
+}
+dialog-box .dialog-oprate button:active {
+	background-color: #e3e3e3;
+}
+dialog-box .dialog-oprate button:not(:first-child) {
+	margin-left: 32px;
+}
+/* 注册按钮单独设置 */
+#dialog-btn-oprateSure, #saveUserInfo {
+	background-color: #04c912;
+	border-color: #02a30d;
+	color: #fff;
+}
+#dialog-btn-oprateSure:active, #saveUserInfo:active {
+	background-color: #019d0c;
+}
+/* 弹出框--错误信息 */
+.erroMesg {
+	height: 48px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ff2828;
+	transition: all 0.15s linear;
+}
+
+/*************************************************/
+/* 动画帧定义部分 */
+/*************************************************/
+@keyframes shakeBox {
+	0% { transform: translate(0, -5px) }
+	33% { transform: translate(0, 0) }
+	66% { transform: translate(0, 5px) }
+	100% { transform: translate(0, 0) }
+}
+
+/*************************************************/
+/* 其它伪类设置 */
+/*************************************************/
+/* WebKit系列浏览器 */
+::-webkit-input-placeholder {
+    color: #bdd3be;
+}
+/* 火狐版本4~18 */
+:-moz-placeholder { 
+    color: #bdd3be;
+}
+/* 火狐版本19+ */
+::-moz-placeholder { 
+    color: #bdd3be;
+}
+/* IE版本10+ */
+:-ms-input-placeholder { 
+    color: #bdd3be;
+}
+
+
+

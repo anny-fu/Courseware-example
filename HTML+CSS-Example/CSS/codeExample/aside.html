@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>H5新元素</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<p class="header">
+		这里用<span class="color">header</span>标签承载
+		</p>
+	</header>
+	<!-- header end **********  nav start -->
+	<nav class="nav clearfix">
+		<ul class="nav-list">
+			<li><a href="#">首页</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">联系我们</a></li>
+		</ul>
+	</nav>
+	<article>
+		<!-- left 广告内容 -->
+		<aside>
+			<div class="left">广告内容</div>
+		</aside>
+		<section class="container">
+			<h1>div section article标签的区别</h1>
+			<hr>
+			<article>
+				<h3>第一章</h3>
+				<p>
+					div section article ，语义是从无到有，逐渐增强的。div 无任何语义，仅仅用作样式化或者脚本化的钩子,对于一段主题性的内容，则就适用 section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 article。原则上来说，能使用 article 的时候，也是可以使用 section 的，但是实际上，假如使用 article 更合适，那么就不要使用 section 。nav 和 aside 的使用也是如此，这两个标签也是特殊的 section，在使用 nav 和 aside 更合适的情况下，也不要使用 section 了。
+				</p>
+			</article>
+			<article>
+				<h3>第二章</h3>
+				<p>
+					对于 div 和 section、 article 以及其他标签的区分比较简单。对于 section 和 article 的区分乍看比较难，其实重点就是看看这段内容脱离了整体是不是还能作为一个完整的、独立的内容而存在，这里面的重点又在完整身上。因为其实说起来 section 包含的内容也能算作独立的一块，但是它只能算是组成整体的一部分，article 才是一个完整的整体。
+				</p>
+			</article>
+		</section>
+		<!--right 广告内容 -->
+		<aside>
+			<div class="right">广告内容</div>
+		</aside>
+	</article>
+	<!-- footer区域 -->
+	<footer>
+		<p class="footer">
+		底部【版权&copy;***公司】用<span class="color">footer</span>承载
+		</p>
+	</footer>
+
+</body>
+</html>

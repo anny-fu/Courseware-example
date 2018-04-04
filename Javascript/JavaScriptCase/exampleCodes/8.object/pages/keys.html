@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>对象键名数组Object.keys方法</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>对象键名数组Object.keys方法</a>
+	</nav>
+	<main>
+		<div>
+			<span>对象属性个数:</span>
+			<span id="showAttrLength"></span>
+		</div>
+		<div class="mt-20">
+			<span>有以下属性：</span>
+			<ul id="allValList" class="m-no mt-10"></ul>
+		</div>
+	</main>
+	
+	<script src="../data/book-info.js"></script>
+	<script>
+		var showAttrLength = document.getElementById("showAttrLength");
+		var attrLength = Object.keys(bookInfo).length;
+		showAttrLength.textContent = attrLength;
+		
+		// 创建一个原型链方法用数组的形式来访问对象的键值
+		Object.prototype.val = function (n) {
+			return this[Object.keys(this)[n]];
+		}
+		
+		// 在列表中遍历出指定对象的所有属性值
+		var allValList = document.getElementById("allValList");
+		for(var i = 0; i < attrLength; i++) {
+			allValList.innerHTML += '<li>' + bookInfo.val(i) + '</li>';
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

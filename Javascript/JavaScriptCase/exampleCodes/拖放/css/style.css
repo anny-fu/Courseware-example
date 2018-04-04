@@ -1,0 +1,50 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+#src{
+	overflow: hidden;
+}
+#src > *
+{
+    float: left;
+}
+#target,
+#src
+{
+    margin: 4px;
+    padding: 2px;
+
+    border: thin solid black;
+}
+#src>img{
+	width: 160px;
+	height: 120px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 3px;
+}
+#target
+{
+    display: table;
+    width: 160px;
+    height: 120px;
+    margin-left: 80px;
+    text-align: center;
+}
+#target > p
+{
+    display: table-cell;
+
+    vertical-align: middle;
+}
+#target img
+{
+    width: 160px;
+    height: 120px;
+}
+img.dragged{
+	box-sizing: border-box;
+	border:1px solid #BE1108;
+}

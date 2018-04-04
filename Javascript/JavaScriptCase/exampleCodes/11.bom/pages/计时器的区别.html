@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>计数</title>
+  <style type="text/css">
+    input{
+      width:50px;
+      height: 30px;
+      border:1px solid #028ae0;
+      text-align: center;
+    }
+    button{
+      margin: 5px;
+      border: 1px solid #028ae0;
+      background: #039dff;
+      height: 32px;
+      border-radius: 5px;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <input type="text" id="count" />
+    <input type="button" value="start" onclick="starts()">
+    <input type="button" value="Stop" onclick="stopCount()">
+  </form>
+</body>
+<script>
+/**
+ *setTimeout：HTML 5标准规定，setTimeout的最短时间间隔是4毫秒。为了节电，对于那些不处于当前窗口的页面，浏览器会将时间间隔扩大到1000毫秒。另外，如果笔记本电脑处于电池供电状态，Chrome和IE 9以上的版本，会将时间间隔切换到系统定时器，大约是15.6毫秒。
+ *
+ *setInterval：setInterval的最短间隔时间是10毫秒，也就是说，小于10毫秒的时间间隔会被调整到10毫秒。
+ * 
+ */
+  var num=0;
+  function startCount() {
+    document.getElementById('count').value =num;
+    num++;
+    console.log(num);
+    // i = setTimeout(startCount,1000);
+    // 将setInterval放到函数中自己调用自己执行，会出现加速执行效果。
+    // i = setInterval(startCount,1000);
+  }
+  /**
+   * 
+   * 如果要实现间隔时间相等的情况，必须要将它放在另外一个函数中去执行
+   */
+  function starts(){
+    i = setInterval(startCount,1000);
+  }
+  function stopCount(){
+      // clearTimeout(i);
+      clearInterval(i);
+    }
+  </script>
+  </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>通过操作class实现图片轮播</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/class-command.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>通过操作class实现图片轮播</a>
+	</nav>
+	<main id="main">
+		<figure>
+			<img src="../img/01.jpg" class="show">
+			<img src="../img/02.jpg">
+			<img src="../img/03.jpg">
+			<img src="../img/04.jpg">
+			<img src="../img/05.jpg">
+		</figure>
+		<button id="btn" type="button">按钮</button>
+	</main>
+	
+	<script>
+		var imgList = document.getElementsByTagName("img");
+		setInterval(function() {
+			var showImg = document.getElementsByClassName("show")[0];
+			var nextImg = showImg.nextElementSibling;
+			showImg.classList.remove("show");
+			if(nextImg) {
+				nextImg.classList.add("show");
+		    } else {
+				imgList[0].classList.add("show");
+			}
+		},2000);
+		
+		var btn = document.getElementById("btn");
+		btn.onclick = function() {
+			this.classList.toggle("checked");
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+{
+  "name": "virtual-os",
+  "version": "1.1.0",
+  "description": "模拟操作系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "text"
+  },
+  "author": "aulence",
+  "license": "ISC"
+}

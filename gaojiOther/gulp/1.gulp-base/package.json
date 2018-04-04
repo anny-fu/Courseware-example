@@ -1,0 +1,21 @@
+{
+  "name": "1.gulp-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cnpm install gulp gulp-less gulp-autoprefixer --save-dev"
+  },
+  "keywords": [],
+  "author": {
+    "name": "aulence",
+    "email": "aulence@foxmail.com",
+    "tel": "18116657687"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-less": "latest"
+  }
+}

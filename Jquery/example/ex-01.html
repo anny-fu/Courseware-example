@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>示例1</title>
+  <script src="../../js/jquery-3.0.0.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="text/javascript">
+    $(document).ready(function(){
+  //隐藏 id="test" 的元素
+  $('#btn1').click(function(){
+    $("#test").hide();
+  });
+//隐藏所有 class="test" 的 <p> 元素
+$('#btn2').click(function(){
+ $("p.test").hide();
+});
+ //隐藏所有 <p> 元素
+ $('#btn3').click(function(){
+   $("p").hide();
+ });
+})
+</script>
+</head>
+<body>
+  <!-- 隐藏当前元素 -->
+  <button id="btn" onclick="$(this).hide();">点击我隐藏</button>
+
+  <button id="btn1">隐藏 id="test" 的元素</button>
+  <button id="btn2">隐藏 class="test" 的p元素</button>
+  <button id="btn3">隐藏所有p元素</button>
+  <div id="test">我是id="test" 的元素</div>
+  <p class="test">我是class="test" 的p元素</p>
+  <p>天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空伐其身行，行弗乱其所为，所以动心忍性，曾益其所不能。</p>
+  <p>天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空伐其身行，行弗乱其所为，所以动心忍性，曾益其所不能。</p>
+</body>
+
+</html>

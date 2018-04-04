@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习二</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		.form-group label,.form-group input,.form-group span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.form-group span {
+			background-color: #eee;
+			border: 1px solid #ddd;
+			padding: 6px;
+			cursor: pointer;
+			color: #8b2323;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习二</a>
+	</nav>
+	<main>
+		<div class="form-group">
+			<label>验证码：</label>
+			<input id="txtValiCode" type="text">
+			<span id="valiCode" title="点击刷新"></span>
+		</div>
+	</main>
+	
+	<script>
+		var valiCode = document.getElementById("valiCode");
+		var strCode = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		// 点击调用
+		valiCode.onclick = function() {
+			createValiCode(5);
+		}
+		// 载入时调用
+		createValiCode(5);
+		function createValiCode(num) {
+			var str = "";
+			// 获取原字符串长度(62)
+			var code_length = strCode.length;
+			for(var i = 0; i < num; i++) {
+				// 求0~61之间的随机数
+				var randomNum = Math.floor(Math.random() * code_length);
+				str += strCode.charAt(randomNum);
+			}
+			valiCode.textContent = str; 
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

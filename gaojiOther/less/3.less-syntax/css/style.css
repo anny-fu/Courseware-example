@@ -1,0 +1,159 @@
+/**
+* 功能：Less入门
+* 日期：2017/6/6
+**/
+.themesLink {
+	text-decoration: none;
+	color: #2398fd;
+	cursor: pointer;
+}
+/* CSS样式初始化 */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	background-color: #dcdcdc;
+	margin: 0;
+	font: normal 16px "微软雅黑";
+	color: #333333;
+}
+body {
+	overflow: hidden;
+}
+/************************************/
+/* 样式元件 */
+/************************************/
+.btn {
+	padding: 6px 12px;
+	background-color: #e3e3e3;
+	border-radius: 5px;
+	font: normal 15px "微软雅黑";
+	cursor: pointer;
+	outline: none;
+}
+.btn.btn-normal {
+	background-color: #e6e6e6;
+	border: 1px solid #cdcdcd;
+	color: #333333;
+}
+.btn.btn-normal:hover {
+	background-color: #ffffff;
+}
+.btn.btn-normal:active {
+	background-color: #cdcdcd;
+}
+.btn.btn-blue {
+	background-color: #2396fd;
+	border: 1px solid #027deb;
+	color: #ffffff;
+}
+.btn.btn-blue:hover {
+	background-color: #56aefd;
+}
+.btn.btn-blue:active {
+	background-color: #027deb;
+}
+.btn.btn-red {
+	background-color: #d23219;
+	border: 1px solid #a42714;
+	color: #ffffff;
+}
+.btn.btn-red:hover {
+	background-color: #e74f37;
+}
+.btn.btn-red:active {
+	background-color: #a42714;
+}
+.btn.btn-purple {
+	background-color: #f313fe;
+	border: 1px solid #d301dd;
+	color: #ffffff;
+}
+.btn.btn-purple:hover {
+	background-color: #f646fe;
+}
+.btn.btn-purple:active {
+	background-color: #d301dd;
+}
+.btn.btn-dark {
+	background-color: #3d3d3d;
+	border: 1px solid #242424;
+	color: #f3f3f3;
+}
+.btn.btn-dark:hover {
+	background-color: #575757;
+}
+.btn.btn-dark:active {
+	background-color: #242424;
+}
+/************************************/
+/* 细节设置 */
+/************************************/
+header {
+	width: 100%;
+	height: 50px;
+	background-color: #07b414;
+	text-align: center;
+	font: normal 20px "微软雅黑";
+	line-height: 50px;
+	color: #ffffff;
+}
+main {
+	height: calc(100% - 90px);
+	padding: 12px;
+	overflow-y: auto;
+}
+main div {
+	padding: 12px;
+	font-size: 20px;
+}
+main div a {
+	text-decoration: none;
+	color: #2398fd;
+	cursor: pointer;
+}
+main div a:hover {
+	color: #99573d;
+}
+main > div.t-1 {
+	background-color: #fff;
+	border: 1px solid #2e6da4;
+	border-radius: 15px;
+	box-shadow: 0 10px 20px rgba(51, 51, 51, 0.5);
+	margin-bottom: 30px;
+}
+main > div.t-2 {
+	background-color: #fff;
+	border: 1px solid #2e6da4;
+	border-radius: 15px;
+	box-shadow: 0 10px 20px rgba(51, 51, 51, 0.5);
+	margin-bottom: 30px;
+}
+main > div.t-3 {
+	background-color: #fff;
+	border: 1px solid #2e6da4;
+	border-radius: 28px;
+	box-shadow: 0 10px 20px rgba(51, 51, 51, 0.5);
+	margin-bottom: 30px;
+}
+main > div.t-4 {
+	background-color: #fff;
+	border: 1px solid #2e6da4;
+	border-radius: 28px;
+	box-shadow: 0 10px 20px rgba(51, 51, 51, 0.5);
+	margin-bottom: 30px;
+}
+footer {
+	width: 100%;
+	height: 40px;
+	background-color: #07b414;
+	text-align: center;
+	font: normal 14px "微软雅黑";
+	line-height: 40px;
+	color: #eeeeee;
+}
+/*# sourceMappingURL=style.css.map */

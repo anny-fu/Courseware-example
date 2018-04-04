@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>事件代理</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		component {
+			position: fixed;
+			left: 0; 
+			top: 0; 
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+		}
+		popup-box {
+			padding: 30px 40px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			position: absolute;
+			left: 50%; top: 50%;
+			transform: translate(-50%,-50%);
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+		}
+		popup-content,popup-ctrl {
+			width: 100%;
+			text-align: center;
+			display: block;
+		}
+		#showImg {
+			width: 320px;
+			display: block;
+		}
+		#createPopupBox {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>事件代理</a>
+	</nav>
+	<main>
+		<ul id="unknowUl"></ul>
+	</main>
+	
+	<script>
+		var unknowUl = document.getElementById("unknowUl");
+		unknowUl.onclick = function(e) {
+			var okList = document.getElementById("ok");
+			var isOkList = e.target.isEqualNode(okList);
+			if(isOkList) {
+				alert("OK");
+			}
+		}
+		
+		createList();
+		
+		function createList() {
+			var unknowUl = document.getElementById("unknowUl");
+			for(var i = 0; i < 5; i++) {
+				unknowUl.innerHTML += '<li>列表项-' + (i+1) +'</li>';
+			}
+			unknowUl.children[2].id = "ok";
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

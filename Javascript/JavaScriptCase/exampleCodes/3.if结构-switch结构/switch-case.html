@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>switch-case语句</title>
+	<style>
+		body {
+			font-size: 20px;
+		}
+		select {
+			font-size: 1em;
+		}
+		span {
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+<body>
+	<select id="week">
+		<option value="星期一">星期一</option>
+		<option value="星期二">星期二</option>
+		<option value="星期三">星期三</option>
+		<option value="星期四">星期四</option>
+		<option value="星期五">星期五</option>
+		<option value="星期六">星期六</option>
+		<option value="星期日">星期日</option>
+	</select>
+	<span id="whatTodo">请选择</span>
+	
+	<script>
+		var week = document.getElementById("week");
+		var whatTodo = document.getElementById("whatTodo");
+		week.onchange = function() {
+			var thisVal = this.value;
+			switch(thisVal) {
+				case "星期一":
+					monday();
+					break;
+				case "星期二":
+					tuesday();
+					break;
+				case "星期三":
+					wednesday();
+					break;
+				case "星期四":
+					thursday();
+					break;
+				case "星期五":
+					friday();
+					break;
+				default:
+					otherday();
+			}
+		}
+		
+		/* 星期一 */
+		function monday() {
+			whatTodo.textContent = "看书";
+			whatTodo.style.color = "#f00";
+		}
+		
+		/* 星期二 */
+		function tuesday() {
+			whatTodo.textContent = "运动";
+			whatTodo.style.color = "#f80";
+		}
+		
+		/* 星期三 */
+		function wednesday() {
+			whatTodo.textContent = "玩游戏";
+			whatTodo.style.color = "#0f0";
+		}
+		
+		/* 星期四 */
+		function thursday() {
+			whatTodo.textContent = "旅游";
+			whatTodo.style.color = "#0ff";
+		}
+		/* 星期五 */
+		function friday() {
+			whatTodo.textContent = "上班";
+			whatTodo.style.color = "#00f";
+		}
+		/* 其它 */
+		function otherday() {
+			whatTodo.textContent = "睡觉";
+			whatTodo.style.color = "#f0f";
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>购物车信息</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body>
+	<div class="main">
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+		<ul class="clearfix">
+			<li><input type="checkbox"></li>
+			<li><img src="images/img.jpg"/></li>
+			<li>亚麻休闲裤</li>
+			<li>118</li>
+			<li><button class="jian">-</button><input type="number" value="0" class="num"><button class="jia">+</button></li>
+			<li>0</li>
+		</ul>
+
+	</div>
+	<div class="foot">
+		合计
+		<span id="allcont">0</span>
+		<button>结算</button>
+	</div>
+</body>
+<script>
+	/*待完善信息：商品信息的动态加载,全选按钮的设置，动态技术总价值*/
+	var jianBtns = document.getElementsByClassName("jian");
+	var jiaBtns = document.getElementsByClassName("jia");
+	var nums = document.getElementsByClassName("num");
+	var conts = document.querySelectorAll("ul li:last-child");
+	var danjias = document.querySelectorAll("ul li:nth-child(4)");
+	var allcont = document.getElementById("allcont");
+	var jsBtn = document.querySelector(".foot button");
+
+	for (var i = 0;i < jiaBtns.length;i++) {
+		jiaBtns[i].onclick = function(){
+			console.log(this.previousSibling);
+			this.previousSibling.value =Number(this.previousSibling.value)+1;
+			this.previousSibling.oninput();
+		}
+		jianBtns[i].onclick = function(){
+			if(this.nextSibling.value != 0){
+				this.nextSibling.value = Number(this.nextSibling.value) - 1;
+				this.nextSibling.oninput();
+			}
+		}
+		nums[i].index = i;
+		nums[i].oninput = function(){
+			conts[this.index].innerHTML = Number(danjias[this.index].innerHTML) * Number(this.value);
+			AllCountChange();
+		}
+	}
+	function AllCountChange(){
+		var zj = 0;
+		for (var i = 0;i < conts.length;i++) {
+			zj += Number(conts[i].innerHTML);
+		}
+		if(zj == 0){
+			jsBtn.style.backgroundColor = "#ddd";
+		}else{
+			jsBtn.style.backgroundColor = "#f40"
+		}
+		allcont.innerHTML = zj;
+	}
+</script>
+</html>

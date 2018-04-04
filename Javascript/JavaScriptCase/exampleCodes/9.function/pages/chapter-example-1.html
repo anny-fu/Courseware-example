@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习一</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#sum {
+			line-height: 2;
+		}
+		#sum > input {
+			width: 376px;
+		}
+		#sum > p {
+			margin: 0;
+		}
+		#result {
+			font-size: 1.2rem;
+			color: #fa8a1c;
+			display: inline-block;
+			margin-left: 6px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习一</a>
+	</nav>
+	<main>
+		<div id="sum">
+			<label>请输入需要求和的数值，数字间用逗号隔开：</label>
+			<br>
+			<input name="num" type="text" placeholder="如：3,4,5,6,7,8...">
+			<button id="cacl">计算</button>
+			<br>
+			<p>这些数的和为:<span id="result">0</span></p>
+		</div>
+	</main>
+	
+	<script>
+		var cacl = document.getElementById("cacl");
+		cacl.onclick = function() {
+			var inputNum = document.getElementsByName("num")[0].value;
+			// 将输入的结果转换为数组
+			var numArr = inputNum.split(",");
+			console.log(numArr);
+			// 显示结果
+			var result = document.getElementById("result");
+			result.textContent = sumNumber.apply(null,numArr);
+			// ES6
+			//result.textContent = sumNumber(...numArr);
+		}
+		/**
+		 * 功能：求和函数
+		 * 参数：任意个数的数值（Number）
+		**/
+		function sumNumber() {
+			var num_leng = arguments.length;
+			var sum = 0;
+			for(var i = 0; i < num_leng; i++) {
+				var currentNum = arguments[i];
+				if(!isNaN(currentNum)) {
+					sum += Number( arguments[i] );
+				}
+				else {
+					alert("参数只能为数字，请检查参数的配置！");
+					return;
+				}
+			}
+			return sum;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>阻止冒泡的方法集</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		div {
+			padding: 25px;
+			background-color: #e0fdff;
+		}
+		div > p {
+			padding: 25px;
+			background-color: #5ef5ff;
+		}
+		div > p > span {
+			background-color: #00b0bc;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>阻止冒泡的方法集</a>
+	</nav>
+	<main id="main">
+		<div>
+			<p>
+				<span>DIV1的span</span>
+			</p>
+		</div>
+		<section>点击DIV在控制台查看结果</section>
+	</main>
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("div > p").on("click", function() {
+			$(this).hide(900);
+		});
+		$("div > p > span").on("click", function(e) {
+			// 阻止事件冒泡
+			//e.stopPropagation();
+			// 不仅阻止事件冒泡，还会阻止后续绑定事件的执行
+			e.stopImmediatePropagation();
+			$(this).css({
+				fontFamily: "羿创小公主体",
+				color: "#ffdf89"
+			});
+		});
+		$("div > p > span").on("click", function(e) {
+			$(this).css({
+				fontSize: "66px",
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

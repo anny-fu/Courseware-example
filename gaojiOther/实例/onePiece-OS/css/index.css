@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* 基础设置 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    overflow: hidden;
+}
+
+/* 主容器 */
+.main {
+    width: 100%; 
+    background: url("../images/bgImg/ruifengpeixun.jpg") no-repeat;
+    background-size: cover;
+}
+/* 水花背景 */
+.waterBg {
+    width: 100%; height: 100%;
+    background: url("../images/bgImg/water_bg.png") no-repeat;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-animation: watermove 25s infinite linear;
+    animation: watermove 25s infinite linear;
+    transition: height 0.6s;
+}
+
+/* 登录窗口 */
+.loginWin {
+    position: absolute;
+    left: 22%;
+    z-index: 2;
+}
+
+/* 头像 */
+.userPhoto {
+    width: 196px; height: 196px;
+    border: 2px solid #efefef;
+    border-radius: 98px;
+    box-shadow: 0 5px 15px #3d454f;
+    overflow: hidden;
+}
+.userPhoto img {
+    width: 100%; height: 100%;
+}
+/* 登录用户名 */
+.loginUser {
+    width: 200px;
+    margin-top: 10px; margin-bottom: 10px;
+}
+.loginUser p {
+    line-height: 50px;
+    text-shadow: -1px -1px 0px #f3f3f3;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 32px;
+    color: #333;
+    margin: 0; padding: 0;
+}
+/* Sunny号 */
+.sunnyShip {
+    width: 124px; height: 124px;
+    background: url("../images/contImg/sunny_A.png");
+    margin-left: 40px;
+    display: block;
+    -webkit-animation: sunnyrotate 5s infinite linear;
+    animation: sunnyrotate 5s infinite linear;
+    cursor: pointer;
+}
+/* 用户输入框 */
+.userInput {
+    display: none;
+}
+.loginInput input, .loginInput button {
+    vertical-align: middle;
+}
+.loginInput input {
+    width: 196px; height: 40px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding-left: 4px; padding-right: 4px;
+    font-size: 16px;
+    -webkit-animation: borderLight 5s infinite linear;
+    animation: borderLight 5s infinite linear;
+    box-sizing: border-box;
+}
+.loginInput input:focus {
+    background-color: #d1fcd1;
+    color: #136d13;
+    -webkit-animation-play-state:paused;
+    animation-play-state:paused;
+    cursor: pointer;
+}
+.loginInput button {
+    width: 48px; height: 48px;
+    background: transparent url("../images/contImg/loginEnter.png") no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.loginInput button:hover {
+    background-position: -48px 0;
+}
+.loginInput button:active {
+    background-position: -96px 0;
+}
+
+/* 全屏按钮 */
+.fullScreen {
+    width: 24px;
+    height: 24px;
+    background: url("../images/contImg/fullScreen-default.png") no-repeat 0 0;
+    position: absolute;
+    z-index: 11;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.fullScreen:hover {
+    background-position: -24px 0;
+}
+.fullScreen:active {
+    background-position: 0 0;
+}
+
+/**************************************************/
+/* 动画定义部分 */
+/**************************************************/
+
+/* 输入框发光效果 */
+@keyframes borderLight {
+    0% { box-shadow: 0 0 15px rgba(252,56,56,0.9);}
+    20% { box-shadow: 0 0 15px rgba(252,156,56,0.9);}
+    40% { box-shadow: 0 0 15px rgba(56,252,156,0.9);}
+    60% { box-shadow: 0 0 15px rgba(156,56,252,0.9);}
+    80% { box-shadow: 0 0 15px rgba(156,56,156,0.9);}
+    100% { box-shadow: 0 0 15px rgba(156,56,56,0.9);}
+}
+@-webkit-keyframes borderLight {
+    0% { box-shadow: 0 0 15px rgba(252,56,56,0.9);}
+    20% { box-shadow: 0 0 15px rgba(252,156,56,0.9);}
+    40% { box-shadow: 0 0 15px rgba(56,252,156,0.9);}
+    60% { box-shadow: 0 0 15px rgba(156,56,252,0.9);}
+    80% { box-shadow: 0 0 15px rgba(156,56,156,0.9);}
+    100% { box-shadow: 0 0 15px rgba(156,56,56,0.9);}
+}
+/* 背景水花移动效果 */
+@keyframes watermove {
+    0% { background-position: top left;}
+    25% { background-position: bottom right;}
+    50% { background-position: bottom left;}
+    75% { background-position: top right;}
+    100% { background-position: top left;}
+}
+@-webkit-keyframes watermove {
+    0% { background-position: top left;}
+    25% { background-position: bottom right;}
+    50% { background-position: bottom left;}
+    75% { background-position: top right;}
+    100% { background-position: top left;}
+}
+/* Sunny号旋转 */
+@keyframes sunnyrotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+    
+}
+@-webkit-keyframes sunnyrotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+    
+}

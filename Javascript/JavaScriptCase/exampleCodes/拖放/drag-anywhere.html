@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html,body,div{margin: 0;padding: 0;}
+    #main{
+      width:100px;
+      height:100px;
+      background:#ffccff;
+      position:absolute;
+    }
+  </style>
+ </head>
+ <body>
+     <div id="main"></div>
+
+     <script>
+          window.onload = function(){
+              var oDiv = document.getElementById("main");
+              oDiv.onmousedown = function(e) {
+                    
+                      var e = e || event;
+                      var disX = e.clientX - this.offsetLeft;
+                      var disY = e.clientY - this.offsetTop;
+     
+                      //即使鼠标移动到浏览器外，拖动依然可以执行
+                      /*if(oDiv.setCapture) {
+                          oDiv.setCapture();
+                      }*/
+
+                      document.onmousemove = function(e) {
+                          var e = e || event;
+                          oDiv.style.left = e.clientX - disX+"px";
+                          oDiv.style.top = e.clientY - disY+"px";
+                      }
+     
+                      document.onmouseup = function(e){
+                           //清除mouseup和mousemove后的事件
+                           document.onmousemove = document.onmouseup = null;
+                           
+                           /*if(oDiv.releaseCapture) {
+                              oDiv.releaseCapture();
+                           }*/
+                      }
+                   return false;
+              }
+          }
+     </script>
+ </body>
+</html>

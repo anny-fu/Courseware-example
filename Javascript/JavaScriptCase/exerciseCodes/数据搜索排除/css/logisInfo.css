@@ -1,0 +1,98 @@
+@charset "utf-8";
+/**
+* 功能：筛选数据功能样式设置
+**/
+
+/********************************************/
+/* 全局样式设置 */
+/********************************************/
+html,body {
+    margin: 0; padding: 0;
+    font: 20px "微软雅黑";
+    color: #333;
+}
+body {
+    padding: 20px;
+}
+/* 统一盒子模型为IE盒子 */
+body, input, button {
+    box-sizing: border-box;
+}
+/* 统一表单元素部分显示差异 */
+input, button {
+    padding: 4px 6px;
+    border: 1px solid #965202;
+    border-radius: 3px;
+    outline: none;
+    font: 18px "微软雅黑";
+}
+/* 统一手型按钮 */
+button, a {
+    cursor: pointer;
+}
+/* 基本按钮设置 */
+button {
+    min-width: 86px;
+    background-color: #ff8900;
+    color: #fff;
+}
+button:hover {
+    background-color: #ff9e2d;
+}
+button:active {
+    background-color: #ff8900;
+}
+
+/********************************************/
+/* 细节设置 */
+/********************************************/
+/* 输入框 */
+[data-filtrate] input {
+    margin-left: 20px;
+    color: #ff8900;
+}
+[data-filtrate] input:focus {
+    box-shadow: 0 0 5px rgba(227, 150, 5, 0.7);
+}
+[data-filtrate] input:first-of-type {
+    margin-left: 0;
+}
+/**** 表格设置部分 ****/
+table {
+    width: 960px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, table th, table td {
+    border: 1px solid #965202
+}
+table th, table td {
+    padding: 4px 6px;
+    color: #965202;
+}
+/* 表头 */
+table th {
+    background-color: #ff8900;
+    font: normal 20px "微软雅黑";
+    color: #fff;
+}
+table tbody tr:nth-child(even) {
+    background-color: #fff6e9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

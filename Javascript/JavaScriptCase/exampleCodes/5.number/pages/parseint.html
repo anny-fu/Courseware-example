@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>parseInt转换</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>parseInt转换</a>
+	</nav>
+	<main>
+		<div>
+			<input type="number" class="smallInput"> +
+			<input type="number" class="smallInput"> =
+			<span id="sum"></span>
+		</div>
+		<button id="calc" type="button">计算</button>
+	</main>
+	
+	<script>
+		var inp1 = document.getElementsByTagName("input")[0],
+			inp2 = document.getElementsByTagName("input")[1];
+		var calc = document.getElementById("calc");
+		calc.onclick = function() {
+			var res = 0;
+			var sum = document.getElementById("sum");
+			res = parseInt(inp1.value) + parseInt(inp2.value);
+			sum.textContent = res;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

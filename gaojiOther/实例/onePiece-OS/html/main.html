@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>“虚拟”系统</title>
+        <link rel="stylesheet" href="../plugins/baseCSS-1.0.3.min.css">
+        <link rel="stylesheet" href="../css/styleSet.css">
+    </head>
+
+    <body>
+        <!-- main { -->
+        <main id="main" class="w100p ha">
+
+            <!-- container { -->
+            <div id="container">
+
+                <!-- 图标栏 -->
+                <div class="iconBarGroup">
+                    <!--<div class="w100 h100p ml10 pt10 pb10 iconBar"></div>-->
+                </div>
+
+
+                <!-- 桌面窗口容器 -->
+                <div class="w100p h100p window pos-abs">
+                    <!-- 窗口工具栏 -->
+                    <div class="w100p h35 winTools">
+                        <!-- 按钮组 -->
+                        <div class="fr">
+                            <!-- 最小化 -->
+                            <span class="d-ib toolsBtn toolsBtn-min"></span>
+                            <span class="d-ib toolsBtn toolsBtn-toWin"></span>
+                            <span class="d-ib toolsBtn toolsBtn-closeWin"></span>
+                        </div>
+                    </div>
+                    <!-- 窗口内容 -->
+                    <div class="winContent">
+                        <iframe name="winContentIframe" src=""></iframe>
+                    </div>
+                </div>
+
+            </div><!-- } container -->
+
+            <!-- 任务栏 { -->
+            <div id="taskbar" class="w100p pos-fix">
+
+                <!-- 开始按钮 -->
+                <div id="startBtn" class="pos-abs"></div>
+
+                <!-- 开始面板 -->
+                <div id="startBlock" class="w280 ha pos-abs">
+                    <div class="userBaseInfo">
+                        <div class="userPhoto">
+                            <img src="../images/userImg/user-lufei.jpg">
+                        </div>
+                    </div>
+                    <div class="btnIconGroup"></div>
+                </div>
+
+                <!-- 日期时间显示 -->
+                <div id="dateDispbox" class="pos-abs">
+                    <div>
+                        <span class="dispHours">15</span>
+                        <span>:</span>
+                        <span class="dispMinutes">30</span>
+                    </div>
+                    <div>
+                        <span class="dispYear">2016</span>
+                        <span>/</span>
+                        <span class="dispMonth">6</span>
+                        <span>/</span>
+                        <span class="dispDate">20</span>
+                    </div>
+                </div>
+
+            </div><!-- } 任务栏 -->
+
+        </main><!-- } main -->
+
+        <!-- 全屏按钮 -->
+        <div class="fullScreen"></div>
+
+        <!-- JS引用部分 -->
+        <script src="../plugins/jquery-2.2.4.min.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

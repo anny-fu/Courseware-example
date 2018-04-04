@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>文档载入完成事件</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>文档载入完成事件</a>
+	</nav>
+	<main>
+		<div id="showImg"></div>
+	</main>
+	
+	<script>
+		var cont = 0;
+		// 载入状态改变事件
+		document.onreadystatechange = function() {
+			console.log(cont++);
+			// 文档载入完成执行（图片尚未加载完成）
+			if(document.readyState === "interactive") {
+			   addImg("../img/img-5.jpg");
+			   addImg("../img/img-6.jpg");
+			   addImg("../img/img-7.jpg");
+			   addImg("../img/img-8.jpg");
+		    }
+		}
+		function addImg(url) {
+			var showImg = document.getElementById("showImg");
+			showImg.innerHTML += '<img src="' + url + '">';
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

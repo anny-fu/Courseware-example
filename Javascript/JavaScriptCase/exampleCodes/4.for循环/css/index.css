@@ -1,0 +1,49 @@
+@charset "utf-8";
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 24px;
+	font: 24px "微软雅黑";
+}
+input,select,button {
+	padding: 6px;
+	font: 0.9em "微软雅黑";
+}
+button {
+	padding: 6px 20px;
+}
+
+#newList {
+	width: 660px;
+	position: absolute;
+	top: 50px; right: 120px;
+	/*border: 1px dashed #0ff;*/
+	overflow: hidden;
+}
+#newList > article {
+	width: 48%; height: 180px;
+	background-color: #bbb;
+	border: 1px solid #aaa;
+	margin-bottom: 20px;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="en" />
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Devrama Slider - jQuery plugin Slider</title>
+<link rel="stylesheet" type="text/css" href="css/devrama-slider.css"/>
+<style>
+  .top-banner {
+    background-color: #555;
+  }
+</style>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.devrama.slider-0.9.4.js"></script>
+</head>
+<body>
+<article id="content" style="margin-top: 100px">
+  <section class="demo">
+    <div class="front-demo">
+      <div class="slide1" data-lazy-background="images/4247776023.png">
+        <h3 data-pos="['10%', '110%', '10%', '5%']" data-duration="700" data-effect="move">
+          Responsive
+        </h3>
+        <div class="description" data-pos="['60%', '110%', '60%', '60%']" data-duration="300" data-effect="move">
+          Automatically,
+        </div>
+        <div class="description" data-pos="['70%', '110%', '70%', '65%']" data-duration="300" data-effect="move">
+          it resizes
+        </div>
+        <div class="description" data-pos="['80%', '110%', '80%', '70%']" data-duration="300" data-effect="move">
+          with window size!!
+        </div>
+      </div>
+      
+      <div class="slide2" data-lazy-background="images/4432435310.png">
+        <h3 data-pos="['22%', '11%']" data-duration="1000" data-effect="fadein">
+          CSS3 Transition Ready
+        </h3>
+        <div class="description" data-pos="['48%', '43%']" data-duration="700" data-delay="300" data-effect="fadein">
+          CSS3 Transition
+        </div>
+        <div class="description" data-pos="['56%', '47%']" data-duration="700" data-delay="300" data-effect="fadein">
+          and
+        </div>
+        <div class="description" data-pos="['64%', '40%']" data-duration="700" data-delay="300" data-effect="fadein">
+          jQuery animation as fallback
+        </div>
+      </div>
+      
+      
+      <div class="slide3">
+        <h3>HTML content inside</h3>
+        <div class="clear" style="color: #FFF;font-size:0.9em;">
+          <code style="float:left; width: 50%;line-height: 1.4em;padding: 0 30px;">
+            &lt;table&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;thead&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan=&quot;2&quot;&gt;HTML tags in your slide.&lt;/th&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/thead&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tbody&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Table content 1&lt;/td&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Table content 2&lt;/td&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;<br />
+&lt;/table&gt;<br />
+            
+          </code>
+          <div class="table" style="float:left; width: 50%;padding: 0 30px;">
+            <table>
+  <thead>
+    <th colspan="2">HTML tags in your slide.</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table content 1</td>
+      <td>Table content 2</td>
+    </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide4" data-lazy-background="images/4277941123.png">
+        <div class="square" data-pos="['0%', '0%']" data-duration="700" data-effect="fadein"></div>
+        <h3 data-pos="['-30%', '3%', '10%', '3%']" data-duration="700" data-effect="move">
+          Customizable Controls/Navigation
+        </h3>
+        <i data-pos="['33%', '5%']" data-duration="700" data-effect="fadein" class="slide-star1 fa fa-star"></i>
+        <i data-pos="['33%', '22%']" data-duration="700" data-effect="fadein" class="slide-star2 fa fa-star"></i>
+        <i data-pos="['33%', '34%']" data-duration="700" data-effect="fadein" class="slide-star3 fa fa-star"></i>
+      </div>
+      
+      <div class="slide5" data-lazy-background="images/6240134386.png">
+        <h3 data-pos="['100%', '0%', '78%', '0%']" data-duration="400" data-effect="move">
+          Various Transition Effects
+        </h3>
+        <div class="description a" data-pos="['12%', '6%']" data-duration="300" data-effect="fadein">
+          slide
+        </div>
+        <div class="description b" data-pos="['12%', '38%']" data-duration="300" data-effect="fadein">
+          fade
+        </div>
+        <div class="description c" data-pos="['12%', '77%']" data-duration="300" data-effect="fadein">
+          split
+        </div>
+        <div class="description d" data-pos="['46%', '21%']" data-duration="300" data-effect="fadein">
+          door
+        </div>
+        <div class="description e" data-pos="['58%', '58%']" data-duration="300" data-effect="fadein">
+          wave
+        </div>
+      </div>
+      
+    </div><!-- .frontslider -->
+    <div style="position:fixed;height:90px;width:100%;left:0;bottom:5px"><div class="footer-banner" style="width:728px; margin:0px auto"></div></div>
+  </section><!-- #front-slider-block -->
+  <script type="text/javascript">
+    
+    $(document).ready(function(){
+      $('.front-demo').DrSlider({
+        navigationType: 'circle',
+        width: 1024,
+        height: 400,
+        transition: 'slide-left',
+        duration: 5000
+      });
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>for循环打印九九乘法表</title>
+</head>
+<body style="text-align:center;">
+
+</body>
+<script type="text/javascript">
+   for(var i=1;i<=9;i++){
+    for(var j=1;j<=i;j++){
+     document.write(j+"+"+i+"="+(i+j)+"\t");
+    }
+    document.write("<br/>");
+   }
+</script>
+<script type="text/javascript">
+   for(var i=1;i<=9;i++){
+    for(var j=1;j<=i;j++){
+     document.write(i+"-"+j+"="+(i-j)+"\t");
+    }
+    document.write("<br/>");
+   }
+</script>
+<script type="text/javascript">
+   for(var i=1;i<=9;i++){
+    for(var j=1;j<=i;j++){
+     document.write(j+"*"+i+"="+(i*j)+"\t");
+    }
+    document.write("<br/>");
+   }
+</script>
+<script type="text/javascript">
+   for(var i=1;i<=9;i++){
+    for(var j=1;j<=i;j++){
+      var num1=i*j;
+     document.write(num1+"/"+j+"="+num1/j+"\t");
+    }
+    document.write("<br/>");
+   }
+</script>
+
+<script type="text/javascript">
+   for(var i=9;i>=1;i--){
+    for(var j=i;j>=1;j--){
+      var num1=i*j;
+     document.write(num1+"/"+j+"="+num1/j+"\t");
+    }
+    document.write("<br/>");
+   }
+</script>
+
+<script type="text/javascript">
+   for(var i=9;i>=1;i--){
+    for(var j=1;j<=i;j++){
+      var num1=i*j;
+     document.write(num1+"/"+j+"="+num1/j+"\t");
+    }
+    document.write("<br/>");
+   }
+</script>
+</html>

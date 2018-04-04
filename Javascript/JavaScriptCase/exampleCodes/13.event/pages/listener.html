@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>addEventListener</title>
+    <link rel="stylesheet" href="../css/code.css">
+  </head>
+  <body>
+    <button type="button" id="btn">点我试试</button>
+  </body>
+  <script>
+    // /*hello函数*/
+    // function hello() {
+    //   console.log('哇哈哈，你点了我哦！');
+    // }
+    // /*获取button元素*/
+    // var button = document.getElementById('btn');
+    // /*监听button按钮的点击事件*/
+    // button.addEventListener('click', hello, false);
+
+    // var event=new Event('click');
+    // console.log(button.dispatchEvent(event));
+    // var ev=!button.dispatchEvent(event);
+    //   if(ev){
+    //     console.log('事件取消');
+    //   }else{
+    //     console.log('事件未取消');
+    //   }
+
+      function dispatch(el, type){
+ try{
+       var evt = document.createEvent('Event');
+        evt.initEvent(type,true,true);
+        el.dispatchEvent(evt);
+  }catch(e){
+       console.log(e);
+  };
+}
+var btn1 = document.getElementById('btn');
+
+dispatch(btn1, 'click');
+  </script>
+</html>

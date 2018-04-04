@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="author" content="Auelnce,aulence@foxmail.com">
+	<title>Vue入门</title>
+	<link rel="stylesheet" href="style/common.css">
+</head>
+<body>
+	<main id="main">
+		<section id="app-1">
+			<h3>1、基本数据显示</h3>
+			<div>{{mesg1}}</div>
+			<div>{{mesg2}}</div>
+		</section>
+		<section id="app-2">
+			<h3>2、属性绑定</h3>
+			<div v-bind:title="title">将鼠标移过来</div>
+		</section>
+		<section id="app-3">
+			<h3>3、数据的是否渲染</h3>
+			<div v-if="show">内容1</div>
+			<div v-if="hide">内容2</div>
+			<div v-if="show">内容3</div>
+			<div v-if="hide">内容4</div>
+			<div v-if="seen">内容5</div>
+			<div v-show="seen">内容6</div>
+		</section>
+		<section id="app-4">
+			<h3>4、列表的渲染</h3>
+			<div>
+				<ul>
+					<li v-for="item in cars">
+						名称：{{item.name}}，售价：{{item.price}}，颜色：{{item.color}}
+					</li>
+				</ul>
+				<ul>
+					<li v-for="item in arrs">{{item}}</li>
+				</ul>
+			</div>
+		</section>
+		<section id="app-5">
+			<h3>5、事件的定义和绑定</h3>
+			<div>
+				{{mesg}}
+			</div>
+			<button v-on:click="addText" type="button">添加文本</button>
+		</section>
+		<section id="app-6">
+			<h3>6、表格的渲染</h3>
+			<table>
+				<thead>
+					<tr>
+						<th v-for="item in eaHader">{{item}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="item in eaInfo">
+						<td>{{item.id}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.brand}}</td>
+						<td>￥{{item.price}}</td>
+						<td>{{item.country}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section id="app-7">
+			<h3>7、双向数据绑定</h3>
+			<div>
+				<form>
+					<label>用户名：</label>
+					<input v-model="userName" type="text" placeholder="请输入用户名">
+				</form>
+				<!--<p>{{"您输入的是：" + userName}}</p>-->
+				<p>您输入的是：{{userName}}</p>
+			</div>
+		</section>
+		<section id="app-8">
+			<h3>8、属性绑定2</h3>
+			<a v-bind:href="url">进行跳转</a>
+		</section>
+	</main>
+
+	<script src="plugin/vue.js"></script>
+	<script src="scripts/1.base.js"></script>
+</body>
+</html>

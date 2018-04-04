@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>原型链继承</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>原型链继承</a>
+	</nav>
+	<main>
+		
+	</main>
+	
+	<script>
+		Object.prototype.thisType = "The Object";
+		var obj = {
+			name: "ABC",
+			age: 23
+		}
+		var product = {
+			brand: "OFO",
+			name: "自行车"
+		}
+		console.log(obj);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

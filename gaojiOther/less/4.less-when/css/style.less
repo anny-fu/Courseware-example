@@ -1,0 +1,121 @@
+/**
+ * 功能：
+ * 日期：2017/6/7
+**/
+// ==================================
+// 全局变量
+// ==================================
+
+// 主题色
+@themeColor: #480;
+
+// ==================================
+// 细节设置
+// ==================================
+* {
+    box-sizing: border-box;
+}
+html,body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: normal 16px/1.6 "微软雅黑";
+}
+header {
+    @lh: 50px;
+    width: 100%;
+    height: @lh;
+    background-color: @themeColor;
+    text-align: center;
+    font-size: 20px;
+    line-height: @lh;
+    color: #ffffff;
+}
+main {
+    padding: 12px;
+}
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    // 主题色按钮类
+    .themeButton (@bgColor) when (lightness(@bgColor) >= 30%) {
+        color: #333;
+    }
+    .themeButton (@bgColor) when (lightness(@bgColor) < 30%) {
+        color: #fff;
+    }
+    .themeButton (@bgColor) {
+        background-color: @bgColor;
+        border: 1px solid darken(@bgColor, 10%);
+    }
+    // 黑色按钮
+    &.btn-1 {
+        @btnBgColor: #3d3d3d;
+        .themeButton(@btnBgColor);
+        &:hover {
+            background-color: lighten(@btnBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@btnBgColor, 10%);
+        }
+    }
+    // 粉红色按钮
+    &.btn-2 {
+        @btnBgColor: #ff9c9c;
+        .themeButton(@btnBgColor);
+        &:hover {
+            background-color: lighten(@btnBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@btnBgColor, 10%);
+        }
+    }
+    // 蓝色按钮
+    &.btn-3 {
+        @btnBgColor: #137dfd;
+        .themeButton(@btnBgColor);
+        &:hover {
+            background-color: lighten(@btnBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@btnBgColor, 10%);
+        }
+    }
+    // 墨绿色按钮
+    &.btn-4 {
+        @btnBgColor: #26784c;
+        .themeButton(@btnBgColor);
+        &:hover {
+            background-color: lighten(@btnBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@btnBgColor, 10%);
+        }
+    }
+    // 白色按钮
+    &.btn-5 {
+        @btnBgColor: #ececec;
+        .themeButton(@btnBgColor);
+        &:hover {
+            background-color: lighten(@btnBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@btnBgColor, 10%);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

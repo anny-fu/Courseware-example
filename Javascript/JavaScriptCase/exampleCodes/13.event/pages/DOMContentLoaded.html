@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>document内容加载完成时</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>document内容加载完成时</a>
+	</nav>
+	<main id="main">
+	</main>
+	
+	<script>
+		// 新标准的实现方式
+		document.addEventListener("DOMContentLoaded", function() {
+			var main = document.getElementById("main");
+			main.innerHTML += '<div style="font-size:70px">加载完成（新）</div>';
+		});
+		
+		// 原标准的实现方式
+		document.onreadystatechange = function() {
+			if(document.readyState === "interactive") {
+				var main = document.getElementById("main");
+				main.innerHTML += '<div style="font-size:70px">加载完成（旧）</div>';
+			} 
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

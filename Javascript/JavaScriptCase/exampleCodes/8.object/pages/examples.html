@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>信息录入存储展示</title>
+    <style>
+        table{
+            width:420px;
+            text-align: center;
+            border-collapse: collapse;
+
+        }
+        /*th,td{*/
+            /*border-bottom: 1px solid #333;*/
+            /*}*/
+            tr{
+                border-bottom: 2px solid #00acde;
+                line-height: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p><label>姓名：</label><input type="text" value=""></p>
+            <p><label>性别：</label><input type="text" value=""></p>
+            <p><label>年龄：</label><input type="text" value=""></p>
+            <button id="btnCreate" type="button">录入</button>
+            <!--自我介绍信息-->
+            <p id="sayHi"></p>
+        </div>
+        <h4>录入的学员信息如下：</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script>
+    //	获取元素
+    var btn = document.getElementById('btnCreate');
+    var inputs = document.getElementsByTagName('input');
+    var sayHi = document.getElementById('sayHi');
+    var tbody = document.getElementsByTagName('tbody')[0];
+
+    //	原型链方法
+    Object.prototype.sayHello = function () {
+        var str = "大家好，我是" + this.name + "今年" + this.age + "岁";
+        return str;
+    }
+    /*数组对象格式*/
+    var personArr = [];
+
+    /**
+     * 点击按钮存储信息并打印自我介绍
+     *
+     * */
+     btn.onclick = function () {
+//    获取输入的内容存入对象
+var stu_info = {
+    name: inputs[0].value,
+    gender: inputs[1].value,
+    age: inputs[2].value
+};
+//        保证有完整的信息录入
+if(stu_info.name === "" || stu_info.gender === "" || stu_info.age === "" ){
+    sayHi.style.color = "#f00";
+    sayHi.innerText = '请录入完整信息！';
+    return ;
+}
+//    点击一次，就push一个对象到数组中；
+personArr.push(stu_info);
+//    显示自己介绍
+sayHi.innerText = stu_info.sayHello();
+//	将信息输出到页面
+tbody.innerHTML += "<tr></tr>";
+//        获取到最新的tr元素
+var trs = tbody.getElementsByTagName('tr'),
+new_tr = trs[trs.length - 1];
+var tds = "";
+//        找到最新插入的对象下标
+var index = personArr.length - 1;
+//        遍历新增对象输出对象属性值
+for (var n in personArr[index]) {
+//            只输出对象自身的属性值（不包含继承的）
+if (personArr[index].hasOwnProperty(n)) {
+// 将元素统一存入一个变量，一次性渲染到DOM
+tds += `<td>${personArr[index][n]}</td>`;
+}
+}
+
+new_tr.innerHTML += tds;
+}
+
+
+</script>
+</body>
+</html>

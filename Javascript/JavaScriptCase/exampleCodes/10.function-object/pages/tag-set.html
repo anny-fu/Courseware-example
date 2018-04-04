@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>标签元素正则设置</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#showCode {
+			padding: 12px;
+			background-color: #313438;
+			display: block;
+			white-space: pre;
+			tab-size: 4;
+			color: #fff;
+			font-family: Consolas,Monaco,"宋体"; 
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>标签元素正则设置</a>
+	</nav>
+	<main>
+<code id="showCode"><ul class="skill-list">
+	<li class="html">HTML</li>
+	<li class="css">CSS</li>
+	<li class="js" class="checked">JavaScript</li>
+	<li class="jq">jQuery</li>
+	<li class="ng">Angular</li>
+	<li class="rc">React</li>
+	<li class="v">Vue</li>
+</ul>
+</code>
+	</main>
+	
+	<script>
+		var showCode = document.getElementById("showCode");
+		var codingAfter = "";
+		var	showCode_HTML = showCode.innerHTML;
+		codingAfter = showCode_HTML.replace(/</g, "&lt;");
+		showCode.innerHTML = codingAfter;
+		showCode_HTML = showCode.innerHTML;
+		codingAfter = showCode_HTML.replace(/>/g, "&gt;");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

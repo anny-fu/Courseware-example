@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习三</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#galen label {
+			width: 102px;
+			text-align: right;
+			display: inline-block;
+			color: #666;
+		}
+		#galen label + span {
+			color: #cea229;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习三</a>
+	</nav>
+	<main>
+	</main>
+	
+	<script>
+		var obj1 = {
+			name: "JS", 
+			fullName: "JavaScript", 
+			duty: "行为控制"
+		};
+		var obj2 = {};
+		for(var x in obj1) {
+			obj2[x] = obj1[x];
+		}
+		// ES6方法
+		//obj2 = Object.assign(obj2,obj1);
+
+	Object.prototype.isObject = function () {
+		return this.valueOf() === Object(this);
+	};
+	var str = "字符串";
+	console.log(str.isObject());
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+

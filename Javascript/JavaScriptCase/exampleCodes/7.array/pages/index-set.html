@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>设置索引</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		.banner {
+			width: 368px;
+			margin: 0 auto;
+		}
+		figure {
+			width: 368px; height: 368px;
+			overflow: hidden;
+		}
+		figure > img {
+			width: 100%;
+		}
+		.banner ul {
+			list-style: none;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+		}
+		.banner ul li {
+			width: 32px; height: 32px;
+			line-height: 32px;
+			border: 1px solid #acacac;
+			border-radius: 5px;
+			text-align: center;
+			cursor: pointer;
+			margin-right: 4px;
+			float: left;
+		}
+		.banner ul li:active {
+			background-color: #c9c9c9;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>设置索引</a>
+	</nav>
+	<main>
+		<div class="banner">
+			<figure>
+				<img id="showImage" src="../img/img-1.jpg">
+			</figure>
+			<ul id="tabImage"></ul>
+		</div>
+	</main>
+	
+	<script>
+		var imgList = [
+			"../img/img-1.jpg",
+			"../img/img-2.jpg",
+			"../img/img-3.jpg",
+			"../img/img-4.jpg",
+			"../img/img-5.jpg",
+			"../img/img-6.jpg",
+			"../img/img-7.jpg",
+			"../img/img-8.jpg"
+		];
+		// 切换按钮列表
+		var tabImage = document.getElementById("tabImage");
+		// 获取图片URL个数
+		var imgLeng = imgList.length;
+		var liStr = ""
+		// 添加对应图片个数的列表按钮
+		for(var i = 0; i < imgLeng; i++) {
+			liStr += '<li>' + (i + 1) + '</li>'
+		}
+		tabImage.innerHTML = liStr;
+		
+		// 显示图片容器
+		var showImage = document.getElementById("showImage");
+		
+		// 获取按钮列表集合
+		var liBtnGroup = tabImage.getElementsByTagName("li");
+		var li_leng = imgLeng;
+		// 通过循环绑定事件
+		for(var j = 0; j < li_leng; j++) {
+			liBtnGroup[j].index = j;
+			liBtnGroup[j].onclick = function() {
+				showImage.src = imgList[this.index];
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

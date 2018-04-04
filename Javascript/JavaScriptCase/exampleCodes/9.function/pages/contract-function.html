@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>实例化对象操作</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>实例化对象操作</a>
+	</nav>
+	<main>
+	</main>
+	
+	<script>
+		/*var role1 = {
+			name: "闪电鸟",
+			serise: "电系",
+			skill: "雷云咒"
+		};
+		var role2 = {
+			name: "皮卡丘",
+			serise: "电系",
+			skill: "十万伏特"
+		};
+		var role3 = {
+			name: "电击魔兽",
+			serise: "电系",
+			skill: "雷光掌"
+		};*/
+		function lightningSerise(name,skill) {
+			this.serise = "雷系";
+			this.name = name;
+			this.skill = skill;
+		}
+		var role1 = new lightningSerise("闪电鸟","雷云咒");
+		var role2 = new lightningSerise("皮卡丘","十万伏特");
+		var role3 = new lightningSerise("电击魔兽","雷光掌");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

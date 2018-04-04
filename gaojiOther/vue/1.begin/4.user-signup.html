@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="author" content="Auelnce,aulence@foxmail.com">
+	<title>Vue构造</title>
+    <link rel="stylesheet" href="style/common.css">
+    <style>
+        .respons {
+            padding: 10px 0 10px 86px;
+            color: #38d0ff;
+        }
+    </style>
+</head>
+<body>
+	<main id="main">
+		<form>
+            <div>
+                <label>用户名：</label>
+                <input type="text" v-model="userName">
+            </div>
+            <div class="respons">{{respons}}</div>
+        </form>
+	</main>
+
+	<script src="plugin/vue.js"></script>
+	<script src="plugin/axios.js"></script>
+	<script src="plugin/lodash.min.js"></script>
+	<script src="scripts/4.user-signup.js"></script>
+</body>
+</html>

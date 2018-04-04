@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>对象原型</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>对象原型</a>
+	</nav>
+	<main id="main">
+		请查看原文件
+	</main>
+	<script>
+		Math.__proto__.isGt = function(a,b) {
+			if(a > b) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

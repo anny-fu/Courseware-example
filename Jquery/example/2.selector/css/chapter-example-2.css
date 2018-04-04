@@ -1,0 +1,39 @@
+body {
+	color: #333;
+}
+/* 周列表 */
+ul.week {
+	list-style: none;
+	overflow: hidden;
+}
+ul.week > li {
+	padding: 6px 12px;
+	border: 1px solid #acacac;
+	border-right: none;
+	cursor: pointer;
+	float: left;
+}
+ul.week > li:last-child {
+	border-right: 1px solid #acacac;
+}
+/* 周列表--选中效果 */
+ul.week > li.checked {
+	background-color: #acacac;
+	color: #ffffff;
+}
+/* 天气列表 */
+ul.weather {
+	width: 496px;
+	list-style: none;
+}
+ul.weather > li {
+	padding: 12px 20px;
+	border: 1px solid #acacac;
+	border-radius: 15px;
+	font-size: 32px;
+	display: none;
+}
+/* 恢复“列表项”的显示类型 */
+ul.weather > li.show {
+	display: list-item;
+}

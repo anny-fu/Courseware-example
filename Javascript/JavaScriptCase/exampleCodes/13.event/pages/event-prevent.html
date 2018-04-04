@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>默认事件阻止</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>默认事件阻止</a>
+	</nav>
+	<main id="main">
+		<a id="gotoBaiDu" href="https://www.baidu.com/" target="_blank">百度一下</a>
+	</main>
+	
+	<script>
+		var gotoBaiDu = document.getElementById("gotoBaiDu");
+		gotoBaiDu.onclick = function(e) {
+			// 因为JS代码执行的时机在浏览器默认行为之前，所以可以用这个方法来阻止后续功能
+			e.preventDefault();
+			window.open("http://www.w3school.com.cn/","_blank");
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习三</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#dataTable {
+			width: 80%;
+			margin: 0 auto;
+		}
+		table, td {
+			border: 1px solid #aaa;
+			border-collapse: collapse;
+		}
+		td {
+			padding: 10px 20px;
+			white-space: nowrap;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习三</a>
+	</nav>
+
+	<main>
+		<table id="dataTable">
+			<tbody>
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>品牌</td>
+					<td>价格</td>
+					<td>操作</td>
+				</tr>
+				<tr>
+					<td>cd-001</td>
+					<td>空调</td>
+					<td></td>
+					<td>4800.20</td>
+					<td>
+						<button type="button" disabled>查看</button>
+					</td>
+				</tr>
+				<tr>
+					<td>cd-002</td>
+					<td>洗衣机</td>
+					<td>海尔</td>
+					<td></td>
+					<td>
+						<button type="button">查看</button>
+					</td>
+				</tr>
+				<tr>
+					<td>cd-003</td>
+					<td>电视</td>
+					<td>三星</td>
+					<td>48699.50</td>
+					<td>
+						<button type="button" disabled>查看</button>
+					</td>
+				</tr>
+				<tr>
+					<td>cd-004</td>
+					<td>灯具</td>
+					<td></td>
+					<td>998.60</td>
+					<td>
+						<button type="button">查看</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		// 页面加载完成后执行
+		$(function () {
+			// 奇偶隔行变色
+			$("table tr:odd").css("backgroundColor", "#fbfdff");
+			$("table tr:even").css("backgroundColor", "#e6f5ff");
+
+			// 禁用按钮
+			$("table button:disabled").css({
+				"backgroundColor": "transparent",
+				//"pointerEvents": "none",
+				"cursor": "not-allowed",
+				"border": "none",
+				"color": "#888"
+			});
+			$("table button:disabled").slideToggle(300);
+			$("table button:disabled").slideUp(300);
+			$("table button:disabled").slideDown(300);
+			$("table button:disabled").fadeOut(300);
+			$("table button:disabled").remove();
+
+			// 空表格
+			$("table td:empty").css("backgroundColor", "#eeeeee");
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

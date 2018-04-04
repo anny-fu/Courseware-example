@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>单选导航栏</title>
+  <style>
+    html,body {
+      margin: 0; padding: 0;
+    }
+    header {
+      width: 100%; height: 60px;
+      background-color: #e73030;
+    }
+    nav {
+      width: 960px; height: 60px;
+      margin: 0 auto;
+    }
+    ul {
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    ul li {
+      width: 160px;
+      float: left;
+      line-height: 60px;
+      position: relative;
+    }
+    ul li input[type="radio"] {
+      width: 100%; height: 100%;
+      position: absolute;
+      left: 0; top: 0;
+      margin: 0;
+      opacity:0;
+      cursor: pointer;
+    }
+    ul li a {
+      width: 100%; height: 100%;
+      text-align: center;
+      color: #f6e2e2;
+      display: block;
+      transition: all 0.2s linear;
+    }
+    ul li input[type="radio"]:hover + a {
+      background-color: #0f0;
+      color: #fff;
+    }
+    ul li input[type="radio"]:checked + a {
+      background-color: #00f;
+      color: #fff;
+      font-size: xx-large;
+      font-family: arial;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <input name="navgitor" type="radio">
+          <a>home</a>
+        </li>
+        <li>
+          <input name="navgitor" type="radio">
+          <a>product</a>
+        </li>
+        <li>
+          <input name="navgitor" type="radio">
+          <a>about</a>
+        </li>
+        <li>
+          <input name="navgitor" type="radio">
+          <a>location</a>
+        </li>
+        <li>
+          <input name="navgitor" type="radio">
+          <a>help</a>
+        </li>
+        <li>
+          <input name="navgitor" type="radio">
+          <a>other</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

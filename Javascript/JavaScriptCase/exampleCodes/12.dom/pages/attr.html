@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>属性的操作</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		div {
+			padding: 10px;
+		}
+		.showPwd {
+			padding: 2px;
+			background-color: #aaa;
+			color: #fff;
+			display: inline-block;
+			cursor: pointer;
+		}
+		.showPwd[data-on] {
+			background-color: #4f900e;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>属性的操作</a>
+	</nav>
+	<main id="main">
+		<div>
+			<label>账户：</label>
+			<input name="userName" type="text">
+		</div>
+		<div>
+			<label>密码：</label>
+			<input name="userPwd" type="password">
+			<span class="showPwd">-_-</span>
+		</div>
+	</main>
+	
+	<script>
+		var userPwd = document.getElementsByName("userPwd")[0];
+		var showPwd = document.getElementsByClassName("showPwd")[0];
+		showPwd.onclick = function() {
+			var status = userPwd.getAttribute("type");
+			if(status === "password") {
+			    userPwd.setAttribute("type", "text");
+		    }
+			else {
+				userPwd.setAttribute("type", "password");
+			}
+			// 这里会返回一个布尔值，表示是否含有该属性
+			var hasOn = this.hasAttribute("data-on");
+			// 如果含有该属性
+			if(hasOn) {
+				this.removeAttribute("data-on");
+			}
+			// 如果不含有该属性
+			else {
+				this.setAttribute("data-on","data-on");
+			}
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

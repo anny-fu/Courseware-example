@@ -1,0 +1,19 @@
+var friendData = [
+	{
+		"name": "蜡笔小新",
+		"photoURL": "images/user-1.jpg"
+	},
+	{
+		"name": "大白(●—●)",
+		"photoURL": "images/user-2.jpg"
+	},
+	{
+		"name": "兰博基尼",
+		"photoURL": "images/user-3.jpg"
+	}
+];
+
+var originPassword = "123456";
+
+
+

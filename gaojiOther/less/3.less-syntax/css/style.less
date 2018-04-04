@@ -1,0 +1,164 @@
+/**
+ * 功能：Less入门
+ * 日期：2017/6/6
+**/
+// ========================
+// 全局变量定义
+// ========================
+// 字体
+@baseFont: normal 16px "微软雅黑";
+@baseBtnFont: normal 15px "微软雅黑";
+
+// 颜色
+@baseColor: #333333;
+@themeColor: #07b414;
+
+// ========================
+// 混合（mixin）
+// ========================
+// 超链接
+.themesLink {
+    text-decoration: none;
+    color: #2398fd;
+    cursor: pointer;
+}
+// 卡片样式
+.themesCard (@rs:15px) {
+    background-color: #fff;
+    border: 1px solid #2e6da4;
+    border-radius: @rs;
+    box-shadow: 0 10px 20px rgba(51,51,51,0.5);
+    margin-bottom: 30px;
+}
+
+/* CSS样式初始化 */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    background-color: #dcdcdc;
+    margin: 0;
+    font: @baseFont;
+    color: @baseColor;
+}
+body {
+    overflow: hidden;
+}
+/************************************/
+/* 样式元件 */
+/************************************/
+.btn {
+    // 按钮正常状态下的样式类
+    .normalStute(@bgcolor, @color) {
+        @thisBgColor: @bgcolor;
+        background-color: @thisBgColor;
+        border: 1px solid darken(@thisBgColor, 10%);
+        color: @color;
+    }
+    // 按钮正常状态下的设置
+    padding: 6px 12px;
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    font: @baseBtnFont;
+    cursor: pointer;
+    outline: none;
+    &.btn-normal {
+        .normalStute(#e6e6e6, #333333);
+        &:hover {
+            background-color: lighten(@thisBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@thisBgColor, 10%);
+        }
+    }
+    &.btn-blue {
+        .normalStute(#2396fd, #ffffff);
+        &:hover {
+            background-color: lighten(@thisBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@thisBgColor, 10%);
+        }
+    }
+    &.btn-red {
+        .normalStute(#d23219, #ffffff);
+        &:hover {
+            background-color: lighten(@thisBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@thisBgColor, 10%);
+        }
+    }
+    &.btn-purple {
+        .normalStute(#f313fe, #ffffff);
+        &:hover {
+            background-color: lighten(@thisBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@thisBgColor, 10%);
+        }
+    }
+    &.btn-dark {
+        .normalStute(#3d3d3d, #f3f3f3);
+        &:hover {
+            background-color: lighten(@thisBgColor, 10%);
+        }
+        &:active {
+            background-color: darken(@thisBgColor, 10%);
+        }
+    }
+}
+
+/************************************/
+/* 细节设置 */
+/************************************/
+header {
+    @lh: 50px;
+    width: 100%;
+    height: @lh;
+    background-color: @themeColor;
+    text-align: center;
+    font: normal 20px "微软雅黑";
+    line-height: @lh;
+    color: #ffffff;
+}
+main {
+    @mainHeight: 50px + 40px;
+    height: calc(~"100% - @{mainHeight}");
+    padding: 12px;
+    overflow-y: auto;
+    div {
+        padding: 12px;
+        font-size: 20px;
+        a {
+            // 主题超链接默认效果
+            .themesLink;
+            &:hover {
+                color: #99573d;
+            }
+        }
+    }
+    & > div.t-1 {
+        .themesCard;
+    }
+    & > div.t-2 {
+        .themesCard;
+    }
+    & > div.t-3 {
+        .themesCard(28px);
+    }
+    & > div.t-4 {
+        .themesCard(28px);
+    }
+}
+footer {
+    @lh: 40px;
+    width: 100%;
+    height: @lh;
+    background-color: @themeColor;
+    text-align: center;
+    font: normal 14px "微软雅黑";
+    line-height: @lh;
+    color: #eeeeee;
+}

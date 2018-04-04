@@ -1,0 +1,50 @@
+/**
+* 功能：Less的基本使用
+* 日期：2017-6-6
+**/
+/***********************************************/
+/* 初始化样式 */
+/***********************************************/
+body,
+html {
+	height: 100%;
+}
+body {
+	font: normal 16px "微软雅黑";
+	color: #333333;
+	overflow: hidden;
+}
+/***********************************************/
+/* 样式细节设置 */
+/***********************************************/
+header,
+footer {
+	width: 100%;
+	min-width: 960px;
+}
+header {
+	height: 50px;
+	background-color: #107ceb;
+	text-align: center;
+	font: normal 20px "微软雅黑";
+	line-height: 50px;
+	color: #ffffff;
+}
+main {
+	height: calc(100% - 90px);
+	padding: 10px;
+	overflow-y: auto;
+}
+main section {
+	font-size: 20px;
+	color: #333333;
+}
+footer {
+	height: 40px;
+	background-color: #dedede;
+	color: #888888;
+	text-align: center;
+	font: normal 14px "微软雅黑";
+	line-height: 40px;
+}
+/*# sourceMappingURL=style.css.map */

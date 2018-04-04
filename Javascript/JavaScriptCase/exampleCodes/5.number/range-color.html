@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" method="post" name="form1" id="form1">
+		<label>red:&nbsp;&nbsp;&nbsp;</label>
+		<input type="range" name="r" min="0" max="255" id="r" onchange="getRgb()" value="255"  /><br/>
+		<label>green:&nbsp;&nbsp;</label>
+		<input type="range" name="g" min="0" max="255"  id="g" onchange="getRgb()" value="255" /><br/>
+		<label>blue :&nbsp; </label>
+		<input type="range" name="b" min="0" max="255" id="b" onchange="getRgb()" value="255" />
+	</form>
+	<p>当前颜色值为：【<span id="bgcolor"></span>】</p>
+</body>
+<script type="text/javascript">
+	function getRgb()
+	{
+		var get_r = parseInt(document.form1.r.value);
+		//将获取到的值(此时值是字符串)转换为10进制的数字
+		var r = get_r.toString(16);//将数字转换成16进制
+		var get_g = parseInt(document.form1.g.value);
+		var g = get_g.toString(16);
+		var get_b = parseInt(document.form1.b.value);
+		var b = get_b.toString(16);
+		console.log("===========r:"+r)
+		console.log("=============g:"+g)
+		console.log("============b:"+b)
+		console.log("#"+r+g+b);
+		document.body.bgColor = "#"+r+g+b;
+		document.getElementById('bgcolor').textContent = "#"+r+g+b;
+
+	// 	var r=document.form1.r.value;
+	// 	var g=document.form1.g.value;
+	// 	var b=document.form1.b.value;
+	// 	console.log("===========r:"+r);
+	// 	console.log("=============g:"+g);
+	// 	console.log("============b:"+b);
+	// 	var num=toHexString(r,g,b);
+
+	// 	document.body.bgColor = "#"+num;
+	// 	document.getElementById('bgcolor').textContent = "#"+num;
+	// 	console.log((r<<16));
+	// 	console.log((g<<8));
+	// 	console.log((r << 16 | g << 8 | b));
+	// 	console.log("16+"+("00000" + (r << 16 | g << 8 | b).toString(16)));
+	// 	console.log("从后往前截取6位:"+("00000" + (r << 16 | g << 8 | b).toString(16)).slice(-6));
+	// 	console.log((1|0));
+	// }
+
+	// function toHexString(r,g,b) {
+	// 	return ("00000" + (r << 16 | g << 8 | b).toString(16)).slice(-6);
+	
+}
+</script>
+</html>

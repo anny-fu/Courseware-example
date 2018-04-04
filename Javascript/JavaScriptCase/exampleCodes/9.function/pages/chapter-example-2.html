@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习二</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#showInfo {
+			width: 220px;
+			padding: 6px;
+			margin-top: 20px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习二</a>
+	</nav>
+	<main>
+		<div id="skillList">
+			<div data-color="#d98e00">HTML</div>
+			<div data-color="#0096d9">CSS</div>
+			<div data-color="#00c72e">JavaScript</div>
+		</div>
+		<div id="showInfo"></div>
+	</main>
+	
+	<script>
+		// div列表
+		var skill_div = document.getElementById("skillList").children,
+		skill_div_leng = skill_div.length;
+		// 显示结果的元素
+		var showInfo = document.getElementById("showInfo");
+		for(var i = 0; i < skill_div_leng; i++) {
+			skill_div[i].onclick = function() {
+				var thisTxt = this.textContent;
+				showInfo.textContent = thisTxt;
+				
+				var thisColor = this.getAttribute("data-color");
+				showInfo.style.backgroundColor = thisColor;
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

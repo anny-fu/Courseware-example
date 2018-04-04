@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>改变this指向</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>改变this指向</a>
+	</nav>
+	<main>
+		
+	</main>
+	
+	<script>
+		var outObj = {
+			name: "外部对象",
+			type: "外部"
+		}
+		var obj = {
+			name: "普通对象",
+			showName: function() {
+				return this.type;
+			}
+		}
+		var layerObj = {
+			name: "多层对象",
+			child: {
+				name: "多层对象--子对象",
+				showName: function(param1,param2) {
+					return this.name + " -- " + param1 + " -- " + param2;
+				}
+			}
+		}
+		//console.log(layerObj.child.showName());
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>jQuery和原生JS的对比</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#roleInfo li {
+			cursor: pointer;
+		}
+		#showActive {
+			font-size: 32px;
+			color: #f81;
+			margin-left: 40px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>jQuery和原生JS的对比</a>
+	</nav>
+	
+	<main>
+		<ul id="roleInfo">
+			<li>宋江</li>
+			<li>贾宝玉</li>
+			<li>赵云</li>
+			<li>孙悟空</li>
+		</ul>
+		<div id="showActive">无</div>
+	</main>
+	<script src="../../source/jquery.js"></script>
+	<script>
+		// 原生实现
+		/*var ul = document.getElementById("roleInfo"),
+			itemList = ul.children;
+		var showActive = document.getElementById("showActive");
+		for(var i = 0; i < itemList.length; i++)  {
+			itemList[i].onclick = function() {
+				var thisText = this.textContent;
+				showActive.textContent = thisText;
+			}
+		}*/
+		
+		// 用jQuery实现
+		$("#roleInfo li").click(function() {
+			// 获取文本
+			var thisText = $(this).text();
+			// 设置文本
+			$("#showActive").text(thisText);
+		});
+		// jquery的基本语法格式
+		// $(selector).methods();
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

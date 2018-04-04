@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css高级选择器-练习</title>
+    <style type="text/css">
+        html,body,h1,h2,h3,p,ul,ol,li{
+            margin:0;padding:0;
+        }
+        table{
+            border: solid 1px black;
+            width: 960px;
+            text-align: center;
+            color: #fff;
+            margin: 50px auto;
+        }
+        tr{
+            height: 32px;
+            line-height: 32px;
+            width: 50px;
+        }
+        /*第一个表格*/
+        #firstTab tr:nth-of-type(odd){
+            background: pink;
+        }
+        #firstTab tr:nth-of-type(even){
+            background: blue;
+        }
+        #firstTab td:nth-of-type(3n+1){
+            background: mediumpurple;
+        }
+        #firstTab tr:last-of-type,#firstTab tr:first-of-type
+        {
+            background: yellowgreen;
+        }
+        /*第二个表格*/
+        #secondTab tr:first-child{
+            font:24px "微软雅黑";
+            text-align: center;
+        }
+        #secondTab tr:nth-of-type(odd){
+            background: pink;
+        }
+        #secondTab tr:nth-of-type(even){
+            background: #82a9ff;
+        }
+        #secondTab td:empty{
+            background: #888;
+        }
+        /*第三个表格*/
+        #thirdTab tr:nth-of-type(odd){
+            background: pink;
+        }
+        #thirdTab tr:nth-of-type(even){
+            background: #82a9ff;
+        }
+        #thirdTab td:nth-of-type(odd){
+            background: darkblue;
+        }
+        /*设置四个方向的字体大小*/
+        #thirdTab tr:first-child,#thirdTab tr:last-child, #thirdTab td:first-child,#thirdTab td:last-child{
+            font-size:140%;
+        }
+        /*排除四个角*/
+        #thirdTab tr:first-of-type td:first-child
+        ,#thirdTab tr:first-of-type td:last-child,
+        #thirdTab tr:last-of-type td:first-child,
+        #thirdTab tr:last-of-type td:last-child{
+            font-size: inherit;
+            color:red;
+        }
+        /*超链接设置*/
+        .anchor{
+            width:960px;
+            margin:0 auto;
+            padding-top: 50px;
+        }
+        .anchor a{
+            background: dodgerblue;
+            text-decoration: none;
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            width: 100px;
+            text-align: center;
+            border-radius: 5px;
+            margin-right : 80px;  
+        }
+        .anchor a:hover{
+            background: #61adf6;
+            color: #fff;
+        }
+        .anchor a:active{
+            color:#fff;
+            background-color:blue;   
+        }
+        table:target{
+           /* box-shadow: 0px 8px 8px rgba(166,167,168,0.9);*/
+           box-shadow: 0px 8px 8px rgba(234,0,0,0.9);
+       }
+
+   </style>
+</head>
+<body>
+    <p class="anchor">
+       <a id="firstLink" href="#firstTab">改变表格1
+       </a>
+       <a id="secondLink" href="#secondTab">改变表格2
+       </a>
+       <a id="thirdLink"  href="#thirdTab">改变表格3
+       </a>
+   </p>
+   <table id="firstTab" rules="all">
+    <tr>
+        <td>01</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>04</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>05</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>06</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+</table>
+<table id="secondTab" cellpadding="0px" cellspacing="0px" rules="all">
+    <tr>
+        <th colspan="8" >员工信息表</th>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>小A</td>
+        <td></td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td></td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td></td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td></td>
+        <td></td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>小A</td>
+        <td>21</td>
+        <td></td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+</table>
+<table id="thirdTab" cellpadding="0px" cellspacing="0px" rules="all">
+    <tr>
+        <td>01</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>04</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+    <tr>
+        <td>05</td>
+        <td>小A</td>
+        <td>21</td>
+        <td>女</td>
+        <td>18382230408</td>
+        <td>535165469@qq.com</td>
+        <td>汉族</td>
+        <td>内江</td>
+    </tr>
+</table>
+
+</body>
+</html>

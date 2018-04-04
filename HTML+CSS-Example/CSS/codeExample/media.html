@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <style>
+        body {
+            background-color: #0f0;
+        }
+
+        /*移动设备宽度在介于360到375之间时，背景色将改变*/
+        @media only screen and (min-width: 360px) and (max-width: 375px) {
+            body {
+                background-color: #00f;
+            }
+
+            p {
+                font-size: 28px;
+            }
+        }
+    </style>
+    /*让IE9以下的浏览器兼容media*/
+    <!-- [if lt IE 9] -->
+    <script src="http://cdn.bootcss.com/livingston-css3-mediaqueries-js/1.0.0/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<p>重置浏览器查看大小，观察浏览器背景颜色变化。<input type="button" onclick="resize_window()" value="查看效果"></p>
+<SCRIPT>
+    <!--
+    function resize_window() {
+        window.open('media.html', 'newwindow', 'height=299,width=299,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+    }
+    //写成一行
+    -->
+</SCRIPT>
+
+</body>
+</html>

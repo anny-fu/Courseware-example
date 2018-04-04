@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>onload事件</title>
+</head>
+<body onload="loadEnd();">
+<h1>Hello world!</h1>
+<!-- <a href="http://www.baidu.com" target="_blank" onunload="unloadEnd();">百度一下</a> -->
+</body>
+<script type="text/javascript">
+  // window.onload =loadEnd;
+  function loadEnd(){
+    alert('欢迎进入，页面加载完成！');
+  }
+  // window.onunload = unloadEnd;
+  function unloadEnd(){
+    alert('谢谢访问！');
+  }
+</script>
+</html>

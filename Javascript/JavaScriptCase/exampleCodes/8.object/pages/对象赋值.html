@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>值引用和对象引用</title>
+	<style>
+		div>p>span{
+			color:#f00;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<h3>引用传引用</h3>
+		<p>改变后的num.a是:<span id="a"></span></p>
+		<p>改变后的obj.b是:<span id="b"></span></p>
+	</div>
+	<div>
+	<h3>值传值</h3>
+		<p>改变后的num1是:<span id="c"></span></p>
+		<p>改变后的num2是:<span id="d"></span></p>
+	</div> 
+	<div>
+	<h3>引用传值</h3>
+		<p>改变后的obj1是:<span id="e"></span></p>
+		<p>改变后的obj2是:<span id="f"></span></p>
+	</div> 
+</body> 
+<script>
+	var a=document.getElementById("a");
+	var b=document.getElementById("b");
+	var c=document.getElementById("c");
+	var d=document.getElementById("d");
+		/*引用传引用*/
+		var obj = {a:'a1',b:'b1'};
+		var num = obj;
+		edit(obj);
+		a.innerHTML=num.a;
+		b.innerHTML=obj.b;
+	/*修改方法*/
+	function edit(obj){
+		 obj.a = 'a2';
+		num.b = 'num1';
+	}
+		
+	
+		/*值传值*/
+		var num1 =2;
+		var num2 =3;
+		 num2 = num1;
+		num1=edit1(num1);
+		/*输出num1和num2的值*/
+		c.innerHTML=num2;
+		d.innerHTML=num1;
+		/*修改值 */
+	function edit1(num1){
+		num1=20;
+		return num1;
+	}
+	
+	
+	var e=document.getElementById("e");
+	var f=document.getElementById("f");
+		/*引用传值*/
+		var obj1 ={a:1,b:2};
+		var obj2 = obj1;
+		obj1 = edit2(obj1);
+		/*输出num1和num2的值*/
+		e.innerHTML=obj1;
+		f.innerHTML=obj2;
+		/*修改值 */
+	function edit2(obj1){
+		obj1=1000;
+		return obj1;
+	}
+
+	// 对象赋值不发生改变的方法(利用for-in或es6的Object.assign)
+
+</script>
+</html>

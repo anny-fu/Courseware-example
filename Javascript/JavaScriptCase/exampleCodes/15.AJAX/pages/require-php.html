@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>请求PHP后台</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		form > div {
+			padding-top: 20px;
+		}
+		form > div > button {
+			margin-left: 199px;
+		}
+		#result {
+			font-size: 24px;
+			color: #f80;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>请求PHP后台</a>
+	</nav>
+	
+	<main>
+		<form name="userInfo">
+			<div>
+				<label>姓名：</label>
+				<input name="name" type="text">
+			</div>
+			<div>
+				<label>手机：</label>
+				<input name="tel" type="tel">
+			</div>
+			<div>
+				<button id="btnSubmit" type="reset">提交</button>
+			</div>
+		</form>
+		<div id="result">-- 这里是输出返回结果的地方 --</div>
+	</main>
+	
+	<script>
+		var btnSubmit = document.querySelector("#btnSubmit");
+		var result = document.querySelector("#result");
+		btnSubmit.onclick = function() {
+			var formData = {
+				name: userInfo.name.value,
+				tel: userInfo.tel.value
+			}
+			getHTTP("https://www.aulence.com/php/test-backstage.php?" + param(formData), function(resStr) {
+				result.innerHTML = resStr;
+			});
+		}
+		
+		/**
+		* 功能：普通GET请求
+		* 参数1: URL（String）
+		* 参数2: 回调函数（Function）
+		**/
+		function getHTTP(url, callback, erro) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET",url);
+			xhr.send();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState === 4) {
+					// 请求成功
+					if(xhr.status === 200) {
+					    var data = xhr.responseText;
+						callback(data);
+				    }
+					// 数据没有发生变化
+					else if(xhr.status === 304) {
+						alert("请不要重复的提交");
+					}
+					// 请求失败
+					else {
+						alert("网络错误，请检查您的网络设置");
+						console.error("网络未连接，或者URL错误");
+					}
+				}
+			}
+		}
+		
+		/**
+		* 功能：参数序列化
+		* 参数: 原生对象（Object）
+		**/
+		function param(obj) {
+			var val = Object.prototype.toString.call(obj);
+			val = val.slice(
+				val.indexOf(" ") + 1, 
+				val.lastIndexOf("]")
+			).toLowerCase();
+			if(val !== "object") {
+			   console.error("该函数的参数只能是一个原生对象");
+				return typeof(val);
+			}
+			
+			var paramArr = [];
+			var paramStr = "";
+			for(var x in obj) {
+				paramStr = x + "=" + encodeURIComponent(obj[x]);
+				paramArr.push(paramStr);
+			}
+			var result = paramArr.join("&");
+			return result;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

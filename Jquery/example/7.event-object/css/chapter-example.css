@@ -1,0 +1,19 @@
+/**
+* 功能：键盘切换图片显示
+**/
+.pathNav {
+	margin-bottom: 0;
+}
+#main {
+	padding: 0;
+}
+figure {
+	margin: 0;
+	font-size: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+figure > img {
+	width: 100%;
+	display: inline-block;
+}

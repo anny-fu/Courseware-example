@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5拖放</title>
+		<style type="text/css">
+			html,body,div{margin: 0;padding: 0;}
+			#output{
+				min-height: 200px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="output">
+			文件拖拉到这里
+		</div>
+		<script>
+			var div = document.getElementById('output');
+			div.addEventListener("dragenter", function( event ) {
+				div.textContent = '';
+				event.stopPropagation();
+				event.preventDefault();
+			}, false);
+
+			div.addEventListener("dragover", function( event ) {
+				event.stopPropagation();
+				event.preventDefault();
+			}, false);
+
+			div.addEventListener("drop", function(event ) {
+				event.stopPropagation();
+				event.preventDefault();
+				var files = event.dataTransfer.files;
+				for (var i = 0; i < files.length; i++) {
+					/*显示文件名和文件大小*/
+					// div.textContent += files[i].name + ' ' + files[i].size + '字节\n';
+
+					/*读取文件内容*/
+					if (files.length > 0) {
+						var file = files[0];
+						var reader = new FileReader();
+						reader.onloadend = function(e) {
+							if (e.target.readyState == FileReader.DONE) {
+								var content = reader.result;
+								div.textContent = "File: " + file.name + "Size: " + file.size+content;
+							}
+						}
+						reader.readAsBinaryString(file);
+					}
+				}
+			},false);
+
+
+		</script>
+	</body>
+</html>

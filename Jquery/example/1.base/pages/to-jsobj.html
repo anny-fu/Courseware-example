@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>将jQuery对象转换为原生JS对象</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#roleInfo li {
+			cursor: pointer;
+		}
+		#showActive {
+			font-size: 32px;
+			color: #f81;
+			margin-left: 40px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>将jQuery对象转换为原生JS对象</a>
+	</nav>
+	
+	<main>
+		<ul id="roleInfo">
+			<li>宋江</li>
+			<li>贾宝玉</li>
+			<li>赵云</li>
+			<li>孙悟空</li>
+		</ul>
+		<div id="showActive">无</div>
+	</main>
+	<script src="../../source/jquery.js"></script>
+	<script>
+		// 用jQuery实现
+		$("#roleInfo li").click(function() {
+			// 将jquery的$(this)对象改成JS对象
+			var thisText = $(this)[0].textContent;
+			$("#showActive").text(thisText);
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

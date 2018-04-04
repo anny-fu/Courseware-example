@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>let</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#showRes {
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>let</a>
+	</nav>
+	
+	<main>
+		<div id="showRes">无</div>
+		<ul id="roleInfo"></ul>
+	</main>
+	<script>
+		// let相对于var的几个特点
+		// 1、没有变量提升
+		// 2、同一个变量不能被重复声明
+		// 3、作用域的最小单位是“块”（花括符）
+		var showRes = document.getElementById("showRes");
+		fn();
+		function fn() {
+			let a = 3;
+			let b = 0;
+			if(a === 3) {
+				b = 5;
+			} else {
+				b = 10;
+			}
+			let c
+			// 块级作用域
+			{
+				c = 15;
+			}
+			showRes.textContent = c;
+			showRes.style.border = "1px solid #f80";
+		}
+		
+		var roleInfo = document.getElementById("roleInfo");
+		var roleList = ['刘备','关羽','张飞'];
+		for(let i = 0; i < roleList.length; i++) {
+			roleInfo.innerHTML += `<li>${roleList[i]}</li>`;
+		}
+		
+		for(let i = 0; i < roleList.length; i++) {
+			roleInfo.children[i].onclick = function() {
+				console.log(`第${i + 1}项`);
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

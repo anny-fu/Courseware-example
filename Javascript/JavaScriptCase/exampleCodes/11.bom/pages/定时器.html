@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+	<style type="text/css">
+		input[type=button]{
+			margin: 5px;
+			border: 1px solid #028ae0;
+			background: #039dff;
+			height: 32px;
+			border-radius: 5px;
+			color:#fff;
+		}
+		#time{
+			color:#f00;
+		}
+	</style>
+
+</head>
+<body>
+	<input type="button" onclick="clearInterval(timer)" value="stop">
+	<span id="time"></span>
+</body>
+<script>
+	var say = '小明';
+	function hello(name){
+		console.log(name+'你好！');
+	}
+	document.addEventListener('click','hello(say)',false);
+		// var i = 1
+		// var timer = setInterval(function() {
+		// 	document.getElementById('time').innerText +=2;
+		// }, 1000);
+	</script>
+	</html>

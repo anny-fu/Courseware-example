@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>课前练习</title>
+<style>
+body { margin:0; padding:0; }
+section {
+    width: 120px; height: 120px;
+    background-color: #b2b2b2;
+    border-radius: 50%;
+    transition:all 1.2s linear;
+}
+[type="button"]:hover + section {
+    transform: translate(600px,120px) rotateY(2160deg) scale(0.9);
+}
+
+    a {
+        width: 120px; height: 30px;
+        display: inline-block;
+        color: #333;
+        text-decoration: none;
+
+    }
+    a:active + img{
+        -webkit-transform:translate(500px,240px) rotate(360deg);
+        -moz-transform:translate(500px,240px) rotate(360deg);
+        -ms-transform:translate(500px,240px) rotate(360deg);
+        transform:translate(500px,240px) rotate(360deg);
+    }
+
+    img {
+        width: 240px; height: 240x;
+        border-radius: 50%;
+        margin-left: 50px;
+        -webkit-transition:all 0.6s linear;
+        -moz-transition:all 0.6s linear;
+        -ms-transition:all 0.6s linear;
+        transition:all 0.6s linear;
+    }
+</style>
+</head>
+<body>
+    <button type="button">抛</button>
+    <section></section>
+     <!--   <a>去吧皮卡丘</a>
+    <img src="../text/img/my.jpg">
+    <a>去吧水箭龟</a>
+    <img src="../text/img/s3.jpg"> -->
+</body>
+</body>
+</html>

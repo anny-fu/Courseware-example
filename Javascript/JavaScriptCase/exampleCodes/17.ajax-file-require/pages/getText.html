@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX示例——文本请求</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main id="main">
+    <button id="loadBtn" type="button">加载内容</button>
+</main>
+
+<script>
+    var loadBtn = document.getElementById("loadBtn");
+    var main = document.getElementById("main");
+    loadBtn.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var content = xhr.responseText;
+                    main.innerHTML = content;
+                }
+                else {
+                    console.error("文件路径错误，或网络错误！");
+                }
+            }
+        }
+        xhr.open("GET", "../doc/text.txt", true);
+        xhr.send(null);
+    }
+
+</script>
+</body>
+</html>

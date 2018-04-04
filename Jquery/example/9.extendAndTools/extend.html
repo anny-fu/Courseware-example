@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>扩展工具</title>
+	<style>
+	#main{
+		width:100px;
+		height:100px;
+		background-color: #0f0;
+	}
+	</style>
+</head>
+<body>
+<main id="main"></main>
+<ul>
+	<li>列表项1</li>
+	<li>列表项2</li>
+	<li>列表项3</li>
+	<li>列表项4</li>
+</ul>
+<script src="plugin/jquery.js"></script>
+<script>
+	/*自定义工具方法*/
+	$.extend({
+		//求最小值
+		min: function (param) {
+			//将参数对象转换为真正的数组
+			var parArr;
+			if (!Array.isArray(param)) {
+				parArr = Array.from(arguments);
+			}
+			parArr = param;
+//		rest参数(...变量名)
+			var minVal = Math.min(...parArr);
+			return minVal;
+		}
+	});
+	//自定义Jquery方法
+	$.fn.extend({
+		//元素固定定位居中显示
+		centered: function () {
+			$(this).css({
+				position: "fixed", left: "50%", top: "50%",
+				transform: "translate(-50%,-50%)", zIndex: 100
+			});
+		}
+	});
+//	调用
+	$("#main").centered();
+
+//	$.grep(arr,fun(item,index),false)
+	合并对象assign();
+	// 定义一个数组
+	var arr = [ "拉布拉多犬", "秋田犬", "边境牧羊犬", "暹罗猫", "咖菲猫", "英短蓝猫" ];
+	//遍历满足条件的数组
+	$.grep(arr,function(item,index){
+		return /猫/.test(item)
+	},false)
+
+//	$.when()
+	var first = {
+		fn: function () {
+			console.log("color:#ff3f77>1");
+		}
+	};
+	var second = {
+		fn: function () {
+			console.log("color:#ff3f77>2");
+		}
+	};
+//	正常调用执行
+//	first.fn();
+//	second.fn();
+
+//when方法回调延时执行
+//	$.when(first,second).then(function(){
+//		first.fn();
+//		second.fn();
+//	});
+//	console.log('hello');
+//	console.log("color:#ff3f77">3);
+	//each(function(index,elem))
+//	作为方法使用
+//$("ul>li").each(function(index,ele){
+//console.log($(this).text());
+//});
+	var obj ={name:"凯凯",gender:"男",age:18};
+//工具方法使用（数组，对象）
+$.each(obj,function(index,item){
+	console.log(index+": "+item);
+});
+console.log($("ul>li"));
+	$.each($("ul>li"),function(index,ele){
+	console.log($(this).text());
+	});
+</script>
+</body>
+</html>

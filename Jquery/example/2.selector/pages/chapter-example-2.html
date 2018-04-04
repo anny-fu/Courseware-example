@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>章节练习二</title>
+		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/chapter-example-2.css">
+	</head>
+	<body>
+		<nav class="pathNav">
+			<a href="../index.html">首页</a>
+			<a>章节练习二</a>
+		</nav>
+
+		<main>
+			<!-- 周选择列表 -->
+			<ul class="week">
+				<li>周一</li>
+				<li>周二</li>
+				<li>周三</li>
+				<li>周四</li>
+				<li>周五</li>
+				<li>周六</li>
+				<li>周日</li>
+			</ul>
+			<!-- 日期列表 -->
+			<ul class="weather">
+				<li>
+					<span>多云</span>
+					<span>16℃~21℃</span>
+				</li>
+				<li>
+					<span>晴天</span>
+					<span>15℃~28℃</span>
+				</li>
+				<li>
+					<span>晴天</span>
+					<span>19℃~29℃</span>
+				</li>
+				<li>
+					<span>小雨</span>
+					<span>18℃~24℃</span>
+				</li>
+				<li>
+					<span>中雨</span>
+					<span>15℃~20℃</span>
+				</li>
+				<li>
+					<span>多云</span>
+					<span>17℃~22℃</span>
+				</li>
+				<li>
+					<span>晴天</span>
+					<span>16℃~21℃</span>
+				</li>
+			</ul>
+			
+			<!--<a id="baidu" href="https://www.baidu.com/">阻止进入百度</a>-->
+		</main>
+		<script src="../plugin/jquery.js"></script>
+		<script>
+			// 页面加载完成后执行
+			$(function() {
+				$("ul.week li").first().click();
+			});
+			
+			// 点击日期显示天气
+			$("ul.week li").click(function () {
+				// 获取索引下标
+				var idx = $(this).index();
+
+				// 为当前节点添加选中效果的class，移除兄弟节点中带有这个class元素的“checked”样式
+				$(this).addClass("checked").siblings("li.checked").removeClass("checked");
+
+				// 移除带有“show”这个class元素的“show”样式
+				$("ul.weather li.show").removeClass("show");
+				
+				// 当前日期对应的天气列表项
+				var $currentWeather = $("ul.weather li").eq(idx);
+				
+				// 获取当前日期的天气状况
+				var weatherType = $currentWeather.children().first().text();
+				
+				// 设置该列表项的颜色
+				if(weatherType === "晴天") {
+				   $currentWeather.css("color", "#f81");
+			    }
+			    /*stringObj.includes(substring [, position]);
+			    * stringObj
+				 必需。要测试的字符串对象。
+				 substring
+				 必需。要测试的字符串。
+				 position
+				 可选。字符串对象中要测试的以 0 开头的第一个字符的位置。
+			    *如果传入的字符串包含在字符串对象中，则 includes 方法返回 true；否则返回 false。
+			    * */
+				else if(weatherType.includes("雨") === true) {
+					$currentWeather.css("color", "#18f");
+				}
+				else if(weatherType === "多云") {
+					$currentWeather.css("color", "#888");
+				}
+				else {
+					$currentWeather.css("color", "#888");
+				}
+				
+				// 为对应索引值的“天气”列表项添加“show”（显示为列表项）这个样式
+				$currentWeather.addClass("show");
+			});
+			
+			// 阻止默认事件
+			var baidu = document.getElementById("baidu");
+			baidu.onclick = function(e) {
+				e.preventDefault();
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

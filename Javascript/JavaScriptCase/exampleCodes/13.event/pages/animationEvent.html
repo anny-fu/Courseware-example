@@ -1,0 +1,63 @@
+    <!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>animation事件监听</title>
+    <style>
+        .clock-bg {
+            width: 240px; height: 240px;
+            background: url("img/clock-bg.png") no-repeat;
+            position: relative;
+            animation: translateClock 5s 5s linear 5;
+            animation-direction: normal;
+        }
+        .clock-pointer {
+            width: 5px; height: 116px;
+            background-color: #3777d6;
+            border-radius: 3px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            position: absolute;
+            left: calc(50% - 3px); top: 12px;
+            transform-origin: 2px 106px;
+            animation: swingPointer 1.2s 5s ease-in 20;
+            animation-direction: alternate;
+        }
+        @keyframes translateClock {
+            0% { transform: translateX(60px)}
+            100% { transform: translateX(600px)}
+        }
+        @keyframes swingPointer {
+            0% { transform: rotate(0deg)}
+            100% { transform: rotate(360deg)}
+        }
+    </style>
+</head>
+<body>
+<section class="clock-bg" id="animation">
+        <section class="clock-pointer"></section>
+    </section>
+    <ul id="output"></ul>
+</body>
+<script type="text/javascript">
+    var el = document.getElementById("animation");
+    el.addEventListener("animationstart", listener, false);
+    el.addEventListener("animationend", listener, false);
+    el.addEventListener("animationiteration", listener, false);
+    function listener(e) {
+      var li = document.createElement("li");
+      switch(e.type) {
+        case "animationstart":
+        li.innerHTML = "Started: elapsed time is " + e.elapsedTime;
+        break;
+        case "animationend":
+        li.innerHTML = "Ended: elapsed time is " + e.elapsedTime;
+        break;
+        case "animationiteration":
+        li.innerHTML = "New loop started at time " + e.elapsedTime;
+        break;
+    }
+    document.getElementById("output").appendChild(li);
+}
+</script>
+</html>

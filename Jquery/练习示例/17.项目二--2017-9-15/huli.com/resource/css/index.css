@@ -1,0 +1,84 @@
+@charset "utf-8";
+/**
+* 功能：网站首页设置
+* 最后修改日期：2015年6月8日
+* 作者：魏叶
+**/
+
+/* 首页大标题 */
+.home_h1 { width: 431px; height: 35px; background-position: 0 0; margin: 34px auto 50px;}
+
+/* 图文链接——单列图 */
+.imgLink_area { overflow: hidden;}
+.imgLink_area img { width: 100%; height: 100%; border: 1px solid #bfbfbe; box-sizing: border-box;}
+.img_cols-ss, .img_cols-sd, .img_cols-ds { display: block; float: left; overflow: hidden;}
+
+/* 图文链接——单列图 */
+.img_cols-ss { width: 388px; height: 388px;}
+
+/* 图文链接——双列图 */
+.img_cols-sd { width: 814px; height: 388px;}
+
+/* 图文链接——双行单列图 */
+.img_cols-ds { width: 388px; height: 814px;}
+
+/* 微博窗口 */
+.m_blogWin { width: 100%; height: 100%; border: 1px solid #bfbfbe;}
+
+/* 幻灯片列表区 */
+.imgLink_area,.imgLink_area .slideList {
+    position: relative;
+}
+.imgLink_area .slideList img {
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+	opacity: 0;
+	transition: all 2s;
+}
+.imgLink_area .slideList img.show {
+    visibility: visible;
+	opacity: 1;
+	animation: imgScale 6s linear;
+}
+/* 设置图片放大原点 */
+.imgLink_area .slideList img.enlarge-1 {
+	transform-origin: 10% 10%;
+}
+.imgLink_area .slideList img.enlarge-2 {
+	transform-origin: 90% 10%;
+}
+.imgLink_area .slideList img.enlarge-3 {
+	transform-origin: 90% 90%;
+}
+.imgLink_area .slideList img.enlarge-4 {
+	transform-origin: 10% 90%;
+}
+/* 控制点 */
+.slideList-point {
+	position: absolute;
+	left: 20px; bottom: 16px;
+}
+.slideList-point > i {
+	width: 12px; height: 12px;
+	background-color: transparent;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	float: left;
+	display: block;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	margin-right: 12px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+.slideList-point > i.ckd {
+	background-color: #fff;
+}
+.slideList-point > i:hover {
+	border: 2px solid #b6ccff;
+	background-color: #b6ccff;
+}
+@keyframes imgScale {
+	0% { transform: scale(1); }
+	100% { transform: scale(1.2) }
+}

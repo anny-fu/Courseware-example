@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>倒计时js代码</title>
+    <style type="text/css">
+      #CountMsg{
+        width: 500px;
+        margin: auto;
+        height: 100px;
+        font-size: 32px;
+        color: #f00;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <div id="CountMsg" class="HotDate">
+    <h4>离春节还剩</h4>
+    <span id="t_d">00天</span>
+    <span id="t_h">00时</span>
+    <span id="t_m">00分</span>
+    <span id="t_s">00秒</span>
+  </div>
+  <script type="text/javascript">
+    window.onload=function(){
+
+      function getRTime(){
+        //截止时间
+        var EndTime= new Date('2017/01/28 00:00:00');
+        // 当前时间
+        var NowTime = new Date();
+        //间隔毫秒数
+        var t =EndTime.getTime() - NowTime.getTime();
+
+        var d=Math.floor(t/1000/60/60/24);
+        var h=Math.floor(t/1000/60/60%24);
+        var m=Math.floor(t/1000/60%60);
+        var s=Math.floor(t/1000%60);
+        /*天数设置*/
+        if(d<10){
+          document.getElementById("t_d").innerHTML ="0"+ d + "天";
+        }else{
+          document.getElementById("t_d").innerHTML = d + "天";
+        }
+        /*小时设置*/
+        if( h<10){
+          document.getElementById("t_h").innerHTML ="0"+ h + "时";
+        }else{
+          document.getElementById("t_h").innerHTML = h + "时";
+        }
+        /*分钟设置*/
+        if( m<10){
+          document.getElementById("t_m").innerHTML ="0"+ m + "分";
+        }else{
+          document.getElementById("t_m").innerHTML = m + "分";
+        }
+        /*秒数设置*/
+        if( s<10){
+          document.getElementById("t_s").innerHTML ="0"+ s + "秒";
+        }else{
+          document.getElementById("t_s").innerHTML = s + "秒";
+        }
+      }
+      setInterval(getRTime,1000);
+    }
+  </script>
+  </body>
+</html>

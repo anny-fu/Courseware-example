@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>字符串转换驼峰命名法</title>
+</head>
+<body>
+<script type="text/javascript">
+// 方法一
+var str="border-bottom-color";
+function tf(){
+    var arr=str.split("-");
+    for(var i=1;i<arr.length;i++){
+        arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+    }
+    return arr.join("");
+};
+tf(str);
+
+// 方法二
+var str="border-bottom-color";
+function tf(){
+    var re=/-(\w)/g;
+    str=str.replace(re,function($0,$1){
+        return $1.toUpperCase();
+    });
+    alert(str)
+};
+tf(str);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>const</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#showRes {
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>const</a>
+	</nav>
+	
+	<main>
+		<div id="showRes">无</div>
+		<ul id="roleInfo"></ul>
+	</main>
+	<script>
+		// const相当于let的两个特点：
+		// 1、定义的常量必须有一个初始值
+		// 2、常量的值不能被更改
+		// 3、对象的值不能更改，但是值的属性和方法可以被更改
+		var showRes = document.getElementById("showRes");
+		/*const num = 200;
+		const str = "OK";
+		if(num === 200) {
+			str = "成功";
+		} else {
+			str = "失败";
+		}
+		showRes.textContent = str;*/
+		
+		const obj = {
+			name: "小小小",
+			age: 3,
+			skill: function() {
+				console.log(this.name);
+			}
+		}
+		obj.name = "大大大";
+		obj.age = 5;
+		obj.skill = function() {
+			console.log(this.age);
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

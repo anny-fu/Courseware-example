@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>周几查询</title>
+	<style type="text/css">
+		#query{
+			width:80px;
+			height: 40px;
+			display: inline-block;
+			background-color: #00f;
+			border-radius: 5px;
+			line-height: 40px;
+			color:#fff;
+			font-size: 18px;
+			text-align: center;
+			margin-right: 10px;
+			text-decoration: none;
+		}
+		#resu{
+			color:#f00;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<a id="query">今天是？</a>
+	<span id="resu"></span>
+	<script >
+		// 获取按钮和显示标签
+		var query = document.getElementById('query'),
+		resu = document.getElementById('resu');
+		// 按钮点击事件函数
+		query.onclick=function(){
+		// 获取当前系统时间
+		var week = new Date().getDay();
+			console.log(week);
+		// 根据week值进行判读输出
+		switch(week){
+			case 0:
+			resu.innerHTML = '今天周日！';
+			break;
+			case 1:
+			resu.innerHTML = '今天周一！';
+			break;
+			case 2:
+			resu.innerHTML = '今天周二！';
+			break;
+			case 3:
+			resu.innerHTML = '今天周三！';
+			break;
+			case 4:
+			resu.innerHTML = '今天周四！';
+			break;
+			case 5:
+			resu.innerHTML = '今天周五！';
+			break;
+			case 6:
+			resu.innerHTML = '今天周六！';
+			break;
+			default:
+			resu.innerHTML = '无效数据！';
+			break;
+		}
+	}
+</script>
+</body>
+</html>

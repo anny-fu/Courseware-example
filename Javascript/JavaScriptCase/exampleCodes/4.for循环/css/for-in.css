@@ -1,0 +1,51 @@
+@charset "utf-8";
+* {
+	box-sizing: border-box;
+}
+body {
+	font: 24px "微软雅黑";
+}
+input,select,button {
+	font: 24px "微软雅黑";
+	outline: none;
+}
+label,input,select {
+	vertical-align: middle;
+}
+form > div {
+	padding: 12px 0;
+}
+form > div > label {
+	width: 68px;
+	display: inline-block;
+	text-align: right;
+}
+input,select {
+	width: 260px;
+}
+
+#showData, th, td {
+	border: 1px solid #999;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 6px 12px;
+	text-align: left;
+	font: normal 22px "微软雅黑";
+}
+th {
+	width: 140px;
+	background-color: #861351;
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+

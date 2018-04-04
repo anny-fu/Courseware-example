@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航-二级导航</title>
+	<style type="text/css">
+		/*外部字体引入*/
+		@font-face{
+			font-family: 'myfont';
+			src:url('fonts/Hiragino Sans GB W3.otf') format('otf');
+		}
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			font-family: "Microsoft Yahei";
+			font-size: 16px;
+		}
+		.cl{clear:both;}
+		a{
+			text-decoration: none;
+			display: inline-block;
+			color:#fff;
+		}
+		a:hover{
+			color: #00bbee;
+		}
+		.container{
+			height:50px;
+			width:1024px;
+			margin:auto;
+			position: relative;
+			background-color: #ccc;
+		}
+		#nav{
+			background-color: #000;
+		}
+		#nav .nav-list{
+			width:500px;
+			margin:0 auto;
+			height: 54px;
+			background-color: #000;
+		}
+		#nav .nav-list ul{
+			list-style: none;
+		}
+		#nav .nav-list ul:after{
+			content:".";
+			height: 0;
+			display: block;
+			visibility: hidden;
+			clear:both;
+		}
+		.nav-list>ul>li{
+			float: left;
+			text-align: center;
+			position: relative;
+		}
+		.nav-list>ul>li>a{
+			font-size: 20px;
+			line-height: 50px;
+			padding:0 10px 4px 10px;
+		}
+		.nav-list>ul>li:hover{
+			background-color:#353535;
+		}
+		.nav-list ul li ul.dis{
+			display: none;
+			position: absolute;
+			top:54px;
+			left:0;
+			z-index: 100;
+			background-color: #353535;
+		}
+		ul.dis li{
+			width: 120px;
+		}
+		ul.dis li a{
+			font-size: 16px;
+			line-height: 32px;
+			text-align: left;
+			width: 98px;
+			padding: 0 11px;
+			font-weight: normal;
+		}
+		.nav-list ul.dis li:hover{
+			background-color: #6d6d6d;
+		}
+		.nav-list>ul>li:hover .dis{
+			display: block;
+		}
+		section .container{
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<div class="nav-list container">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">单车分类</a>
+					<ul class="dis">
+						<li><a href="#">死飞车</a></li>
+						<li><a href="#">复古骑行</a></li>
+						<li><a href="#">公路车</a></li>
+						<li><a href="#">山地车</a></li>
+						<li><a href="#">折叠/小径车</a></li>
+						<li><a href="#">BMX</a></li>
+						<li><a href="#">城市车及其他</a></li>
+					</ul>
+				</li>
+				<li><a href="#">骑车装备</a>
+					<ul class="dis">
+						<li><a href="#">车身装备</a></li>
+						<li><a href="#">人身装备</a></li>
+					</ul>
+				</li>
+				<li><a href="#">单车生活</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="container">
+
+		</div>
+</body>
+</html>

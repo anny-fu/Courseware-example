@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>输入框内容修改</title>
+	<style type="text/css">
+
+		p{color:#00a2c4;font-size: 18px;padding:0 20px;}
+		input{width:200px;height: 30px;outline: 0;color:#ddd;
+			line-height: 30px;border:1px solid #9b9b9b;border-radius: 5px; padding-left: 5px;   
+			font-size: 18px; margin:10px;}
+			input:focus{
+				border-color:#0f0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>输入框获取和失去焦点样式改变</p>
+		<input type="text" id="input" value="请输入密码">
+	</body>
+	<script>
+// 获取元素
+var inp = document.getElementById('input');
+// 获取焦点
+inp.onfocus = function(){
+	var inpVal = inp.value;
+		// 判断清除value中的值,并改变type = 'password'
+		if(inpVal == '请输入密码'){
+			inp.value = '';
+			inp.type = 'password';
+			inp.style.color ='#333';
+		}
+	}
+// 失去焦点
+inp.onblur = function(){
+	// 判断value值为空，赋值为“请输入密码”，否则为当前输入的值。更改type = 'text',否则保留type值和value值
+	var inpVal = inp.value;
+	if(inpVal== '' || inpVal== null){
+		inp.value= '请输入密码';
+		inp.type = 'text';
+		inp.style.color ='#ddd';
+	}
+}
+
+
+
+</script>
+</html>

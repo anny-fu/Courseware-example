@@ -1,0 +1,464 @@
+@charset "utf-8";
+/**
+* 作者：Verning Aulence
+* 日期：2014-4-24
+* 功能：样式设置
+**/
+
+body {
+    overflow: hidden;
+    font-family: "微软雅黑",serif;
+    background: url("../images/bgImg/ruifengpeixun.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/**** main ****/
+#main {
+    /* 桌面壁纸 */
+	background:url("../images/bgImg/huoyanaisi.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+	/* 任务栏的高度弥补 */
+	padding-bottom:50px;
+    display: none;
+}
+
+/**** container ****/
+#container {
+    overflow: hidden;
+}
+.iconBarGroup {
+    overflow: hidden;
+}
+/**** 图标栏 ****/
+.iconBar {
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+	cursor:pointer;
+    float: left;
+}
+/* 图标按钮 */
+.btnIcon {
+	border-radius:5px;
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+    -webkit-transition:all 0.15s ease-in 0s;
+    -moz-transition:all 0.15s ease-in 0s;
+    transition:all 0.15s ease-in 0s;
+}
+.btnIcon:hover, .btnIcon.checked {
+	background:rgba(64, 64, 64, 0.5);
+	border-color:#898c9f;
+	box-shadow:0px 0px 10px rgba(203, 218, 235, .6);
+}
+.btnIcon:active {
+    background:rgba(64, 64, 64, 0.9);
+}
+/* 图标内的超链接 */
+.btnIcon a {
+    text-decoration: none;
+}
+/* 图标集 */
+.btnIcon .icon {
+	width:64px; height:64px;
+	left:18px; top:6px;
+}
+.btnIcon .icon img {
+    width: 100%;
+}
+/* 图标名 */
+.icon_name {
+	line-height:40px;
+	color:#d9e2f2;
+    text-shadow:0 1px 0px rgba(39, 35, 20, 0.95);
+    -webkit-transition:all 0.3s ease-in 0s;
+    -o-transition:all 0.3s ease-in 0s;
+    transition:all 0.3s ease-in 0s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.btnIcon:hover .icon_name, .btnIcon.checked .icon_name {
+    color:#fefefe;
+    text-shadow: 0 0 2px rgba(86,86,86,0.9);
+}
+.btnIcon:active .icon_name {
+	color:#8cacec;
+}
+/* 开始菜单中的图标 */
+#startBlock .btnIcon a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#startBlock .btnIcon .icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+}
+/* 桌面窗口容器 */
+.window {
+    background: transparent;
+	z-index:103;
+	left:0; top:0;
+	display:none;
+}
+/* 窗口工具栏 */
+.winTools {
+    background: linear-gradient(to bottom, rgba(69, 69, 69, 0.8), rgba(14, 14, 14, 0.8));
+}
+/* 窗口内容 */
+.winContent {
+    height: calc(100% - 35px);
+}
+.winContent iframe {
+    width: 100%; height: 100%;
+    margin: 0px;
+    padding: 0;
+    border: none;
+}
+/* 工具栏按钮 */
+.toolsBtn {
+	width:30px; height:30px;
+	background:url(../images/contImg/toolsBtn.png) no-repeat;
+	margin-top:1px;
+	cursor:pointer;
+}
+/* 最小化 */
+.toolsBtn-min {
+	background-position:0px 0px;
+}
+/* 窗口化 */
+.toolsBtn-toWin {
+	background-position:-30px 0px;
+}
+/* 关闭窗口 */
+.toolsBtn-closeWin {
+	background-position:-60px 0;
+}
+
+/**** 对话弹出框 ****/
+dialog.dialog, dialog.dialog .maskLayer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+/* 弹出框组件 */
+dialog.dialog {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    z-index: 101;
+    display: block;
+}
+/* 遮罩层 */
+dialog.dialog .maskLayer {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.dialog-box {
+    min-width: 320px;
+    background-color: #131313;
+    border: 1px solid #3c3c3c;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    color: #dcdcdc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    transition: all 0.128s ease-in;
+}
+.dialog-box.show {
+    transform: translate(-50%,-50%) scale(1);
+}
+.dialog-box input, .dialog-box button {
+    padding: 4px 6px;
+    font: 16px "微软雅黑";
+    color: #dcdcdc;
+    box-sizing: border-box;
+}
+/* 关闭按钮 */
+.dialog-box-close {
+    width: 24px;
+    height: 24px;
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    text-align: center;
+    font: normal 18px "serif","sans-serif";
+    line-height: 24px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    color: #acacac;
+    cursor: pointer;
+    transition: all 0.08s;
+    display: none;
+}
+.dialog-box-close:hover {
+    background-color: #3c3c3c;
+}
+.dialog-box-close:active {
+    background-color: #282828;
+    color: #6c6c6c;
+}
+.dialog-box .header,.dialog-box .footer {
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #999;
+}
+/* 弹出框内容 */
+.dialog-box .content {
+    padding: 16px 20px;
+}
+/* 弹出框内容--文本居中 */
+.dialog-box .content.text-center {
+    text-align: center;
+}
+/* 弹出框内容--表单类型 */
+.dialog-box.form form {
+    padding: 0 20px;
+}
+.dialog-box.form form > div {
+    padding: 10px 0;
+    text-align: left;
+    white-space: nowrap;
+}
+.dialog-box.form label, .dialog-box.form input {
+    vertical-align: middle;
+}
+.dialog-box.form label {
+    text-align: right;
+    display: inline-block;
+    white-space: nowrap;
+}
+.dialog-box.form input {
+    width: 320px;
+    background-color: #030303;
+    border: 1px solid #313131;
+    border-radius: 3px;
+    outline: none;
+}
+.dialog-box.form input:focus {
+    box-shadow: 0 0 8px rgba(232, 150, 69, 0.8);
+}
+/* 弹出框--确认操作 */
+.dialog-box.info .footer,.dialog-box.confirm .footer, .dialog-box.form .footer {
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 20px;
+}
+.dialog-box.info .content,.dialog-box.confirm .content {
+    line-height: 1.6;
+}
+.dialog-box .footer button {
+    padding: 4px 20px;
+    background-color: #2c2c2c;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.dialog-box .footer button:nth-of-type(2) {
+    margin-left: 30px;
+}
+.dialog-box .footer button:hover {
+    background-color: #3d3d3d;
+    border: 1px solid #4b4b4b;
+}
+.dialog-box .footer button:active {
+    background-color: #282828;
+    color: #9c9c9c;
+}
+/**** 弹出框内部元素样式自定义 ****/
+/* 上传图片预览 */
+#previewIcon {
+    padding-left: 48px;
+}
+#previewIcon > img {
+    max-width: 240px;
+    max-height: 240px;
+    min-width: 64px;
+    min-height: 64px;
+}
+
+
+/**** 任务栏 ****/
+#taskbar {
+    height:52px;
+	background:url("../images/contImg/footerBar.png") repeat-x;
+    opacity: 0.9;
+	bottom:0;
+	z-index:100;
+}
+/* 开始按钮 */
+#startBtn {
+    width: 64px; height: 64px;
+	background:url("../images/contImg/bc.png") no-repeat 0 0;
+	border-radius:30px;
+	left:5px; bottom:0;
+	cursor:pointer;
+	z-index:102;
+}
+#startBtn:hover { background-position: -64px 0;}
+#startBtn:active { background-position: 0 0;}
+/* 开始面板 */
+#startBlock {
+    height: 480px;
+	background:url("../images/bgImg/lufei_bg.jpg") no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover ;
+    padding: 6px;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	border:2px solid #e5e5f7;
+	border-bottom:none;
+	left:2px; bottom:52px;
+	z-index:101;
+	display:none;
+}
+/* 开始面板--用户基本信息 */
+#startBlock .userBaseInfo {
+    width: 100%; height: 22px;
+}
+#startBlock .userPhoto {
+    width: 64px; height: 64px;
+    border:2px solid #fff;
+    border-radius: 33px;
+    position: relative;
+    left: -10px; top:-48px;
+    overflow: hidden;
+    z-index: 102;
+}
+#startBlock .userPhoto img {
+    width: 100%; height: 100%;
+}
+/* 开始面板--文件图标组 */
+#startBlock .btnIconGroup {
+    height: 448px;
+    overflow-y: auto;
+}
+
+/* 自定义滚动条样式 */
+#startBlock .btnIconGroup::-webkit-scrollbar { width: 10px;}
+#startBlock .btnIconGroup::-webkit-scrollbar-thumb {
+    width: 10px;
+    min-height: 10px;
+    background-color: #11278a;
+    border-radius: 7px;
+}
+#startBlock .btnIconGroup::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #2a90d1;
+    box-shadow: 0 2px 8px rgba(59, 63, 80, 0.8);
+}
+#startBlock .btnIcon {
+    padding: 8px;
+}
+/* 开始面板--图标 */
+#startBlock .icon-01, #startBlock .icon-02 {
+    width: 32px; height: 32px;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/* 开始面板--文件名 */
+#startBlock .icon_name {
+    line-height: 32px;
+    font-size: 1rem;
+    color: #dec7c7;
+    /*text-shadow: 0 -1px 1px #fff;*/
+}
+/* 系统日期时间显示 */
+#dateDispbox {
+    width: 118px; height: 40px;
+    padding-left: 8px;
+    border-left: 1px solid #c8cedd;
+    line-height: 20px;
+    text-align: center;
+    font-family: arial;
+    font-size: 14px;
+    color: #fff;
+    right: 8px; bottom: 6px;
+    box-sizing: border-box;
+}
+/* 鼠标右键菜单 */
+.mouseRightBtnList {
+    width: auto; height: auto;
+    min-width: 160px;
+    background-color: rgba(220, 220, 220, 0.9);
+    border: 1px solid #f3f3f3;
+    border-radius: 3px;
+    padding: 8px;
+    padding-top: 4px; padding-bottom: 4px;
+    position: absolute;
+    display: none;
+}
+.mouseRightBtnList ul {
+    border-bottom: 1px solid #bababa
+}
+.mouseRightBtnList ul:last-child {
+    border-bottom: none;
+}
+.mouseRightBtnList li {
+    line-height: 32px;
+    position: relative;
+    cursor: pointer;
+}
+.mouseRightBtnList li span {
+    font-size: 15px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.mouseRightBtnList li span:first-child {
+    width: 32px; height: 32px;
+    text-align: left;
+}
+.mouseRightBtnList li span:last-child {
+    width: 32px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+/* 右键菜单图标 */
+.mouseRightIco {
+    background: url("../images/contImg/folder_32.png") no-repeat;
+    background-position: center;
+}
+.mouseRightIco.sz-24 {
+    -webkit-background-size: 80% 80%;
+    background-size: 80% 80%;
+    
+}
+.mouseRightIco.sz-18 {
+    -webkit-background-size: 65% 65%;
+    background-size: 65% 65%;
+}
+.mouseRightIco.sz-12 {
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+}
+/* 关闭此系统 & 删除 */
+.mouseRightBtnList li.closeThisOS, .mouseRightBtnList li.deleteIcon {
+    color: #ec2323;
+}
+/* 全屏按钮 */
+.fullScreen {
+    width: 24px;
+    height: 24px;
+    background: url("../images/contImg/fullScreen-blue.png") no-repeat 0 0;
+    position: absolute;
+    z-index: 11;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.fullScreen:hover {
+    background-position: -24px 0;
+}
+.fullScreen:active {
+    background-position: 0 0;
+}

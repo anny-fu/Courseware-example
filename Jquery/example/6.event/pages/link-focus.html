@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>超链接标签的focus状态</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		a:focus {
+			font-size: 32px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>超链接标签的focus状态</a>
+	</nav>
+	<main id="main">
+		<a href="#">可以获得焦点的超链接</a>
+	</main>
+	<form name="userInfo">
+		<input name="userName" type="text">
+		<button type="submit">按钮</button>
+	</form>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("button").on("click", function() {
+			var txtVal = $("input:text").val();
+			if(txtVal === "") {
+				$("input:text").before("<p>内容不能为空</p>");
+			} else {
+				$("input:text").prevAll("p").remove();
+			}
+		});
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

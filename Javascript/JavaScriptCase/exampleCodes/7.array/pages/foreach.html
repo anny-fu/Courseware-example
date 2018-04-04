@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>forEach循环</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>forEach循环</a>
+	</nav>
+	<main>
+		<ul id="goodsList"></ul>
+	</main>
+	
+	<script>
+		var quantity = [3, 6, 9, 5, 2],
+			goodsName = ["书","茅台","中华","钢笔","茶杯"];
+		
+		var goodsList = document.getElementById("goodsList");
+		quantity.forEach(function(item,index) {
+			goodsList.innerHTML += '<li>' + goodsName[index] + ' -- ' + item + '</li>'
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

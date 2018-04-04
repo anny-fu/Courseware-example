@@ -1,0 +1,65 @@
+/**
+* 功能：Less的基本使用
+* 日期：2017-6-6
+**/
+
+// ==========================
+// 全局变量定义部分
+// ==========================
+
+// 颜色
+@baseColor: #333333;
+@themeColor: #107ceb;
+@lightColor: #888888;
+// 字体
+@baseFont: normal 16px "微软雅黑";
+@largeFont: normal 20px "微软雅黑";
+@smallFont: normal 14px "微软雅黑";
+
+/***********************************************/
+/* 初始化样式 */
+/***********************************************/
+body,html {
+    height: 100%;
+}
+body {
+    font: @baseFont;
+    color: @baseColor;
+    overflow: hidden;
+}
+
+/***********************************************/
+/* 样式细节设置 */
+/***********************************************/
+header, footer {
+    width: 100%;
+    min-width: 960px;
+}
+header {
+    @lh: 50px;
+    height: @lh;
+    background-color: @themeColor;
+    text-align: center;
+    font: @largeFont;
+    line-height: @lh;
+    color: #ffffff;
+}
+main {
+    @HF_height: 50px + 40px;
+    height: calc(~"100% - @{HF_height}");
+    padding: 10px;
+    overflow-y: auto;
+    section {
+        font-size: 20px;
+        color: #333333;
+    }
+}
+footer {
+    @lh: 40px;
+    height: @lh;
+    background-color: #dedede;
+    color: @lightColor;
+    text-align: center;
+    font: @smallFont;
+    line-height: @lh;
+}

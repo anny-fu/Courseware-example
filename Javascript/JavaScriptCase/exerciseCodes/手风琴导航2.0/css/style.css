@@ -1,0 +1,119 @@
+@charset 'utf-8';
+/* ********************************************* */
+html,body,div,p,span,a,ul,li{
+    margin: 0;
+    padding: 0;
+}
+header,nav {
+    display: block
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* ******************  手风琴导航  *********************** */
+.sub_nav {
+    width: 100%;
+}
+.sub_nav_title {
+    position: relative;
+    width: inherit;
+    height: 50px;
+    background-color: #169dcb;
+    color: white;
+    text-indent: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: sans-serif, "microsoft yahei";
+    line-height: 50px;
+    border-bottom: 1px solid #035f7e;
+    cursor: pointer;
+}
+
+.sub_nav_title img {
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin: -12px;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+.sub_nav_content {
+    display: none;
+    width: inherit;
+    min-height: 30px;
+    border: 1px solid #c1c5c6;
+    line-height: 30px;
+    padding: 10px;
+}
+
+/* ***************************背景滑动导航************************* */
+header.head{
+    background-color: #66CCCC;
+}
+.nav{
+    width:800px;
+    margin:0 auto;
+}
+#nav_list{
+    width:100%;
+    position: relative;
+    z-index: 10;
+}
+#nav_list:after{
+    content: '';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+#nav_list>li{
+    float: left;
+
+}
+
+#nav_list>li>a{
+    font-size: 18px;
+    color:#fff;
+    padding: 15px 20px;
+    display: inline-block;
+}
+#nav_list>li.on>a{
+    color:#FF99CC;
+}
+#nav_bg{
+    width:76px;
+    height: 54px;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: -1;
+    background-color:#CCFF66;
+    transition:all .3s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

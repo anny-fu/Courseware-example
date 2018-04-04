@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Promise对象测试</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        main > p {
+            color: #4f44a4;
+        }
+    </style>
+</head>
+<body>
+<main id="main"></main>
+
+<script>
+    let main = document.getElementById("main");
+    (new Promise(f1)).then(f2()).then(f3());
+    function f1() {
+        main.innerHTML += `<p>第一段</p>`;
+    }
+    function f2() {
+        main.innerHTML += `<p>第二段</p>`;
+    }
+    function f3() {
+        main.innerHTML += `<p>第三段</p>`;
+    }
+</script>
+</body>
+</html>

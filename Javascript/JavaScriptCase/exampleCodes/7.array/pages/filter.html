@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>数组过滤filter</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>数组过滤filter</a>
+	</nav>
+	<main>
+		<span>值大于等于10小于等于300的数据：</span>
+		<span id="res"></span>
+	</main>
+	
+	<script>
+		var arr = [1,4,6,23,34,46,324,23,46,10,234,98,422];
+		// 筛选出值大于等于10小于等于300的数据
+		var resVal = arr.filter(function(item) {
+			return item >= 10 && item <= 300;
+		});
+		var res = document.getElementById("res");
+		res.textContent = resVal.join(" - ");
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

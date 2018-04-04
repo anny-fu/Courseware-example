@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>子元素节点个数的两种属性测试</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>子元素节点个数的两种属性测试</a>
+	</nav>
+	<main>
+		<ul id="testUl"></ul>
+	</main>
+	
+	<script>
+		var testUl = document.getElementById("testUl");
+		var str = "";
+		for(var i = 0; i < 10000; i++) {
+			str += `<li>列表项${i + 1}</li>`;
+		}
+		testUl.innerHTML = str;
+		// 测试children.length
+		/*console.time("test1");
+		testUl.children.length;
+		console.timeEnd("test1");*/
+		
+		// 测试childElementCount
+		console.time("test2");
+		testUl.childElementCount;
+		console.timeEnd("test2");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

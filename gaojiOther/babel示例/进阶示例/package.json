@@ -1,0 +1,16 @@
+{
+  "name": "babel2",
+  "version": "1.0.1",
+  "description": "babel进阶示例",
+  "main": "./js/common.js",
+  "scripts": {
+    "babel": "babel ./js/origin -d ./js -s --watch"
+  },
+  "author": "aulence",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "babel21",
+  "version": "1.0.0",
+  "description": "babel基础示例",
+  "main": "./js/common.js",
+  "scripts": {
+    "test": "cnpm install babel-cli babel-preset-env babel-preset-stage-3 --save-dev",
+    "startbabel": "babel ./js/origin/common_es6.js -o ./js/common.js -s"
+  },
+  "author": {
+    "name": "aulence",
+    "email": "aulence@foxmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}

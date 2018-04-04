@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Promise对象测试</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        main > p {
+            color: #4f44a4;
+        }
+    </style>
+</head>
+<body>
+<main id="main"></main>
+
+<script>
+    let main = document.getElementById("main");
+
+    let preloadImage = function (resolve1) {
+        return new Promise(function (resolve, reject) {
+            resolve1();
+            resolve();
+            reject();
+        });
+    };
+    // 使用promise对象按顺序执行代码
+    preloadImage(resolve1, reject)
+        .then(resolve2, reject)
+        .then(resolve3, reject);
+
+    function resolve1() {
+        main.innerHTML += `<p>新增的第一段内容</p>`;
+    }
+    function resolve2() {
+        main.innerHTML += `<p>新增的第二段内容</p>`;
+    }
+    function resolve3() {
+        main.innerHTML += `<p>新增的第三段内容</p>`;
+    }
+    function reject() {
+        console.log("发生错误！");
+    }
+</script>
+</body>
+</html>

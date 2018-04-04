@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="200">
+    您的浏览器不支持canvas!
+  </canvas>
+</body>
+<script type="text/javascript">
+  // 获取canvas(一张纸)
+  var canvas=document.getElementById('myCanvas');
+  //以2D形式生成图案
+  var ctx = canvas.getContext('2d');
+// 绘制一天直线
+ctx.beginPath();//开始绘制
+ctx.moveTo(30,30);//起点
+ctx.lineTo(200,200);//终点
+ctx.lineTo(30,200);//终点
+ctx.closePath();
+ctx.lineWidth = 5.0;//设置线宽
+ctx.strokeStyle ='#f00';//设置线条颜色
+ctx.stroke();//为线条着色
+
+</script>
+</html>

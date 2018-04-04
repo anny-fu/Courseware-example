@@ -1,0 +1,26 @@
+@charset "utf-8";
+h1,h2 {
+	font-weight: normal;
+}
+body {
+	margin: 0; padding: 0;
+	font: 20px "微软雅黑";
+}
+main {
+	width: 960px;
+	margin: 0 auto;
+	color: #555;
+}
+h1 {
+	text-align: center;
+}
+button {
+	font-size: 18px;
+}
+.computerInfo {
+	width: 520px;
+	margin: 0 auto;
+}
+.computerInfo span {
+	color: #2196F3;
+}

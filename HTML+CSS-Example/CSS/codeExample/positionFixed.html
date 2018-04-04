@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定定位</title>
+	<style>
+		html{
+			height: 800px;
+			width:1000px;
+		}
+		body {
+			margin: 0; padding: 0;
+			height:100%;
+		}
+		section {
+			/*可以是fixed,absolute*/
+			position: fixed;
+			top: 50px; right: 50px;
+			/*四边同时设置：900px;700px;
+				如果只设置某两边：100px;100px;
+			*/
+			/*left:50px;bottom: 50px;*/
+			padding: 50px; padding-left: 30px;
+			padding-bottom: 30px;
+			border-left-width: 5px; 
+			border-right-width: 5px;
+			border-width: 10px;
+			border-color: #9f9f9f;
+			border-style: solid;
+			box-sizing: content-box;
+		}
+	</style>
+</head>
+<body>
+	<section></section>
+</body>
+</html>

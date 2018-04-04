@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id="src">
+
+    <img  id="banana" src="img/banana.jpg" alt="banana" title="">
+
+    <img  id="apple" src="img/apple.jpg" alt="apple" title="">
+
+    <img  id="orange" src="img/orange.jpg" alt="orange" title="">
+
+    <div id="target">
+      Drop Here
+      <!-- <p id="msg"></p> -->
+    </div><!-- #target -->
+
+  </div><!-- #src -->
+
+</body>
+<script type="text/javascript">
+// 获取drag对象和接受drag元素的（drop）对象
+var imgs = document.getElementById('src').children;
+var tar = document.getElementById('target');
+var msg = document.getElementById('msg');
+
+for (var i = 0; i < imgs.length; i++) {
+// str图片触发dragstart事件
+  imgs[i].ondragstart = function (event){
+    event.dataTransfer.setData('Text',event.target.id);
+    console.log(event.target.id);
+  }
+  //连续触发drag事件
+  imgs[i].ondrag =function (event){
+    tar.innerHTML = event.target.id;
+  }
+  //触发拖放结束事件dragend
+  imgs[i].ondragend = function(event){
+    tar.innerHTML = 'Drop Here';
+  }
+}
+//ondragover的默认事件
+function dAll(event){
+  event.preventDefault();
+}
+tar.ondragover = dAll;
+
+//触发drop事件，处理接收数据
+tar.ondrop = drops;
+
+function drops(event){
+  var data = event.dataTransfer.getData('Text');
+  console.log(data);
+  var node = document.getElementById(data).cloneNode(false);
+  this.innerHTML = '';
+  this.appendChild(node);
+}
+</script>
+</html>

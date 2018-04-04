@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>动画</title>
+	<style>
+		div {
+			background-color: deeppink;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<button type="button">开始动画</button>
+<div></div>
+<script src="plugin/jquery.js"></script>
+<script>
+	$(function () {
+		$("button").on('click', function () {
+//			$("div").animate(
+//				//仅支持属性值为数字的css样式(除css3变形转换)
+//				{left:"300",backgroundColor:"#f00",rotate: "1800"},
+//				//对于animate方法不直接支持的样式属性设置方法
+//				{
+//					step: function (rotate, fx) {
+//						$("div").css({"transform": "rotate(" + rotate + "deg)"});
+//
+//					},
+//					duration: 1000
+//				})
+
+			//动画效果链式调用
+			$("div").css("backgroundColor","red").slideUp(1000)
+				.slideDown(1000)
+				.hide(500).show(500,function(){
+					$(this).remove();
+			});
+		})
+	})
+</script>
+</body>
+</html>

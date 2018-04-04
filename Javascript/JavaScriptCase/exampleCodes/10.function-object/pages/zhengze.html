@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则去空格</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+var pattem = /\s/g;
+var str = "111 222 333 444 555";
+alert(str.replace(pattem,""));
+var pattem = /(^\s*)|(\s*$)/g;
+var str = "  fay chou   ";
+alert("|"+str.replace(pattem,"")+"|");
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>嵌套的函数调用方式</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>嵌套的函数调用方式</a>
+	</nav>
+	<main>
+		<div>
+			<span>函数一运行：</span>
+			<span id="fn1_run"></span>
+		</div>
+		<div>
+			<span>函数二运行：</span>
+			<span id="fn2_run"></span>
+		</div>
+	</main>
+	
+	<script>
+		// 创建主函数
+		function mainFn() {
+			var mainTxt = "【这是子函数";
+			// 创建子函数1
+			function childFn1() {
+				var childTxt = "一】";
+				return mainTxt + childTxt;
+			}
+			// 创建子函数2
+			function childFn2() {
+				var childTxt = "二】";
+				return mainTxt + childTxt;
+			}
+			// 将两个函数赋予一个别名以供执行时调用
+			return {
+				fn1: childFn1,
+				fn2: childFn2
+			};
+		}
+		
+		document.getElementById("fn1_run").textContent = mainFn().fn1();
+		document.getElementById("fn2_run").textContent = mainFn().fn2();
+	</script>
+</body>
+</html>
+
+
+
+
+
+

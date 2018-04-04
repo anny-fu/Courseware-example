@@ -1,0 +1,17 @@
+{
+  "name": "gulp-browsersync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "cnpm install gulp gulp-less browser-sync --save-dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-less": "latest",
+	"gulp-autoprefixer": "latest"
+  }
+}

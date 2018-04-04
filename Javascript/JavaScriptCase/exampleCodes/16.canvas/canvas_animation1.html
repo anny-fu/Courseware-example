@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1350" height="600">
+        您的浏览器不支持canvas！
+    </canvas>
+</body>
+<script>
+    //获取绘制环境
+    var canvas = document.getElementById("myCanvas");
+//    生成2d图案
+    var canvasObj = canvas.getContext("2d");
+
+    //随机函数
+    function randomFun(max, min) {
+        return Math.floor(Math.random() * (min - max + 1) + max);
+    }
+    /*球构造函数*/
+    function Ball() {
+        // 球的半径
+        this.r = randomFun(10, 30);
+        // 随机颜色
+        this.color = "rgb(" + randomFun(0, 255) + "," + randomFun(0, 255) + "," + randomFun(0, 255) + ")";
+        //球初始位置
+        this.x = randomFun(this.r, canvas.width - this.r);
+        this.y = randomFun(this.r, canvas.height - this.r);
+        // 运动速度
+        this.speedX = randomFun(3, 6) * (randomFun(0, 1) ? 1 : -1);
+        this.speedY = randomFun(3, 6) * (randomFun(0, 1) ? 1 : -1);
+    }
+    /*移动函数*/
+    Ball.prototype.move = function () {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        /*如果球运动到左边时*/
+        if (this.x <= this.r) {
+            this.x = this.r;
+            this.speedX *= -1;
+        }
+        /*运动到右边*/
+        if (this.x >= canvas.width - this.r) {
+            this.x = canvas.width - this.r
+            this.speedX *= -1;
+        }
+        /*运动到顶部*/
+        if (this.y <= this.r) {
+            this.y = this.r;
+            this.speedY *= -1;
+        }
+        /*运动到底部*/
+        if (this.y >= canvas.height - this.r) {
+            this.y = canvas.height - this.r;
+            this.speedY *= -1;
+        }
+    }
+    /*绘制球*/
+    Ball.prototype.draw = function () {
+        canvasObj.beginPath();
+        canvasObj.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+        //实心球
+//        canvasObj.fillStyle = this.color;
+//        canvasObj.fill();
+        //空心球
+      canvasObj.strokeStyle = this.color;
+      canvasObj.lineWidth = 1;
+      canvasObj.stroke();
+    }
+    //生成球数组
+    var balls = [];
+    for (var i = 0; i < randomFun(50, 100); i++) {
+        var ball = new Ball();
+        ball.draw();
+        balls.push(ball);
+    }
+    // 定时器执行动画效果
+    setInterval(function () {
+        canvasObj.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < balls.length; i++) {
+            balls[i].move();
+            balls[i].draw();
+        }
+    }, 100);
+</script>
+</html>

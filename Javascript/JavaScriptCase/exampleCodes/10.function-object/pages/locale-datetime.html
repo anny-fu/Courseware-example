@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>当前本地日期时间</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>当前本地日期时间</a>
+	</nav>
+	<main>
+		<div>
+			<span>现在的时间：</span>
+			<span id="showDateTime"></span>
+		</div>
+	</main>
+	
+	<script>
+		var showDateTime = document.getElementById("showDateTime");
+		setInterval(function() {
+			var currentTime = new Date().toLocaleString();
+			showDateTime.innerHTML = currentTime;
+		},1000);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+@charset "utf-8";
+body {
+	padding: 0;
+	margin: 0;
+}
+main {
+	width: 960px;
+	line-height: 460%;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+label {
+	width: 76px; 
+	display: inline-block;
+	text-align: right;
+	font-size: 32px;
+}
+input {
+	width: 100px;
+	padding: 8px 20px;
+	border: 1px solid #999;
+	text-align: center;
+	font-size: 36px;
+	color: #888;
+	box-sizing: border-box;
+	outline: none;
+}
+input:focus {
+	border-color: #2396fd;
+	box-shadow: 0 0 10px rgba(35, 150, 253, 0.8);
+	color: #2396fd;
+}
+.lblFocus {
+	font: 36px algerian;
+	color: #2396fd;
+}
+label, input {
+	vertical-align: middle;
+}
+.btnGroup {
+	margin-top: 30px;
+	text-align: right;
+}
+#reset, #calcRes {
+	height: 50px;
+	border: none;
+	border-radius: 5px;
+	font-size: 26px;
+	cursor: pointer;
+	outline: none;
+}
+#reset {
+	width: 120px;
+	background-color: #f3f3f3;
+	border: 1px solid #acacac;
+	color: #555;
+}
+#reset:hover {
+	background-color: #f9f9f9;
+	border: 1px solid #bfbfbf;
+	color: #888;
+}
+#reset:active {
+	background-color: #f3f3f3;
+	border: 1px solid #acacac;
+	color: #555;
+}
+#calcRes {
+	width: 320px; 
+	background-color: #047ae3;
+	border: 1px solid #3ea3fd;
+	color: #fff;
+	margin-left: 10px; margin-right: 6px;
+}
+#calcRes:hover {
+	background-color: #2194fa;
+}
+#calcRes:active {
+	background-color: #047ae3;
+}
+#score {
+	width: 360px;
+	text-align: right;
+	font-size: 32px;
+	line-height: normal;
+	margin-left: auto;
+	margin-right: 6px;
+	margin-top: 20px;
+	color: #666;
+}
+#score label, #score span {
+	width: auto; height: 50px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#score span {
+	width: 120px;
+	font-size: 46px;
+	font-family: algerian;
+	line-height: 46px;
+	color: #f60;
+}
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>节点遍历</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>节点遍历</a>
+	</nav>
+	<main>
+		<ul id="testUl">
+			<!-- 注释 -->
+			<li class="list-item">列表项1</li>
+			<li class="list-item">列表项2</li>
+		</ul>
+	</main>
+	
+	<script>
+		// 测试元素
+		var test = document.getElementById("testUl");
+		// 首个子节点
+		var el = test.firstChild;
+		var i = 1;
+		// 遍历出所有子节点，直到el为null为止
+		while(el) {
+			console.log(i + "、" + el);
+			el = el.nextSibling;
+			i++;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

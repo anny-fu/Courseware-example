@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>for-in遍历练习</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var arr= ["主板","CPU","内存","显卡","声卡","硬盘","机箱电源","显示器","键盘","鼠标","音箱"];
+		var computer = {
+			"mainboard": "主板",
+			"cpu": "CPU",
+			"internalStrage": "内存",
+			"graphicsCard": "显卡",
+			"soundCard": "声卡",
+			"hardDisk": "硬盘",
+			"caseAndPower": {
+				"computerCase": "机箱",
+				"power": "电源"
+			},
+			"dispay": "显示器",
+			"keyboard": "键盘",
+			"mouse": "鼠标",
+			"loudspeaker": "音箱"
+		}
+		for(i in computer){
+			if(typeof computer[i] !== 'object'){
+				console.log(computer[i]);
+				continue;
+			}
+				for(y in computer[i]){
+					console.log(computer[i][y]);
+				}
+			}
+		</script>
+	</body>
+	</html>

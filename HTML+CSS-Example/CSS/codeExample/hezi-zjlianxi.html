@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>盒子模型-章节练习(padding,margin)</title>
+  <style type="text/css">
+    /*初始化样式*/
+    body,p{margin:0;padding:0;}
+    body{
+      background-color:#fdffc1;
+      width:1000px;
+      /*margin:0 auto;*/
+    }
+    section,p{
+      box-sizing: border-box;
+    }
+    section{
+      width:960px;
+      height: 560px;
+      background-color:#eb9bee;
+      margin:20px;
+      padding:10px 20px 15px;
+    }
+    p{
+      padding:20px 15px;
+      background-color:#5f98ee;
+      height: 242px;
+      overflow: hidden;
+    }
+    p.p1{
+      margin-bottom: 50px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <section>
+    <p class="p1">与“margin”一样，“padding”属性在设置三个值的时候是没有同时设置垂直方向，又分别设置左右方向的写法的。若要进行这样的设置，请使用四个值的设置方式去进行设置，即将垂直方向（第一个和第三个）的值设为一样，再分别去设置水平方向（第二个和第四个）的值。与“margin”一样，“padding”属性在设置三个值的时候是没有同时设置垂直方向，又分别设置左右方向的写法的。若要进行这样的设置，请使用四个值的设置方式去进行设置，即将垂直方向（第一个和第三个）的值设为一样，再分别去设置水平方向（第二个和第四个）的值。与“margin”一样，“padding”属性在设置三个值的时候是没有同时设置垂直方向，又分别设置左右方向的写法的。若要进行这样的设置，请使用四个值的设置方式去进行设置，即将垂直方向（第一个和第三个）的值设为一样，再分别去设置水平方向（第二个和第四个）的值。与“margin”一样，“padding”属性在设置三个值的时候是没有同时设置垂直方向，又分别设置左右方向的写法的。若要进行这样的设置，请使用四个值的设置方式去进行设置，即将垂直方向（第一个和第三个）的值设为一样，再分别去设置水平方向（第二个和第四个）的值。</p>
+    <p>p元素内容</p>
+  </section>
+</body>
+</html>

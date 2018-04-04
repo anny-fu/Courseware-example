@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            font-size: 22px;
+        }
+        p>label{
+            font-size: 20px;
+            color:#4CAF50;
+        }
+        #money{
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 3px;
+            font-size: 20px;
+        }
+        #btn{
+            width: 80px;
+            height: 38px;
+            border: 1px solid #ddd;
+            background: #03a6ca;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p>
+            <label>输入转换金额：</label>
+            <input id="money" type="number" name="number" value="165954.76">
+            <input id="btn" type="button" value="格式化">
+        </p>
+        <p>格式化后：<span id="results"></span></p>
+    </form>
+
+    <script>
+        document.getElementById('btn').onclick = function(){
+            var moneyVal = document.getElementById('money').value,
+            resultsBox = document.getElementById('results');
+            // 判断是否有小数
+            if(moneyVal.indexOf('\.') !== -1){
+                // 如果有,先将字符串分割再调用执行格式化方法
+                var strArr = moneyVal.split('.');
+                resultsBox.textContent =  parseNum(strArr[0]) +'.'+ strArr[1];
+            }else{
+             resultsBox.textContent = parseNum(moneyVal);
+         }
+     }
+
+
+    //法一
+    function parseNum(num){
+        var list = new String(num).split('').reverse();
+        console.log(list);
+        for(var i = 0; i < list.length; i++){
+            if(i % 4 == 3){
+                list.splice(i, 0, ',');
+            }
+        }
+        return list.reverse().join('');
+    }
+
+
+
+    //法二
+    //  function parseNum(num){
+    //     var list = String(num).split('').reverse();
+    //     var temp = [];
+    //     for(var i = 0, len = list.length; i < len; i = i + 3){
+    //         temp.push(list.slice(i, i + 3).join(''));
+    //     }
+    //     return temp.join(',').split('').reverse().join('');
+    // }
+    // console.log(parseNum(10000121213));
+    
+
+
+    //法三
+    // String.prototype.strReverse = function(){
+    //     return this.split('').reverse().join('');
+    // }
+
+    // function parseNum(num){
+    //     var str_num = String(num);
+    //     var len = str_num.length;
+    //     var tail = str_num.slice(0, len % 3);
+    //     tail = tail.strReverse();
+    //     var reg=/\d{3}/g;
+    //     var list = str_num.strReverse().match(reg);
+    //     list.push(tail);
+    //     var res = list.join(',').strReverse();
+    //     return res;
+    // }
+    // console.log(parseNum(10000121213));
+
+
+    //法四
+    // function parseNum(num){
+    //     var reg=/(?=(?!\b)(\d{3})+$)/g;
+    //     return String(num).replace(reg, ',');
+    // }
+    // console.log(parseNum(10000121213));
+
+</script>
+</body>
+</html>

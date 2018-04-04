@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LocalStorage</title>
+</head>
+<body>
+  <p><button onclick="clickCounts();" type="button">点我</button></p>
+  <div id="result"></div>
+  <p>关闭浏览器选项卡（或窗口），重新打开次页面，计数器不会继续计数（会重置）</p>
+</body>
+<script type="text/javascript">
+  function clickCounts()
+  {
+    if(typeof(Storage)!=="undefined")
+    {
+      if (sessionStorage.clickcount)
+      {
+        sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;
+      }
+      else
+      {
+        sessionStorage.clickcount=1;
+      }
+      document.getElementById("result").innerHTML="在这个会话中你已经点击了该按钮 " + sessionStorage.clickcount + " 次 ";
+    }
+    else
+    {
+      document.getElementById("result").innerHTML="对不起，您的浏览器不支持 web 存储。";
+    }
+  }
+</script>
+</html>

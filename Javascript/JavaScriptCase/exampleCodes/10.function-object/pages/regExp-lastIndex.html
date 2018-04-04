@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+  var regex = /b/g;
+var str = 'abbab';
+
+console.log(regex.test(str)+":"+regex.lastIndex); // true
+console.log(regex.test(str)+":"+regex.lastIndex); // true
+console.log(regex.test(str)+":"+regex.lastIndex); // false
+console.log(regex.test(str)+":"+regex.lastIndex); // false
+
+console.log(regex.exec(str)+":"+regex.lastIndex);
+console.log(regex.exec(str)+":"+regex.lastIndex);
+console.log(regex.exec(str)+":"+regex.lastIndex);
+console.log(regex.exec(str)+":"+regex.lastIndex);
+</script>
+</html>

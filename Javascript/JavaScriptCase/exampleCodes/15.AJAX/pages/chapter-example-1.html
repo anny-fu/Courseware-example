@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习一</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		.mainNav {
+			overflow: hidden;
+		}
+		.mainNav > a {
+			padding: 8px 20px;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			display: inline-block;
+			text-decoration: none;
+			color: #333;
+		}
+		.mainNav > a:hover {
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习一</a>
+	</nav>
+	<header>
+		<nav class="mainNav">
+			<a href="#page-1">第一页</a>
+			<a href="#page-2">第二页</a>
+			<a href="#page-3">第三页</a>
+		</nav>
+	</header>
+	<main id="main">
+	</main>
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			location.hash = "page-1";
+		});
+		
+		var main = document.querySelector("#main");
+		
+		window.onhashchange = function() {
+			var getHash = location.hash;
+			console.log(getHash);
+			switch(getHash) {
+				case "#page-1":
+					router("../data/data-1.json");
+					break;
+				case "#page-2":
+					router("../data/data-2.json");
+					break;
+				case "#page-3":
+					router("../data/data-3.json");
+					break;
+				default:
+					router("../data/data-1.json");
+			}
+		}
+		
+		/**
+		* 功能：单页跳转
+		* 参数：URL（String）
+		**/
+		function router(url) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET",url);
+			xhr.send();
+			xhr.onload = function() {
+				var jsonStr = xhr.responseText;
+				var obj = JSON.parse(jsonStr);
+				var str = "";
+				for(var x in obj) {
+					str += '<p>' + obj[x] + '</p>'
+				}
+				main.innerHTML = str;
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>文本及HTML处理</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>文本及HTML处理</a>
+	</nav>
+	<main id="main">
+		<div class="txt">
+			<p>这是一段测试文本</p>
+		</div>
+		<div class="print-txt"></div>
+		<div class="print-htmlStr"></div>
+		<div class="print-html"></div>
+		
+		<select>
+			<option>HTML</option>
+			<option>CSS</option>
+			<option>JavaScript</option>
+			<option>jQuery</option>
+		</select>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		var txt = $("div.txt").text();
+		$(".print-txt").text(txt);
+		
+		var html = $("div.txt").html();
+		$(".print-htmlStr").text(html);
+		
+		var html = $("div.txt").html();
+		$(".print-html").html(html);
+		
+		$("")
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX跨域资源共享</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- CORS -- Cross-Origin Resource Sharing -->
+<!-- 如条件允许设置“Access-Control-Allow-Origin”是最好的 -->
+<main id="main">
+    <button id="loadBtn" type="button">加载内容</button>
+</main>
+
+<script>
+    var body = document.body;
+    var loadBtn = document.getElementById("loadBtn");
+    var main = document.getElementById("main");
+    var flightHandler = function(data){
+        main.innerHTML = data.name;
+        main.innerHTML += data.createDate;
+        main.innerHTML += data.author;
+    };
+    var url = "http://aulence.com/resource/testJSON.json?code=Aulence2017030623558&callback=flightHandler";
+    var script = document.createElement('script');
+    script.setAttribute('src', url);
+    document.getElementsByTagName('head')[0].appendChild(script);
+    flightHandler({
+        "name": "测试JSON文件",
+        "createDate": "2017年3月6日",
+        "author": "Verning Aulence"
+    });
+
+</script>
+</body>
+</html>

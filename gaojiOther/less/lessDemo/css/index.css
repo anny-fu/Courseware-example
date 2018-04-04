@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/**
+**功能：less基本运用
+**开发人员：Tom.Anny
+**日期：2017/12/28
+**/
+.box .btn {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #0064b3;
+  background-color: #006bbf;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.box .btn:hover {
+  background-color: #0088f2;
+}
+.box .btn:active {
+  background-color: #005da6;
+}
+.box .btn-second {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.box .btn-third {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=index.css.map */

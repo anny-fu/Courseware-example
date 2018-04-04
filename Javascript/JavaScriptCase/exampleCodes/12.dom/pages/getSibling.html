@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>通过当前节点查找所有同级节点</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/**
+	 * 通过获取当前节点的父节点，
+	 * 通过父级点获取所有子节点元素，然后
+	 * 这些子元素push到一个新的数组中
+	 * (排除当前元素)
+	 * @param  当前节点元素
+	 * @return 返回同级节点集合
+	 */
+	 function siblings(ele){
+	 	var = [];
+	 	var childs = ele.parentNode.children;
+	 	for(var i = 0,chi_len = childs.length;i<chi_len;i++){
+	 		if(childs[i] !== ele){
+	 			a.push(childs[i]);
+	 		}
+	 	}
+	 	return a;
+	 }
+	 /**
+	  * Jquery源码实现：
+	  * 先找到此元素的父节点的第一个子节点，然后循环查
+	  * 找此节点的下一个兄弟节点，一直到查找完毕。
+	  * @param  当前节点
+	  * @return 同级节点集合
+	  */
+	 function siblings(ele){
+	 	var = [];
+	 	var childs = ele.parentNode.firstChild;
+	 	for( ; childs; childs = childs.nextSibling){
+	 		if ( n.nodeType === 1 && n !== elem ) {
+	 			r.push( n );
+	 		}
+	 	}
+	 	return a;
+	 }
+	</script>
+</body>
+</html>

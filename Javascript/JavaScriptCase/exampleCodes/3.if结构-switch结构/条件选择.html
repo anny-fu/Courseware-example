@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>if结构</title>
+  <style type="text/css">
+    span{color:#00a2c4;font-size: 18px;padding:0 20px;}
+    input{width:100px;height: 30px;outline: 0;}
+    input,button{line-height: 30px;border:1px solid #d4d3d3;border-radius: 5px;    font-size: 18px; text-align: center;margin:10px;}
+    button{width:60px;height: 30px;background-color:#00a2c4;cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div>
+    <span>请输入你的存款：</span>
+    <input type="text" id="money">
+    <button id="btn" onclick="show();">确定</button>
+  </div>
+  <div id="result"></div>
+</body>
+<script type="text/javascript">
+  /*获取对应元素*/
+  var money = document.getElementById('money');
+  var result = document.getElementById('result');
+  var m=0,msg='';
+  function show(){
+    /*存储输入的金额*/
+    result.innerHTML = '';
+    m = money.value;
+    // 是否大于0
+    if(m > 0){
+      if(m >= 100000){
+       msg ='富豪，你可以买辆汽车，开车上班了';
+     }else if(m >= 5000){
+      msg = '你可以选择买一辆酷炫的机车骑着去上班！';
+    }else if(m >= 500){
+      msg = '你可以买一辆自行车骑着去上班！';
+    }else if( m >= 20){
+      msg = '你现在可以选择打的去上班！';
+    }else if(m >= 2 && m < 20){
+      msg ='你可以选择乘坐地铁或者公交上班！';
+    }else{
+      msg ='你只能步行上班了！';
+    }
+  }else{
+   msg ='没钱还不加紧卖力工作！';
+ }
+ // result.innerHTML = msg;
+ console.log(msg);
+}
+show();
+</script>
+</html>

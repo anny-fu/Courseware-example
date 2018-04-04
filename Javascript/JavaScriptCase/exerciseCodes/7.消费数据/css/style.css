@@ -1,0 +1,143 @@
+@charset "utf-8";
+/**
+ * 功能：消费数据
+ * 日期：2017-8-14
+**/
+/************************************************/
+/* 样式初始化 */
+/************************************************/
+html,body,h1,p,ul,li {
+	margin: 0; padding: 0;
+}
+html,body {
+	font: lighter 20px "微软雅黑";
+	color: #333;
+}
+input, button {
+	border-radius: 3px;
+	border: 1px solid #999;
+	outline: none;
+	font-size: 20px;
+}
+button {
+	background-color: #f3f5fa;
+	cursor: pointer;
+}
+button:active {
+	background-color: #ffffff;
+	color: #666;
+}
+
+/************************************************/
+/* 样式元件化 */
+/************************************************/
+/* 行内块 */
+.create-line label {
+	display: inline-block;
+}
+/* IE盒子 */
+.create-line > div,.create-line input {
+	box-sizing: border-box;
+}
+
+/************************************************/
+/* 细节设置 */
+/************************************************/
+main {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/***** 数据添加部分 ****/
+.data-create-group {
+	margin-bottom: 10px;
+}
+/* 添加数据行容器 */
+.create-line {
+	padding-top: 10px; padding-bottom: 10px;
+	overflow: hidden;
+}
+.create-line > div {
+	width: 33.33333333%;
+	padding-left: 10px; padding-right: 10px;
+	float: left;
+}
+.create-line > div:nth-child(1) {
+	text-align: left;
+}
+.create-line > div:nth-child(2) {
+	text-align: center;
+}
+.create-line > div:nth-child(3) {
+	text-align: right;
+}
+/* 添加数据行--字段标签 */
+.create-line label {
+	width: 112px;
+	text-align: right;
+}
+/* 添加数据行--文本框 */
+.create-line input {
+	width: 180px;
+	padding: 4px 6px;
+	color: #2396fc;
+}
+/* 添加数据行--按钮 */
+.create-line:last-child {
+	margin-top: 10px;
+	text-align: center;
+}
+.create-line button {
+	width: 120px; height: 36px;
+}
+#creatData {
+	background-color: #0575d9;
+	border: 1px solid #66b1f4;
+	margin-left: 54px;
+	color: #fff;
+}
+#creatData:active {
+	background-color: #026ac7;
+}
+
+/***** 表格部分 ****/
+#expenseData, th, td {
+	border: 1px solid #2396fc;
+}
+#expenseData {
+	width: 100%;
+	border-collapse: collapse;
+}
+th, td {
+	border-left: none;
+	border-right: none;
+	padding: 4px 6px;
+	text-align: left;
+}
+tbody td {
+	width: 134px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+th, tfoot {
+	background-color: #0575d9;
+	font-weight: lighter;
+	color: #fff;
+}
+/* 隔行变色 */
+tbody tr:nth-child(even) {
+	background-color: #dcf1ff;
+}
+/* 平均和总计部分 */
+.avgExpense,.sumExpense {
+	font: normal 26px "Arial";
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>大小写转换</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		span[id] {
+			color: #f38d1c;
+			font-size: 26px;
+		}
+		section > p {
+			margin: 0;
+			line-height: 2;
+		}
+		#webURL {
+			width: 320px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>大小写转换</a>
+	</nav>
+	<main>
+		<section>
+			<p>
+				<label>请输入网址：</label>
+				<input id="webURL" type="url">
+				<button id="parseURL" type="button">解析</button>
+			</p>
+			<p>
+				<span>当前URL的协议为：</span>
+				<span id="protocal"></span>
+			</p>
+			<p>
+				<span>当前URL的文件类型为：</span>
+				<span id="fileType"></span>
+			</p>
+			<p>
+				<span>当前URL的域名为：</span>
+				<span id="domain"></span>
+			</p>
+		</section>
+	</main>
+	
+	<script>
+		var section = document.getElementsByTagName("section")[0];
+		section.onclick = function(e) {
+			// 获取当前点击的元素的标签名转换为小写
+			var tgName = e.target.tagName.toLowerCase();
+			// 判断如果是input标签就给它设置阴影
+			if(tgName === "input") {
+				e.target.style.boxShadow = "0 0 10px #2398fd";
+			}
+		}
+		document.body.onkeyup = function(e) {
+			console.log(e.keyCode);
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

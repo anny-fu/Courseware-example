@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>事件对象的生成</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>事件对象的生成</a>
+	</nav>
+	<main id="main">
+		<button type="button">生成事件对象</button>
+		<div id="res">（点击按钮查看控制台）</div>
+	</main>
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("button").on("click", function(e) {
+			console.dir(e)
+			console.log("您点击的页面坐标：" + e.pageX + ":" + e.pageY);
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习一</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		span[id] {
+			font-family: Algerian;
+			font-size: 2rem;
+			color: #245ba7;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习一</a>
+	</nav>
+	<main>
+		<div>
+			<p>现在距离2018世界杯还有：</p>
+			<p>
+				<span id="howDay"></span>
+				<span>天</span>
+				<span id="howHours"></span>
+				<span>时</span>
+				<span id="howMinutes"></span>
+				<span>分</span>
+				<span id="howSeconds"></span>
+				<span>秒</span>
+			</p>
+		</div>
+	</main>
+	
+	<script>
+		// 获取天、时、分、秒的span标签
+		var howDay = document.getElementById("howDay");
+		var howHours = document.getElementById("howHours");
+		var howMinutes = document.getElementById("howMinutes");
+		var howSeconds = document.getElementById("howSeconds");
+		
+		// 设置世界杯时间（2018年6月14日19点0时0分0秒）
+		var worldCupDate = new Date(2018,5,14,19,0,0,0);
+		
+		// 每隔一秒运行一次
+		setInterval(function() {
+			// 获取当前日期
+			var currentDate = new Date();
+			// 求世界杯距离今天的毫秒数
+			var difference = worldCupDate - currentDate;
+			// 设置天、时、分、秒
+			howDay.textContent = Math.floor(difference / 1000 / 60 / 60 / 24) ;
+			howHours.textContent = Math.floor(difference / 1000 / 60 / 60 % 24) ;
+			howMinutes.textContent = Math.floor(difference / 1000 / 60 % 60);
+			howSeconds.textContent = Math.floor(difference / 1000 % 60);
+		},1000);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

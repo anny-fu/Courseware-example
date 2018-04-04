@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/**
+**功能：less基本运用
+**开发人员：Tom.Anny
+**日期：2017/12/28
+**/
+//css
+//.box button {
+//  width: 100px;
+//  height: 40px;
+//  border: 1px solid #0064b3;
+//  background-color: #006bbf;
+//  color: #fff;
+//}
+//
+//.box .btn:hover {
+//  background-color: #0876cc;
+//  color: #fff;
+//}
+//.box .btn:active {
+//  background-color:#0876ff;
+//  color: #fff;
+//}
+
+//less
+//变量：@变量名:值;
+@bgColor-base: #006bbf;
+//混合
+//.btn-radius {
+//  -webkit-border-radius: 5px;
+//  -moz-border-radius: 5px;
+//  border-radius: 5px;
+//}
+//函数:不带参
+.btn-radius() {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+//函数带参,设置默认值
+.btn-radius(@radius:5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box {
+  .btn {
+    @w: 100px;
+    width: @w / 1;
+    height: 40px;
+    border: 1px solid #0064b3;
+    background-color: @bgColor-base;
+    color: #fff;
+    cursor:pointer;
+    outline:none;
+
+    .btn-radius();
+
+    // 嵌套：&代表他的上一层选择器
+    &:hover {
+      //color函数：变亮
+      background-color: lighten(@bgColor-base, 10%);
+    }
+    &:active {
+      //color函数：变暗
+      background-color: darken(@bgColor-base, 5%);
+    }
+
+    //  设置不同的radius
+    &-second {
+      .btn-radius(8px);
+    }
+    &-third {
+      .btn-radius(15px);
+    }
+  }
+}

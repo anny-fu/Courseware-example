@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>窗口大小</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		body {
+			height: 2000px;
+		}
+		#btnSubmit {
+			opacity: 0;
+			transition: all 3s;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>窗口大小</a>
+	</nav>
+	<main>
+		<div>
+			<p class="erroMesg"></p>
+			<label>用户名：</label>
+			<input id="txtUserName" type="text">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>年龄：</label>
+			<input id="txtAge" type="number">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>手机号：</label>
+			<input id="txtTel" type="tel">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>用户名：</label>
+			<input id="txtUserName" type="text">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>年龄：</label>
+			<input id="txtAge" type="number">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>手机号：</label>
+			<input id="txtTel" type="tel">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>用户名：</label>
+			<input id="txtUserName" type="text">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>年龄：</label>
+			<input id="txtAge" type="number">
+		</div>
+		<div>
+			<p class="erroMesg"></p>
+			<label>手机号：</label>
+			<input id="txtTel" type="tel">
+		</div>
+		<div>
+			<button id="btnSubmit">提交</button>
+		</div>
+	</main>
+	
+	<script>
+		// 获取按钮距离文档顶部的位置
+		var btnSubmit = document.getElementById("btnSubmit");
+		var btn_offsetTop = btnSubmit.offsetTop;
+		// 获取窗口可见高度
+		var winViewHeight = innerHeight;
+		document.body.onscroll = function() {
+			var scllTop = pageYOffset;
+			if(pageYOffset > winViewHeight - btn_offsetTop) {
+			    btnSubmit.style.opacity = "1";
+		    }
+			else {
+				btnSubmit.style.opacity = "0";
+			}
+			//console.log(scllTop);
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

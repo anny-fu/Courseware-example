@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Canvas</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="900" height="220">
+			您的浏览器不支持canvas！
+		</canvas>
+	</body>
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		/*生成2D图案*/
+		var ctx = canvas.getContext('2d');
+		/*定义渐变颜色*/
+		var color = ctx.createLinearGradient(0,0,120,0);//使用渐变颜色填充,从(0,0)到(160,0) （左到右）
+		color.addColorStop(0,"#d30069"); //起始颜色
+		color.addColorStop(1,"#ae00fc"); //终点颜色
+		/*定义颜色*/
+		var color1 = ctx.createLinearGradient(0,0,0,150);//使用渐变颜色填充,从(0,0)到(0,160) （上到下）
+		color1.addColorStop(0,"#f70000"); //起始颜色
+		color1.addColorStop(1,"#ff00eb"); //终点颜色
+		/*定义颜色*/
+		var color2 = ctx.createLinearGradient(0,0,0,200);//使用渐变颜色填充,从(0,0)到(0,160) （上到下）
+		color2.addColorStop(0,"#ffeb00"); //起始颜色
+		color2.addColorStop(1,"#bf0000"); //终点颜色
+
+		/*绘制实心圆*/
+		ctx.beginPath(); // 开始路径绘制
+		ctx.arc(120, 110, 80, 0, Math.PI*2, true); // 设置坐标和半径
+		ctx.fillStyle = color; //以上面定义的渐变填充
+		ctx.fill();
+
+		/*绘制空心圆*/
+		ctx.beginPath();
+		ctx.arc(320, 110, 80, 0, Math.PI*2, true);
+		ctx.lineWidth = 5.0; //边框线大小
+		ctx.strokeStyle = color1; //以上面定义的渐变填充
+		ctx.stroke();//线条着色
+
+		/*绘制实心圆*/
+		ctx.beginPath(); // 开始路径绘制
+		ctx.arc(520, 110, 80, 0, Math.PI*2, true); // 设置坐标和半径
+		ctx.fillStyle = color2; //以上面定义的渐变填充
+		ctx.fill();
+	</script>
+</html>

@@ -1,0 +1,62 @@
+@charset "utf-8";
+/**
+ * 功能：Vue入门
+ * 日期：2017/11/28
+**/
+* {
+    box-sizing: border-box;
+}
+html,body,h1,h2,h3 {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #ececec;
+    font: 20px "微软雅黑";
+    border: 1px solid transparent;
+}
+input {
+    padding: 6px;
+    border: 1px solid #acacac;
+    border-radius: 3px;
+    font: 18px "微软雅黑";
+}
+button {
+    padding: 6px 8px;
+    font: 18px "微软雅黑";
+    cursor: pointer;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table,th,td {
+    border: 1px solid #acacac;
+}
+th,td {
+    padding: 6px 8px;
+    text-align: left;
+}
+table.simple th,table.simple td {
+    border-left: none;
+    border-right: none;
+}
+#main {
+    width: 960px;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+#main section {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+#main section:last-child {
+    border-bottom: none;
+}
+#main section > div {
+    margin: 10px 0;
+}
+

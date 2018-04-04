@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航栏右侧推出</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		body,html{
+			width: 100%;
+		 	height: 100%;
+		}
+		a{text-decoration: none; color: #fff;}
+
+		.header{
+			position: fixed;
+			top: 0;left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			z-index: 995;
+		}
+		.nav{
+			overflow: hidden;
+			width: 100%;
+			height: 50px;
+			background: #1F3536;
+		}
+		.menu{
+			float: right;
+			width: 100px;
+			cursor: pointer;
+		}
+		.menu:hover{
+			box-sizing: border-box;
+			background: rgba(0,0,0,.7);
+			border: 2px solid rgba(0,0,0,.7);
+		}
+
+		.menu_ch{
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		.menu_ch span{
+			display: inline-block;
+			width: 30px;
+			height: 15px;
+			vertical-align: middle;
+			border-top: 3px solid #fff;
+			border-bottom: 3px solid #fff;
+		}
+		.show_nav{
+			width: 100px;
+			background: #0FCF7C;
+			position:absolute;
+			top: 50px;
+			right: -100px;
+			z-index: 999;
+			transition: all .5s linear;
+		}
+		.show_nav a {
+			display: block;
+			width: 100px;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.show_nav a:hover{
+			font-weight: bolder;
+			background: rgba(0,0,0,.2);
+		}
+
+		#container{
+			width: 100%;
+			height: 100%;
+		}
+		.page{
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			font-size: 48px;
+			text-align: center;
+			line-height: 500px;
+			transition: all .5s linear;
+		}
+		.page:first-child{
+			background: #07D8BF;
+		}
+		.page:nth-child(2){
+			background: #B2D81D;
+		}
+		.page:nth-child(3){
+			background: #D83199;
+		}
+		.page:nth-child(4){
+			background: #9A80D8;
+		}
+		.page:last-child{
+			background: #D87403;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<nav class="nav">
+			<div id="menu" class="menu">
+				<div class="menu_ch"><span></span></div>
+				<div id="showNav" class="show_nav">
+					<a href="#">HTML5</a>
+					<a href="#">CSS3</a>
+					<a href="#">JavaScript</a>
+					<a href="#">jQuery</a>
+					<a href="#">AngularJS</a>
+				</div><!-- #showNav -->
+			</div>
+		</nav>
+
+	</header>
+	<div id="container">
+		<section id="pageOne" class="page">HTML5</section><!-- pageOne -->
+		<section id="pageTwo" class="page">CSS3</section><!-- pageTwo -->
+		<section id="pageThree" class="page">JavaScript</section><!-- pageThree -->
+		<section id="pageFour" class="page">jQuery</section><!-- pageThree -->
+		<section id="pageFive" class="page">AngularJS</section><!-- pageThree -->
+	</div><!-- #container -->
+
+	<script>
+		var showNav = document.getElementById("showNav"),
+			container = document.getElementById("container"),
+			menu = document.getElementById("menu"),
+			pages = document.getElementsByClassName("page"),
+			showA = showNav.getElementsByTagName("a");
+			/*获取当前窗口可视高度*/
+
+			/*scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		console.log(screenHeight+"============"+scrollTop);*/
+
+		menu.onmouseover = function () {
+			var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+		for (var i = 0, max = showA.length; i < max; i++) {
+			/*var showAHeight = (screenHeight - 50 + scrollTop)/ max  + "px";*/
+			var showAHeight = (screenHeight - 50 )/ max + "px";
+			console.log(showAHeight);
+			showA[i].style.height = showAHeight;
+			showA[i].style.lineHeight = showAHeight;
+			showA[i].style.borderBottom='1px solid #333';
+		}
+			showNav.style.right = 0;
+			for (var i = 0; i < pages.length; i ++) {
+				pages[i].style.transform = "translate(-100px)";
+			}
+		}
+		menu.onmouseout = function () {
+			showNav.style.right = -100 + "px";
+			for (var i = 0; i < pages.length; i ++) {
+				pages[i].style.transform = "translate(0)";
+			}
+		}
+
+	</script>
+
+</body>
+</html>

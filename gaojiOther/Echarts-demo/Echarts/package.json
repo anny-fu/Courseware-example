@@ -1,0 +1,14 @@
+{
+  "name": "echarts",
+  "version": "1.0.0",
+  "description": "Webpack示例",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aulence",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.3.3"
+  }
+}

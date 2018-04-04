@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>表单元素半选中状态</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		table, th, td {
+			border: 1px solid #ddd;
+		}
+		th, td {
+			padding: 6px 12px;
+		}
+		table input[type="checkbox"] {
+			width: 20px; height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>表单元素半选中状态</a>
+	</nav>
+	<main id="main">
+		<table>
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox" id="allCkd">
+					</th>
+					<th>名称</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox" name="ckbox">
+					</td>
+					<td>水果</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="ckbox">
+					</td>
+					<td>电器</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="ckbox">
+					</td>
+					<td>厨具</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	<script>
+		(function() {
+			var allCkd = document.getElementById("allCkd");
+			// 子复选框
+			var childCkbox = document.getElementsByName("ckbox"),
+				childCkbox_leng = childCkbox.length;
+			// 全选框状态改变事件
+			allCkd.onchange = function() {
+				// 全选框状态
+				var isCkd = this.checked === true;
+				
+				// 如果被选中
+				if(isCkd) {
+					for(var i = 0; i < childCkbox_leng; i++) {
+						childCkbox[i].checked = true;
+					}
+				} else {
+					for(var i = 0; i < childCkbox_leng; i++) {
+						childCkbox[i].checked = false;
+					}
+				}
+			}
+			
+			// 子复选框状态改变
+			for(var i = 0; i < childCkbox_leng; i++) {
+				childCkbox[i].onchange = function() {
+					if(this.checked) {
+						allCkd.indeterminate = true;
+					}
+					else {
+						allCkd.indeterminate = false;
+					}
+				}
+			}
+		})();
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+

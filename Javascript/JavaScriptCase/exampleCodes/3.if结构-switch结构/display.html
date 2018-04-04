@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>节点属性</title>
+</head>
+<body>
+  <input type="button" onclick="block();" value="点击">
+  <ul class="item" style="display: block">
+     <li>javascript</li>
+     <li>HTML/CSS</li>
+     <li>jQuery</li>
+  </ul>
+  <script type="text/javascript">
+        /*点击按钮隐藏item*/
+        var item=document.getElementsByClassName("item")[0];
+        function block(){
+          if(item.style.display=="block"){
+              item.style.display="none"
+          }else{
+            item.style.display="block";
+          }
+        }
+  </script>
+</body>
+</html>

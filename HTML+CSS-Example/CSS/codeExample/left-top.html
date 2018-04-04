@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>测试题示例</title>
+  <style>
+    /*水平：400px   垂直：100px*/
+    body {
+      width:1200px;
+      height:600px;
+      margin: 0; padding: 0;
+    }
+    section {
+      width: 1025px; height: 600px;
+      background-color: #ccc;
+      margin: 10px auto;
+      padding:10px;
+    }
+    section article {
+      width: 600px; height: 540px;
+      background-color: #666;
+      position: relative;
+      left: 50%; top: 30px;
+      margin-left: -300px;
+    }
+    section article div {
+      width: 400px; height: 380px;
+      background-color: #999;
+      position: absolute;
+      left: 50%; top: 50px;
+      margin-left: -200px;
+    }
+  </style>
+  <body>
+    <section>
+      <article>
+        <div id="div"></div>
+      </article>
+    </section>
+  </body>
+  <script src="../../js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    var l = $("#div").offset().left;
+    var h = $("#div").offset().top;
+    // 在浏览器控制台console查看
+    console.log("======left======="+l+"======top======="+h);
+  </script>
+  </html>

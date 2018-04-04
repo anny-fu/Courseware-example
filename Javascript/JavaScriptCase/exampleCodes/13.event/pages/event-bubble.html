@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>事件冒泡</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		ul {
+			padding: 20px;
+			margin: 0;
+			border: 1px solid #ddd;
+			list-style: none;
+		}
+		ul > li {
+			padding: 10px;
+			border: 1px solid #eee;
+			margin-bottom: 12px;
+		}
+		ul > li:last-child {
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>事件冒泡</a>
+	</nav>
+	<main id="main">
+		<ul id="ul">
+			<li>列表项1</li>
+			<li>列表项2</li>
+			<li>列表项3</li>
+			<li>列表项4</li>
+			<li>列表项5</li>
+		</ul>
+	</main>
+	
+	<script>
+		var count = 0;
+		var ul = document.getElementById("ul");
+		/* 鼠标进入的情况 */
+		// 会冒泡
+		/*ul.onmouseover = function() {
+			console.log(count++);
+		}*/
+		// 不会冒泡
+		/*ul.onmouseenter = function() {
+			console.log(count++);
+		}*/
+		
+		/* 鼠标移出的情况 */
+		// 会冒泡
+		ul.onmouseout = function() {
+			console.log(count++);
+		}
+		// 不会冒泡
+		/*ul.onmouseleave = function() {
+			console.log(count++);
+		}*/
+	</script>
+</body>
+</html>
+
+
+
+
+
+

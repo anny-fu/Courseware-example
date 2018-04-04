@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>hover事件</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		.test {
+			width: 260px;
+			padding: 20px;
+			border: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>hover事件</a>
+	</nav>
+	<main id="main">
+		<div class="test">
+			<p>你现在的状态是：</p>
+		</div>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$(".test").hover(function() {
+			$(this).append("<p>鼠标移入</p>")
+		}, function() {
+			$(this).children().last().remove();
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

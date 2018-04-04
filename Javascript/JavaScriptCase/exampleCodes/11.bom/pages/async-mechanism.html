@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>异步机制</title>
+	<link id="setCSS" rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>异步机制</a>
+	</nav>
+	<main>
+		<ul id="syncUl"></ul>
+		<ul id="asyncUl"></ul>
+	</main>
+	
+	<script>
+		// 同步列表
+		var syncUl = document.getElementById("syncUl");
+		syncUl.innerHTML += '<li>第一个同步列表项</li>';
+		syncUl.innerHTML += '<li>第二个同步列表项</li>';
+		addItem(function() {
+			syncUl.innerHTML += '<li>第三个同步列表项</li>';
+		});
+		syncUl.innerHTML += '<li>第四个同步列表项</li>';
+		syncUl.innerHTML += '<li>第五个同步列表项</li>';
+		function addItem(callback) {
+			var num = 0;
+			for(var i = 0; i < 5000000; i++) {
+				num += i;
+			}
+			callback();
+		}
+		
+		// 异步列表
+		var syncUl = document.getElementById("asyncUl");
+		asyncUl.innerHTML += '<li>第一个异步列表项</li>';
+		asyncUl.innerHTML += '<li>第二个异步列表项</li>';
+		setTimeout(function() {
+			asyncUl.innerHTML += '<li>第三个异步列表项</li>';
+		}, 0);
+		asyncUl.innerHTML += '<li>第四个异步列表项</li>';
+		asyncUl.innerHTML += '<li>第五个异步列表项</li>';
+	</script>
+</body>
+</html>
+
+
+
+
+
+

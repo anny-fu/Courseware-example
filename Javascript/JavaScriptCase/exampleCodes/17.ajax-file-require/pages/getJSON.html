@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX示例——JSON请求</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main id="main">
+    <button id="loadBtn" type="button">加载内容</button>
+</main>
+
+<script>
+    var loadBtn = document.getElementById("loadBtn");
+    var main = document.getElementById("main");
+    loadBtn.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var content = xhr.responseText;
+                    var jsonData = JSON.parse(content);
+                    main.innerHTML = `
+                        <h1>电脑主机信息</h1>
+                        <div class="computerInfo">
+                            <p>
+                                <label>名称：</label>
+                                <span>${jsonData.goodsInfo.alienware.name}</span>
+                            </p>
+                            <p>
+                                <label>CPU：</label>
+                                <span>${jsonData.goodsInfo.alienware.cpu}</span>
+                            </p>
+                            <p>
+                                <label>显卡：</label>
+                                <span>${jsonData.goodsInfo.alienware.graphCard}</span>
+                            </p>
+                            <p>
+                                <label>内存：</label>
+                                <span>${jsonData.goodsInfo.alienware.memory}</span>
+                            </p>
+                            <p>
+                                <label>硬盘：</label>
+                                <span>${jsonData.goodsInfo.alienware.hardDisk}</span>
+                            </p>
+                            <p>
+                                <label>电源：</label>
+                                <span>${jsonData.goodsInfo.alienware.power}</span>
+                            </p>
+                        </div>
+                    `;
+                }
+                else {
+                    console.error("文件路径错误，或网络错误！");
+                }
+            }
+        }
+        xhr.open("GET", "../json/testData.json", true);
+        xhr.send(null);
+    }
+
+</script>
+</body>
+</html>

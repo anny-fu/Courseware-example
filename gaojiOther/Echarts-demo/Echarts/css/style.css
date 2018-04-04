@@ -1,0 +1,51 @@
+@charset "utf-8";
+/**
+ * 功能：图表样式设置
+ * 日期：2017/4/7
+ **/
+body {
+    background-color: #888888;
+    padding-bottom: 50px;
+}
+
+/* 默认页的容器样式 */
+#echarts-1, #echarts-2,#echarts-3,#echarts-4 {
+    height: 420px;
+}
+
+/* 响应页的容器样式 */
+.container .row > div {
+    padding: 0;
+}
+.mediaCharts > div {
+    height: 360px;
+}
+
+/* 信息输出 */
+#spritInfo {
+    min-height: 54px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid #ef7100;
+    border-radius: 25px;
+    font: 24px/28px arial;
+    color: #888888;
+    margin-top: 20px;
+}
+#spritInfo .propertyName, #spritInfo .propertyValue {
+    padding: 0 4px;
+    display: inline-block;
+}
+#spritInfo .propertyValue {
+    font: 28px/28px "Bauhaus 93";
+    color: #ef7100;
+}
+/* 缩放的图表 */
+#scaleCharts {
+    height: 100%;
+}
+@media (max-width: 420px) {
+    body {
+        background-color: #333333;
+    }
+}

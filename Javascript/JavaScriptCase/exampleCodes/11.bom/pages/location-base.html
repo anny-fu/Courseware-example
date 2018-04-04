@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>本地存储基础</title>
+	<link id="setCSS" rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>本地存储基础</a>
+	</nav>
+	<main>
+		<div>
+			<label>昵称：</label>
+			<input id="niceName" type="text">
+			<button id="btnSignIn" type="button">登录</button>
+		</div>
+	</main>
+	
+	<script>
+		var btnSignIn = document.getElementById("btnSignIn");
+		btnSignIn.onclick = function() {
+			var niceNameVal = document.getElementById("niceName").value;
+			localStorage.setItem("niceNameKey", niceNameVal);
+			location.href = "location-base-target.html";
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

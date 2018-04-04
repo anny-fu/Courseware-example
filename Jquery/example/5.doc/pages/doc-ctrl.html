@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>文档基本操作</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		ul.goodsList {
+			border: 1px solid #acacac;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>文档基本操作</a>
+	</nav>
+	<main id="main">
+		
+		<ul class="goodsList">
+			<li class="goodsItem">菠萝</li>
+			<li class="goodsItem">沐浴露</li>
+			<li class="goodsItem">毛巾</li>
+			<li class="goodsItem">薯片</li>
+		</ul>
+		<section class="container">
+			<div class="first">hello1</div>
+			<div class="second">hello2</div>
+			<div class="third">hello3</div>
+		</section>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		// 在子元素列表之前（加入HTML内容）
+		$(".goodsList").prepend("<li>电池</li>");
+		// 在子元素列表之后
+		$(".goodsList").append("<li>酱油</li>");
+		// 在元素之前
+		$(".goodsList").before("<h3>超市商品</h3>");
+		// 在元素之后
+		$(".goodsList").after("<p>共计：￥123.35</p>");
+
+
+		//replaceWith(old,new)
+		$('.third').replaceWith($('.first'));
+		//		replaceAll(new,old);
+		$("<p>替换内容</p>").replaceAll("div");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

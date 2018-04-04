@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>onscroll事件</title>
+    <link rel="stylesheet" href="../css/code.css">
+    <style type="text/css">
+
+    html,body{
+        border:0px solid #f00;
+    }
+    #result{
+        height: 100px;
+        overflow: auto;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0);" class="selected" target="_blank">首页</a></li>
+                <li id="second-li"><a href="javascript:void(0);"  target="_blank">设置</a></li>
+                <li id="info"><a href="javascript:void(0);" target="_blank">信息</a></li>
+            </ul>
+        </nav>
+    </header>
+    <banner>
+        <img src="../../img/banner.jpg" alt="图片加载中" title="科技生活">
+    </banner>
+    <section>
+        <article id="result">
+            <h2>科技改变生活</h2>
+            <p>20世纪是科学技术突飞猛进的世纪，飞机的发明，第一枚火箭的升空，门德尔遗传规律的再发现，青霉素的发明，第一台电子计算机的诞生，第一只半导体三极管的发明，集成电路的出现，原子弹和氢弹的研制成功，第一座原子能反应堆的建成，激光的发现，PC机的发明，互联网的出现，“多利”克隆羊的降生……日新月异的科学发现和技术发明，改变了人类对客观世界的认识，改变了人们的生产方式、生活方式和经济结构。科学技术确实已成为第一生产力，成为人类文明进步的基础和动力。人们终于建立了走一条与自然协调，又不危及子孙后代生存与发展的可持续发展道路的理念。</p>
+            <p>在此世纪之交，由《钱江晚报》策划撰稿、浙江少年儿童出版社编辑出版的《科学改变人类生活的100个瞬间》一书，将20世纪世界上最伟大的科学发现和技术发明展现给少年读者，意义深远。实施科教兴国战略，建立国家创新体系，提高全民的科技文化素质和创新能力，是迎接21世纪全球化知识经济时代的挑战的必由之路。</p>
+        </article>
+        <article >
+            <h2 id="section">为优生优育作出杰出贡献</h2>
+            <p>1954年，美国生物学家格雷戈里·平卡斯发明了世界上第一种有效口服避孕药，并进行了首批临床试验。它的发明和使用，促进了人类性观念的革命，对于控制世界人口的增长有着巨大的意义。</p>
+            <p>生命的繁衍和延续本来是一件自然的事情。在20世纪之前，人口的生态平衡是靠自然规律来调节的，但今天人们必须依靠自己来控制人口的发展。因此，一场性观念的革命必然如山雨欲来，科学的发展也使之成为可能：1960年5月，美国食品和药品署认可了世界上第一种有效口服避孕药。由美国内分泌学家格雷戈里·平卡斯开发研制的这种药丸，后来被认为是历史上最具有人口学意义的药品之一。</p>
+        </article>
+    </section>
+    <footer>***责任有限公司&copy;</footer>
+</body>
+<script>
+/*    var result=document.getElementById("result");
+    result.onscroll=changes;
+    function  changes(){
+        var d=result.scrollHeight;
+        var e=result.clientHeight;
+        var scroll=result.scrollTop;
+        console.log(d);
+        console.log(scroll);
+        console.log(e);
+        if (d - scroll === e) {
+            console.log('谢谢阅读');
+        } else {
+            console.log('您还未读完');
+        }
+    }
+
+    window.onscroll = function() {
+        var scroll = document.documentElement.scrollTop||document.body.scrollTop;//兼容浏览器
+        var d=document.documentElement.scrollHeight || document.body.scrollHeight;
+        var e=document.documentElement.clientHeight || document.body.clientHeight;
+        console.log(d);
+        console.log(scroll);
+        console.log(e);
+        if (d - scroll === e) {//判断条件是否成立
+            console.log('谢谢阅读');
+        } else {
+            console.log('您还未读完');
+        }
+    }*/
+
+</script>
+</html>

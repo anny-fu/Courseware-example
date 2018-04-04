@@ -1,0 +1,109 @@
+/**
+ * 功能：首页样式设置
+ * 日期：2017/11/10
+**/
+// ==== mixin ====
+// 特效--卡片
+.effect-card(@rs:5px) {
+    -webkit-border-radius: @rs;
+    -moz-border-radius: @rs;
+    border-radius: @rs;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: all 0.1s;
+    &:hover {
+        box-shadow: 0 10px 20px fade(@theme-color, 30%);
+        transform: translate(0, -2px);
+    }
+}
+// 特效--按钮
+// 较亮的情况
+.effect-button(@bgc) when (lightness(@bgc) > 70%) {
+    color: #333333;
+}
+// 较暗的情况
+.effect-button(@bgc) when (lightness(@bgc) <= 70%) {
+    color: #ffffff;
+}
+.effect-button(@bgc) {
+    background-color: @bgc;
+    border: 1px solid darken(@bgc, 20%);
+}
+
+
+/* 导航条 */
+header {
+    @height: 60px;
+    height: @height;
+    line-height: @height;
+    background-color: @theme-color;
+    ul {
+        list-style: none;
+        overflow: hidden;
+        li {
+            height: @height;
+            padding: 0 20px;
+            color: #ffffff;
+            cursor: pointer;
+            float: left;
+            user-select: none;
+            &:hover {
+                background-color: lighten(@theme-color, 10%);
+            }
+            &:active {
+                background-color: lighten(@theme-color, 3%);
+            }
+            &.active {
+                background-color: lighten(@theme-color, 8%);
+                cursor: default;
+            }
+        }
+    }
+}
+
+/* 相册展示 */
+.photoShow {
+    margin-bottom: 20px;
+    img {
+        width: 100%;
+        .effect-card;
+    }
+    div:first-child {
+        img {
+            .effect-card(50%);
+        }
+    }
+}
+
+/* 按钮组 */
+.button-group {
+    .btn {
+        &.red {
+            .effect-button(#f00);
+        }
+        &.green {
+            .effect-button(#0f0);
+        }
+        &.blue {
+            .effect-button(#00f);
+        }
+        &.light-blue {
+            .effect-button(#1d9ffd);
+        }
+        &.light-green {
+            .effect-button(#3dfd3d);
+        }
+        &.dark {
+            .effect-button(#3a3b3c);
+        }
+        &.normal {
+            .effect-button(#fafbfc);
+        }
+    }
+}
+
+/* 登录按钮 */
+.btn.theme-btn {
+    background-color: @theme-color;
+    color: #ffffff;
+}

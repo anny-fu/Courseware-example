@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>克隆操作</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		div {
+			padding: 24px 0 10px 0;
+			position: relative;
+		}
+		div > p.errMesg {
+			margin: 0;
+			position: absolute;
+			left: 8px; top: 0;
+			font-size:18px;
+			color:#f33;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>克隆操作</a>
+	</nav>
+	<main id="main">
+		<div>
+			<input name="userName" type="text" placeholder="请输入用户名">
+		</div>
+		<div></div>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$("input:text").on({
+			blur: function() {
+				var thisVal = $(this).val();
+				if(thisVal === "") {
+					$(this).before("<p class='errMesg'>请输入用户名</p>");
+				} 
+			},
+			focus: function() {
+				$(this).prev().remove();
+			}
+		});
+		// clone默认参数为false，表示浅层克隆，当参数为true的时候表示深层克隆，可以连同该元素所有的属性和方法（事件）一同克隆
+		var cloneInput = $("input:text").clone(true);
+		$("div").eq(1).html(cloneInput);
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+

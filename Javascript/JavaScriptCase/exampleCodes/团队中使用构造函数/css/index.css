@@ -1,0 +1,35 @@
+/**
+* 功能：首页样式
+**/
+@charset "utf-8";
+
+.main {
+	width: 1200px;
+	margin: 20px auto;
+	color: #c34a4a;
+}
+
+/**** 商品数量选择 ****/
+.goodsCount {
+	display: inline-block;
+}
+.goodsCount input {
+	width: 64px;
+	padding: 6px;
+	text-align: center;
+}
+.goodsCount button {
+	padding: 0 8px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 24px;
+}
+.goodsCount button:active {
+	color: #999;
+}
+/* 禁用时的样式 */
+.goodsCount button.disabled {
+	color: #ccc;
+}

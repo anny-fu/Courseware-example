@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>节点的生成</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		div {
+			padding: 20px;
+			border: 1px solid #ccc;
+		}
+		.redFont {
+			font-size: 32px;
+			color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>节点的生成</a>
+	</nav>
+	<main id="main"></main>
+	
+	<script>
+		var main = document.getElementById("main");
+		// 创建元素节点
+		var div = document.createElement("div");
+		// 创建文本节点
+		var txt = document.createTextNode("这是一个DIV标签");
+		// 为div节点设置一个属性及值
+		div.setAttribute("class", "redFont");
+		// 将文本节点添加到div元素里
+		div.appendChild(txt);
+		// 将这个虚拟的div添加进HTML文档内的main标签里
+		main.appendChild(div);
+	</script>
+</body>
+</html>
+
+
+
+
+
+

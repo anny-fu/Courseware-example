@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta charset="UTF-8">
+	<title>信贷计算系统</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main>
+		<!-- 消费笔数 -->
+		<fieldset>
+			<legend>消费笔数</legend>
+			<div>
+				<label>共计：</label>
+				<input id="quantity" type="number" max="10" placeholder="请输入分期数">
+			</div>
+		</fieldset>
+		<!-- 单笔分期利息 -->
+		<fieldset>
+			<legend>单笔分期利息</legend>
+			<div id="unitByStage">
+				<span class="placeholder">请先输入分期数</span>
+				
+				<div class="ctrlLine">
+					<label>第1笔分期金额：</label>
+					<input type="text" placeholder="请输入分期金额" maxlength="12" class="byStageMoney">
+					<span>元</span>
+					<label class="ml50">分期数：</label>
+					<select class="byStageCount">
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="6">6</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="18">18</option>
+						<option value="24">24</option>
+					</select>
+				</div>
+				<div class="resLine">
+					<div>
+						<label>本期利息：</label>
+						<output>
+							<span class="res-1">0</span>
+							<span>元</span>
+						</output>
+					</div>
+					<div>
+						<label>总利息：</label>
+						<output>
+							<span class="res-2">0</span>
+							<span>元</span>
+						</output>
+					</div>
+					<div>
+						<label>本期本息：</label>
+						<output>
+							<span class="res-3">0</span>
+							<span>元</span>
+						</output>
+					</div>
+					<div>
+						<label>总本息：</label>
+						<output>
+							<span class="res-4">0</span>
+							<span>元</span>
+						</output>
+					</div>
+				</div>
+				
+			</div>
+		</fieldset>
+		<!-- 消费利息总额 -->
+		<fieldset>
+			<legend>消费利息总额</legend>
+			<div id="sumRes">
+				<div>
+					<label>每期总利息：</label>
+					<output>
+						<span class="res-1">0</span>
+						<span>元</span>
+					</output>
+				</div>
+				<div>
+					<label>全部总利息：</label>
+					<output>
+						<span class="res-2">0</span>
+						<span>元</span>
+					</output>
+				</div>
+				<div>
+					<label>本息共计：</label>
+					<output>
+						<span class="res-3">0</span>
+						<span>元</span>
+					</output>
+				</div>
+			</div>
+		</fieldset>
+	</main>
+	<!--<script src="js/script.js"></script>-->
+</body>
+</html>

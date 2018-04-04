@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>实例化对象</title>
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>实例化对象</a>
+	</nav>
+	<main>
+		
+	</main>
+	
+	<script>
+		function Roleinfo(gender,color) {
+			this.name = "皮卡丘";
+			this.serise = "电系";
+			this.age = 5;
+			this.skill = ['电光一闪','钢铁之尾','十万伏特'];
+			this.gender = gender;
+			this.color = color;
+		}
+		// 实例化
+		var pikachu1 = new Roleinfo("公","浅黄色");
+		var pikachu2 = new Roleinfo("母","棕黄色");
+		var pikachu3 = new Roleinfo("人妖","深黄色");
+	</script>
+</body>
+</html>
+
+
+
+
+
+

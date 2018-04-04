@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>章节练习一获取URL信息</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		span[id] {
+			color: #f38d1c;
+			font-size: 26px;
+		}
+		section > p {
+			margin: 0;
+			line-height: 2;
+		}
+		#webURL {
+			width: 320px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>获取URL信息</a>
+	</nav>
+	<main>
+		<section>
+			<p>
+				<label>请输入网址：</label>
+				<input id="webURL" type="url">
+				<button id="parseURL" type="button">解析</button>
+			</p>
+			<p>
+				<span>当前URL的协议为：</span>
+				<span id="protocal"></span>
+			</p>
+			<p>
+				<span>当前URL的文件类型为：</span>
+				<span id="fileType"></span>
+			</p>
+			<p>
+				<span>当前URL的域名为：</span>
+				<span id="domain"></span>
+			</p>
+		</section>
+	</main>
+	
+	<script>
+		// 解析按钮
+		var parseURL = document.getElementById("parseURL");
+		
+		parseURL.onclick = function() {
+			// 输入框
+			var webURL = document.getElementById("webURL"),
+				webURL_val = webURL.value;
+			// 分别是：协议类型、文件类型和域名三个span标签
+			var protocal = document.getElementById("protocal");
+			var fileType = document.getElementById("fileType");
+			var domain = document.getElementById("domain");
+			// 获取协议类型、文件类型和域名
+			var getProtocal = webURL_val.split("://")[0];
+			var getFileType = webURL_val.split(".")[webURL_val.split(".").length - 1];
+			var getDomain;
+			
+			// 判断是否有“www”
+			var hasWWW = (webURL_val.indexOf("www") !== -1);
+			if(hasWWW) {
+				getDomain = webURL_val.split(".")[1] + "." + webURL_val.split(".")[2].slice(0,webURL_val.split(".")[2].indexOf("/"));
+			} else {
+				var domainName = webURL_val.split(".")[0];
+				var domainType = webURL_val.split(".")[1];
+				getDomain = domainName.slice(domainName.indexOf("//") + 2) + "." + domainType.slice(0,domainType.indexOf("/"));
+			}
+			
+			// 输出结果
+			protocal.textContent = getProtocal;
+			fileType.textContent = getFileType;
+			domain.textContent = getDomain;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

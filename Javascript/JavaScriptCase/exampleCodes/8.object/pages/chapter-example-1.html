@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>章节练习一</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#galen label {
+			width: 102px;
+			text-align: right;
+			display: inline-block;
+			color: #666;
+		}
+		#galen label + span {
+			color: #cea229;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>章节练习一</a>
+	</nav>
+	<main>
+		<div id="galen">
+		</div>
+	</main>
+	
+	<script>
+		// 创建一个原型链方法用于获取对象“长度”
+		Object.prototype.objLength = function() {
+			return Object.keys(this).length;
+		};
+		// 创建一个原型链方法用数组的形式来访问对象的键值
+		Object.prototype.attrVal = function (n) {
+			return this[Object.keys(this)[n]];
+		};
+		
+		var attrNameArr = ["ID","角色名","攻击力","防御力","速度","血量","魔法","技能"];
+		
+		var roleInfo = {
+			id: "lol-119",
+			name: "德玛西亚之力",
+			attack: 36,
+			defense: 42,
+			speed: 66,
+			hp: 2400,
+			mp: null,
+			skill: ["坚韧（被动）","致命打击","勇气","审判","德玛西亚正义"]
+		}
+		
+		var galen = document.getElementById("galen");
+		// 获取对象属性个数
+		var attrLeng = roleInfo.objLength();
+		var htmlStr = "";
+		for(var i = 0; i < attrLeng; i++) {
+			// 值为空的时候值显示“无”
+			if(roleInfo.attrVal(i) === null) {
+				htmlStr +=  '<div>' +
+								'<label>' + attrNameArr[i] + '：</label>&nbsp' +
+								'<span>无</span>' +
+							'</div>';
+			} 
+			// 值为数组的时候
+			else if(Array.isArray(roleInfo.attrVal(i))) {
+				htmlStr +=  '<div>' +
+								'<label>' + attrNameArr[i] + '：</label>&nbsp;' +
+								'<span>' + roleInfo.attrVal(i).join("&nbsp;&nbsp;") + '</span>' +
+							'</div>';
+		    } 
+			else {
+				htmlStr +=  '<div>' +
+								'<label>' + attrNameArr[i] + '：</label>&nbsp;' +
+								'<span>' + roleInfo.attrVal(i) + '</span>' +
+							'</div>';
+			}
+			
+		}
+		galen.innerHTML = htmlStr;
+	</script>
+</body>
+</html>
+
+
+
+
+
+

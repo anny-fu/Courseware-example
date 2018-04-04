@@ -1,0 +1,13 @@
+@charset 'utf-8';
+html,body{font-family: '微软雅黑';font-size: 16px;}
+p,div,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,a,button,input{
+  margin:0;padding:0;
+}
+button{
+  padding:8px;border:1px solid #2a90d1;
+  background: #0a89da;color:#fff;
+  border-radius:5px;
+}
+div,p{
+  margin-top: 10px;
+}

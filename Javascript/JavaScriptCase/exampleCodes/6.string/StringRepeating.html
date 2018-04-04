@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串拼接工厂函数（原型链）</title>
+</head>
+<body>
+	<p>字符串复制工厂</p>
+	<p>
+		<label>复制字符串</label>
+		<input type="text" placeholder="输入字符串" id="string" value="你哈!">
+		<label >选择次数(min=1;max=10)</label>
+		<input type="number" min="1" max="10" id="num" value="3">
+		<input type="button" id="repeat" value="开始复制">
+	</p>
+	<p>复制后的结果为：<span id="result"></span></p>
+	<script>
+		// 获取显示结果元素
+		var result = document.getElementById('result'),
+		btn = document.getElementById('repeat');
+		// String对象原型添加方法
+		String.prototype.repeatity = function(a){
+			var strs='';
+			for(var i = 0; i < a; i++){
+				strs=strs.concat(this);
+			}
+			return strs;
+		}
+		btn.onclick= function(){
+			var str =document.getElementById('string').value,
+			num =parseInt(document.getElementById('num').value);
+			var s = str.repeatity(num);
+			result.innerHTML = s;
+		}
+		
+
+	</script>
+</body>
+</html>

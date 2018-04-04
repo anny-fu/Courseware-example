@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <link rel="stylesheet" href="css/iframe.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            font-family: "微软雅黑";
+        }
+        body,p,img,div,section,article{
+            margin:0;
+            padding:0;
+        }
+        img{
+            vertical-align: middle;
+            width:100%;
+        }
+        article{
+            padding:10px;
+            width:800px;
+            margin: auto;
+            position: relative;
+            background-color: #f00;
+        }
+        section {
+            width: 240px; 
+            height: 240px;
+            padding: 8px;
+            overflow: hidden;
+            color: #ffffff;
+        }
+        section:nth-child(1) {
+            background-color: #b90909;
+
+        }
+        section:nth-child(2) {
+            position: relative;
+            background-color: #09b932;
+
+        }
+        section:nth-child(2)>p{
+            width:120px;
+            height: 120px;
+            position: absolute;
+            right:20px;
+            bottom: 20px;
+            margin:0 auto;
+            overflow: hidden;
+            background-color: #284673;
+        }
+        section:nth-child(3) {
+            position: absolute;
+            /*left:50%;*/
+            left:calc(50% - 120px);
+            top:calc(50% - 120px);
+            /*margin-left: -120px;*/
+            /*margin-top: -120px;*/
+            background-color: #0946b9;
+
+        }
+        section:nth-child(3)>p{
+            width:100px;
+            height: 100px;
+            display: inline-block;
+            background-color: #f00;
+            position: absolute;
+            right:0;
+        }
+        span{
+            position: absolute;
+            right:10px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <span>span文本标签</span>
+        <a href="#">超链接</a>
+        <section>
+            壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。白露横江，水光接天。纵一苇之所如，凌万顷之茫然。
+        </section>
+        <section>
+            <p>
+                壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴
+            </p>
+        </section>
+        <section>
+            <p><img src="img/my.jpg" alt=""></p>
+        </section>
+    </article>
+</body>
+</html>

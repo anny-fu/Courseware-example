@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>获取名字排序</title>
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+		.box{
+			padding-left: 80px;
+		}
+		.box p{
+			color:#dedede;
+			font-size: 20px;
+		}
+		#showName{
+			color: #cea229;
+		}
+	</style>
+</head>
+<body>
+	<div class='box'>
+		<p>请输入多个英文名,使用英文的(;或,)分隔</p>
+		<input type="text" id="textName" value="" pliceholder="请输入名字..">
+		<input type="button" id="sortName" value="排序">
+		<div id="showName"></div>
+	</div>
+</body>
+<script>
+	var textName = document.getElementById('textName'),
+	sortName = document.getElementById('sortName'),
+	showName = document.getElementById('showName');
+	// 设置点击事件
+	sortName.onclick = function(){
+		// 每次点击时清空div内容
+		showName.innerHTML= '';
+		var nameArr,names = textName.value;
+		// 判断是否输入了内容
+		if(names.lenght !== 0 && names !== ""){
+			// 分割字符串:逗号和分号都可以
+			if(names.indexOf(',') !== -1){
+				nameArr = names.split(',');
+			}else{
+				nameArr = names.split(';');
+			}
+			// 数组排序
+			nameArr.sort();
+			// 换行输出
+			showName.innerHTML = nameArr.join('<br>');
+		}else{
+			showName.innerHTML = '请输入内容！';
+		}
+	}
+</script>
+</html>

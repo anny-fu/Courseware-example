@@ -1,0 +1,134 @@
+@charset "utf-8";
+/**************************************************/
+/* 样式初始化设置 */
+/**************************************************/
+html,body {
+	width: 100%; height: 100%;
+	margin: 0;
+}
+body {
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+dialog-icon, dialog-header span, dialog-header i, dialog-mesgbox input, dialog-mesgbox button {
+	display: inline-block;
+	vertical-align: middle;
+}
+dialog-header, dialog-content, dialog-mesgbox {
+	display: block;
+}
+
+/**************************************************/
+/* 样式细节设置 */
+/**************************************************/
+dialog-custom {
+	width: 280px; height: 198px;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	font-size: 14px;
+	box-sizing: border-box;
+	color: #eee;
+	opacity: 1;
+	transition: all 0.3s;
+	z-index: 1000;
+}
+/* 对话框头部 */
+dialog-header {
+	width: 100%; height: 40px;
+	line-height: 40px;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: relative;
+}
+dialog-icon {
+	width: 32px; height: 32px;
+	/* 本地 */
+	/*background: url(../img/customer_service_32px.png) center center no-repeat;*/
+	/* 线上 */
+	background: url(../img/customer_service_32px.png) center center no-repeat;
+	-webkit-background-size: 80% 80%;
+	background-size: 80% 80%;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+dialog-header i {
+	width: 20px; height: 20px;
+	background-color: #f73434;
+	border-radius: 50%;
+	text-align: center;
+	font: normal 0.9em Arial,HelveticaNeue,"Droid Sans";
+	line-height: 20px;
+	margin-left: 5px;
+}
+dialog-header .close {
+    padding: 0 6px;
+	position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    font-weight: lighter;
+    font-size: 2em;
+    cursor: pointer;
+}
+/* 对话框内容区域 */
+dialog-content {
+	padding: 12px 0 8px;
+	border-bottom: 1px solid #000;
+	margin: 0 12px;
+}
+/* 咨询老师信息 */
+dialog-content .consulter span:first-child {
+	float: left;
+}
+dialog-content .consulter span:last-child {
+	float: right;
+}
+dialog-content .consulter:after {
+	content: "";
+	height: 0;
+	clear: both;
+	display: block;
+	visibility: hidden;
+}
+dialog-content .message {
+	margin-top: 12px;
+	display: list-item;
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 16px;
+	clear: both;
+}
+/* 消息发送区域 */
+dialog-mesgbox {
+	padding: 10px 0;
+	border-top: 1px solid #aaa;
+	margin: 0 12px;
+}
+dialog-mesgbox input, dialog-mesgbox button {
+	border: none;
+	border-radius: 5px;
+	outline: none;
+}
+dialog-mesgbox input {
+	width: 188px;
+	padding: 6px;
+}
+dialog-mesgbox button {
+	background-color: #2398fd;
+	padding: 5px 10px;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+}
+/* 遮罩层 */
+masklayer {
+	position: fixed;
+	left: 0; top: 0; right: 0; bottom: 0;
+	z-index: 999;
+}
+
+
+
+

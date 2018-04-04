@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>基本属性操作</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		form > div {
+			padding: 10px 0;
+		}
+		.showPwd {
+			cursor: pointer;
+			/* 禁用文本选择 */
+			user-select: none;
+		}
+		.showPwd:active {
+			color: #e00;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>基本属性操作</a>
+	</nav>
+	<main id="main">
+		<form name="signInInfo">
+			<div>
+				<label>账户：</label>
+				<input type="text" name="userName">
+			</div>
+			<div>
+				<label>密码：</label>
+				<input type="password" name="userPwd">
+				<span class="showPwd">o_o</span>
+			</div>
+			<div>
+				<button type="button">登录</button>
+			</div>
+		</form>
+	</main>
+	
+	<script src="../plugin/jquery.js"></script>
+	<script>
+		$(".showPwd").on("click", function() {
+			var $pwd = $("input[name='userPwd']");
+			var currentAttr = $pwd.attr("type");
+			if(currentAttr === "password") {
+				$(this).text("-_-");
+			    $pwd.attr("type","text");
+			}
+			else if(currentAttr === "text") {
+				$(this).text("o_o");
+			    $pwd.attr("type","password");	
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

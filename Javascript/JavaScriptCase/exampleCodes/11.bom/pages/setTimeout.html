@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定时器</title>
+</head>
+<body>
+  <input type="button" name="tuttom" value="stop" id="btn">
+</body>
+<script type="text/javascript">
+  window.onload=function(){
+    toShow();
+  }
+  var s;
+  var i=0;
+  var btn=document.getElementById('btn');
+  function toShow(){
+    i++;
+    console.log(i);
+    s=setTimeout(toShow,1000);
+  }
+  btn.onclick=function(){
+    clearTimeout(s);
+  }
+</script>
+</html>

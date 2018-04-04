@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>自定义数据data方法</title>
+	<style>
+		button{
+			width:180px;
+			height: 60px;
+			border:1px solid #ccc;
+			background: #efefef;
+			margin:20px;
+		}
+	</style>
+</head>
+<body>
+<button id="btn1">添加数据</button>
+<button id="btn2">获取数据</button>
+<div></div>
+<script src="plugin/jquery.js"></script>
+<script>
+	/*data(attrName,attrVal)*/
+	$("#btn1").click(function(){
+		$("div").data("dataInfo","Hello World");
+	})
+	$("#btn2").click(function(){
+		$("div").text($("div").data("dataInfo"));
+	})
+</script>
+</body>
+</html>

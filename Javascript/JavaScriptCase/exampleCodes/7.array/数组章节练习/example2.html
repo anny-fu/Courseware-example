@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>计算平均分</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = "小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+		// 分割字符串
+		str = str.split(';');
+		console.log(str);
+		var arr=[];
+		for (var i = 0; i < str.length; i++) {
+			// 将分割后的字符串数组里面每个成员再以
+			// 冒号分割，然后取数字，转换为数值类型
+			arr.push(Number(str[i].split(':')[1]));
+		}
+		// 求和取整
+		var result = arr.reduce(function(re1,re2){
+			return re1 + re2;
+		});
+
+		console.log(arr.length);
+		console.log("总分为："+result+"======平均分为："+parseInt(result/arr.length));
+
+		/*方法二*/
+		  //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+		  var sorceStr = "小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+		var arr  = sorceStr.split(';');//按 ; 符号进行数组分割
+		var sum = 0;
+		var av= 0;
+		for( var i =0;i<arr.length;i++ ){
+	    var index = arr[i].indexOf(':'); //根据 ： 符号确定数字开始的位置 
+		sum += parseInt(  arr[i].substr(index+1,2)  );  // parseInt() 字符串类型转成整型
+	}
+	av = sum/arr.length;
+    av = Math.floor(av);  // 取整
+    
+  //从数组中将成绩撮出来，然后求和取整，并输出。
+  document.write("--班级总分为："+av);
+</script>
+</body>
+</html>

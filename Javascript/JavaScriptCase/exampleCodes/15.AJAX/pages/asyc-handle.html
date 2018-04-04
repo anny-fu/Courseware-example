@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>异步处理</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		ul {
+			margin: 0;
+		}
+		ul li {
+			cursor: pointer;
+		}
+		ul li:active {
+			color: #e00;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>异步处理</a>
+	</nav>
+	
+	<main>
+		<ul id="hardware"></ul>
+	</main>
+	
+	<script>
+		function run() {
+			var hardware = document.querySelector("ul#hardware");
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET","https://www.aulence.com/data/hardware-info.json");
+			xhr.send();
+			xhr.onload = function() {
+				var jsonStr = xhr.responseText;
+				var obj = JSON.parse(jsonStr);
+				for(var x in obj) {
+					hardware.innerHTML += 
+						'<li>' + obj[x] + '</li>';
+				}
+				var liArr = hardware.children,
+					liArr_leng = liArr.length;
+				for(let i = 0; i < liArr_leng; i++) {
+					liArr[i].onclick = function() {
+						console.log((i + 1) + "、" +this.textContent);
+					}
+				}
+			}
+			
+		}
+		run();
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
