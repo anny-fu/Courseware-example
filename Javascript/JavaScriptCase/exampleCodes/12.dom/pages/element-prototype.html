@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>标签元素的原型</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		#testDiv, #otherDiv {
+			width: 256px; height: 256px;
+			background-color: #0c12b2;
+			color: #fff;
+		}
+		#otherDiv {
+			background-color: #00aa3b;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>标签元素的原型</a>
+	</nav>
+	<main>
+		<div id="testDiv">div</div>
+		<div id="otherDiv">这是另外的DIV</div>
+		<p id="testP">test p</p>
+		<span id="testSpan">span</span>
+	</main>
+	
+	<script>
+		var testDiv = document.getElementById("testDiv");
+		var otherDiv = document.getElementById("otherDiv");
+		var testP = document.getElementById("testP");
+		var testSpan = document.getElementById("testSpan");
+		// 获取对象的类型
+		var thisType = Object.prototype.toString.call.bind(Object.prototype.toString);
+		/* 所有元素居中方法 */
+		Element.prototype.centered = function() {
+			this.style.cssText = "position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%);";
+		}
+		Element.prototype.removeCentered = function() {
+			this.style.cssText = "";
+		}
+		// Math求平均值方法
+		Math.__proto__.avg = function() {
+			var num_length = arguments.length;
+			var sum = 0;
+			for(var i = 0; i < num_length; i++) {
+				sum += arguments[i];
+			}
+			sum /= num_length;
+			return sum;
+		}
+		// Math求阶乘方法
+		Math.__proto__.fac = function(num) {
+			var product = 1;
+			for(var i = 1; i <= num; i++) {
+				product *= i;
+			}
+			return product;
+		}
+		
+		// 总结：
+		// 对象有属性__proto__,指向该对象的构造函数的原型对象
+		// 方法除了有属性__proto__,还有属性prototype，prototype指向该方法的原型对象
+	</script>
+</body>
+</html>
+
+
+
+
+
+

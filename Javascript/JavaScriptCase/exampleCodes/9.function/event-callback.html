@@ -47,15 +47,27 @@
 		<button id="popupImg" type="button">弹出图片</button>
 		<!-- 组件显示区域 -->
 		<component>
+			<!-- 文本按钮组件 -->
+			<!-- <popup-box> 
+				<popup-content>
+					<p>您确定要替换位图片1吗？</p> 
+				</popup-content>
+				<popup-ctrl>
+					<button id="sureCtrl" type="button">确认</button>
+				</popup-ctrl>
+			</popup-box> -->
+			<!-- 图片组件 -->
 			<!--<popup-box>
 			<popup-content>
 			<img src="">
 			</popup-content>
-			</popup-box>-->
-		</component>
-	</main>
-	
-	<script>
+		</popup-box>-->
+
+
+	</component>
+</main>
+
+<script>
 		// 图片显示容器
 		var showImg = document.getElementById("showImg");
 		// 四个按钮
@@ -126,14 +138,14 @@
 					this.parentElement.parentElement.remove();
 					component.style.zIndex = "-1";
 				}
-		    }
+			}
 			// 如果是显示图片
 			else if(param.type === "image") {
 				component.innerHTML = '<popup-box>' +
-					'<popup-content>' +
-					'<img id="popup-image" src="' + param.imgURL + '">' +
-					'</popup-content>' +
-					'</popup-box>';
+				'<popup-content>' +
+				'<img id="popup-image" src="' + param.imgURL + '">' +
+				'</popup-content>' +
+				'</popup-box>';
 			}
 			component.style.zIndex = "10";
 			var popupImage = document.getElementById("popup-image");
@@ -143,7 +155,7 @@
 			}
 			
 		}
-			
+
 	</script>
 </body>
 </html>
