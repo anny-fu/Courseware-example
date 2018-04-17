@@ -32,7 +32,7 @@
 	<main id="main">
 		<div>
 			<label>账户：</label>
-			<input name="userName" type="text">
+			<input name="userName" type="text" data-user="anny" value="">
 		</div>
 		<div>
 			<label>密码：</label>
@@ -43,6 +43,7 @@
 	
 	<script>
 		var userPwd = document.getElementsByName("userPwd")[0];
+			var userName = document.getElementsByName('userName')[0];
 		var showPwd = document.getElementsByClassName("showPwd")[0];
 		showPwd.onclick = function() {
 			var status = userPwd.getAttribute("type");
@@ -62,6 +63,13 @@
 			else {
 				this.setAttribute("data-on","data-on");
 			}
+//		通过dataset对象获取data-*的属性值
+		var val =userName.dataset.user;
+		console.log(val);
+		// 将获取的属性值赋值给value属性
+     userName.value = val;
+     console.log(this.dataset.on);
+
 		}
 		
 	</script>

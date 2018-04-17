@@ -14,6 +14,7 @@ main.oncontextmenu = function(e) {
 				if(iconList.length) {
 				   iconList[iconList.length - 1].remove();
 				}
+				
 			}
 		}
 	});

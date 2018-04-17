@@ -150,7 +150,7 @@ function addbox(btn){
 
 
 
-
+    /*商品增加*/
     function increase(btn){
        // 返回指定元素的前一个兄弟元素（单价）
        var td1 = btn.previousElementSibling;
@@ -165,7 +165,7 @@ function addbox(btn){
         sum();
         
       }
-
+      /*商品数量减少*/
       function decrease(btn){
         var td1 = btn.nextElementSibling;
         var amount = parseInt(td1.value);
@@ -200,4 +200,4 @@ function addbox(btn){
 
 
         </script>
-        </html>}
+        </html>

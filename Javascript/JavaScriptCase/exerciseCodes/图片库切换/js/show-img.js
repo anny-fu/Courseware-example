@@ -10,12 +10,12 @@ var img_item=imgBox.children;
 // 文字显示P
 var show=img_container.children;
 //当前点击的图片路径和文本内容,index记录当前选中的li
-
+var index = 0;
 console.log(show[1]);
 
 for (var i = 0; i < img_item.length; i++) {
   // 记录li的下标
-  img_item[i].index=i;
+  img_item[i].index = i;
   // 为每个li添加点击事件
   img_item[i].onclick=showimg;
 }
@@ -26,7 +26,7 @@ function showimg(){
     if(!this.hasAttribute('on')){
       this.setAttribute('class','on');
       // 如果当前点击的li不等于记录的li,就清除当前li的class
-      if(index !=this.index){
+      if(this.index != index){
        img_item[index].removeAttribute('class');
        // 从新记录添加class的li
        index =this.index;

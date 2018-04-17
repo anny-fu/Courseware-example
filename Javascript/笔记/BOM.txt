@@ -6,7 +6,9 @@ window.screen.height 返回当前屏幕高度(分辨率值)
 
 offsetHeight; 获取元素实际内容高度( height + padding + border )
 
-clientHeight：内容可视区域的高度，也就是说页面浏览器中可以看到内容的这个区域的高度，一般是最后一个工具条以下到状态栏以上的这个区域，与页面内容无关（不包含滚动条宽度:height + padding ）。
+offsetLeft:当前元素距离父级元素左边的距离
+
+clientHeight：内容可视区域的高度，也就是说页面浏览器中可以看到内容的这个区域的高度，一般是最后一个工具条以下到状态栏以上的这个区域，与页面内容无关（不包含滚动条宽度:height ）。
 
 scrollHeight：获取对象的滚动高度。
 IE,Opera:网页的实际高度，可以小于clientHeight；
