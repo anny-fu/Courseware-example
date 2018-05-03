@@ -21,11 +21,94 @@ var loginsInfo = {
     consignee: ["皮卡丘","柯南","鸣人","路飞","悟空","黑崎一护"],
     describe: ["查看","查看","查看","查看","查看","查看"]
 }
+
+// 数组对象
+ var logistics=[
+        {
+            orderId:'taobao_001',
+            name:'单反',
+            sendTime:'2016-11-11',
+            getTime:'2016-11-16',
+            whoSign:'皮卡丘',
+            detail:'查看'
+        },
+        {
+            orderId:'taobao_002',
+            name:'手机',
+            sendTime:'2016-11-11',
+            getTime:'2016-11-18',
+            whoSign:'柯南',
+            detail:'查看'
+        },
+        {
+            orderId:'taobao_003',
+            name:'书籍',
+            sendTime:'2016-11-11',
+            getTime:'2016-11-18',
+            whoSign:'鸣人',
+            detail:'查看'
+        },
+        {
+            orderId:'taobao_004',
+            name:'茶杯',
+            sendTime:'2016-11-11',
+            getTime:'2016-11-19',
+            whoSign:'路飞',
+            detail:'查看'
+        },
+        {
+            orderId:'taobao_005',
+            name:'电脑',
+            sendTime:'2016-11-11',
+            getTime:'2016-11-21',
+            whoSign:'悟空',
+            detail:'查看'
+        },
+        {
+            orderId:'taobao_006',
+            name:'衣服',
+            sendTime:'2016-11-11',
+            getTime:'2016-11-23',
+            whoSign:'八戒',
+            detail:'查看'
+        },
+    ];
+
+
+
+function filterDate(){
+    // 数据长度
+    var DateLen = logistics.length;
+    // tbody
+var  tableCont = document.getElementById("logisInfoTable").getElementsByTagName("tbody")[0];
+
+    tableCont.innerHTML = "";
+    // 获取排除值
+      var filterVal = logisEle.filterBox.value;
+    for (var i = 0; i < DateLen; i++) {
+        // 如果等于排除值，就不输出
+        if(filterVal == logistics[i].orderId || filterVal == logistics[i].name ||
+            filterVal == logistics[i].sendTime || filterVal == logistics[i].getTime ||
+            filterVal == logistics[i].whoSign || filterVal == logistics[i].detail){
+            continue;
+        }
+        tableCont.innerHTML += `<tr>
+        <td>${logistics[i].orderId}</td>
+        <td>${logistics[i].name}</td>
+        <td>${logistics[i].sendTime}</td>
+        <td>${logistics[i].getTime}</td>
+        <td>${logistics[i].whoSign}</td>
+        <td>${logistics[i].detail}</td>
+        </tr>`;
+    }
+}
+
 /**** 函数事件触发 ****/
 /* 筛选排除数据 */
 logisEle.filterBtn.onclick = function() {
     // 点击触发函数
-    filterData();
+    // filterData();
+    filterDate();
 }
 /* 搜索指定数据 */
 logisEle.searchBtn.onclick = function() {
@@ -47,7 +130,8 @@ logisEle.searchBox.onfocus = function() {
 **/
 function filterData() {
         // 获取排除输入框的值
-        var filterVal = document.getElementById("filterVal").value,
+        // var filterVal = document.getElementById("filterVal").value,
+        var filterVal = logisEle.filterBox.value;
         // 获取数组长度
         loginsInfo_data_len = loginsInfo.orderNum.length,
         // 物流信息表格内容

@@ -1,89 +1,115 @@
 
 var form = document.querySelector("form");
 
-//设置事件代理
-form.addEventListener("focusin",function(event){
-	//如果是input获得焦点
-	if(event.target.tagName.toLowerCase() == "input"){
-		if(event.target.previousElementSibling){//如果target是同意协议的checkbox 就不执行下面的代码
-			event.target.previousElementSibling.style.display = "none";//设置input上面的提示文字隐藏
-			//设置下面的输入的格式的提示信息
-			event.target.parentElement.nextElementSibling.querySelector("span").innerHTML = event.target.getAttribute("data-tip")
-		}
+// 获取焦点事件代理
+form.addEventListener('focusin', function (event) {
+//	判断如果是input获取焦点,排除checkbox
+	var ele = event.target;
+	if (ele.tagName.toLowerCase() == 'input' && ele.previousElementSibling) {
+		ele.previousElementSibling.style.display = "none";
+		//提示信息
+		ele.parentElement.nextElementSibling.querySelector('span').innerHTML = ele.getAttribute("data-tip")
 	}
-});
-//设置失去焦点的代理事件
-form.addEventListener("focusout",function(){
-	if(event.target.tagName.toLowerCase() == "input"){
-		if(event.target.value == ""){//如果用户没有输入信息，就还原样式
-			event.target.previousElementSibling.style.display = "inline";
-			event.target.parentElement.nextElementSibling.querySelector("span").innerHTML = ""
-		}else{//如果用户输入了信息，就做判断
-			var input_str = event.target.value;//获取用户输入的信息
+})
+
+//失去焦点事件代理
+form.addEventListener('focusout', function (event) {
+	var ele = event.target;
+	//显示提示信息容器
+	var msgBox = ele.parentElement.nextElementSibling.querySelector('span');
+	if (ele.tagName.toLowerCase() == 'input') {
+		//	内容为空
+		if (ele.value == "") {
+			ele.previousElementSibling.style.display = "inline";
+			msgBox.innerHTML = '<i class="i-error"></i><span class="error">内容不能为空！</span>';
+		} else {
+			//	如果内容不为空
+			var input_val = ele.value;
+			//	返回结果
 			var result = "";
-			//根据id进行不同的判断
-			switch(event.target.getAttribute("id")){
-				case "username":result = username(input_str); break;
-				case "passwd":result = passwd(input_str); break;
-				case "repasswd":result = repasswd(document.getElementById("passwd").value,input_str);break;
-				case "phone":result = phone(input_str);break;
-				case "authCode":result = true;break;//如果是密码提示信息，直接返回TRUE 隐藏掉下面的提示信息
-				default:return;//其他的直接返回，主要针对checkbox
+			var pass = document.getElementById('passwd').value;
+			switch (ele.getAttribute('id')) {
+				case "username":
+					result = username(input_val);
+					break;
+				case "passwd":
+					result = passwd(input_val);
+					break;
+				case "repasswd":
+					result = repasswd(pass, input_val);
+					break;
+				case "phone":
+					result = phone(input_val);
+					break;
+				case "authCode":
+					result = authcode(input_val);
+					break;
+				default:
+					return false;
 			}
-			if(result == true){
-				//如果用户输入符合规范，直接隐藏提示信息
-				event.target.parentElement.nextElementSibling.querySelector("span").innerHTML = ""
+			//	 如何符合规范
+			if (result == true) {
+				msgBox.innerHTML = '<i class="i-succes"></i><span class="success">验证通过！</span>';
 			}else{
-				//如果用户输入不符合规范
-				event.target.parentElement.nextElementSibling.querySelector("span").innerHTML = '<i class="i-error"></i><span class="error">'+result+"</span>";
+			//	验证不通过,显示错误信息
+				msgBox.innerHTML = '<i class="i-error"></i><span class="error">'+result+'</span>';
+
+
 			}
 		}
 	}
 })
 
 
-function username(username){
-	if(/[^\u4e00-\u9fa5\w-]/.test(username)){
-		return "格式错误，仅支持汉字、字母、数字、“-”“_”的组合";
-	}else if(username.length < 4 || username.length > 20){
-		return "长度只能在4-20个字符之间";
-	}else{
+//用户名验证
+function username(uName) {
+//正则匹配
+	var reg = /[^\u4e00-\u9fa5\w-]/;
+	if (reg.test(uName)) {
+		return "格式错误，只支持汉字、字母、数字、下划线和“-”的组合";
+	} else if (uName.length < 4 || uName.lenght > 20) {
+		return "支持长度在4-20个字符之间";
+	} else {
 		return true;
 	}
 }
-function passwd(passwd){
-	//先做判断repasswd是否和passwd一致，用户可能repasswd输入正确，密码输入错误，再重新修改密码
-	var repasswd_input = document.getElementById("repasswd");
-	if(repasswd_input.value != ""){
-		var result = repasswd(passwd,repasswd_input.value);
-		if(result){
-			repasswd_input.parentElement.nextElementSibling.querySelector("span").innerHTML = ""
-		}else{
-			repasswd_input.parentElement.nextElementSibling.querySelector("span").innerHTML = '<i class="i-error"></i><span class="error">'+result+"</span>";
-		}
-	}
 
-	if(passwd.length < 6){
-		return "长度只能在6-20个字符之间";
-	}else {
+//密码验证
+function passwd(passwd) {
+		//获取确认密码
+	var repass = document.getElementById('repasswd').value;
+	//数字，字母，特殊符号必须两种以上组合
+	var reg = /^((?=.*?\d)(?=.*?[A-Za-z])|(?=.*?\d)(?=.*?[!@#$%^&])|(?=.*?[A-Za-z])(?=.*?[!@#$%^&]))[\dA-Za-z!@#$%^&]+$/;
+	if (!reg.test(passwd)) {
+		return "格式错误!";
+	} else if (passwd.length < 6 || passwd.length > 20) {
+		return "长度必须在6-20个字符之间。";
+	}else if(repass != '' && passwd != repass){
+		return '两次密码不一致！';
+	}else{
 		return true;
 	}
 }
-function repasswd(passwd,repasswd){
-	if(passwd != repasswd){
-		return "两次密码输入不一致";
-	}else {
+//确认密码验证
+function repasswd(pass,repass){
+	if(pass != '' && pass !== repass){
+		return "两次密码不一致。";
+	}else{
 		return true;
 	}
 }
-function phone(phone_num){
-	console.log(/^1(3|4|5|7|8)\d{9}$/.test(phone_num));
-	if(/^1(3|4|5|7|8)\d{9}$/.test(phone_num)){
+
+//手机号码验证
+function phone(phoneNum){
+	var reg =/^1(3|4|5|7|8)\d{9}$/;
+	if(reg.test(phoneNum)){
 		return true;
 	}else{
-		return "格式有误";
+		return "格式不正确。";
 	}
 }
+
+
 //监听同意协议的CheckBox的改变
 document.querySelector(".form_agreen>input").onchange = function(){
 	if(this.checked){//如果是勾上的，还原样式
@@ -117,4 +143,9 @@ ranDom.onclick = function(){
 	yzm =randoms();
 	this.innerHTML='<i id="yzm">'+yzm+'</i>';
 	this.style.letterSpacing ='7px'
+}
+// 验证码
+function authcode(num){
+	console.log(yzm);
+return num == yzm ? true : "验证码错误！";
 }

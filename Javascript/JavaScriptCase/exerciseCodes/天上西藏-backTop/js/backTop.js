@@ -13,7 +13,7 @@ closeCode = qrCode .getElementsByTagName("a")[0];
 window.onscroll = function(){
 	var scrollH = document.documentElement.scrollTop || document.pageYOffset || document.body.scrollTop || 0,
 	screenH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-	if(scrollH > screenH / 2){
+	if(scrollH > 100){
 		goTop.style.height = "127px";
 		qrCode.style.cssText = "height:160px;border-bottom:1px solid #eee";
 	}else{
@@ -37,10 +37,10 @@ function got(){
 function goTopTrans(){
 	// 获取滚动条滚动距离和每次向上滚动的距离
 	var scrollH = document.documentElement.scrollTop ||document.pageYOffset || document.body.scrollTop,
-	goSpeed = scrollH - scrollH / 10;
+	goSpeed = scrollH - scrollH / 10;//每次滚动距离
 	console.log(goSpeed);
 	if(scrollH > 0){
-		document.documentElement.scrollTop = document.body.scrollTop = goSpeed;
+		document.documentElement.scrollTop = document.body.scrollTop = goSpeed;//720,648
 	}else{
 		clearInterval(goTopt);
 		// goTop.onclick = got;

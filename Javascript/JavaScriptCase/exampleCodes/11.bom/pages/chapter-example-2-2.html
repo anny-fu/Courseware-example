@@ -15,6 +15,7 @@
 	</style>
 </head>
 <body>
+<div>iframe2内容：</div>
 	<main>
 		<div>
 			<label>宝贝：</label>
@@ -34,6 +35,10 @@
 	</main>
 	
 	<script>
+/*	父级页面访问子级页面：contentWindow属性获得iframe节点包含的window对*象，而contentDocument属性获得得iframe节点包含的document对象
+*子页面访问父级页面：window.parent
+*主页面和iframe涉及到跨域限制，需要通过启动本地服务器进行测试
+*/
 		var btnActive = document.getElementById("btnActive");
 		btnActive.onclick = function() {
 			// 获取iframe1里的文本框内容

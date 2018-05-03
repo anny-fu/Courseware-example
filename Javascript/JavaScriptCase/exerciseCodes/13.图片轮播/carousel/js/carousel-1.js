@@ -16,12 +16,12 @@ window.onload = function() {
     var carous = new Imgcarousel("carousel", 2400, false, true);
     // 调用“生成图片和控制点”方法
     carous.createImageAndPoint();
-    // 调用“点击控制点切换图片”方法
-    carous.tabImageShow();
     // 调用“图片自动轮播定时器”方法
     carous.imageCarousInterval();
     // 调用“左右翻页按钮功能”方法
     carous.flip();
+    // 调用“点击控制点切换图片”方法
+    carous.tabImageShow();
 }
 
 /*************************************************/

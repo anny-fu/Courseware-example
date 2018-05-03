@@ -194,6 +194,7 @@
 			function sumPwd() {
 				// 如果点击次数等于6的时候中止操作
 				if(numkeyCount === 6) {
+					numkeyCount = 0;
 					return;
 				}
 				// 添加“密码值”
@@ -216,7 +217,7 @@
 						var erroMesg = document.getElementsByClassName("erroMesg")[0];
 						erroMesg.textContent = "您的密码输入错误";
 						clearPwd();
-						
+
 					}
 				}
 				// 累加1

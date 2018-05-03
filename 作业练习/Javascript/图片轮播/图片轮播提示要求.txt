@@ -1,0 +1,24 @@
+
+构造函数实现图片轮播切换效果
+1.构造函数中需使用this关键字
+2.图片和控制点需动态生成
+3.切换效果为控制元素的class
+
+构造函数如：
+function Imgcarousel(参数需自己定义){
+/**私有属性**/
+//主容器
+this.container= document.getElementById(容器ID);
+//图片容器
+this.imgBox = ...
+//控制点容器
+this.pointBox = ...
+//.....
+
+/**私有方法**/
+//生成图片和小圆点函数
+this.createImgAndPoint = function(){}
+//图片切换函数
+//next、prev切换效果函数
+//......
+}

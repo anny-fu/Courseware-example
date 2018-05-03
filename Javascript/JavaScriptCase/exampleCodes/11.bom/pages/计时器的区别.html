@@ -22,8 +22,8 @@
 </head>
 <body>
   <form>
-    <input type="text" id="count" />
-    <input type="button" value="start" onclick="starts()">
+    <input type="text" id="count" value="0"/>
+    <input type="button" value="start" onclick="startCount()">
     <input type="button" value="Stop" onclick="stopCount()">
   </form>
 </body>
@@ -39,10 +39,13 @@
     document.getElementById('count').value =num;
     num++;
     console.log(num);
+    // 放到函数内部，可以循环执行
     // i = setTimeout(startCount,1000);
     // 将setInterval放到函数中自己调用自己执行，会出现加速执行效果。
     // i = setInterval(startCount,1000);
   }
+  // 外部调用只能执行一次
+  // setTimeout(startCount,1000);
   /**
    * 
    * 如果要实现间隔时间相等的情况，必须要将它放在另外一个函数中去执行

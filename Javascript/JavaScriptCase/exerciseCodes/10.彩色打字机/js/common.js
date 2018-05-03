@@ -8,6 +8,9 @@ window.onload = function() {
 function printColorFont(ident) {
 	// 获取当前文本框的Value值
 	var txtVal = document.getElementById(ident).value;
+	if(txtVal == ''){
+		return ;
+	}
 	// 将这个值转换为数组
 	var txtArr = txtVal.split("");
 	// 获取到“信纸”里的div元素
@@ -23,8 +26,7 @@ function printColorFont(ident) {
 		
 		// 将这次设置好class和对应的文字拼接为一个span标签添加进“信纸”内
 		showTxtDiv.innerHTML += '<span class="' +
-			radomFZ + '">' +digni 
-			txtArr[count++] + 
+			radomFZ + '">' +txtArr[count++] + 
 			'</span>';
 		// 如果计数器长度和文本组成的数组相等，则清楚定时器
 		if(txtArr.length === count) {

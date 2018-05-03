@@ -13,11 +13,12 @@ var formPopBox = document.getElementById("formPopBox");
 
 // 显示文本弹出框
 textPopBox.onclick = function() {
-	popupbox("showPopupElement", {
+	var obj = {
 		type: "text",
 		showClose: true,
 		content: "人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。"
-	});
+	};
+	popupbox("showPopupElement", obj);
 }
 
 // 显示确认弹出框
@@ -25,6 +26,7 @@ comfirmPopBox.onclick = function() {
 	popupbox("showPopupElement", {
 		type: "confirm",
 		content: "您确认要更换当前的背景图片吗？",
+		// content: "您确认要退出当前网站？",
 		confirm: function() {
 			// 获取当前的背景图class
 			var main = document.getElementsByTagName("main")[0];

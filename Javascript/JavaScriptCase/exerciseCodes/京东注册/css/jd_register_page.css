@@ -35,7 +35,7 @@
  .clearfix{
  	zoom: 1;
  }
- .logo,.i-def,.i-error,.i-company,.i-global{
+ .logo,.i-def,.i-error,.i-company,.i-global,.i-succes{
  	background: url(../img/icon.png);
  }
  .i-def{
@@ -50,9 +50,15 @@
  .i-error{
  	background-position: -17px -100px;
  }
+ .i-succes{
+ 	background-position: 0px 53px;
+ }
 
  .error{
  	color: #e22;
+ }
+ .success{
+	 color:#90b71b;
  }
  .nochecked{
  	padding: 2px;
@@ -127,7 +133,7 @@
  }
  .form_item label:nth-child(2){
  	color: rgb(204,204,204);
- 	line-height: 46px;
+ 	line-height: 52px;
  	margin-left: 20px;
  	position: absolute;
  	font-family: "Microsoft YaHei", "Hiragino Sans GB";
