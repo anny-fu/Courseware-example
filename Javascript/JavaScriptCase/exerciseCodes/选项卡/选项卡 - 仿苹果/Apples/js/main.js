@@ -46,7 +46,6 @@ oContents.firstElementChild.style.display = 'block';
 // 遍历`a`，添加点击事件
 var aA = Array.prototype.slice.call(oNav.children);
 aA.forEach(function(a, idx){
-
 	// 为`a`添加一个自定义属性
 	a.idx = idx;
 	// a.setAttribute(`idx`, idx);

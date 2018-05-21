@@ -29,7 +29,7 @@ $(function() {
             // 添加选中效果
             $(this).addClass("checked");
                 // 获取楼层的下标，以便于计算出楼层数 
-            var idx = $(this).closest(".storey").index(),
+                var idx = $(this).closest(".storey").index(),
                 // 当前楼层
                 storeyFloor = (elevStatus.storeyTotal - idx),
                 // 层高（后面+1是为了视觉上对齐）
@@ -40,23 +40,23 @@ $(function() {
             // 电梯移动到相应楼层
             switch(storeyFloor) {
                 case 1:
-                    elevatorMove(storeyFloor, floorHeight * amountMove, this);
-                    break;
+                elevatorMove(storeyFloor, floorHeight * amountMove, this);
+                break;
                 case 2:
-                    elevatorMove(storeyFloor, floorHeight * amountMove, this);
-                    break;
+                elevatorMove(storeyFloor, floorHeight * amountMove, this);
+                break;
                 case 3:
-                    elevatorMove(storeyFloor, floorHeight * amountMove, this);
-                    break;
+                elevatorMove(storeyFloor, floorHeight * amountMove, this);
+                break;
                 case 4:
-                    elevatorMove(storeyFloor, floorHeight * amountMove, this);
-                    break;
+                elevatorMove(storeyFloor, floorHeight * amountMove, this);
+                break;
                 case 5:
-                    elevatorMove(storeyFloor, floorHeight * amountMove, this);
-                    break;
+                elevatorMove(storeyFloor, floorHeight * amountMove, this);
+                break;
                 case 6:
-                    elevatorMove(storeyFloor, floorHeight * amountMove, this);
-                    break;
+                elevatorMove(storeyFloor, floorHeight * amountMove, this);
+                break;
             }
         }
     });
@@ -68,7 +68,7 @@ $(function() {
 **/
 function elevatorMove(num,measure,btn) {
         // 获取当前电梯所在层数
-    var elevatorNum = elevStatus.onFloor,
+        var elevatorNum = elevStatus.onFloor,
         // 计算出电梯所在层和当前楼层的差值
         diffFloorVal = Math.abs(elevatorNum - num);
     // 移动电梯

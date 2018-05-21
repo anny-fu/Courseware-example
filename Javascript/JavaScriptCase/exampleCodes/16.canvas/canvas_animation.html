@@ -3,54 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Canvas</title>
-    <style type="text/css">
-        button {
-            margin: 5px;
-            border: 1px solid #028ae0;
-            background: #039dff;
-            height: 32px;
-            border-radius: 5px;
-            color: #fff;
-        }
-
-        .container {
-            height: 300px;
-        }
-    </style>
 </head>
 <body>
-<div class="container">
-
-    <canvas id="myCanvas" width="1300" height="500">
-        您的浏览器不支持canvas！
-    </canvas>
-</div>
+        <canvas id="myCanvas">
+            您的浏览器不支持canvas！
+        </canvas>
 </body>
 <script>
     var canvas = document.getElementById('myCanvas');
     var cxt = canvas.getContext('2d');
+    canvas.width = document.body.offsetWidth;
+    canvas.height = "700";
+
     //定义一个球类对象
-    var ball = {x: 10, y: 100, dir_x: 5, dir_y: 5, radius: 20};
+    var ball = {x: 10, y: 100, dir_x: 5, dir_y: 5, radius: 10};
     // 函数调用
     drawBall();
 
     /*绘制球函数*/
     function drawBall() {
+        // 覆盖上一次的小球轨迹
         cxt.fillStyle = "white";
         cxt.fillRect(0, 0, canvas.width, canvas.height);
+
+        // 绘制小球
         cxt.beginPath();
         cxt.fillStyle = "red";
         //arc()
-        cxt.arc(ball.x, ball.y, 10, 0, Math.PI * 2, true);
+        cxt.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, true);
         cxt.fill();
         //让我们的球动起来
         ball.x += ball.dir_x;
         ball.y += ball.dir_y;
         //判断方向
-        if (ball.x < 10 || ball.x >= Number(canvas.width) - 10) {
+        if (ball.x <  ball.radius || ball.x >= Number(canvas.width) -  ball.radius) {
             ball.dir_x *= -1;
         }
-        if (ball.y < 10 || ball.y >= Number(canvas.height) - 10) {
+        if (ball.y <  ball.radius || ball.y >= Number(canvas.height) -  ball.radius) {
             ball.dir_y *= -1;
         }
         setTimeout("drawBall()", 10);

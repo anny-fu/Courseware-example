@@ -72,7 +72,8 @@ function Table() {
 	}
 	
 	/**
-	* 功能：删除当前行
+	* 功能：删除当前行fale
+	* 
 	**/
 	function deleCurrentRow() {
 		$("#goodsInfo  [name=deleData]").on("click", function() {

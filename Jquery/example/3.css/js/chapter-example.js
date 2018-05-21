@@ -36,7 +36,7 @@ function lazyLoad() {
 			// 获取当前元素距离文档顶部的偏移值
 			const $currentBlock =  $lazyElement.eq(i),
 				offsetVal = $currentBlock.offset().top;
-			//元素距离顶部位置小于滚动条距离加一屏的高度-100
+			//元素距离顶部位置< 滚动条距离 +(一屏的高度-100)
 			//(winHeight - 100)这个结果越大，说明元素出现越早
 			if(offsetVal < sroTopVal + (winHeight - 100)) {
 				$currentBlock.children(".offsetBlock").addClass("show");

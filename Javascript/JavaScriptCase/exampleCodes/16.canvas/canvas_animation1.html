@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Canvas</title>
+    <style type="text/css">
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="1350" height="600">
+    <canvas id="myCanvas">
         您的浏览器不支持canvas！
     </canvas>
 </body>
 <script>
     //获取绘制环境
     var canvas = document.getElementById("myCanvas");
-//    生成2d图案
+    //生成2d图案
     var canvasObj = canvas.getContext("2d");
-
+    canvas.width = document.body.offsetWidth;
+    canvas.height = document.body.offsetHeight;
     //随机函数
     function randomFun(max, min) {
         return Math.floor(Math.random() * (min - max + 1) + max);
@@ -63,16 +70,16 @@
         canvasObj.beginPath();
         canvasObj.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
         //实心球
-//        canvasObj.fillStyle = this.color;
-//        canvasObj.fill();
+         // canvasObj.fillStyle = this.color;
+         //canvasObj.fill();
         //空心球
-      canvasObj.strokeStyle = this.color;
-      canvasObj.lineWidth = 1;
-      canvasObj.stroke();
+        canvasObj.strokeStyle = this.color;
+        canvasObj.lineWidth = 1;
+        canvasObj.stroke();
     }
     //生成球数组
     var balls = [];
-    for (var i = 0; i < randomFun(50, 100); i++) {
+    for (var i = 0; i < randomFun(100, 200); i++) {
         var ball = new Ball();
         ball.draw();
         balls.push(ball);

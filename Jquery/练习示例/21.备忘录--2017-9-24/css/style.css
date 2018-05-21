@@ -121,11 +121,11 @@ main-page > main {
     text-overflow: ellipsis;
     color: #333333;
 }
-#memoireList li p:first-of-type {
+/*#memoireList li p:first-of-type {
     position: absolute;
     left: 0;
     top: 12px;
-}
+}*/
 #memoireList li p:last-child {
     font-size: 0.9rem;
     color: #888888;

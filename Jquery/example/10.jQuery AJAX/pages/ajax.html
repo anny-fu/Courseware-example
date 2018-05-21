@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>AJAX请求</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<style>
+		table, td {
+			border: 1px solid #aaa;
+			border-collapse: collapse;
+		}
+		table {
+			margin-top: 20px;
+		}
+		td {
+			padding: 8px 20px;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul > li {
+			width: 320px;
+			padding: 8px 12px;
+			margin-bottom: 12px;
+			border: 1px solid #aaa;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="pathNav">
+		<a href="../index.html">首页</a>
+		<a>AJAX请求</a>
+	</nav>
+	
+	<main>
+		<table>
+			<tbody>
+			</tbody>
+		</table>
+		<div class="showList"></div>
+	</main>
+	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$.getJSON("https://www.aulence.com/data/spirit-roleinfo.json", function(data) {
+			console.table(data);
+			var data_leng = data.length;
+			var $tody = $("table tbody")
+			for(let i = 0; i < data_leng; i++) {
+				$tody.append(`
+					<tr>
+						<td>${data[i].name}</td>
+						<td>${data[i].gender}</td>
+						<td>${data[i].property}</td>
+						<td>${data[i].capability}</td>
+						<td>${data[i].type}</td>
+						<td>${data[i].skills}</td>
+					</tr>
+				`);
+			}
+		});
+		
+		$.get("../data/doc.html", function(doc) {
+			$(".showList").html(doc);
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

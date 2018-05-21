@@ -4,18 +4,9 @@
     <meta charset="UTF-8">
     <title>Canvas</title>
     <style type="text/css">
-        button {
-            margin: 5px;
-            border: 1px solid #028ae0;
-            background: #039dff;
-            height: 32px;
-            border-radius: 5px;
-            color: #fff;
-        }
-
-        .container {
-            height: 300px;
-        }
+   #myCanvas{
+    background-color: #000;
+   }
     </style>
 </head>
 <body>
@@ -43,7 +34,7 @@
             gravity = 1;
         var tim = setInterval(function () {
             /*渲染画布为黑色，为了抹去上一步的小圆点。*/
-            ctx.fillStyle = "black";
+            ctx.fillStyle = "#333";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             /*移动时小球的坐标的改变*/
             posX += vx;

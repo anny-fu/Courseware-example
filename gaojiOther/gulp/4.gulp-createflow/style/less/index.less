@@ -1,0 +1,39 @@
+// 居中主容器
+.main-container(@width) {
+    width: @width;
+    margin: 0 auto;
+}
+
+header {
+    @height: 50px;
+    height: @height;
+    background-color: @themeColor;
+    text-align: center;
+    line-height: @height;
+    color: #fff;
+}
+
+
+/* 相册列表 */
+.album-list {
+    .main-container(1200px);
+    display: flex;
+    list-style: none;
+    &>li {
+        width: 25%;
+        &>img {
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* 全屏相册容器 */
+.fullScreenPanel {
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6) no-repeat center center / contain;
+    cursor: pointer;
+}
