@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求素数（质数）</title>
+</head>
+
+<body>
+    <script>
+        /*
+        第一步先找出101~200的所有数字（for循环）；
+        第二步让每个数字对所有比它小的数字（1除外）取余，
+        如果有一个结果为0，就结束循环（break）；如果所有的取余结果都不为0，那这个数就是质数；
+        第三步，就是输出找到的素数，这个是这题的关键。只要第二层for循环找到一个取余结果为0的数，
+        就直接利用break结束此次循环，直到第二层for循环执行到j=i-1时，即i对比i小的所有数取余都不为0，此时输出i即为质数；
+        注意不能认为只要判断不为0就直接输出结果，此时输出的结果是错误的，可能会重复输出（因为第二层循环执行很多次，每执行一次输出一次结果），
+        可能输出的结果不是自己想要的（比如全部是奇数，这是因为在输出语句后加了break）
+                */
+        var min = 101,
+            max = 200;
+        for (var i = min; i < max; i++) {
+            for (var j = 2; j < i; j++) {
+                // 和每个比本身小的数进行取余(1除外)
+                if (i % j == 0) {
+                    break;
+                    // 结果输出时：避免重复输出(这个数要等于当前数-1)，确定范围
+                } else if (j == i - 1) {
+                    console.log(i);
+                }
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

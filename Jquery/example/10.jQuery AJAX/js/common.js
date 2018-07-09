@@ -80,7 +80,8 @@ function loadTextFile() {
 		$("main").html(data);
 	});
 }
-/* 载入JSON文件 */function loadJSONFile() {
+/* 载入JSON文件 */
+function loadJSONFile() {
 	$.getJSON("json/test.json", function (data) {
 		var $main = $("main");
 		$main.html(`
@@ -109,7 +110,7 @@ function loadTextFile() {
 		});
 		str = str.slice(0, str.lastIndexOf("、"));
 		$main.find(".infoLine").eq(3).children("span").text(str);
-	});
+});
 }
 
 /* 载入JavaScript文件 */
@@ -164,9 +165,11 @@ function testGetParam(sendType, url) {
 		url: url,
 		async: false,
 		dataType: "jsonp",
-		jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
-		// timeout: 10,
-		jsonpCallback: "flightHandler",
+// jsonp: "callback",
+		//回掉函数名的参数名，默认callback，服务端通过它来获取到回调函数名
+		// jsonpCallback: 'successCallback',
+		//  回掉函数名，默认jquery自动生成
+		//两个参数可以随后台确定，如果你传入后端，那么后端需要调用这个回调函数，函数的参数data才会得到结果
 		success: function (bookData) {
 //			操作请求到的数据
 			console.log(bookData);
@@ -246,4 +249,11 @@ function testGetParam(sendType, url) {
 			console.log(textStatus);
 		}
 	});
+
+	//自定义回调函数名
+	function successCallback(data) {
+		console.log("successCallback");
+		console.log(data);
+	}
+
 }

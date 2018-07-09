@@ -1,0 +1,135 @@
+/*
+ * @Author: tom.anny 
+ * @Date: 2018-06-22 17:43:25 
+ * @Last Modified by:   tom.anny 
+ * @Last Modified time: 2018-06-22 17:43:25 
+ */
+
+body,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding-top: 100px;
+  width: 700px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.rotates {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  border: 1px solid #d504a6;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  opacity: 0;
+  transition: opacity 1s;
+  animation: bgcolor 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.rotates:before,
+.rotates:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ae00c0;
+  animation: scales 2s linear infinite;
+  animation-play-state: paused;
+}
+
+.rotates:before {
+  left: 12px;
+  top: -2px;
+  animation-delay: 1.5s;
+}
+
+.rotates:after {
+  left: 22px;
+  bottom: -5px;
+}
+
+.box {
+  width: 500px;
+  margin: 10px auto;
+  padding: 50px 20px;
+  border-radius: 20px;
+  border-top: 5px solid #ae00c0;
+  border-bottom: 1px solid #a4a2a2;
+  background-color: #f6f5f5;
+  margin-top: 20px;
+}
+
+.box:hover {
+  box-shadow: 0 3px 2px 2px #9b9b9b;
+}
+
+.box input,
+.box select {
+  width: 75px;
+  height: 32px;
+  line-height: 28px;
+  border: 1px solid #f6f5f5;
+  border-radius: 5px;
+  color: #ae00c0;
+  font-size: 22px;
+  text-align: center;
+}
+
+.box span {
+  padding: 0 10px;
+  color: #ae00c0;
+  font-size: 22px
+}
+
+#result {
+  font-size: 28px;
+}
+
+
+/*显示隐藏动画*/
+
+.box:hover+.rotates,
+.box:hover+.rotates:before,
+.box:hover+.rotates:after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+
+/*定义动画帧*/
+
+@keyframes bgcolor {
+  0% {
+    transform: rotate(0deg);
+    border-color: #f68c04;
+  }
+  50% {
+    border-color: #d100b5;
+    transform: rotate(180deg);
+  }
+  100% {
+    border-color: #70fc3a;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scales {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.8)
+  }
+  100% {
+    transform: scale(1)
+  }
+}

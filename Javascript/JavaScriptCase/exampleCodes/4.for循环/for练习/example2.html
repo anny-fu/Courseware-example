@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>循环打印三角形</title>
+</head>
+
+<body>
+  <script>
+    // 打印三角形
+    // 外层循环控制行，内层循环控制列
+    //var line =Number(prompt());
+	var line = 14;
+    for (var i = 1; i <= line; i++) {
+      // 如果函数等于总函数的一半时:round函数是四舍五入
+      if (i < Math.round(line / 2)) {
+        for (var j = 1; j <= i; j++) {
+          document.write('*');
+        }
+      } else {
+        // 倒序输出
+        for (var k = line - i; k >= 0; k--) {
+          document.write('*');
+        }
+      }
+      document.write('<br/>');
+    }
+  </script>
+</body>
+
+</html>

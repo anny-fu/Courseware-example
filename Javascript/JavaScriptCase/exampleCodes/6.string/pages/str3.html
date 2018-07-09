@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串合并和分隔方法</title>
+  <style>
+    #fileIpt {
+      width: 800px;
+      height: 60px;
+      font-size: 30px;
+    }
+    
+    #btn {
+      width: 100px;
+      height: 40px;
+      font-size: 26px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <input id="text" type="text" value="hello javascript">
+    <input id="numbers" type="number" value="2" min="1">
+    <input id="btn" type="button" value="确定">
+  </div>
+  <p id="result"></p>
+  <script>
+    var text = document.getElementById('text');
+    var num = document.getElementById('numbers');
+    var btn = document.getElementById('btn');
+    btn.onclick = function() {
+      // 文本
+      var txtVal = text.value;
+      // 次数
+      var nums = num.value;
+      var concatStr = '';
+      for (let i = 0; i < nums; i++) {
+        // 复制
+        concatStr = concatStr.concat(txtVal);
+      }
+      document.getElementById('result').textContent = "该字符串经过" + nums + "次复制之后为：" + concatStr;
+    }
+
+    // window, Object, String, Number, Boolean, Array;
+    String.prototype.repeatety = function(n) {
+      var concatStr = '';
+      for (let i = 0; i < n; i++) {
+        // 复制
+        concatStr = concatStr.concat(this);
+      }
+      return concatStr;
+    }
+  </script>
+</body>
+
+</html>

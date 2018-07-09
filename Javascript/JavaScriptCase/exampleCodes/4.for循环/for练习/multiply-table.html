@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>九九乘法表</title>
+    <style>
+ 
+        .line>div {
+            padding: 8px;
+            border: 2px solid #ff8a00;
+            float: left;
+            margin:8px;
+            width:76px;
+        }
+        .line>div>span{
+            padding:0 5px;
+        }
+        div.line:before,div.line:after{
+            content:'';
+            display: table;
+        }
+        div.line:after{
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        show();
+
+        function show() {
+            var body = document.getElementsByTagName('body')[0];
+            var lines = document.getElementsByClassName('line'); //行数
+            for (var i = 1; i <= 9; i++) {
+                // 每次循环先添加一行
+                body.innerHTML += '<div class="line"></div>';
+                // 内层循环控制列数
+                for (var j = 1; j <= i; j++) {
+				//document.write('<div class="line"><div>' + j + '<span>*</span>' + i + '<span>=</span>' + (i * j) + '</div></div>');
+                    lines[i-1].innerHTML += '<div>' + j + '<span>*</span>' + i + '<span>=</span>' + (i * j) + '</div>';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

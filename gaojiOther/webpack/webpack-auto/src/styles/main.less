@@ -1,0 +1,100 @@
+// 功能：主页样式
+// 日期：2017/11/27
+
+// ==== 定义全局样式 ====
+// 主题色
+@themeColor: #ff8800;
+
+// 全局字体
+@font: normal @fontSize "Microsoft YaHei";
+@fontSize: 16px;
+
+* {
+    box-sizing: border-box;
+}
+html,body {
+    font: @fontSize 'Microsoft Yahei',sans-serif;
+}
+html,body,ul,ol,p,h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+}
+html,body,#main {
+    height: 100%;
+}
+body {
+    font: @font;
+}
+/* 标题栏 */
+#headerTitle {
+    @height: 50px;
+    height: @height;
+    background-color: @themeColor;
+    text-align: center;
+    font-size: @fontSize * 1.2;
+    line-height: @height;
+    color: #ffffff;
+}
+/* 内容部分 */
+#content {
+    height: calc(~"100% - 102px");
+    overflow-x: hidden;
+    overflow-y: auto;
+    .banner-img {
+        display: block;
+        width: 100%;
+        transition: transform 0.9s;
+        transform-origin: center bottom;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+/* 底部导航 */
+#footerNav {
+    @height: 50px;
+    width: 100%;
+    height: @height;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ddd;
+    ul {
+        height: @height;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        li {
+            height: @height;
+            padding-top: 4px;
+            justify-content: space-around;
+            flex-grow: 1;
+            cursor: pointer;
+            &:nth-child(2) {
+                padding-top: 6px;
+                div {
+                    i {
+                        font-size: @fontSize * 1.2;
+                    }
+                }
+            }
+            div {
+                text-align: center;
+                font-size: @fontSize - 2px;
+                color: #888888;
+                align-content: center;
+                i {
+                    font-size: @fontSize * 1.4;
+                }
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            /* 被选中时的效果 */
+            &.active {
+                div {
+                    color: @themeColor;
+                }
+            }
+        }
+    }
+}

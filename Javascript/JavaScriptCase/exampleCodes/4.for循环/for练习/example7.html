@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小球下落高度</title>
+</head>
+<body>
+    <script>
+    // 每次落地后的反弹的高度为原来的一半，
+    var hig = 100;//高度
+    var num = 10;//落地次数
+    var num1 = 0 ,num2 = 0;//下落和回弹的高度
+    for (var i = 0; i < num; i++) {
+        // 落下时进过的高度
+        num1 = num1+hig;//100,150,175
+        // 每次回弹高度
+        hig = hig / 2;//50,25,12.5
+        if(i< 9){
+            // 反弹时经过的高度
+        num2 = num2 + hig;//50,75,87.5
+        }
+        console.log("第"+(i+1)+"次落地时，经过"+(num1+num2)+"米");//150,225,262.5
+        
+    }
+    console.log("第10反弹的高度为"+hig+"米");
+    </script>
+</body>
+</html>

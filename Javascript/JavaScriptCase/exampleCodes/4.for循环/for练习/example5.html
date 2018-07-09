@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求水仙花数</title>
+</head>
+
+<body>
+    <script>
+    //    水仙花数：一个三位数，其各位数字的立方之和；比如：153是水仙花数！因为153=1*1*1+5*5*5+3*3*3
+    var min = 100,max = 1000;//区间值
+    var b = 0,s = 0,g = 0;//记录个、十、百位数
+    var numArr = [];//该区间是水仙花数的数组
+    for (var i = min; i < max; i++) {
+       b =parseInt(i / 100);//百位数
+       s = parseInt(i / 10) - (b * 10);//十位数
+       g = parseInt(i % 10);//个位数
+    //    判断是否为水仙花数：Math.pow(x,y)方法用于计算x的y次幂
+        // 三位数的立方之和
+        // var sum =Math.pow(b,3) + Math.pow(s,3) + Math.pow(g,3);
+        var sum = Number((b * b * b) + (s * s * s) + (g * g * g));
+       if(i == sum ){
+            numArr.push(i);
+       }
+        
+    }
+    console.log("100~999之间的数为水仙花数的是："+numArr.join('、'));
+    </script>
+</body>
+
+</html>

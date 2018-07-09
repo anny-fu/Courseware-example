@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串查找替换方法</title>
+</head>
+
+<body>
+  <script>
+    var strs = "product,prompt,prototype,progress";
+    // match()
+    // 返回值;成功（数组）；否则null
+    // document.write(strs.match('pro'));
+    //全局匹配
+    document.write(strs.match(/pro/g));
+    document.write(strs.match('heoo'));
+    // search();
+    // 返回值：存在返回其第一个字符的下标位置。反之为-1；
+    document.write(strs.search('pro'));
+    document.write(strs.search('pro'));
+    // replace(oldStr,newStr)
+    // console.log(strs.replace('ro', 'BB'));
+    // console.log(strs.replace(/ro/g, 'BB'));
+    console.log(strs.replace(/pro/g, ''));
+  </script>
+</body>
+
+</html>

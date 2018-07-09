@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>练习一</title>
+</head>
+
+<body>
+  <script>
+    var arr = [
+        ['小Ａ', '女', '２１', '大一'],
+        ['小Ｂ', '男', '２３', '大三'],
+        ['小Ｃ', '男', '２４', '大四'],
+        ['小Ｄ', '女', '２１', '大一'],
+        ['小Ｅ', '女', '２２', '大四'],
+        ['小Ｆ', '男', '２１', '大一'],
+        ['小Ｇ', '女', '２２', '大二'],
+        ['小Ｈ', '女', '２０', '大三'],
+        ['小Ｉ', '女', '２０', '大一'],
+        ['小Ｊ', '男', '２０', '大三']
+      ]
+      //大一的女学员姓名
+    for (const key in arr) {
+      var stu = arr[key];
+      // 遍历第一二层
+      // 选出都为大一学员
+      if (stu.indexOf('大一') !== -1 && stu.indexOf('女') !== -1) {
+        console.log(stu);
+      }
+    }
+
+    //练习二
+    var info = ['我', '他', '非常', '不喜欢', '喜欢', '编程', '跳舞'];
+    info.forEach(function(ele, idx, arr) {
+      if (ele == '他' || ele == '不喜欢' || ele == '跳舞') {
+        arr.splice(idx, 1);
+      }
+    })
+    console.log(info.join(''));
+
+    // 练习三
+    var stud = [{
+      age: 19,
+      name: 'Jack'
+    }, {
+      age: 5,
+      name: 'Apple'
+    }, {
+      age: 12,
+      name: 'Lynn'
+    }, {
+      age: 25,
+      name: 'David'
+    }]
+    for (const key in stud) {
+      if (stud[key]['age'] > 18) {
+        console.log(stud[key]);
+      }
+    }
+    // 练习四
+    var stuAge = [20, 23, 26, 18, 26, 16, 27, 25, 23, 22, 28, 24, 25, 26, 21];
+    var avg = 0,
+      minAge = 0,
+      maxAge = 0,
+      countGt = 0,
+      countLt = 0,
+      oddNum;
+    stuAge.sort(function(a1, a2) {
+      return a1 - a2;
+    });
+    // 求平均年龄
+    var sum = stuAge.reduce(function(item1, item2) {
+      return item1 + item2;
+    });
+    avg = parseInt(sum / stuAge.length);
+    min = stuAge[0];
+    max = stuAge[stuAge.length - 1];
+    // 调换位置
+    stuAge[0] = max;
+    stuAge[stuAge.length - 1] = min;
+    // 大于平均年龄和小于平均年龄
+    oddNum = stuAge.filter(function(ele) {
+      if (ele % 2 !== 0) {
+        return ele;
+      }
+    });
+    for (const j in stuAge) {
+      if (stuAge[j] > avg) {
+        countGt++;
+      } else if (stuAge[j] < avg) {
+        countLt++;
+      }
+    }
+    console.log('平均年龄：' + avg + '\n最大年龄：' + max + '\n最小年龄：' + min + '\n交换位置后：' + stuAge + '\n大于avg：' + countGt +
+      '\n小于avg：' + countLt + '\n年龄为奇数的：' + oddNum.length);
+    //   练习五
+    var arr = [
+      [50, 29, 30, 24],
+      [60, 49, 78, 66],
+      [30, 75, 26, 88]
+    ];
+    //4角上的值
+    var sum = 0;
+    arr.forEach(function(ele, idx, arr) {
+      if (idx == 0 || idx == (arr.length - 1)) {
+        sum += ele[0] + ele[ele.length - 1];
+      }
+    });
+    console.log(sum);
+  </script>
+</body>
+
+</html>

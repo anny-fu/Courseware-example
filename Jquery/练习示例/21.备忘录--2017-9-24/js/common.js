@@ -51,7 +51,6 @@ function addMemoire() {
 			"left": "0%"
 		},300);
 	});
-	// 返回
 	$("#backMainPage").click(function () {
 		let $editPage = $("edit-page");
 		$editPage.animate({

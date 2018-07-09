@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组方法的综合利用</title>
+  <style>
+    #container {
+      width: 500px;
+      margin: 10px auto;
+      text-align: center;
+    }
+    
+    #container button {
+      padding: 3px 5px;
+      margin-top: 10px;
+    }
+    
+    #display span {
+      margin: 0 2px;
+      padding: 5px;
+      background-color: #0f00f6;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="display"></div>
+    <button class="shift">删除第一项</button>
+    <button class="pop">删除最后一项</button>
+    <button class="copy">复制</button>
+    <button class="remove-3">删除前三项</button>
+    <button class="remove-2to3">删除第二至三项</button>
+    <button class="insert-after2">在第二项后插入两项</button>
+    <button class="replace-2to3">替换第二和三项</button>
+    <button class="sort">正序排序</button>
+    <button class="reverse">倒序排序</button>
+    <button class="reset">还原</button>
+  </div>
+  <script>
+    var originArr = [100, 15, 20, 60, 30, 80, 40, 66, 90, 10];
+    var arr = originArr.slice();
+    delegateClickEvent();
+    render(arr);
+    //重置页面元素
+    function render(arr) {
+      var displayArea = document.getElementById('display');
+      displayArea.innerHTML = '';
+      for (var i = 0; i < arr.length; i++) {
+        displayArea.innerHTML += '<span>' + arr[i] + '</span>';
+      }
+    }
+    // 按钮点击事件
+    function delegateClickEvent() {
+      var container = document.getElementById('container');
+      //   添加事件监听
+      container.addEventListener('click', function(evnet) {
+        var target = evnet.target;
+        // 根据点击元素的className判断该操作哪一个方法
+        switch (target.className) {
+          case 'shift':
+            arr.shift();
+            target.className = 'unshift';
+            target.textContent = '添加第一项';
+            render(arr);
+            break;
+
+          case 'unshift':
+            arr.unshift('item unshifted');
+            target.className = 'shift';
+            target.textContent = '删除第一项';
+            render(arr);
+            break;
+
+          case 'pop':
+            arr.pop();
+            target.className = 'push';
+            target.textContent = '添加最后一项';
+            render(arr);
+            break;
+
+          case 'push':
+            arr.push('item pushed');
+            target.className = 'pop';
+            target.textContent = '删除最后一项';
+            render(arr);
+            break;
+
+          case 'copy':
+            arr = arr.concat(arr);
+            render(arr);
+            break;
+
+          case 'remove-3':
+            arr.splice(0, 3);
+            render(arr);
+            break;
+
+          case 'remove-2to3':
+            arr.splice(1, 2);
+            render(arr);
+            break;
+
+          case 'insert-after2':
+            arr.splice(2, 0, 'insert1', 'insert2');
+            render(arr);
+            break;
+
+          case 'replace-2to3':
+            arr.splice(1, 2, 'replace1', 'replace2');
+            render(arr);
+            break;
+          case 'sort':
+            arr.sort(function(item1, item2) {
+              return item1 - item2;
+            });
+            render(arr);
+            break;
+          case 'reverse':
+            arr.reverse();
+            render(arr);
+            break;
+          case 'reset':
+            arr = originArr.slice();
+            render(arr);
+            break;
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -5,7 +5,7 @@
   "main": "./js/common.js",
   "scripts": {
     "test": "cnpm install babel-cli babel-preset-env babel-preset-stage-3 --save-dev",
-    "startbabel": "babel ./js/origin/common_es6.js -o ./js/common.js -s"
+    "startbabel": "babel ./js/origin/common_es6.js -o ./js/co.js -s"
   },
   "author": {
     "name": "aulence",

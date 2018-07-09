@@ -15,6 +15,9 @@
 			margin-top: 20px;
 			color: #555;
 		}
+		#skillList>div{
+		    cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -44,6 +47,7 @@ function setStyle(obj){
 for (var i = 0; i <skill_div.length; i++) {
 	// console.log(skill_div[i]);
 	skill_div[i].onclick = function(){
+	//setStyle(this);
 		// 获取当前元素的text,data-color属性值
 		var divText = this.textContent;
 		console.log(divText);

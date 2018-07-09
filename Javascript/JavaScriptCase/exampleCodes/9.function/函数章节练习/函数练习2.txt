@@ -1,0 +1,232 @@
+1.参数集合是什么？
+(function(){
+    return typeof arguments;
+})();
+的结果是？object
+
+typeOf只能以字符串的形式返回数据类型
+js中包括6种数据类型——number，string，boolean，object，undefined，null。
+arguments是实参的集合——是一个对象（可以进行数组的循环，但没有数组的方法）。
+
+2.函数表达式
+var f=function g(){
+    return 23;
+};
+typeof g();
+的结果是？报错
+
+解答：刚才说到typeOf只能返回六种数据类型，f的声明是函数表达式。
+这种写法下，f是可以找到，但g不一定找得到。所以会报错
+
+3.delete方法删除什么？
+(function(x){
+  delete x;
+  return x;
+})(1);
+的执行结果是？
+
+解答：delete方法只能删除对象的属性，所以x根本删不掉。自执行的函数参数为1，所以返回1
+
+4.连等赋值（没做）
+var y=1,x=y=typeof x;
+console.log(x);
+执行结果是？undefined
+
+解答：连等号的赋值过程是从右往左运算的。一开始x没有声明。那么x就是undefined，
+接着x和y当然都也是undefined，运用typeof后，看到的结果是"undefined"。
+
+5.函数还是参数？
+console.log((function f(f){
+    return typeof f();
+})(function(){return 1;}))
+的执行结果是？number
+解答：自执行函数返回的这个f()其实指的是是参数！所以结果是"number"
+
+6.this的指向（没做）
+var foo={
+    bar:function(){
+        return this.baz
+    },
+    baz:1
+};
+
+(function(){
+    return typeof arguments[0]();
+})(foo.bar);
+的执行结果是？
+
+首先，这个foo对象定义有问题。作为方法，this指向的是调用者自身（这里是foo.bar），但是函数不存在baz这个属性，所以方法结果是undefined。
+
+另一方面，和第四题类似，注意到arguments0就是一个函数自执行的结果，它已经从foo对象中剥离开来了,this指向arguments[0]
+
+所以结果为"undefined"
+
+扩展
+上述条件不变
+
+console.log(typeof (f=foo.bar)());
+结果是？
+
+解答：显然，这个函数被剥离，this指向window，执行的结果是undefined
+
+7.分组选择符
+var f = (function f(){
+   return "1"; 
+}, function g(){
+ return 2; 
+})();
+
+typeof f;
+的结果是？number
+
+解答：好奇怪的写法！
+这是分组选择符——选择的是变量最后一位。
+例如：
+var a=(1,2,3)
+console.log(a)//3
+
+
+8.判断语句的条件
+  var x = 1;
+  if (function f(){}) {
+    x += typeof f;
+  }
+  x;
+的结果是什么？
+
+注意：函数声明不允许写在if判断条件中！如果真的写了，
+全部返回真——因为只有0，空字符串，undefined，null，false才判断为假。
+结果返回undefined。而1+undefined自然是‘1undefined’
+
+9. "类型"的类型（没做）
+  var x = [typeof x, typeof y][1];
+  typeof typeof x;
+解答：遇到判断typeof判断typeof，肯定返回字符串
+
+10.眼力
+  (function(foo){
+    return typeof foo.bar;
+  })({ foo: { bar: 1 } });
+的执行结果是？undefined
+
+解答：完全是考眼力了。参数是一个对象，这个对象只有一个属性foo。所以结果是undefined。
+
+12. 函数声明的预解析
+(function f(){
+    function f(){ return 1; }
+    return f();
+    function f(){ return 2; }
+  })();
+的结果是？2
+解答：首先要明确，函数声明是预解析的，在return之前，两句声明都已经被解析了。
+所以返回的是2。
+
+13.构造函数的禁忌
+return的f()值的是里面的f()还是外面的f()？
+
+  function f(){ return f; }
+  new f() instanceof f;
+的执行结果是？false
+解答：instanceof返回的是一个布尔值。看他是不是构造函数的实例。
+但是这个构造函数有很大的问题，构造函数在执行完毕之后，就变成了f值。所以不要给构造函数return东西。
+例如：
+ function f(){}
+  new f() instanceof f;
+
+
+
+14.在String()构造函数不存在的情况下自定义一个MyString()的构造器函数。
+记住，由于String()不存在，因此你在写构造器函数时不能使用任何属于内建String对象的方法和属性。
+并且要让你所创建的对象通过以下测试：
+var s = new MyString("hello");
+s.length;  //5
+
+s[0];  //"h"
+
+s.toString();  //"hello"
+
+s.valueOf();  //"hello"
+
+s.charAt(1);  //"e"
+
+s.charAt("2");  //"l"
+
+s.charAt("e");  //"h"
+
+s.concat(" world!");  //"hello world!"
+
+s.slice(1,3);  //"el"
+
+s.slice(0,-1);  //"hell"
+
+s.split("e");  //["h","llo"]
+
+s.split("l");  //["he","","o"]
+
+答案：
+function MyString(pstr){
+    this.str=pstr.toString();
+    this.length=this.str.length;
+
+    for(var i=0;i<this.length;i++){
+        this[i]=this.str[i];
+    }
+
+    this.toString=function (){
+        return this.str;
+    };
+
+    this.valueOf=function (){
+        return this.toString();
+    };
+    this.charAt=function(index){
+        index=parseInt(index,10);
+        index=isNaN(index)?0:index;
+        return this[index];
+    };
+    this.concat=function(concatStr){
+        return this.str+concatStr;
+    };
+    this.slice=function(startIndex,endIndex){
+        while(startIndex<0){
+            startIndex=startIndex+this.length;
+        }
+        while(endIndex<0){
+            endIndex=endIndex+this.length;
+        }
+        if(endIndex<=startIndex){
+            return "";
+        }
+        var resultStr="";
+        for(var i=startIndex;i<endIndex;i++){
+            resultStr+=this[i];
+        }
+        return resultStr;
+    };
+    this.split=function(s){
+        var resultArr=[];
+        var tempStr="";
+        for(var i=0;i<this.length;i++){
+            if(this[i]===s){
+                resultArr.push(tempStr);
+                tempStr="";
+            }else{
+                tempStr+=this[i];
+            }
+        }
+        resultArr.push(tempStr);
+        return resultArr;
+    };
+    this.reverse=function(){
+        var tempArr=[];
+        var i;
+        for(i=0;i<this.length;i++){
+            tempArr[i]=this[i];
+        }
+        tempArr.reverse();
+        this.str=tempArr.join("");
+        for(i=0;i<this.length;i++){
+            this[i]=tempArr[i];
+        }
+    };
+}

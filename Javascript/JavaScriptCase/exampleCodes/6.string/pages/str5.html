@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串大小写转换</title>
+</head>
+
+<body>
+  <script>
+    // 大小写转换
+    var str = "anthony,jayden,angel,taylor,robert";
+    // 切割为数组
+    var strArr = str.split(',');
+    for (let i = 0; i < strArr.length; i++) {
+      //  给每个数组成员的第一个字符转为大写
+      strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].substr(1);
+      // console.log(strArr);
+    }
+    // 一字符串的方式输出
+    document.write(strArr.join());
+  </script>
+</body>
+
+</html>

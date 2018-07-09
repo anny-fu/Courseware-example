@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合各个位数都不相同的三位数</title>
+</head>
+
+<body>
+    <script>
+        //    个位、十位、百位都可由1,2,3,4位数组成的3位不重复的数
+        var sum = 5; //小于5的数
+        var arr = []; //记录个位十位百位上的数
+        var count = 0; //记录个数
+        for (var i = 1; i < sum; i++) {//百位
+            for (var j = 1; j < sum; j++) {//十位
+                for (var k = 1; k < sum; k++) {//个位
+                    // 如果百，十，个位上的数都不相同，才输出
+                    if(i !== j && i !== k && j !== k){
+                        count ++;
+                        var num = i+""+j+""+k;
+                        // 将三位数拼起来存入数组
+                        arr.push(num);
+                    }
+
+                }
+
+            }
+
+        }
+        // 最后打印出结果
+        console.log("一共可组成："+count+"个三位数;分别是："+arr.join('、'));
+    </script>
+</body>
+
+</html>

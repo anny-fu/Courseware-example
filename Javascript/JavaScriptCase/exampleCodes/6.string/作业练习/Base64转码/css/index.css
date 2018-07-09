@@ -1,0 +1,48 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box
+}
+
+body {
+  padding: 20px;
+}
+
+#content,
+#showCode {
+  width: 600px;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 25px;
+}
+
+#content {
+  height: 120px;
+  font: 18px "微软雅黑";
+  display: block;
+  outline: none;
+}
+
+#content:focus {
+  box-shadow: 0 0 10px rgba(92, 139, 145, 0.6);
+}
+
+form>button {
+  padding: 10px 58px;
+  margin-top: 20px;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
+
+form>button:first-of-type {
+  margin-right: 42px;
+}
+
+#showCode {
+  height: 220px;
+  background-color: #5c8b91;
+  border: 1px solid #2b5358;
+  margin-top: 20px;
+  word-break: break-word;
+  color: #fff;
+}

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
-	<meta charset="UTF-8">
-	<title>求出固定区间的润年</title>
+  <meta charset="UTF-8">
+  <title>求出固定区间的润年</title>
 </head>
+
 <body>
-	<script type="text/javascript">
-	// 获取年份
-	var years =[]; 
-	var nowY = new Date().getFullYear();
-	console.log(nowY);
-	for(var i = 2000 ;i <= nowY;i++){
-		if(i % 4 == 0 && i % 100 != 0 || ){
-			years.push(i);
-		}
-	}
-	console.log(years);
-// 循环控制
-// for (var i = 0; i < Things.length; i++) {
-// 	Things[i]
-// }
-	</script>
+  <script type="text/javascript">
+    // 获取年份
+    var years = [];
+    var nowY = new Date().getFullYear();
+    console.log(nowY);
+    for (var i = 2000; i <= nowY; i++) {
+      // if(i % 4 == 0 && i % 100 != 0 || ){
+      // 	years.push(i);
+      // }
+    }
+    console.log(years);
+    // 循环控制
+    // for (var i = 0; i < Things.length; i++) {
+    // 	Things[i]
+    // }
+  </script>
 </body>
+
 </html>

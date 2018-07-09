@@ -1,0 +1,26 @@
+{
+  "name": "webpack-loader",
+  "version": "1.0.1",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev-dep": "cnpm install webpack@3 jquery bootstrap@3 css-loader style-loader less less-loader url-loader file-loader --save-dev",
+    "save-dep": "cnpm install jquery@3 bootstrap@3 --save"
+  },
+  "keywords": [],
+  "author": "aulence",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.12.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.3.1"
+  }
+}

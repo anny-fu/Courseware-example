@@ -1,0 +1,113 @@
+/****************************************************/
+答题声明：解答题部分不能进行代码运行，直接读代码后写出结果。
+/****************************************************/
+
+解答题：
+1、构造函数的作用及语法优势？
+
+2、如下代码：
+(function(){
+    return typeof arguments;
+})();
+结果是？
+
+3、var f=function g(){
+    return 23;
+};
+typeof g();
+的结果是？
+
+4、代码
+(function(x){
+  delete x;
+  return x;
+})(1);
+的执行结果是？
+
+5、代码
+console.log((function f(f){
+    return typeof f();
+})(function(){return 1;}))
+的执行结果是？
+
+6、代码
+var f = (function f(){
+   return "1"; 
+}, function g(){
+ return 2; 
+})();
+
+typeof f;
+的结果是？
+
+7、判断语句的条件
+  var x = 1;
+  if (function f(){}) {
+    x += typeof f;
+  }
+  x;
+的结果是什么？
+
+9、代码
+(function(foo){
+    return typeof foo.bar;
+  })({ foo: { bar: 1 } });
+的执行结果是？
+
+10、代码
+(function f(){
+    function f(){ return 1; }
+    return f();
+    function f(){ return 2; }
+  })();
+的结果是？
+
+11、代码
+ function f(){ return f; }
+  new f() instanceof f;
+的执行结果是？
+
+
+
+
+
+
+程序题：
+1.JS点击显示与隐藏之手风琴导航制作。
+提示：获取元素，判断点击，如果当前导航内容显示就隐藏，如果隐藏就显示出来。
+效果文件GIF动画效果。
+
+2.定义一个构造函数，参数是一个对象(比如学生信息)，在构造函数中实现如下功能：
+功能1：打招呼的方法
+功能2：修改学生信息的方法
+功能3：新增学生信息的方法
+功能4：删除学员信息的方法
+功能5：输出学生的基本信息
+
+3.在String()构造函数不存在的情况下自定义一个MyString()的构造器函数。
+记住，由于String()不存在，因此你在写构造器函数时不能使用任何属于内建String对象的方法和属性。
+并且要让你所创建的对象通过以下测试：
+var s = new MyString("hello");
+s.length;  //5
+
+s[0];  //"h"
+
+s.toString();  //"hello"
+
+s.valueOf();  //"hello"
+
+s.charAt(1);  //"e"
+
+s.charAt("2");  //"l"
+
+s.charAt("e");  //"h"
+
+s.concat(" world!");  //"hello world!"
+
+s.slice(1,3);  //"el"
+
+s.slice(0,-1);  //"hell"
+
+s.split("e");  //["h","llo"]
+
+s.split("l");  //["he","","o"]

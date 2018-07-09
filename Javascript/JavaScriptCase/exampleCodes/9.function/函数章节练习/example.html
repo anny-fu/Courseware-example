@@ -9,7 +9,7 @@
 	<script>
 		/**
 		* 功能：显示对象信息
-		* 参数：需要显示的项目（字符串，各项用“,”号分割）
+		* 参数：需要显示的项目（字符串，各项用“,”号分割:如："编号,昵称,性别,电话"）
 		**/
 		Object.prototype.showAllInfo = function(showInfo) {
 			var arr = [];
@@ -20,12 +20,15 @@
 				arr.push(this[x]);
 			}
 			var lbl = showInfo.split(",");
-			lbl.forEach(function(item,index) {
+			lbl.forEach(function(item,index,lblArr) {
 				lbl[index] = item + "：" + arr[index];
 			});
-			return lbl.join("，");
+			return lbl.join(";");
 		}
-		
+		/**
+		*角色构造函数
+		*param:number(编号)；name(昵称);gender(性别);tel(电话)
+		**/
 		function RoleInfo(number,name,gender,tel) {
 			this.number = number;
 			this.name = name;

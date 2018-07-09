@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求完数</title>
+</head>
+<body>
+    <script>
+    // 完数：等于自身的所有因子之和（能被自己整除的所有小于自身的数之和）
+    var num = 1000;
+    for(var j = 1; j <= num;j++){
+        var sum = 0;//每个数的因子之和
+        for(var i = 1;i < j;i++){
+            if(j % i == 0){
+                sum = sum + i;
+            }
+        }
+        // 如果当前数的因子之和等于自身，就是完数
+        if(sum == j){
+            console.info(j);
+        }
+    }
+    
+    
+    </script>
+</body>
+</html>

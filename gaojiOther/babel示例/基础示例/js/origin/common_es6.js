@@ -7,7 +7,7 @@ let $body = $(`body`);
 const contentArr = ['Babel简要介绍', '基本概念', '该页面由柯宇的老师制作，若涉及到法律相关问题，请直接找柯宇的麻烦，谢谢！'];
 
 let setTheme = (element, color) => {
-	$(element).css('backgroundColor', color);
+  $(element).css('backgroundColor', color);
 };
 
 $body.html(`
@@ -26,4 +26,4 @@ $body.html(`
 	<footer>${contentArr[2]}</footer>
 `);
 
-setTheme('header, footer','#237dfd');
+setTheme('header, footer', '#237dfd');

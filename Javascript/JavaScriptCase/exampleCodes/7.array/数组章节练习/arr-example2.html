@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组练习二</title>
+</head>
+
+<body>
+  <script>
+    /*
+                                                                                    var nameStr = prompt('请输入英文名，并以英文的","分隔');
+                                                                                    if (nameStr == '') {
+                                                                                      alert('输入内容不能为空');
+                                                                                    } else {
+                                                                                      // 将字符串转换为数组
+                                                                                      var nameArr = nameStr.split(',');
+                                                                                      nameArr.sort();
+                                                                                      for (const key in nameArr) {
+                                                                                        document.write(nameArr[key] + '<br/>');
+                                                                                      }
+                                                                                    }
+                                                                                */
+    //千分位表示法
+    var moneyStr = prompt("请输入对应的金额！");
+    if (moneyStr == '') {
+      moneyStr = prompt("请输入对应的金额！");
+    } else {
+      if (moneyStr.indexOf('\.') !== -1) {
+        //  以小数点切割
+        var strArr = moneyStr.split('.');
+        var list = strArr[0].split('').reverse();
+        for (var i = 0; i < list.length; i++) {
+          if (i % 4 == 3) {
+            list.splice(i, 0, ',');
+          }
+        }
+        document.write(list.reverse().join('') + '.' + strArr[1]);
+      } else {
+        var lists = moneyStr.split('').reverse();
+        for (var i = 0; i < lists.length; i++) {
+          if (i % 4 == 3) {
+            lists.splice(i, 0, ',');
+          }
+        }
+        document.write(lists.reverse().join(''));
+      }
+    }
+    //数组去重
+    var arrNum = [16, 10, 18, 32, 41, 41, 22, 22, 32, 5, 16, 18];
+    var newNum = [];
+    arrNum.forEach(function(ele) {
+      if (newNum.indexOf(ele) == -1) {
+        newNum.push(ele);
+      }
+    })
+    console.log(newNum);
+
+    //链式调用
+    var classArr = [48, 63, 55, 92, 96, 77, 82, 69, 86, 83, 16, 72, 90, 81, 88, 80, 73, 66];
+    var res = classArr.sort(function(n1, n2) {
+        return n2 - n1;
+      })
+      .filter(function(ele) {
+        return ele >= 60 && ele < 90;
+      })
+      .reduce(function(n1, n2) {
+        return n1 + n2;
+      })
+    console.log(res);
+  </script>
+</body>
+
+</html>

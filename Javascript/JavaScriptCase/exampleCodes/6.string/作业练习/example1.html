@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>路径内容截取</title>
+  <style>
+    #fileIpt {
+      width: 800px;
+      height: 60px;
+      font-size: 30px;
+    }
+    
+    #btn {
+      width: 100px;
+      height: 40px;
+      font-size: 26px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <input id="fileIpt" type="text" value="file:///D:/tom.anny/Course/6.string/index.html">
+    <input id="btn" type="button" value="确定">
+  </div>
+  <script>
+    // 练习：
+    // var fileStr = 'file:///D:/tom.anny/Course/6.string/index.html';
+    // var fileStr = 'file:///C:/Users/tom.zhou/Desktop/w1803.png';
+    // 获取到协议类型，当前磁盘，用户名称，以及打开文件名及后缀
+
+    var input = document.getElementById('fileIpt');
+    var btn = document.getElementById('btn');
+    btn.onclick = function() {
+      // 获取url路径字符串
+      var fileStr = input.value;
+      // 1.协议类型
+      var getProtocal = fileStr.slice(0, fileStr.indexOf(':///'));
+      document.write("协议为：" + getProtocal + "<br/>");
+      // 2.磁盘名
+      var strArr = fileStr.split(':///');
+      var diskName = strArr[1].slice(0, strArr[1].indexOf(':'));
+      document.write("磁盘名为：" + diskName + "<br/>");
+      // 3.用户名
+      // 如果是C盘
+      var urlArr = strArr[1].split('/');
+      var userName = "";
+      if (diskName == 'C') {
+        userName = urlArr[2];
+      } else {
+        userName = urlArr[1];
+      }
+      document.write("用户名为：" + userName + "<br/>");
+      // 4.文件名及后缀
+      var fileType = urlArr[urlArr.length - 1];
+      document.write("文件名及后缀为：" + fileType + "<br/>");
+    }
+  </script>
+</body>
+
+</html>

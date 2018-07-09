@@ -2,7 +2,42 @@
  * 功能：首页样式设置
  * 日期：2017/11/10
 **/
-// ==== mixin ====
+
+/***
+color函数：
+lighten(@color,30%)：为@color增加30%亮度
+darken(@color,30%):为@color增加30%暗度
+
+//色调修改
+spin(@color,20):增加20个色调
+spin(@color,-20):减少20个色调
+
+saturate(@color, 10%)：增加饱和度
+desaturate(@color, 10%)：减少饱和度
+
+fadein(@color,10%):减少不透明度
+fadeout(@color,10%):增加不透明度
+fade(@color,30%):给当前颜色设置30%不透明度
+
+mix(@color1,@color2):混合两种颜色
+
+
+提前颜色信息：（色调，饱和度，亮度）
+hue(@color)：提取@color的色调值
+saturation(@color):提取饱和度
+lightness(@color):提取亮度
+
+*/
+
+
+
+
+
+
+
+
+
+// ==== mixin(混合) ====
 // 特效--卡片
 .effect-card(@rs:5px) {
     -webkit-border-radius: @rs;

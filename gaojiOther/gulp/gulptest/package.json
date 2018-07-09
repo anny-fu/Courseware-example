@@ -1,0 +1,21 @@
+{
+  "name": "gulptest",
+  "version": "1.0.0",
+  "description": "gulp入门实例",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "cnpm i --save-dev gulp gulp-less gulp-sourcemaps gulp-clean-css gulp-htmlmin browser-sync gulp-autoprefixer"
+  },
+  "keywords": [],
+  "author": "tomAnny",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-less": "^3.5.0",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

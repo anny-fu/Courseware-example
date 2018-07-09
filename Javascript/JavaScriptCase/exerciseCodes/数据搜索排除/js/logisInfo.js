@@ -107,8 +107,8 @@ var  tableCont = document.getElementById("logisInfoTable").getElementsByTagName(
 /* 筛选排除数据 */
 logisEle.filterBtn.onclick = function() {
     // 点击触发函数
-    // filterData();
-    filterDate();
+    filterData();
+    // filterDate();
 }
 /* 搜索指定数据 */
 logisEle.searchBtn.onclick = function() {
@@ -133,7 +133,7 @@ function filterData() {
         // var filterVal = document.getElementById("filterVal").value,
         var filterVal = logisEle.filterBox.value;
         // 获取数组长度
-        loginsInfo_data_len = loginsInfo.orderNum.length,
+        var loginsInfo_data_len = loginsInfo.orderNum.length,
         // 物流信息表格内容
         tableCont = document.getElementById("logisInfoTable").getElementsByTagName("tbody")[0];
         console.log(loginsInfo.orderNum);

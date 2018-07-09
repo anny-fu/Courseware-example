@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串截取方法</title>
+</head>
+
+<body>
+  <script>
+    // slice()和数组中的slice方法一样
+    //如果参数为负数：这个负数加上字符串长度得到对应的下标
+    var str = "hello javascript!";
+    console.log(str.charAt(11));
+    console.log(str.slice(-6));
+    // substring():参数为负数，会被转换为0;
+    console.log(str.substring(-6, 2));
+    // substr(startIdx,length);
+    //第一个参数为负数和slice一样，第二个参数为负数，自动转换为0；
+    console.log(str.substr(str.indexOf('j'), 4));
+  </script>
+</body>
+
+</html>

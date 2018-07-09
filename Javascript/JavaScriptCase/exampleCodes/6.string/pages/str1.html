@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>字符串类型转换</title>
+</head>
+
+<body>
+  <script>
+    //   1.原始类型转换:添加引号
+    console.log(String(true));
+    console.log(String(undefined));
+    console.log(String(10));
+
+    // 2.引用类型转换
+    // valueOf() ;toString();
+    console.log(String([]));
+    console.log(String([1, 2, 3]));
+    console.log(String({}));
+    console.log(String({
+      name: 'anny',
+      age: 30
+    }));
+    console.log(String(function() {
+      return 'hello'
+    }));
+  </script>
+</body>
+
+</html>

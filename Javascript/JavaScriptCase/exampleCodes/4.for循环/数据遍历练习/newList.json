@@ -1,0 +1,382 @@
+//新闻资讯
+var news = {
+  "showapi_res_error": "",
+  "showapi_res_code": 0,
+  "showapi_res_body": {
+    "ret_code": 0,
+    "pagebean": {
+      "allPages": 145,
+      "contentlist": [
+        {
+          "id": "dcbfaab4324d8527741a20ef6cdfc423",
+          "pubDate": "2018-06-19 10:29:55",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "一图流：好久不见，富力旧将张贤秀、斯文森赛后拥抱",
+          "desc": "对阵分析赛事前瞻亚洲详盘欧赔足球赔率篮球比分直播nba比分直播网球比分直播。6月19日讯、世界杯小组赛继续进行，瑞典1-0击败韩国。张贤秀于2014年至2017赛季效力广州富力，一共为球队出场74次，随后加盟东京FC；斯文森在2016赛季效力广州富力，一共为球队出场33次，随后转会到了美职联的西雅图海湾人。",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://img.sportscn.com/q.jpg?https://c1.hoopchina.com.cn/uploads/star/event/images/180619/059b643d4db74bd56f99c1adaaadd81251482bb2.jpg"
+            }
+          ],
+          "source": "华体网",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "7581022293011928663",
+          "link": "http://we.sportscn.com/viewnews-2532440.html"
+        },
+        {
+          "id": "f5ca729f06a700727da70beff15cbc9d",
+          "pubDate": "2018-06-19 10:26:41",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "世界杯期间成为了热歌爆发的黄金时间",
+          "desc": "世界杯期间对于音乐产业来说一直是音乐发行的淡季，因为公众的视线全都集中在足球上。据国际足联的官方报道，2014年世界杯期间有32亿观众被吸引，但相比之下像超级碗这样的盛会只有大约1亿观众。不过对于今年6月14日到7月15日在俄罗斯举行的世界杯来说，情况却发生了根本性的转变。",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://img2.jiemian.com/101/original/20180619/152936694391449000_a580xH.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://img3.jiemian.com/101/original/20180619/152936694420553400_a580xH.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://img1.jiemian.com/101/original/20180619/152936694383745400_a580xH.jpg"
+            }
+          ],
+          "source": "界面",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "11520111531013819463",
+          "link": "http://www.jiemian.com/article/2239735.html"
+        },
+        {
+          "id": "299d36bbd34885aa21010199ab4d5da7",
+          "pubDate": "2018-06-19 10:26:41",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "如果世界杯在广西开踢会怎样？阴晴不定的天气扣20分",
+          "desc": "当下大家最关心的除了天气，恐怕就是世界杯了！这届世界杯已经踢了好几天了，不懂足球的小西听说今年连连爆冷门，大家看得刺不刺激？以莫斯科为例，6至7月是最适宜旅游的季节，日最高气温在22℃左右，最低气温在12℃左右，湿度适中。这样的天气条件，你认为广西的天气能打几分？18日20时~19日20时天气预报示意图。广西高速公路管理局18日提供。",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/559/w250h309/20180619/4GwP-heauxvz3201266.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/104/w550h354/20180619/-f2q-heauxvz3201297.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/115/w550h365/20180619/VdE1-heauxvz3201327.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/14/w320h494/20180619/B6Ys-heauxvz3201378.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/631/w331h300/20180619/3SMR-heauxvz3201407.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/162/w550h412/20180619/HvlZ-heauxvz3201437.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/619/w413h206/20180619/5J35-heauxvz3201471.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/754/w550h204/20180619/uBRb-heauxvz3201495.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/556/w300h256/20180619/aY_l-heauxvz3201518.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/gx/crawl/793/w459h334/20180619/FJhT-heauxvz3201541.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://gx.sina.com.cn/news/2018-06-19/"
+            }
+          ],
+          "source": "新浪广西",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "9791665296876480781",
+          "link": "http://gx.sina.com.cn/news/2018-06-19/detail-iheauxvz3276944.shtml"
+        },
+        {
+          "id": "701d3b9306720a890cf67dd8e48e9c68",
+          "pubDate": "2018-06-19 10:26:41",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "【俄罗斯世界杯】C罗、梅西、内马尔“三星首秀三场平” 三人发挥各不同",
+          "desc": "在今年俄罗斯世界杯上，最抢手的球星是C罗、梅西和内马尔，他们也均完成了自己在本届世界杯上的首秀。英国足球数据网站WhoScored根据传球成功率、触球次数、射门次数等多项数据，对每场比赛的选手进行了赛后评分，C罗获得全场最高的9.8分，梅西和内马尔虽然没有进球，但也获得了本队本场比赛的最高分，对球队的重要性毋庸置疑。",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/translate/170/w583h387/20180619/WtWz-heauxvz3315215.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/translate/182/w588h394/20180619/AJjp-heauxvz3315259.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/translate/172/w578h394/20180619/F4aU-heauxvz3315311.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://n.sinaimg.cn/translate/168/w573h395/20180619/Y13s-heauxvz3315378.png"
+            }
+          ],
+          "source": "新浪新闻",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "4747251420507930881",
+          "link": "http://news.sina.com.cn/o/2018-06-19/doc-iheauxvz3399987.shtml"
+        },
+        {
+          "id": "da7887ad53768d2a6fe4d05af6e78176",
+          "pubDate": "2018-06-19 10:24:52",
+          "havePic": false,
+          "channelName": "体育最新",
+          "title": "世界杯是怎么赚钱的？",
+          "desc": "四年一届的世界杯于6月14日正式拉开帷幕，在接下来的一个月里，来自世界各地的球迷将齐聚俄罗斯，尽情享受这场足球盛宴。与奥运会的“难以为继”相比，同为国际型体育盛会的世界杯却一直被视为体育界最赚钱的生意之一。我们仍然记得，那一个个在Windows 98上体验《FIFA 2002》的夜晚，通过修改游戏难度，伟大的中国队也终于踢了巴西一场，4比0。",
+          "imageurls": [],
+          "source": "界面",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "10872515481518848246",
+          "link": "http://www.jiemian.com/article/2240155.html"
+        },
+        {
+          "id": "f36323db926cf13a063dac21399867d7",
+          "pubDate": "2018-06-19 10:22:06",
+          "havePic": false,
+          "channelName": "国内最新",
+          "title": "多部门禁网售彩票世界杯竞猜APP上仍热卖",
+          "desc": "　　世界杯开赛以来，购买足球彩票成了不少球迷看比赛之余最热衷的一件事儿，尽管自2015年起财政部、民政部、国家体育总局就联合下发通知禁止了一切互联网彩票销售行为，但多款销售彩票的APP这几天登上App Store热门排行，记者亲验后发现，双色球、竞彩足球这样的福利彩票，均可顺利购买。软件协议称提供的是代售服务，但中国福利彩票中心表示一切网售包括APP销售彩票都被禁止，没有得到任何授权，发现有违规网站建议市民报警。",
+          "imageurls": [],
+          "source": "中国新闻网",
+          "channelId": "5572a109b3cdc86cf39001db",
+          "link": "http://www.chinanews.com/sh/2018/06-19/8540718.shtml"
+        },
+        {
+          "id": "95c8909cd7d599b10bc8625e09fa2cfc",
+          "pubDate": "2018-06-19 10:22:05",
+          "havePic": false,
+          "channelName": "体育最新",
+          "title": "科技改变足球，本届世界杯13战过后已出现8粒点球",
+          "desc": "虎扑6月19日讯、本届世界杯中引入的视频助理裁判彻底改变了比赛。小组赛第一轮还没有结束，13场比赛里已经出现了8粒点球。相比2014年巴西世界杯，出现第8粒点球是在第25场比赛里。而在2010年南非世界杯，直到第35场比赛才出现第8粒点球。在2006年的德国，第8粒点球在第40场比赛里出现。",
+          "imageurls": [],
+          "source": "虎扑篮球",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "12745242137598678189",
+          "link": "http://voice.hupu.com/soccer/2313362.html"
+        },
+        {
+          "id": "d12c13f5b4fe87999379e3aa298fe5b6",
+          "pubDate": "2018-06-19 10:08:37",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "欧文在踢俄罗斯世界杯？ 巴拿马中场与他撞脸",
+          "desc": "腾讯体育讯北京时间6月19日，据美媒体《clutchpoints》报道，凯尔特人全明星凯里-欧文在踢俄罗斯足球世界杯？没有，只是巴拿马中场加布里埃尔-戈麦斯与他撞脸了。戈麦斯与欧文撞脸如果你既是一位篮球迷又是一位足球迷，那么你在观看本届俄罗斯足球世界杯时，你是不是发现了戈麦斯和欧文很相像？这就是很多球迷今天在社交媒",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://inews.gtimg.com/newsapp_bt/0/4032599798/641"
+            }
+          ],
+          "source": "体育新闻",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "link": "http://sports.qq.com/a/20180619/016639.htm"
+        },
+        {
+          "id": "7ee9ed9461dd55c58fd9cfa19d5de7b7",
+          "pubDate": "2018-06-19 10:04:21",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "《为什么是足球》：作为男性化运动的足球",
+          "desc": "俄世界杯举办机构‘强烈警告’LGBT 球迷：不要‘在公开场合暴露性倾向’，否则有可能遭到猎杀和刺伤。足球支持者联合会表示，为确保人身安全，同性恋球迷应注意言行，不要在公共场合牵手或与伴侣举止亲昵。在这一污名化过程中，女性气质和同志群体首当其冲，成为界定支配性男性气质的重要“他者”和界限。",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image.thepaper.cn/www/image/8/337/513.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image.thepaper.cn/www/image/8/337/512.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image.thepaper.cn/www/image/8/337/632.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image2.thepaper.cn/image/8/247/908.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image1.thepaper.cn/image/8/271/727.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image2.thepaper.cn/image/8/82/722.jpg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://image2.thepaper.cn/image/8/266/892.jpg"
+            }
+          ],
+          "source": "澎湃新闻",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "7241234296097079996",
+          "link": "http://www.thepaper.cn/newsDetail_forward_2202385"
+        },
+        {
+          "id": "151aab859b54e4bb26f1a4c5324ed672",
+          "pubDate": "2018-06-19 09:37:49",
+          "havePic": true,
+          "channelName": "体育最新",
+          "title": "【小组赛第二轮看点】萨拉赫霸气复出：“一亿埃及人雄起”",
+          "desc": "世界杯小组赛首轮即将战罢，32强悉数亮相，北京时间明天凌晨，小组赛第二轮就将开打，又有哪些看点值得期待？热情奔放的性格可能与地理位置有关，在巴西和哥斯达黎加的足球哲学里，最相似的一点就是对进攻的崇拜。小组次战面对瑞典，德国人与阿根廷人一样不容有失。美编|婷婷返回搜狐，查看更多。",
+          "imageurls": [
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/62eef8ee464a4a2690216bb455e7ac96.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/951cc69ac17f461dab4b9c0fb70b9e6e.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/b56da50fa21d4432b4a2cc5fef8c7884.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/20c70221d8314b658bceaf5d238000a6.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/77b87e5c36764b41b6498fd8ced1b129.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/5564bf9f34b54c949b4eb05cacdf5936.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/5f1250d71c6c48e580a1d254c3d41769.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/63b8b4de972c498e8941ca90897725ea.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/e1c511f2f8e140b5a7d3a60c29f34b83.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/20bbab998d1447888e833f0c997048c2.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/06094e7360cd4c6b882c014230626e37.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/0059755902fe48a385ae2fe141c2c89e.png"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/4a42e5e240784757a3125897dd8e3f3a.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/326edb3695af49aaad01ca86cdf5439a.jpeg"
+            },
+            {
+              "height": 0,
+              "width": 0,
+              "url": "http://5b0988e595225.cdn.sohucs.com/images/20180619/5f1940cb080a49139c85b7b7253027c6.jpeg"
+            }
+          ],
+          "source": "搜狐体育",
+          "channelId": "5572a109b3cdc86cf39001e6",
+          "nid": "16678264983534569090",
+          "link": "http://sports.sohu.com/20180619/n541082173.shtml"
+        }
+      ],
+      "currentPage": 1,
+      "allNum": 2890,
+      "maxResult": 20
+    }
+  }
+}
+//健康资讯
+var Health = {
+  "showapi_res_error": "",
+  "showapi_res_code": 0,
+  "showapi_res_body": {
+    "ret_code": 0,
+    "item": {
+      "content": "今天是第五个世界肝炎日，WHO确定今天的活动主题为“预防肝炎，立即行动”，鼓励公众首先要重视肝炎的预防策略。小编有义务给大家科普下：7月28日是已故诺贝尔奖得主巴鲁克布隆伯格的诞辰日，为纪念这位乙肝病毒发现者，世界卫生组织从2011年开始将每年的世界肝炎日变更为7月28日。作为一种全球性的传染病，肝炎这一世界三大难治症之一，一直为全社会高度关注。\r\n<STRONG>肝炎距离肝癌只有十来年 </STRONG>\r\n肝炎之所以受到全世界的关注，主要是因为肝炎患者人数多，治疗难度大，世卫组织最新数据显示，全球共有20亿人感染肝炎病毒，其中约有5亿人感染了慢性肝炎，每年约有100万人因此而死亡。我国作为一个肝病大国，乙肝和丙肝病毒携带者近1.5亿，每年因肝硬化、肝癌死亡人数达28万。\r\n为此，小编特意走访了一些医生，湖北省肿瘤医院生物治疗中心胡胜主任介绍，肝炎与肝癌关系密切，尤其是乙、丙肝与肝癌有着一定的联系，临床的肝癌患者中约80％左右有肝炎或隐性肝炎病史，在慢性乙肝病毒携带者中肝癌发生率较正常人高出100倍。\r\n\r\n“从肝炎到肝癌大致要经历肝炎－肝硬化－肝癌这样一个过程。”胡胜说，“若不尽早治疗，如果是乙肝，这个过程一般会持续二十几年的时间，而丙肝，是十来年的时间。”\r\n<STRONG>\r\n\r\n早期预防成了重中之重</STRONG>\r\n慢性肝炎易发展成为肝硬化、肝癌，早期预防成了重中之重。目前，预防原发性肝炎的最主要措施是接种乙肝疫苗，以预防乙型肝炎的发生。除此之外，还需加强其他传播途径的控制，如饮食、手术、输血、注射和理发等。如果不幸感染肝炎，要进行系统的抗病毒治疗。\r\n作为肝癌的高危人群，要怎么预防呢？胡主任建议，乙肝携带者和慢性肝炎病人每三个月要做一次肝脏健康检查，定期检查，即使有癌变也可以早期发现，在肝癌早期发现、早期治疗，效果是很好的，所以定期检查不容忽视。\r\n<STRONG>肝癌可防可治并不可怕</STRONG>\r\n<STRONG></STRONG>\r\n肝炎发展到肝癌，很多人会觉得这就是宣告了死亡，其实，随着治疗技术的提高，长期带瘤生存的肝癌病人占有很重比例。目前，在湖北省肿瘤医院做过生物免疫治疗的病人中，不仅生活质量提高，五年生存率也大大提高。\r\n不久前，胡胜主任为一位62岁的老人做了一个疗程的生物免疫治疗，患者之前的B超和CT都显示肿瘤位于肝脏的右后叶，有8.5厘米。而来到湖北省肿瘤医院时CT显示肿瘤继续增大，达到了10厘米，经过采血、细胞培养、回输两个疗程的生物免疫治疗联合两个周期的化疗后，患者精神状态明显变好，经过 CT检查，肿瘤已经缩小到了直径5厘米。\r\n胡胜指出，科学技术的进步，使得肝癌不再是不治之症。生物免疫治疗是继手术、放疗、化疗后的第四大肿瘤治疗方法，它通过采集患者自身血液中的免疫细胞，体外培养后再回输到患者体内，来激发人体自身的抗癌免疫系统，达到杀伤癌细胞的目的，疗效显著。早期肝癌患者，通过生物免疫治疗联合手术、放化疗，治愈率非常高；中晚期患者接受生物免疫治疗则可有效改善生活质量，延长生存期。\r\n目前，湖北省内仅湖北省肿瘤医院能开展多细胞生物免疫治疗，并引进有国际领先的整体万级、局部百级的国际标准GMP实验室，免疫细胞的活性与质量都能达到国际标准，治疗安全有效。自应用生物免疫治疗三年来，已经有上万名肿瘤患者在湖北省肿瘤医院生物治疗中心受益，实现了康复或者长期带瘤生存！\r\n更多关于世界肝炎日特别知识，一张图让你醍醐灌顶：",
+      "id": "044629",
+      "author": "科教网",
+      "title": "世界肝炎日：预防肝炎，立即行动",
+      "time": "2015-07-28 17:05:24",
+      "img": "http://img1.gtimg.com/health/pics/hv1/37/205/1889/122884537.jpg",
+      "tname": "疾病资讯",
+      "tid": "2"
+    }
+  }
+}
+
+
+
