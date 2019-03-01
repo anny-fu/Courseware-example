@@ -20,7 +20,7 @@ exports.config = [
         test: /\.(gif|jpe?g|png)$/,
         loader: 'file-loader',
         options: {
-            useRelativePath: false,
+            useRelativePath: true,
             name: 'assets/[name].[ext]',
             outputPath: 'static/'
         }

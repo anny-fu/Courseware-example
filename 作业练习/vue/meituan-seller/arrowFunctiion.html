@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+    <style>
+        html,body {
+            font: 20px "Microsoft YaHei";
+        }
+        div {
+            padding: 8px 20px;
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        div.checked {
+            background-color: #2396fd;
+            border: 1px solid #0d6dc2;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">测试DIV</div>
+    <script>
+        test.onclick = function() {
+            // window.setTimeout(function() {
+           setTimeout(() => {
+                this.classList.add('checked');
+            },500);
+        }
+        // this指向的几种情况（前提是this出现在函数内部）
+        // 1、在普通函数内部，指向window对象
+        // 2、在对象内部，指向当前对象
+        // 3、在事件函数内部，指向当前Element对象（标签）
+        // 4、在构造函数内部，正常调用指向window，new操作过程指向当前实例
+    </script>
+</body>
+</html>

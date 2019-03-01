@@ -1,0 +1,41 @@
+@charset "utf-8";
+html,body {
+    margin: 0;
+    font: 20px sans-serif;
+}
+input,select,textarea,button {
+    font: inherit;
+}
+body {
+    padding: 12px;
+}
+table,th,td {
+    border: 1px solid #999999;
+    border-left: none;
+    border-right: none;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+thead th {
+    font-weight: normal;
+}
+th,td {
+    padding: 6px;
+    text-align: left;
+}
+form {
+    margin-bottom: 20px;
+}
+form > div {
+    padding-top: 20px;
+}
+form .checkItem {
+    margin-right: 10px;
+    cursor: pointer;
+}

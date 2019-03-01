@@ -1,0 +1,414 @@
+/**
+* 功能：首页样式
+**/
+
+/**** 样式初始化部分 ****/
+html,body,#app {
+	height: 100%;
+}
+body {
+	background-color: #ffffff;
+	font: lighter 12px/1.0 "微软雅黑";
+	color: #333;
+}
+/* 响应式调整字体大小 */
+@media (min-width: 360px) {
+	body {
+		font-size: 14px;
+	}
+}
+input,select,textarea,button {
+	outline: none;
+}
+
+/**** 细节样式设置部分 ****/
+button.normal {
+	width: 96%;
+	padding: 8px 0;
+	background-color: #ff8811;
+	border:none;
+	border-radius: 5px;
+	font: 1rem "微软雅黑";
+	color: #ffffff;
+	margin: 16px 2%;
+	display: block;
+	cursor: pointer;
+}
+button.normal:active {
+	background-color: #ff9f40;
+}
+
+/**** 细节样式设置部分 ****/
+nav.fillter {
+	background-color: #ffffff;
+}
+#app {
+	padding: 0;
+}
+#app > .content {
+	height: calc(100% - 41px);
+	padding-bottom: 50px;
+	background-color: #eaeaea;
+	overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+#app > .content::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+}
+#app > .content::-webkit-scrollbar-thumb {
+	background-color: rgba(171, 151, 198, 0.2);
+	border-radius: 3px;
+	cursor: hand;
+}
+#app > .content:hover::-webkit-scrollbar-thumb {
+	background-color: rgba(171, 151, 198, 0.4);
+}
+/* 筛选排序列表 */
+nav.fillter {
+	position: relative;
+}
+ul.filterSort {
+	padding: 8px 10px;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+ul.filterSort > li {
+	flex-basis: 26.5%;
+	text-align: center;
+	font-size: 0.8rem;
+	line-height: 24px;
+	cursor: pointer;
+}
+ul.filterSort > li:nth-of-type(3) {
+	border-right: 1px solid #ccc;
+}
+ul.filterSort > li:nth-of-type(4) {
+	flex-basis: 20.5%;
+}
+ul.filterSort > li.checked {
+	font-weight: normal;
+	color: #000;
+}
+/* 综合排序列表 */
+.comSort {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+	list-style: none;
+	position: absolute;
+	top: 41px; left: 0;
+	z-index: 11;
+}
+.comSort > li {
+	padding: 0 14px;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+}
+.comSort > li.checked {
+	color: #ec6a07;
+}
+/* 筛选栏图标 */
+ul.filterSort > li i.icon {
+	width: 16px; height: 16px;
+	margin: 0 2px;
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	top: -1px;
+}
+/* 筛选栏图标--箭头 */
+ul.filterSort > li i.icon.arrow {
+	width: 12px; height: 12px;
+	margin-left: 4px;
+	background: url(../img/arrow.svg) 0 0 no-repeat;
+	transition: all 0.1s;
+}
+ul.filterSort > li i.icon.arrow.checked {
+	transform: rotate(90deg);
+}
+/* 筛选栏图标--漏斗 */
+ul.filterSort > li i.icon.funnel {
+	background: url(../img/funnel.svg) 0 0 no-repeat;
+}
+@media (max-width: 340px) {
+	ul.filterSort > li {
+		font-size: 0.7rem;
+	}
+	ul.filterSort > li i.icon {
+		width: 12px; height: 12px;
+	}
+	ul.filterSort > li i.icon.arrow {
+		width: 10px; height: 10px;
+		margin-left: 2px;
+	}
+}
+
+/* 商家数量统计 */
+.sellerCount {
+    padding: 6px 12px;
+    text-align: center;
+    background-color: #e1e7eb;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 商家列表 */
+#business {
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#business li {
+	padding: 12px 12px 12px 0;
+	margin-left: 12px;
+	border-bottom: 1px solid #eee;
+	/* overflow: hidden; */
+	position: relative;
+}
+/* 商家图片 */
+#business li .bus-img {
+	width: 72px;
+	position: absolute;
+	left: 0; top: 12px;
+}
+#business li .bus-img img {
+	width: 100%;
+}
+/* 商家简介 */
+#business li .bus-introd {
+	width: auto;
+	margin-left: 80px;
+	color: #666;
+}
+/* 响应式调整列表布局 */
+@media (min-width: 360px) {
+	#business li .bus-img {
+		width: 96px;
+	}
+	#business li .bus-introd {
+		margin-left: 106px;
+	}
+}
+/* 商家名称 */
+.bus-introd .bus-name {
+	font-weight: normal;
+	font-size: 1rem;
+	color: #000;
+}
+.bus-introd .bus-name span {
+	vertical-align: middle;
+}
+.bus-introd .bus-name span:nth-of-type(2) {
+	padding: 2px 6px;
+	border: 1px solid #1ace1a;
+	font-size: 0.8rem;
+	color: #1ace1a;		
+	margin-left: 6px;
+	display: inline-block;
+}
+/* 销售情况 */
+.bus-situation {
+	margin-top: 4px;
+}
+.bus-situation .score, .bus-situation .saleCount, .bus-situation .distance {
+	display: inline-block;
+	vertical-align: middle
+}
+/* 评分星数 */
+.bus-situation .score i {
+	width: 12px; height: 12px;
+	background: #fff url(../img/star-score.png) no-repeat;
+	background-size: auto 12px;
+	display: inline-block;
+}
+.bus-situation .score i.star-all {
+	background-position: 0 0;
+}
+.bus-situation .score i.star-half {
+	background-position: -12px 0;
+}
+/* 距离 */
+.bus-situation .distance {
+	float: right;
+	color: #acacac;
+}
+.bus-situation .distance span {
+	color: #666;
+}
+/* 送餐费用 */
+.bus-introd .deliveryCost {
+	color: #acacac;
+	margin-top: 4px;
+}
+@media (min-width: 360px) {
+	.bus-situation {
+		margin-top: 10px;
+	}
+	.bus-introd .deliveryCost {
+		margin-top: 10px;
+	}
+}
+.bus-introd .deliveryCost span {
+	color: #666;
+}
+/* 商家活动 */
+.bus-introd .activities {
+	margin-top: 15px;
+}
+.bus-introd .activities p {
+	margin: 0;
+	padding: 5px 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.bus-introd .activities p span {
+	padding: 2px;
+	margin-right: 5px;
+	display: inline-block;
+	color: #fff;
+}
+/* “减”的颜色 */
+.bus-introd .activities p span.red {
+	background-color: #ff6060;
+}
+.bus-introd .activities p span.orange {
+	background-color: #ff9214;
+}
+.bus-introd .activities p span.yellow {
+	background-color: #f7e400;
+}
+.bus-introd .activities p span.green {
+	background-color: #2cf02c;
+}
+.bus-introd .activities p span.cyan {
+	background-color: #13e4f5;
+}
+.bus-introd .activities p span.blue {
+	background-color: #1d99db;
+}
+.bus-introd .activities p span.purple {
+	background-color: #ce60ff;
+}
+/* 商家信息创建 */
+form[name=sellerInfoCreate] {
+	width: 100%;
+	height: calc(100% - 2px);
+	padding: 12px;
+	background-color: #fff;
+	position: fixed;
+	left: 0; top: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+/* 表单标题 */
+form[name=sellerInfoCreate] .title {
+	height: 30px;
+    text-align: center;
+    font: normal 1rem "微软雅黑";
+    line-height: 30px;
+    border-bottom: none;
+    background-color: #dbeeff;
+}
+/* 表单控件组 */
+form[name=sellerInfoCreate] > div {
+	width: calc(100% - 24px);
+	height: 40px;
+	line-height: 40px;
+	font-size: 0;
+	border-bottom: 1px solid #e3e3e3;
+}
+form[name=sellerInfoCreate] > div label,form[name=sellerInfoCreate] > div input {
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+form[name=sellerInfoCreate] > div label:first-child {
+	width: 86px;
+	display: inline-block;
+	font-size: 0.9rem;
+}
+form[name=sellerInfoCreate] > div input {
+	width: calc(100% - 90px);
+	height: 100%;
+	border: none;
+	font-size: 1rem;
+	color: #333;
+}
+form[name=sellerInfoCreate] > div label.radio {
+	width: 60px;
+	font-size: 1rem;
+	text-align: center;
+	display: inline-block;
+}
+form[name=sellerInfoCreate] > div input[type=radio] {
+	width: 16px; height: 16px;
+}
+/* 文本域特殊容器 */
+form[name=sellerInfoCreate] > div.activ {
+	height: auto;
+	line-height: 100%;
+}
+form[name=sellerInfoCreate] > div.activ textarea {
+	width: 100%;
+	height: 72px;
+	padding: 6px 0;
+	border: none;
+	font-size: 0.9rem;
+	line-height: 25px;
+	resize: none;
+	color: #333;
+}
+form[name=sellerInfoCreate] > div.btn-group {
+	height: auto;
+	padding: 20px 0;
+}
+form[name=sellerInfoCreate] > div.btn-group button {
+	width: 100%;
+	padding: 8px;
+	background-color: #f9f9f9;
+	border: 1px solid #acacac;
+	border-radius: 5px;
+	font-size: 1rem;
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+form[name=sellerInfoCreate] > div.btn-group button.comfirm {
+	background-color: #2396fd;
+	border: 1px solid #128bf5;
+	color: #ffffff;
+}
+/* 遮罩层 */
+.maskLayer {
+	background-color: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	left: 0; right: 0; top: 41px; bottom: 0;
+	z-index: 10;
+}
+
+/* Vue动画 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.6s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+

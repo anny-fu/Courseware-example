@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>定位的层级问题</title>
+	<style>
+		div {
+			width: 480px; height: 480px;
+			position: absolute;
+			z-index: 0;
+		}
+		div > div {
+			position: absolute;
+		}
+		/* 红色 */
+		div:first-child > div {
+			background-color: rgba(255, 0, 0, 0.8);
+			left: 100px; top: 10px;
+			z-index: 9999;
+		}
+		/* 绿色 */
+		div:last-child > div {
+			background-color: rgba(0, 255, 0, 0.8);
+			left: 200px; top: 50px;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<!-- 红色 -->
+	<div>
+		<div></div>
+	</div>
+	<!-- 绿色 -->
+	<div>
+		<div></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@charset "utf-8";
+/**
+ * 功能：项目模版
+ * 日期：
+**/
+// ============ 全局变量定义部分 ============
+// 主题色
+$theme-color: #7128f7;
+
+html,body {
+    margin: 0;
+    font: 20px sans-serif,"MicroSoft YaHei";
+}
+header {
+    background-color: $theme-color;
+    padding: 12px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.album-ul {
+    width: 90%;
+    max-width: 1200px;
+    margin: 32px auto;
+    display: flex;
+    list-style: none;
+    li {
+        width: 25%;
+        img {
+            width: 90%;
+            border: 1px solid lighten($theme-color, 25%);
+            border-radius: 3px;
+            display: block;
+            transition: all 0.6s;
+            box-shadow: 0 0 0 rgba(58, 55, 66, 0.3);
+            margin: 0 auto;
+            filter: saturate(0.2);
+            &:hover {
+                transform: scale(1.2);
+                filter: saturate(1);
+                box-shadow: 0 10px 16px rgba(58, 55, 66, 0.3);
+            }
+        }
+    }
+}

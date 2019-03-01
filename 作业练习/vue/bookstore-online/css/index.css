@@ -1,0 +1,113 @@
+@charset "utf-8";
+/**** 样式初始化部分 ****/
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+ul,
+ol,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font: 16px "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+}
+html,
+body,
+#app,
+.container {
+  height: 100%;
+}
+input,
+select,
+button,
+textarea {
+  outline: none;
+}
+/* 搜索框 */
+.searchBox {
+  padding: 12px;
+  background-color: #333333;
+}
+.searchBox input {
+  width: 100%;
+  padding: 8px 8px 8px 32px;
+  background: #f8f8f8 url(../assets/icon-search.svg) no-repeat 8px 50%;
+  background-size: auto 60%;
+  border: none;
+  border-radius: 5px;
+  font: 16px "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 16px;
+}
+@media screen and (max-width: 340px) {
+  .searchBox {
+    padding: 10px;
+  }
+  .searchBox input {
+    padding: 6px 6px 6px 30px;
+    font-size: 14px;
+  }
+}
+/* 内容区域容器 */
+.container {
+  height: calc(100% - 58px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media screen and (max-width: 340px) {
+  .container {
+    height: calc(100% - 48px);
+  }
+}
+/* 图书列表 */
+.book-list {
+  padding: 20px;
+}
+.book-list h2 {
+  font: normal 16px "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 5px;
+}
+.book-list h2 span {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0px;
+}
+.book-list h2 span.icon-arrow-right {
+  background: url(../assets/icon-arrow-right.svg) no-repeat center center / 80% 80%;
+}
+.book-list ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.book-list ul li {
+  width: 33%;
+  padding: 10px 0;
+  font: normal 16px "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 12.8px;
+}
+.book-list ul li img {
+  max-width: 96%;
+  height: 125px;
+  display: block;
+  margin: 0 auto;
+}
+.book-list ul li .book-name {
+  width: 90%;
+  margin: 5px auto;
+  word-break: break-all;
+  color: #066bc5;
+}
+.book-list ul li .book-price {
+  width: 90%;
+  margin: 5px auto;
+  color: #b2240c;
+}

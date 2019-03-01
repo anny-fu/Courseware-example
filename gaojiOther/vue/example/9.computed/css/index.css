@@ -1,0 +1,137 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    font: 20px sans-serif;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+/* 商品排序 */
+.goods-sort {
+    margin-top: 20px;
+}
+
+/* 商品列表 */
+.goods-list {
+    list-style: none;
+    margin: 12px;
+    margin-top: 0;
+    padding: 12px;
+}
+
+.goods-list>li {
+    padding: 4px 12px;
+    line-height: 40px;
+}
+
+.goods-list>li:hover {
+    background-color: #f3f3f3;
+}
+
+.goods-list>li>label,
+.goods-list>li>span,
+.goods-list>li>i {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.goods-list>li>label {
+    width: 102px;
+    color: #666666;
+    display: inline-block;
+}
+
+.goods-list>li>span {
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #0099ff;
+}
+
+.goods-list>li>i {
+    height: 40px;
+    padding-top: 4px;
+    font-style: normal;
+    color: #e9d310;
+    cursor: pointer;
+    box-sizing: inherit;
+}
+
+/* 商品详情面板 */
+
+.goods-detail {
+    min-width: 440px;
+    padding: 32px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    z-index: 11;
+}
+
+.goods-detail .close-panel {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font: normal 46px/46px '宋体';
+    color: #999999;
+    cursor: pointer;
+}
+
+.goods-detail .close-panel:hover {
+    color: #bbbbbb;
+}
+
+.goods-detail>div {
+    padding: 0 12px;
+    line-height: 40px;
+    white-space: nowrap;
+    border-bottom: 1px dotted #d3d3d3;
+}
+
+.goods-detail label,
+.goods-detail span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.goods-detail label {
+    width: 102px;
+}
+
+.goods-detail span {
+    color: #2e93f1;
+}
+
+/* 遮罩层 */
+
+.masklayer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* vue淡入淡出动画 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}

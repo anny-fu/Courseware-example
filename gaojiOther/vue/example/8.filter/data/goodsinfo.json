@@ -1,0 +1,23 @@
+[
+    {
+        "identifier": "BD234432",
+        "name": "海尔冰箱",
+        "country": "中国",
+        "manufDate": 1476171000000,
+        "price": 4986
+    },
+    {
+        "identifier": "BD234423",
+        "name": "华帝热水器",
+        "country": "中国",
+        "manufDate": 1467791280000,
+        "price": 1299
+    },
+    {
+        "identifier": "HG234566",
+        "name": "三星曲面屏电视",
+        "country": "韩国",
+        "manufDate": 1511418600000,
+        "price": 13655
+    }
+]

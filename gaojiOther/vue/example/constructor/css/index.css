@@ -1,0 +1,28 @@
+@charset "utf-8";
+html,body {
+    font: 20px sans-serif;
+}
+input,button {
+    font: inherit;
+}
+.popup-box {
+    background-color: #fff;
+    border-radius: 3px;
+    position: fixed;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+.popup-box .header {
+    padding: 4px 6px;
+    color: #999999;
+    font-size: 0.8rem;
+}
+.popup-box .content {
+    padding: 12px 40px;
+    color: #555555;
+}
+.popup-box .footer {
+    padding: 12px;
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+@charset "utf-8";
+html,body {
+    margin: 0;
+    font: 20px sans-serif;
+}
+.tab-bar {
+    display: flex;
+    list-style: none;
+}
+.tab-bar li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.content {
+    list-style: none;
+}
+.content li {
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
