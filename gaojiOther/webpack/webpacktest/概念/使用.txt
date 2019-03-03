@@ -1,0 +1,81 @@
+安装webpack：
+全局：cnpm i webpack@3.8.1 -g
+项目依赖： cnpm i webpack -D
+webpack命令：
+-h:帮助
+-v:版本
+<entry> [<entry>] <output> :如不使用config file文件
+webpack  要使用config file 文件
+
+命令行工具：webpack-cli  ==== 交互式(你问我答)的初始化项目，迁移项目,webpack4的命令工具
+安装：cnpm i webpack-cli -g 
+init:
+官网demo:webpack-cli init webpack-addons-demo
+1.脚手架：Pengwings
+2.项目入口：app
+3.通用模块:vender
+
+
+webpack配置：
+webpack:默认找项目根目录的配置文件
+webpack --config webpack.conf.dev.js:直接指定对应的配置文件
+
+第三方脚手架：
+Vue-cli
+Angular-cli
+React-starter
+
+
+打包js：
+webpack app.js --output-filename bundle.js  ==== 指定打包的js和打包后输出的文件
+webpack app.js -o bundle.js 
+
+
+提取公共代码：
+webpacl.optimize.CommonsChunkPlugin
+
+配置项：
+options.name or options.names : 指定的chunks名称
+options.filename : 公用代码打包后的文件名
+options.minChunks : 同一代码出现的次数
+options.chunks : 规定提取代码的范围
+options.children : 是否到子模块或者所有模块中查找代码
+options.deepChildren :
+options.async : 创建异步公共代码块
+
+场景：
+单页应用;单页+第三方依赖;多页应用+第三方依赖+webpack生成代码
+
+CSS功能插件：
+style-loader:生成style标签或link标签
+style-loader/url:
+style-loader/useable:
+css-loader:让js动态import一个css到文档流中
+option:
+alias:解析的别名
+
+
+Tree shaking：
+功能：筛选打包，过滤掉项目中无用的代码或者文件
+场景：常规优化，引入第三方的某个功能
+js tree shaking：比如一个js库中只有到一些方法，其多余的就不会不打包上线
+css tree shaking：比如Boostrap中的各种公共样式或者js插件。项目中只会运用到一部分。
+
+文件处理：
+图片处理，字体文件，第三方JS库
+
+图片处理：
+file-loader:CSS中引入的图片
+url-loader:Base64编码
+img-loader:图片压缩
+postcss-sprites:雪碧图合成
+
+生成HTML：
+HtmlWebpackPlugin
+options:{template:模板,filename:文件名,minify:是否压缩,chunks:指定加入页面的chunks,inject:是否插入css}
+
+webpack和vue框架：
+vue --help:查看对应命令
+vue list :模板命令
+vue init <template name> <project name>；初始化模板项目结构
+vue init <git repo> <project name>：初始化git项目模板结构

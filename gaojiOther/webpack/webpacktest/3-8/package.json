@@ -1,0 +1,23 @@
+{
+  "name": "3-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devSave": "cnpm install less-loader less file-loader url-loader img-loader postcss-sprites --save-dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "img-loader": "^3.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "postcss-sprites": "^4.2.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.8.1"
+  }
+}

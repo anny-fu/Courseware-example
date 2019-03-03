@@ -1,0 +1,74 @@
+webpack诞生：
+Tobias Koppers(GitHub:@sokra)
+
+为啥需要构建：
+1.开发分工：前端对应数据操作和页面操作变多，变复杂，业务逻辑也变多，需要用打包来整理前端内容。
+2.框架变化：js库 ====》MVC ====>MV*   方法 ===》上层业务开发
+
+
+模块化的概念：AMD和CMD
+AMD(Async Module Definition):RequireJS(异步模块) == 依赖前置，提前执行
+CMD(Common Module Definition):SeaJS(通用模块) ==== 依赖就近，延迟执行
+
+安装node+npm+webpack
+
+
+版本迭代： 						功能更新：
+
+v1.0.0 ---- 2014.2.20   ===== 编译，打包，(HMR)模块化热更新,代码更新，文件处理
+v2.2.0 ---- 2017.1.18	===== Tree Shanking， ES Module，动态Import，新文档
+v3.0.0 ---- 2017.6.19	===== Scope Hoisting(作用域提升),打包后的文件运行速度提升,Magic Comments(配合动态import使用)
+v4.0.0 ---- 2017.12.5	===== 代号(legato:连续地演奏)，任然支持3的所有插件，对v3版本的bug修复和提升了加载性能
+
+webpack的核心：
+1.Entry:打包入口  ==== 代码入口，找到依赖模块，单个或多个
+2.Output:打包出口 ==== 代码出口，打包成的文件(bundle)
+3.Loaders:处理除js之外的文件
+4.Plugins:插件
+
+
+
+
+原理：入口文件（Jquery,bootstrap中的less）
+意义：独立开发
+
+
+
+
+node stream  === 菜鸟教程中的NodeJS
+node全局对象：__dirname
+
+初始化package.json:配置文件
+文件命名规则：不能以数字开头，不能大写字母，不能包含空格，不能中文
+
+
+
+webpack打包：模块化开发，单一职责原则
+
+windows中快速命令行生成文件：ni + 文件名
+MAC/liux：touch + 文件名
+
+命令窗口：powershell  cls(清空命令)
+
+开发依赖(工具/环境)：cnpm i webpack@3 -D(--save-dev)【建议安装webpack3.0】
+项目依赖:cnpm i jquery -S(--save)
+
+yarn:cnpm的备胎
+
+模块化中，将jquery定义在全局中:
+导入依赖模块：window.$=require("jquery");
+导出模块：exports.函数名=函数名
+
+
+webpack构建vue项目：
+ vue init webpack test
+
+ 自动安装项目依赖包：
+ cnpm install/yarn
+
+
+MAC命令行工具：
+原生：Terminal
+iTerm2：http://www.iterm2.com
+Zsh：http://ohmyz.sh  [可配置]
+可到知乎搜索更多答案！

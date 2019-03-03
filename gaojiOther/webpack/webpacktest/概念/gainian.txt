@@ -1,0 +1,31 @@
+webpack诞生：
+Tobias Koppers(GitHub:@sokra)
+
+为啥需要构建：
+1.开发分工：前端对应数据操作和页面操作变多，变复杂，业务逻辑也变多，需要用打包来整理前端内容。
+2.框架变化：js库 ====》MVC ====>MV*   方法 ===》上层业务开发
+
+
+模块化的概念：AMD和CMD
+AMD(Async Module Definition):RequireJS(异步模块) == 依赖前置，提前执行
+CMD(Common Module Definition):SeaJS(通用模块) ==== 依赖就近，延迟执行
+
+安装node+npm+webpack:cnpm i webpack@3 -g 
+初始化package.json:配置文件 cnpm init -yes
+文件命名规则：不能以数字开头，不能大写字母，不能包含空格，不能中文
+
+开发依赖(工具/环境)：cnpm i webpack@3 -D(--save-dev)【建议安装webpack3.0】/yarn add webpack --dev
+项目依赖:cnpm i jquery -S(--save)
+
+webpack构建vue项目：
+ vue init webpack test
+
+ 自动安装项目依赖包：
+ cnpm install/yarn
+
+版本迭代： 						功能更新：
+
+v1.0.0 ---- 2014.2.20   ===== 编译，打包，(HMR)模块化热更新,代码更新，文件处理
+v2.2.0 ---- 2017.1.18	===== Tree Shanking， ES Module，动态Import，新文档
+v3.0.0 ---- 2017.6.19	===== Scope Hoisting(作用域提升),打包后的文件运行速度提升,Magic Comments(配合动态import使用)
+v4.0.0 ---- 2017.12.5	===== 代号(legato:连续地演奏)，任然支持3的所有插件，对v3版本的bug修复和提升了加载性能
